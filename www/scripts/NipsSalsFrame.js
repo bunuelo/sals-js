@@ -6,7 +6,7 @@ sals.frame.frame_uid_map = {};
 sals.frame.uid__next_value = 0;
 
 sals.frame.uid__new = function() {
-    var uid = "" + sals.frame.uid__next_value;
+    var uid = "uid-" + sals.frame.uid__next_value;
     sals.frame.uid__next_value ++;
     return uid;
 };
@@ -25,6 +25,10 @@ sals.frame.frame__is_type = function(obj) {
 	return true;
     }
     return false;
+};
+
+sals.frame.frame__uid = function(self) {
+    return self["__meta__"]["uid"];
 };
 
 sals.frame.frame__get_element = function(self, key) {
@@ -65,10 +69,24 @@ sals.frame.frame__to_string = function(self) {
     return str;
 };
 
+sals.frame.flat_frame__new = function(frame) {
+    var self = sals.frame.frame__new();
+    sals.frame.frame__foreach_key(frame, function(key) {
+	var value = sals.frame.frame__get_element(frame, key);
+	if (sals.frame.frame__is_type(value)) {
+	    var value__uid = sals.frame.frame__uid(value);
+	    sals.frame.frame__set_element(self, key, value__uid);
+	} else {
+	    sals.frame.frame__set_element(self, key, value);
+	}
+    });
+};
+
 sals.frame.test = function() {
     var frame1 = sals.frame.frame__new();
     var frame2 = sals.frame.frame__new();
     sals.frame.frame__set_element(frame1, "child", frame2);
     sals.frame.frame__set_element(frame2, "test", 4);
-    return sals.frame.frame__to_string(frame1);
+    var flat_frame = sals.frame.flat_frame__new(frame1);
+    return sals.frame.frame__to_string(flat_frame);
 };
