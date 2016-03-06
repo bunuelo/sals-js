@@ -2,7 +2,7 @@
 console.log("Loading NipsSalsIndex.js");
 
 window.onload = function() {
-    console.log("Executing document.onload");
+    console.log("Executing window.onload");
     document.body.innerHTML = "Hi Bob.";
     var script_file_names = ["scripts/NipsSalsCore.js",
 			     "scripts/NipsSalsGraph.js"];
