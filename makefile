@@ -38,6 +38,6 @@ git-add:
 	git add --all .
 
 git-development-cycle:
-	make git-pull; make git-add; make git-commit; make git-push
+	make git-pull; make compile-webpage; make git-add; make git-commit; make git-push
 
 
