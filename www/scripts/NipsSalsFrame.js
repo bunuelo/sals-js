@@ -31,12 +31,20 @@ sals.frame.frame__uid = function(self) {
     return self["__meta__"]["uid"];
 };
 
+sals.frame.frame__key_count = function(self) {
+    return self.length - 1;
+};
+
 sals.frame.frame__get_element = function(self, key) {
     return self[key];
 };
 
 sals.frame.frame__set_element = function(self, key, value) {
     self[key] = value;
+};
+
+sals.frame.frame__contains_key = function(self, key) {
+    return (self.hasOwnProperty(key));
 };
 
 sals.frame.frame__foreach_key = function(self, element_func) {
@@ -54,8 +62,12 @@ sals.frame.frame__foreach_value = function(self, element_func) {
 };
 
 sals.frame.frame__to_string = function(self) {
-    var str = "{";
+    var str       = "{";
+    var key_index = 0;
     sals.frame.frame__foreach_key(self, function(key) {
+	if (key_index > 0) {
+	    str += " ";
+	}
 	var value     = sals.frame.frame__get_element(self, key);
 	var value_str = null;
 	if (sals.frame.frame__is_type(value)) {
@@ -64,6 +76,7 @@ sals.frame.frame__to_string = function(self) {
 	    value_str = "" + value;
 	}
 	str += (key + ":" + value_str);
+	key_index ++;
     });
     str += "}";
     return str;
@@ -80,6 +93,39 @@ sals.frame.flat_frame__new = function(frame) {
 	    sals.frame.frame__set_element(self, key, value);
 	}
     });
+    return self;
+};
+
+sals.frame.flat_frame_uid_map__new = function() {
+    var self = sals.frame.frame__new();
+    return self;
+};
+
+sals.frame.flat_frame_uid_map__contains_uid = function(self, uid) {
+    return sals.frame.frame__contains_key(self, uid);
+};
+
+sals.frame.flat_frame_uid_map__add_frame = function(self, frame) {
+    var frame__uid = sals.frame.frame__uid(frame);
+    var flat_frame = sals.frame.flat_frame__new(frame);
+    sals.frame.frame__set_element(self, frame__uid, flat_frame);
+};
+
+sals.frame.flat_frame_uid_map__try_add_frame_recursively = function(self, frame) {
+    var frame__uid = sals.frame.frame__uid(frame);
+    if (! sals.frame.flat_frame_uid_map__contains_uid(self, frame__uid)) {
+	sals.frame.flat_frame_uid_map__add_frame_recursively(self, frame);
+    }
+};
+
+sals.frame.flat_frame_uid_map__add_frame_recursively = function(self, frame) {
+    sals.frame.flat_frame_uid_map__add_frame(self, frame);
+    sals.frame.frame__foreach_key(frame, function(frame_key) {
+	var frame_value = sals.frame.frame__get_element(frame, frame_key);
+	if (sals.frame.frame__is_type(frame_value)) {
+	    sals.frame.flat_frame_uid_map__try_add_frame_recursively(self, frame_value);
+	}
+    });
 };
 
 sals.frame.test = function() {
@@ -87,6 +133,7 @@ sals.frame.test = function() {
     var frame2 = sals.frame.frame__new();
     sals.frame.frame__set_element(frame1, "child", frame2);
     sals.frame.frame__set_element(frame2, "test", 4);
-    var flat_frame = sals.frame.flat_frame__new(frame1);
-    return sals.frame.frame__to_string(flat_frame);
+    var flat_frame_uid_map = sals.frame.flat_frame_uid_map__new();
+    sals.frame.flat_frame_uid_map__add_frame_recursively(flat_frame_uid_map, frame1);
+    return sals.frame.frame__to_string(flat_frame_uid_map);
 };
