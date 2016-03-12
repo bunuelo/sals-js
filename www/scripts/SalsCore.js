@@ -12,15 +12,15 @@ sals.core.source_file_names = ["scripts/SalsCore.js",
 sals.core.total_load_count = 0;
 
 sals.core.error_loading = function() {
-    var script_file_name = window.sals_source_file_names[window.sals_total_load_count];
+    var script_file_name = window.sals_source_file_names[sals.core.total_load_count];
     console.log("Error loading " + script_file_name); 
 };
 
 sals.core.success_loading = function() {
-    var script_file_name = window.sals_source_file_names[window.sals_total_load_count];
+    var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
     console.log("Loaded " + script_file_name);
-    window.sals_total_load_count ++;
-    window.sals_load_next_file();
+    sals.core.total_load_count ++;
+    sals.core.load_next_file();
 };
 
 sals.core.load_next_file = function() {
@@ -28,8 +28,8 @@ sals.core.load_next_file = function() {
 	var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
 	var script           = document.createElement("script");
 	script.src           = script_file_name;
-	script.onload        = window.sals_success_loading;
-	script.onerror       = window.sals_error_loading;
+	script.onload        = sals.core.success_loading;
+	script.onerror       = sals.core.error_loading;
 	document.body.appendChild(script);
     } else {
 	sals.core.done_loading_files();
