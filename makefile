@@ -33,7 +33,7 @@ compile-webpage:
 	chmod -R a+rx ./www/
 
 upload-webpage: compile-webpage
-	rsync -avz ./ bomorgan@bomorgan.com:bomorgan/nips-sals/
+	rsync -avz ./ bomorgan@bomorgan.com:bomorgan/sals/
 
 git-pull:
 	git pull

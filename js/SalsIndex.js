@@ -1,10 +1,10 @@
 
-console.log("Loading NipsSalsIndex.js");
+console.log("Loading SalsIndex.js");
 
-window.sals_source_file_names = ["scripts/NipsSalsCore.js",
-				 "scripts/NipsSalsFrame.js",
-				 "scripts/NipsSalsGraph.js",
-				 "scripts/NipsSalsGo.js"];
+window.sals_source_file_names = ["scripts/SalsCore.js",
+				 "scripts/SalsFrame.js",
+				 "scripts/SalsGraph.js",
+				 "scripts/SalsGo.js"];
 
 window.sals_total_load_count = 0;
 
