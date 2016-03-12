@@ -93,7 +93,7 @@ sals.frame.frame__to_string_with_uid_frame = function(self, uid_frame) {
 		var value     = sals.frame.frame__get_element(self, key);
 		var value_str = null;
 		if (sals.frame.frame__is_type(value)) {
-		    value_str = sals.frame.frame__to_string(value);
+		    value_str = sals.frame.frame__to_string_with_uid_frame(value, uid_frame);
 		} else {
 		    value_str = "" + value;
 		}
