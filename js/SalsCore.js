@@ -36,7 +36,11 @@ sals.core.load_next_file = function() {
 };
 
 sals.core.done_loading_files = function() {
-    document.body.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
+    try {
+	document.body.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
+    } catch (error) {
+	console.log("SalsCore Error: " + error.stack);
+    }
 };
 
 sals.core.initialize = function() {
