@@ -1,6 +1,8 @@
 
 sals.go = {};
 
+// go_game_board_cell
+
 sals.go.go_game_board_cell__new = function(state, north, south, east, west) {
     var self = sals.frame.frame__new();
     sals.frame.frame__set_element(self, "state", state);
@@ -31,6 +33,8 @@ sals.go.go_game_board_cell__to_html = function(self) {
 	return "INVALID";
     }
 };
+
+// go_game_board
 
 sals.go.go_game_board__new = function(width, height) {
     var self = sals.frame.frame__new();
@@ -113,11 +117,31 @@ sals.go.go_game_board__to_html = function(self) {
     return html;
 };
 
+sals.go.go_game__new = function(width, height) {
+    var self          = sals.frame.frame__new();
+    var go_game_board = sals.go.go_game_board__new(width, height);
+    sals.frame.frame__set_element(self, "board", go_game_board);
+    return self;
+};
+
+sals.go.go_game__board = function(self) {
+    return sals.frame.frame__get_element(self, "board");
+};
+
+sals.go.go_game__to_html = function(self) {
+    var html        = "";
+    var board       = sals.go.go_game__board(self);
+    var board__html = sals.go.go_game_board__to_html(board);
+    html += board__html;
+    return html;
+};
+
 sals.go.test = function() {
-    var go_game_board = sals.go.go_game_board__new(18, 18);
-    var white_cell = sals.go.go_game_board__get_cell(go_game_board, 4, 4);
+    var go_game = sals.go.go_game_board__new(18, 18);
+    var go_game__board = sals.go.go_game__board(go_game);
+    var white_cell = sals.go.go_game_board__get_cell(go_game__board, 4, 4);
     sals.go.go_game_board_cell__set_state(white_cell, "white");
-    var black_cell = sals.go.go_game_board__get_cell(go_game_board, 6, 4);
+    var black_cell = sals.go.go_game_board__get_cell(go_game__board, 6, 4);
     sals.go.go_game_board_cell__set_state(black_cell, "black");
-    return sals.go.go_game_board__to_html(go_game_board);
+    return sals.go.go_game__to_html(go_game);
 };
