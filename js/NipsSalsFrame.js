@@ -21,6 +21,9 @@ sals.frame.frame__new = function() {
 };
 
 sals.frame.frame__is_type = function(obj) {
+    if (obj === null) {
+	return false;
+    }
     if (typeof(obj) === "object") {
 	return true;
     }
@@ -32,7 +35,7 @@ sals.frame.frame__uid = function(self) {
 };
 
 sals.frame.frame__key_count = function(self) {
-    return self.length - 1;
+    return Object.keys(self).length - 1;
 };
 
 sals.frame.frame__get_element = function(self, key) {

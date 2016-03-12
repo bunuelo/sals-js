@@ -3,7 +3,8 @@ console.log("Loading NipsSalsIndex.js");
 
 window.sals_source_file_names = ["scripts/NipsSalsCore.js",
 				 "scripts/NipsSalsFrame.js",
-				 "scripts/NipsSalsGraph.js"];
+				 "scripts/NipsSalsGraph.js",
+				 "scripts/NipsSalsGo.js"];
 
 window.sals_total_load_count = 0;
 
@@ -33,7 +34,7 @@ window.sals_load_next_file = function() {
 };
 
 window.sals_done_loading_files = function() {
-    document.body.innerHTML = "Successfully loaded all files." + "<br>" + sals.frame.test();
+    document.body.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
 };
 
 window.onload = function() {
