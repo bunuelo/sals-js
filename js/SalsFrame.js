@@ -39,6 +39,9 @@ sals.frame.frame__key_count = function(self) {
 };
 
 sals.frame.frame__get_element = function(self, key) {
+    if (! (key in self)) {
+	throw new Error("sals.frame.frame__get_element ERROR: self does not contain key (" + key + ").");
+    }
     return self[key];
 };
 
