@@ -77,25 +77,38 @@ sals.frame.frame__foreach_value = function(self, element_func) {
     }
 };
 
+sals.frame.frame__to_string_with_uid_frame = function(self, uid_frame) {
+    var self__uid = sals.frame.frame__uid(self);
+    if (sals.frame.frame__contains_key(uid_frame, frame__uid)) {
+	return "<>";
+    } else {
+	sals.frame.frame__add_element(uid_frame, frame__uid, true);
+	var str = "{";
+	(function() {
+	    var key_index = 0;
+	    sals.frame.frame__foreach_key(self, function(key) {
+		if (key_index > 0) {
+		    str += " ";
+		}
+		var value     = sals.frame.frame__get_element(self, key);
+		var value_str = null;
+		if (sals.frame.frame__is_type(value)) {
+		    value_str = sals.frame.frame__to_string(value);
+		} else {
+		    value_str = "" + value;
+		}
+		str += (key + ":" + value_str);
+		key_index ++;
+	    });
+	    str += "}";
+	})();
+	return str;
+    }
+}
+
 sals.frame.frame__to_string = function(self) {
-    var str       = "{";
-    var key_index = 0;
-    sals.frame.frame__foreach_key(self, function(key) {
-	if (key_index > 0) {
-	    str += " ";
-	}
-	var value     = sals.frame.frame__get_element(self, key);
-	var value_str = null;
-	if (sals.frame.frame__is_type(value)) {
-	    value_str = sals.frame.frame__to_string(value);
-	} else {
-	    value_str = "" + value;
-	}
-	str += (key + ":" + value_str);
-	key_index ++;
-    });
-    str += "}";
-    return str;
+    var hash_object = {};
+    sals.frame.frame__to_string_with_hash_object(self, hash_object);
 };
 
 sals.frame.flat_frame__new = function(frame) {
