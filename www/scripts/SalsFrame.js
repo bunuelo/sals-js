@@ -79,10 +79,10 @@ sals.frame.frame__foreach_value = function(self, element_func) {
 
 sals.frame.frame__to_string_with_uid_frame = function(self, uid_frame) {
     var self__uid = sals.frame.frame__uid(self);
-    if (sals.frame.frame__contains_key(uid_frame, frame__uid)) {
+    if (sals.frame.frame__contains_key(uid_frame, self__uid)) {
 	return "<>";
     } else {
-	sals.frame.frame__add_element(uid_frame, frame__uid, true);
+	sals.frame.frame__add_element(uid_frame, self__uid, true);
 	var str = "{";
 	(function() {
 	    var key_index = 0;
