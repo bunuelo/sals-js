@@ -39,7 +39,7 @@ sals.core.done_loading_files = function() {
     try {
 	document.body.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
     } catch (error) {
-	console.log("SalsCore Error: " + error.stack);
+	console.log("SalsCore Error: " + error.message + "\n" + error.stack);
     }
 };
 
