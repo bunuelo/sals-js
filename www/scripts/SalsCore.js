@@ -26,7 +26,7 @@ sals.core.load_next_file = function() {
     if (sals.core.total_load_count < sals.core.source_file_names.length) {
 	var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
 	var script           = document.createElement("script");
-	script.src           = script_file_name;
+	script.src           = script_file_name + "?" + new Date().getTime();
 	script.onload        = sals.core.success_loading;
 	script.onerror       = sals.core.error_loading;
 	document.body.appendChild(script);
