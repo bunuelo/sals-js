@@ -46,6 +46,13 @@ sals.frame.frame__get_element = function(self, key) {
 };
 
 sals.frame.frame__set_element = function(self, key, value) {
+    if (! (key in self)) {
+	throw new Error("sals.frame.frame__set_element ERROR: self does not contain key (" + key + ").");
+    }
+    self[key] = value;
+};
+
+sals.frame.frame__add_element = function(self, key, value) {
     self[key] = value;
 };
 
