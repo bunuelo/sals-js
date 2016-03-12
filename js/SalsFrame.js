@@ -107,8 +107,8 @@ sals.frame.frame__to_string_with_uid_frame = function(self, uid_frame) {
 }
 
 sals.frame.frame__to_string = function(self) {
-    var hash_object = {};
-    sals.frame.frame__to_string_with_hash_object(self, hash_object);
+    var uid_frame = sals.frame.new_frame();
+    return sals.frame.frame__to_string_with_uid_frame(self, uid_frame);
 };
 
 sals.frame.flat_frame__new = function(frame) {
