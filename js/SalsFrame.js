@@ -107,7 +107,7 @@ sals.frame.frame__to_string_with_uid_frame = function(self, uid_frame) {
 }
 
 sals.frame.frame__to_string = function(self) {
-    var uid_frame = sals.frame.new_frame();
+    var uid_frame = sals.frame.frame__new();
     return sals.frame.frame__to_string_with_uid_frame(self, uid_frame);
 };
 
