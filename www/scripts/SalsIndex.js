@@ -5,15 +5,16 @@ window.onload = function() {
     console.log("Executing window.onload");
     var success_callback = function() {
 	try {
-	    document.body.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
+	    var go_game_element = sals.go.test_go_game_element();
+	    document.body.appendElement(go_game_element);
 	} catch (error) {
-	    console.log("Sals Error: " + error.message + "\n" + error.stack);
+	    sals.core.log_error(error);
 	}
     };
     try {
 	sals.core.initialize(success_callback);
     } catch (error) {
-	console.log("Sals Error: " + error.message + "\n" + error.stack);
+	sals.core.log_error(error);
     }
 };
 

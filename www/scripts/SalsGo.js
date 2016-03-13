@@ -153,3 +153,10 @@ sals.go.test = function() {
     sals.go.go_game_board_cell__set_state(black_cell, "black");
     return sals.go.go_game__to_html(go_game);
 };
+
+sals.go.test_go_game_element = function() {
+    var go_game_element = document.createElement("div");
+    go_game_element.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
+    return go_game_element;
+};
+
