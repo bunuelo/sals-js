@@ -137,7 +137,7 @@ sals.go.go_game__to_html = function(self) {
     var board__html = sals.go.go_game_board__to_html(board);
     html += board__html;
     html += "</td><td>"
-    html += "<textarea rows=25 cols=160>";
+    html += "<textarea rows=50 cols=160>";
     html += sals.frame.frame__to_string(board);
     html += "</textarea>"
     html += "</td></tr></table>"
