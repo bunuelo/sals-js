@@ -16,34 +16,31 @@ sals.core.error_loading = function() {
     console.log("Error loading " + script_file_name); 
 };
 
-sals.core.success_loading = function() {
+sals.core.success_loading = function(done_loading_files_callback) {
     var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
     console.log("Loaded " + script_file_name);
     sals.core.total_load_count ++;
     sals.core.load_next_file();
 };
 
-sals.core.load_next_file = function() {
+sals.core.load_next_file = function(done_loading_files_callback) {
     if (sals.core.total_load_count < sals.core.source_file_names.length) {
 	var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
 	var script           = document.createElement("script");
 	script.src           = script_file_name + "?" + new Date().getTime();
-	script.onload        = sals.core.success_loading;
+	script.onload        = function() {sals.core.success_loading(done_loading_files_callback)};
 	script.onerror       = sals.core.error_loading;
 	document.body.appendChild(script);
     } else {
-	sals.core.done_loading_files();
+	sals.core.done_loading_files(done_loading_files_callback);
     }
 };
 
-sals.core.done_loading_files = function() {
-    try {
-	document.body.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
-    } catch (error) {
-	console.log("SalsCore Error: " + error.message + "\n" + error.stack);
-    }
+sals.core.done_loading_files = function(done_loading_files_callback) {
+    console.log("sals.core.done_loading_files: here.");
+    done_loading_files_callback();
 };
 
-sals.core.initialize = function() {
-    sals.core.load_next_file();
+sals.core.initialize = function(success_callback) {
+    sals.core.load_next_file(success_callback);
 };
