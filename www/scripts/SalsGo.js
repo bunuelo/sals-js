@@ -133,11 +133,14 @@ sals.go.go_game__board = function(self) {
 sals.go.go_game__to_html = function(self) {
     var html        = "";
     var board       = sals.go.go_game__board(self);
+    html += "<table><tr><td>"
     var board__html = sals.go.go_game_board__to_html(board);
     html += board__html;
+    html += "</td><td>"
     html += "<textarea rows=10 cols=120>";
     html += sals.frame.frame__to_string(board);
     html += "</textarea>"
+    html += "</td></tr></table>"
     return html;
 };
 
