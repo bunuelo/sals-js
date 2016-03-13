@@ -3,6 +3,8 @@ sals.go = {};
 
 // go_game_board_cell
 
+sals.go.go_game_board_cell__size = 16;
+
 sals.go.go_game_board_cell__new = function(state, north, south, east, west) {
     var self = sals.frame.frame__new();
     sals.frame.frame__add_element(self, "state", state);
@@ -24,11 +26,11 @@ sals.go.go_game_board_cell__set_state = function(self, state) {
 sals.go.go_game_board_cell__to_html = function(self) {
     var state = sals.go.go_game_board_cell__state(self);
     if (state === null) {
-	return "<img src=\"images/go_empty_cell.png\" width=32/>";
+	return "<img src=\"images/go_empty_cell.png\" width=" + sals.go.go_game_board_cell__size + " height=" + sals.go.go_game_board_cell__size + "/>";
     } else if (state === "white") {
-	return "<img src=\"images/go_stone_white.png\" width=32/>";
-    } else if (state === "black") {
-	return "<img src=\"images/go_stone_black.png\" width=32/>";
+	return "<img src=\"images/go_stone_white.png\" width=" + sals.go.go_game_board_cell__size + " height=" + sals.go.go_game_board_cell__size + "/>";
+    } else if (state === "black") {e
+	return "<img src=\"images/go_stone_black.png\" width=" + sals.go.go_game_board_cell__size + " height=" + sals.go.go_game_board_cell__size + "/>";
     } else {
 	return "INVALID";
     }
