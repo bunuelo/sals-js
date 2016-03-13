@@ -20,7 +20,7 @@ sals.core.success_loading = function(done_loading_files_callback) {
     var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
     console.log("Loaded " + script_file_name);
     sals.core.total_load_count ++;
-    sals.core.load_next_file();
+    sals.core.load_next_file(done_loading_files_callback);
 };
 
 sals.core.load_next_file = function(done_loading_files_callback) {
