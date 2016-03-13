@@ -1,3 +1,3 @@
-Neural Information Processing Systems - Substrate for Accountable Layered Systems
----------------------------------------------------------------------------------
+SALS-JS (Substrate for Accountable Layered Systems -- JavaScript)
+-----------------------------------------------------------------
 

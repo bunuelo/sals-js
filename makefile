@@ -19,7 +19,7 @@ print-usage:
 	@echo ""
 
 start-editor:
-	$(TEXT_EDITOR) makefile html/*.html js/*.js
+	$(TEXT_EDITOR) makefile *.md html/*.html js/*.js
 
 compile-webpage:
 	mkdir -p ./www/
