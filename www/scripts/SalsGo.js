@@ -29,7 +29,7 @@ sals.go.go_game_board_cell__to_html = function(self) {
 	return "<img src=\"images/go_empty_cell.png\" width=" + sals.go.go_game_board_cell__size + " height=" + sals.go.go_game_board_cell__size + "/>";
     } else if (state === "white") {
 	return "<img src=\"images/go_stone_white.png\" width=" + sals.go.go_game_board_cell__size + " height=" + sals.go.go_game_board_cell__size + "/>";
-    } else if (state === "black") {e
+    } else if (state === "black") {
 	return "<img src=\"images/go_stone_black.png\" width=" + sals.go.go_game_board_cell__size + " height=" + sals.go.go_game_board_cell__size + "/>";
     } else {
 	return "INVALID";
