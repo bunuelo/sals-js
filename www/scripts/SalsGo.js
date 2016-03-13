@@ -145,7 +145,6 @@ sals.go.go_game__to_html = function(self) {
 };
 
 sals.go.test = function() {
-    document.body.style.backgroundColor = "#000000";
     var go_game = sals.go.go_game__new(18, 18);
     var go_game__board = sals.go.go_game__board(go_game);
     var white_cell = sals.go.go_game_board__get_cell(go_game__board, 4, 4);
