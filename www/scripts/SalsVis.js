@@ -26,5 +26,6 @@ sals.vis.vis_graph__new = function() {
     };
     var options = {};
     var network = new vis.Network(dom_element, data, options);
+    console.log("SalsVis: returning new graph!!!!");
     return dom_element;
 };
