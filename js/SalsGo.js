@@ -131,19 +131,18 @@ sals.go.go_game__board = function(self) {
 };
 
 sals.go.go_game__to_dom_element = function(self) {
-    var go_game_element = document.createElement("div");
-    var html        = "";
-    var board       = sals.go.go_game__board(self);
-    html += "<table><tr><td>"
-    var board__html = sals.go.go_game_board__to_html(board);
-    html += board__html;
-    html += "</td><td>"
-    html += "<textarea rows=32 cols=160>";
-    html += sals.frame.frame__to_string(board);
-    html += "</textarea>"
-    html += "</td></tr></table>"
-    go_game_element.innerHTML = html;
-    return go_game_element;
+    var go_game_table                          = document.createElement("table");
+    var go_game_table__tr                      = document.createElement("tr");
+    var go_game_table__tr__game_board_td       = document.createElement("td");
+    var go_game_table__tr__textarea_td         = document.createElement("td");
+    var board                                  = sals.go.go_game__board(self);
+    var board__html                            = sals.go.go_game_board__to_html(board);
+    go_game_table__tr__game_board_td.innerHTML = board__html;
+    go_game_table__tr__textarea_td.innerHTML   = "<textarea rows=32 cols=160>" + sals.frame.frame__to_string(board) + "</textarea>";
+    go_game_table.appendChild(go_game_table__tr);
+    game_game_table__tr.appendChild(go_game_table__tr__game_board_td);
+    game_game_table__tr.appendChild(go_game_table__tr__textarea_td);
+    return go_game__table;
 };
 
 sals.go.test_go_game_element = function() {
