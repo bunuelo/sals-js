@@ -29,6 +29,20 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	vis_nodes_array.push(vis_node);
     });
     
+    sals.frame.frame__foreach_key(graph__edges, function(graph__edge__uid) {
+	var graph__edge                 = sals.frame.frame__get_element(graph__edges, graph__edge__uid);
+	var graph__edge__label          = sals.graph.graph_edge__label(graph__edge);
+	var graph__edge__from_node      = sals.graph.graph_edge__from_node(graph__edge);
+	var graph__edge__from_node__uid = sals.frame.frame__uid(graph__edge__from_node);
+	var graph__edge__to_node        = sals.graph.graph_edge__to_node(graph__edge);
+	var graph__edge__to_node__uid   = sals.frame.frame__uid(graph__edge__to_node);
+	var vis_edge                    = {
+	    from : graph__edge__from_node__uid,
+	    to   : graph__edge__to_node__uid
+	};
+	vis_edges_array.push(vis_edge);
+    });
+    
     // create an array with nodes
     var nodes = new vis.DataSet(vis_nodes_array);
     

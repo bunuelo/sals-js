@@ -14,14 +14,24 @@ sals.graph.graph_node__label = function(self) {
 
 // graph_edge
 
-sals.graph.graph_edge__new = function(label) {
+sals.graph.graph_edge__new = function(label, from_node, to_node) {
     var self = sals.frame.frame__new();
-    sals.frame.frame__add_element(self, "label", label);
+    sals.frame.frame__add_element(self, "label",     label);
+    sals.frame.frame__add_element(self, "from_node", from_node);
+    sals.frame.frame__add_element(self, "to_node",   to_node);
     return self;
 };
 
 sals.graph.graph_edge__label = function(self) {
     return sals.frame.frame__get_element(self, "label");
+};
+
+sals.graph.graph_edge__from_node = function(self) {
+    return sals.frame.frame__get_element(self, "from_node");
+};
+
+sals.graph.graph_edge__to_node = function(self) {
+    return sals.frame.frame__get_element(self, "to_node");
 };
 
 // graph
