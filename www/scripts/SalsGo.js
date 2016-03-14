@@ -159,9 +159,9 @@ sals.go.go_game__to_dom_element = function(self) {
 sals.go.test_go_game_element = function() {
     var go_game        = sals.go.go_game__new(3, 3);
     var go_game__board = sals.go.go_game__board(go_game);
-    var white_cell     = sals.go.go_game_board__get_cell(go_game__board, 4, 4);
+    var white_cell     = sals.go.go_game_board__get_cell(go_game__board, 0, 0);
     sals.go.go_game_board_cell__set_state(white_cell, "white");
-    var black_cell = sals.go.go_game_board__get_cell(go_game__board, 6, 4);
+    var black_cell = sals.go.go_game_board__get_cell(go_game__board, 1, 1);
     sals.go.go_game_board_cell__set_state(black_cell, "black");
     return sals.go.go_game__to_dom_element(go_game);
 };
