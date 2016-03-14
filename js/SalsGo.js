@@ -101,6 +101,17 @@ sals.go.go_game_board__get_cell = function(self, x, y) {
     return cell;
 };
 
+sals.go.go_game_board__to_graph = function(self) {
+    var graph  = sals.graph.graph__new();
+    var node_a = sals.graph.graph_node__new("A");
+    var node_b = sals.graph.graph_node__new("B");
+    var edge_c = sals.graph.graph_edge__new("C");
+    sals.graph.graph__add_node(graph, node_a);
+    sals.graph.graph__add_node(graph, node_b);
+    sals.graph.graph__add_edge(graph, edge_c);
+    return graph;
+};
+
 sals.go.go_game_board__to_html = function(self) {
     var width  = sals.go.go_game_board__width(self);
     var height = sals.go.go_game_board__height(self);
@@ -138,7 +149,8 @@ sals.go.go_game__to_dom_element = function(self) {
     var go_game_table__tr__visgraph_td         = document.createElement("td");
     var board                                  = sals.go.go_game__board(self);
     var board__html                            = sals.go.go_game_board__to_html(board);
-    var visgraph                               = sals.vis.vis_graph__new(256, 256);
+    var board__graph                           = sals.go.go_game_board__to_graph(board);
+    var visgraph                               = sals.vis.vis_graph__new(256, 256, board__graph);
     go_game_table__tr__game_board_td.innerHTML = board__html;
     go_game_table__tr__textarea_td.innerHTML   = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
     go_game_table__tr__visgraph_td.appendChild(visgraph);

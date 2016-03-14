@@ -1,6 +1,6 @@
 sals.vis = {};
 
-sals.vis.vis_graph__new = function(width, height) {
+sals.vis.vis_graph__new = function(width, height, graph) {
     // create an array with nodes
     var nodes = new vis.DataSet([
 	{id: 1, label: 'Node 1'},
