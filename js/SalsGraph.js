@@ -35,7 +35,7 @@ sals.graph.graph__add_node = function(self, node) {
 
 sals.graph.graph__add_edge = function(self, edge) {
     var edges = sals.graph.graph__edges(self);
-    var edge__uid = sals.frame.frame__uid(node);
+    var edge__uid = sals.frame.frame__uid(edge);
     sals.frame.frame__add_element(edges, edge__uid, edge);
 };
 
