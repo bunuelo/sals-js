@@ -144,19 +144,16 @@ sals.go.go_game__to_html = function(self) {
     return html;
 };
 
-sals.go.test = function() {
+sals.go.test_go_game_element = function() {
+    var go_game_element = document.createElement("div");
     var go_game = sals.go.go_game__new(18, 18);
     var go_game__board = sals.go.go_game__board(go_game);
     var white_cell = sals.go.go_game_board__get_cell(go_game__board, 4, 4);
     sals.go.go_game_board_cell__set_state(white_cell, "white");
     var black_cell = sals.go.go_game_board__get_cell(go_game__board, 6, 4);
     sals.go.go_game_board_cell__set_state(black_cell, "black");
-    return sals.go.go_game__to_html(go_game);
-};
-
-sals.go.test_go_game_element = function() {
-    var go_game_element = document.createElement("div");
-    go_game_element.innerHTML = "Successfully loaded all files." + "<br>" + sals.go.test();
+    go_game_element.innerHTML = sals.go.go_game__to_html(go_game);
     return go_game_element;
 };
+
 
