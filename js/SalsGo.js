@@ -142,7 +142,7 @@ sals.go.go_game__to_dom_element = function(self) {
     go_game_table.appendChild(go_game_table__tr);
     go_game_table__tr.appendChild(go_game_table__tr__game_board_td);
     go_game_table__tr.appendChild(go_game_table__tr__textarea_td);
-    return go_game__table;
+    return go_game_table;
 };
 
 sals.go.test_go_game_element = function() {
