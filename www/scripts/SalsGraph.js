@@ -78,8 +78,8 @@ sals.graph.graph__add_frame_recursively_with_frame_uid_map = function(self, fram
 		frame__value__node = sals.graph.graph__add_frame_recursively_with_frame_uid_map(self, frame__value, frame_uid_map);
 	    } else {
 		frame__value__node = sals.graph.graph_node__new("" + frame__value);
+		sals.graph.graph__add_node(self, frame__value__node);
 	    }
-	    sals.graph.graph__add_node(self, frame__value__node);
 	    var edge = sals.graph.graph_edge__new("" + frame__key, frame__node, frame__value__node);
 	    sals.graph.graph__add_edge(self, edge);
 	});
