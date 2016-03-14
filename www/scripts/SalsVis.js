@@ -20,6 +20,8 @@ sals.vis.vis_graph__new = function() {
     
     // create a network
     var dom_element = document.createElement("div");
+    dom_element.style.width  = 512;
+    dom_element.style.height = 512;
     var data = {
 	nodes: nodes,
 	edges: edges
