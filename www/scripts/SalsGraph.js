@@ -1,16 +1,30 @@
 sals.graph = {};
 
+// graph_node
+
 sals.graph.graph_node__new = function(label) {
     var self = sals.frame.frame__new();
     sals.frame.frame__add_element(self, "label", label);
     return self;
 };
 
+sals.graph.graph_node__label = function(self) {
+    return sals.frame.frame__get_element(self, "label");
+};
+
+// graph_edge
+
 sals.graph.graph_edge__new = function(label) {
     var self = sals.frame.frame__new();
     sals.frame.frame__add_element(self, "label", label);
     return self;
 };
+
+sals.graph.graph_edge__label = function(self) {
+    return sals.frame.frame__get_element(self, "label");
+};
+
+// graph
 
 sals.graph.graph__new = function() {
     var self = sals.frame.frame__new();
