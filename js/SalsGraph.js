@@ -70,7 +70,7 @@ sals.graph.graph__add_frame_recursively_with_frame_uid_map = function(self, fram
     } else {
 	var frame__node = sals.graph.graph_node__new("Frame");
 	sals.frame.frame__add_element(frame_uid_map, frame__uid, frame__node);
-	sals.graph.graph__add_node(self, frame_node);
+	sals.graph.graph__add_node(self, frame__node);
 	sals.frame.frame__foreach_key(frame, function(frame__key) {
 	    var frame__value = sals.frame.frame__get_element(frame, frame__key);
 	    var frame__value__node;
