@@ -6,7 +6,7 @@ window.onload = function() {
     var success_callback = function() {
 	try {
 	    var go_game_element = sals.go.test_go_game_element();
-	    document.body.appendElement(go_game_element);
+	    document.body.appendChild(go_game_element);
 	} catch (error) {
 	    sals.core.log_error(error);
 	}
