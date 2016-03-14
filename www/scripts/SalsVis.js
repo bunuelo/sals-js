@@ -60,7 +60,11 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	nodes: nodes,
 	edges: edges
     };
-    var options = {};
+    var options = {
+	layout : {
+	    improvedLayout : false
+	}
+    };
     var network = new vis.Network(dom_element, data, options);
     return dom_element;
 };
