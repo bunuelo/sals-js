@@ -45,11 +45,12 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	    from : graph__edge__from_node__uid,
 	    to   : graph__edge__uid
 	};
+	vis_edges_array.push(from_vis_edge);
 	var to_vis_edge = {
 	    from : graph__edge__uid,
 	    to   : graph__edge__to_node__uid
 	};
-	vis_edges_array.push(vis_edge);
+	vis_edges_array.push(to_vis_edge);
     });
     
     // create an array with nodes
