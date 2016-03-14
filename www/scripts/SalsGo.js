@@ -145,7 +145,7 @@ sals.go.go_game__to_dom_element = function(self) {
     var board                                  = sals.go.go_game__board(self);
     var board__html                            = sals.go.go_game_board__to_html(board);
     var board__graph                           = sals.go.go_game_board__to_graph(board);
-    var visgraph                               = sals.vis.vis_graph__new(256, 256, board__graph);
+    var visgraph                               = sals.vis.vis_graph__new(512, 512, board__graph);
     go_game_table__tr__game_board_td.innerHTML = board__html;
     go_game_table__tr__textarea_td.innerHTML   = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
     go_game_table__tr__visgraph_td.appendChild(visgraph);
