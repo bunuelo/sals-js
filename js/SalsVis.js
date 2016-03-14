@@ -38,7 +38,8 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var graph__edge__to_node__uid   = sals.frame.frame__uid(graph__edge__to_node);
 	var vis_edge__vis_node          = {
 	    id    : graph__edge__uid,
-	    label : graph__edge__label
+	    label : graph__edge__label,
+	    shape : "box"
 	};
 	vis_nodes_array.push(vis_edge__vis_node);
 	var from_vis_edge = {
