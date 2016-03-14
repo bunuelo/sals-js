@@ -130,7 +130,7 @@ sals.go.go_game__board = function(self) {
     return sals.frame.frame__get_element(self, "board");
 };
 
-sals.go.go_game__to_html = function(self) {
+sals.go.go_game__to_dom_element = function(self) {
     var go_game_element = document.createElement("div");
     var html        = "";
     var board       = sals.go.go_game__board(self);
