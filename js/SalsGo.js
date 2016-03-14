@@ -102,13 +102,8 @@ sals.go.go_game_board__get_cell = function(self, x, y) {
 };
 
 sals.go.go_game_board__to_graph = function(self) {
-    var graph  = sals.graph.graph__new();
-    var node_a = sals.graph.graph_node__new("A");
-    var node_b = sals.graph.graph_node__new("B");
-    var edge_c = sals.graph.graph_edge__new("C", node_a, node_b);
-    sals.graph.graph__add_node(graph, node_a);
-    sals.graph.graph__add_node(graph, node_b);
-    sals.graph.graph__add_edge(graph, edge_c);
+    var graph = sals.graph.graph__new();
+    sals.graph.graph__add_frame_recursively(graph, self);
     return graph;
 };
 

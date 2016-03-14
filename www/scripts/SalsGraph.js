@@ -63,3 +63,36 @@ sals.graph.graph__add_edge = function(self, edge) {
     sals.frame.frame__add_element(edges, edge__uid, edge);
 };
 
+sals.graph.graph__add_frame_recursively_with_frame_uid_map = function(self, frame, frame_uid_map) {
+    var frame__uid = sals.frame.frame__uid(frame);
+    if (sals.frame.frame__contains_key(frame_uid_map, frame__uid)) {
+	return sals.frame.frame__get_element(frame_uid_map, frame__uid);
+    } else {
+	var frame__node = sals.graph.graph_node__new("Frame");
+	sals.frame.frame__add_element(frame_uid_map, frame__uid, frame__node);
+	sals.graph.graph__add_node(self, frame_node);
+	sals.frame.frame__foreach_key(frame, function(frame__key) {
+	    var frame__value = sals.frame.frame__get_element(frame, frame__key);
+	    var frame__value__node;
+	    if (sals.frame.frame__is_type(frame__value)) {
+		frame__value__node = sals.graph.graph__add_frame_recursively_with_frame_uid_map(self, frame__value, frame_uid_map);
+	    } else {
+		frame__value__node = sals.graph.graph_node__new("" + frame__value);
+	    }
+	    sals.graph.graph__add_node(graph, frame__value__node);
+	    var edge = sals.graph.graph_edge__new("" + frame__key, frame__node, frame__value__node);
+	    sals.graph.graph__add_edge(graph, edge);
+	});
+	return frame__node;
+    }
+    
+    var node_b = sals.graph.graph_node__new("B");
+    var edge_c = sals.graph.graph_edge__new("C", node_a, node_b);
+    sals.graph.graph__add_node(graph, node_b);
+    sals.graph.graph__add_edge(graph, edge_c);
+};
+
+sals.graph.graph__add_frame_recursively = function(self, frame) {
+    var frame_uid_map = sals.frame.frame__new();
+    sals.graph.graph__add_frame_recursively_with_frame_uid_map(self, frame, frame_uid_map);
+};
