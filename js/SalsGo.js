@@ -138,7 +138,7 @@ sals.go.go_game__to_dom_element = function(self) {
     var board                                  = sals.go.go_game__board(self);
     var board__html                            = sals.go.go_game_board__to_html(board);
     go_game_table__tr__game_board_td.innerHTML = board__html;
-    go_game_table__tr__textarea_td.innerHTML   = "<textarea rows=32 cols=160>" + sals.frame.frame__to_string(board) + "</textarea>";
+    go_game_table__tr__textarea_td.innerHTML   = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
     go_game_table.appendChild(go_game_table__tr);
     go_game_table__tr.appendChild(go_game_table__tr__game_board_td);
     go_game_table__tr.appendChild(go_game_table__tr__textarea_td);
