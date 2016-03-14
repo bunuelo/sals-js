@@ -47,8 +47,9 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	};
 	vis_edges_array.push(from_vis_edge);
 	var to_vis_edge = {
-	    from : graph__edge__uid,
-	    to   : graph__edge__to_node__uid
+	    from   : graph__edge__uid,
+	    to     : graph__edge__to_node__uid,
+	    arrows : "to"
 	};
 	vis_edges_array.push(to_vis_edge);
     });
