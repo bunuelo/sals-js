@@ -1,6 +1,6 @@
 sals.vis = {};
 
-sals.vis.vis_graph__new = function() {
+sals.vis.vis_graph__new = function(width, height) {
     // create an array with nodes
     var nodes = new vis.DataSet([
 	{id: 1, label: 'Node 1'},
@@ -20,8 +20,8 @@ sals.vis.vis_graph__new = function() {
     
     // create a network
     var dom_element = document.createElement("div");
-    dom_element.style.width  = "512px";
-    dom_element.style.height = "512px";
+    dom_element.style.width  = "" + width  + "px";
+    dom_element.style.height = "" + height + "px";
     var data = {
 	nodes: nodes,
 	edges: edges
