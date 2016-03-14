@@ -38,9 +38,10 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var graph__edge__to_node        = sals.graph.graph_edge__to_node(graph__edge);
 	var graph__edge__to_node__uid   = sals.frame.frame__uid(graph__edge__to_node);
 	var vis_edge = {
-	    from  : graph__edge__from_node__uid,
-	    to    : graph__edge__to_node__uid,
-	    label : graph__edge__label
+	    from   : graph__edge__from_node__uid,
+	    to     : graph__edge__to_node__uid,
+	    label  : graph__edge__label,
+	    arrows : "to"
 	};
 	vis_edges_array.push(vis_edge);
     });
