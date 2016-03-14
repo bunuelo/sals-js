@@ -24,7 +24,8 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var graph__node__label = sals.graph.graph_node__label(graph__node);
 	var vis_node           = {
 	    id    : graph__node__uid,
-	    label : graph__node__label
+	    label : graph__node__label,
+	    shape : "ellipse"
 	};
 	vis_nodes_array.push(vis_node);
     });
@@ -39,7 +40,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var vis_edge__vis_node          = {
 	    id    : graph__edge__uid,
 	    label : graph__edge__label,
-	    shape : "box"
+	    shape : "text"
 	};
 	vis_nodes_array.push(vis_edge__vis_node);
 	var from_vis_edge = {
