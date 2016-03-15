@@ -63,6 +63,14 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 // sals_vis_graph
 
 sals.vis.sals_vis_graph__new = function(width, height, graph) {
-    return sals.vis.vis_graph__new(width, height, graph);
+    var dom_element = document.createElement("div");
+    dom_element.style.background = "#000000";
+    dom_element.style.width      = "" + width  + "px";
+    dom_element.style.height     = "" + height + "px";
+    var vis_graph = sals.vis.vis_graph__new(width - 1, height - 1, graph);
+    dom_element.appendChild(vis_graph);
+    vis_graph.offsetLeft = 1;
+    vis_graph.offsetTop  = 1;
+    return dom_element;
 };
 
