@@ -48,7 +48,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     };
     var options = {
 	physics : {
-	    stabilizations : false
+	    stabilization : false
 	},
 	layout : {
 	    improvedLayout : false
