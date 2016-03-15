@@ -1,5 +1,7 @@
 sals.vis = {};
 
+// vis_graph
+
 sals.vis.vis_graph__new = function(width, height, graph) {
     var graph__nodes    = sals.graph.graph__nodes(graph);
     var graph__edges    = sals.graph.graph__edges(graph);
@@ -43,12 +45,12 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     dom_element.style.width  = "" + width  + "px";
     dom_element.style.height = "" + height + "px";
     var data = {
-	nodes: nodes,
-	edges: edges
+	nodes : nodes,
+	edges : edges
     };
     var options = {
 	physics : {
-	    stabilization : false
+	    stabilization : false // don't wait until network stabilizes before updating UI
 	},
 	layout : {
 	    improvedLayout : false
@@ -57,3 +59,10 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     var network = new vis.Network(dom_element, data, options);
     return dom_element;
 };
+
+// sals_vis_graph
+
+sals.vis.sals_vis_graph__new = function(width, height, graph) {
+    return sals.vis.vis_graph__new(width, height, graph);
+};
+

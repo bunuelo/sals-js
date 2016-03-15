@@ -145,7 +145,7 @@ sals.go.go_game__to_dom_element = function(self) {
     var board                                  = sals.go.go_game__board(self);
     var board__html                            = sals.go.go_game_board__to_html(board);
     var board__graph                           = sals.go.go_game_board__to_graph(board);
-    var visgraph                               = sals.vis.vis_graph__new(512, 512, board__graph);
+    var visgraph                               = sals.vis.sals_vis_graph__new(512, 512, board__graph);
     go_game_table__tr__game_board_td.innerHTML = board__html;
     go_game_table__tr__textarea_td.innerHTML   = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
     go_game_table__tr__visgraph_td.appendChild(visgraph);
@@ -157,7 +157,7 @@ sals.go.go_game__to_dom_element = function(self) {
 };
 
 sals.go.test_go_game_element = function() {
-    var go_game        = sals.go.go_game__new(6, 6);
+    var go_game        = sals.go.go_game__new(6, 6ssssss);
     var go_game__board = sals.go.go_game__board(go_game);
     var white_cell     = sals.go.go_game_board__get_cell(go_game__board, 0, 0);
     sals.go.go_game_board_cell__set_state(white_cell, "white");
