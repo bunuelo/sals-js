@@ -38,11 +38,25 @@ sals.frame.frame__key_count = function(self) {
     return Object.keys(self).length - 1;
 };
 
+sals.frame.frame__get_meta_element = function(self, key) {
+    if (! (self["__meta__"].hasOwnProperty(key))) {
+	throw new Error("sals.frame.frame__get_element ERROR: self does not contain key (" + key + ").");
+    }
+    return self["__meta__"][key];
+};
+
 sals.frame.frame__get_element = function(self, key) {
     if (! (self.hasOwnProperty(key))) {
 	throw new Error("sals.frame.frame__get_element ERROR: self does not contain key (" + key + ").");
     }
     return self[key];
+};
+
+sals.frame.frame__set_meta_element = function(self, key, value) {
+    if (! (self["__meta__"].hasOwnProperty(key))) {
+	throw new Error("sals.frame.frame__set_element ERROR: self does not contain key (" + key + ").");
+    }
+    self["__meta__"][key] = value;
 };
 
 sals.frame.frame__set_element = function(self, key, value) {
@@ -52,6 +66,13 @@ sals.frame.frame__set_element = function(self, key, value) {
     self[key] = value;
 };
 
+sals.frame.frame__add_meta_element = function(self, key, value) {
+    if (self["__meta__"].hasOwnProperty(key)) {
+	throw new Error("sals.frame.frame__add_element ERROR: self already contains key (" + key + ").");
+    }
+    self["__meta__"][key] = value;
+};
+
 sals.frame.frame__add_element = function(self, key, value) {
     if (self.hasOwnProperty(key)) {
 	throw new Error("sals.frame.frame__add_element ERROR: self already contains key (" + key + ").");
@@ -59,8 +80,18 @@ sals.frame.frame__add_element = function(self, key, value) {
     self[key] = value;
 };
 
+sals.frame.frame__contains_meta_key = function(self, key) {
+    return (self["__meta__"].hasOwnProperty(key));
+};
+
 sals.frame.frame__contains_key = function(self, key) {
     return (self.hasOwnProperty(key));
+};
+
+sals.frame.frame__foreach_meta_key = function(self, element_func) {
+    for (key in self["__meta__"]) {
+	element_func(key);
+    }
 };
 
 sals.frame.frame__foreach_key = function(self, element_func) {
@@ -71,9 +102,17 @@ sals.frame.frame__foreach_key = function(self, element_func) {
     }
 };
 
+sals.frame.frame__foreach_meta_value = function(self, element_func) {
+    for (key in self["__meta__"]) {
+	element_func(self[key]);
+    }
+};
+
 sals.frame.frame__foreach_value = function(self, element_func) {
     for (key in self) {
-	element_func(self[key]);
+	if (key !== "__meta__") {
+	    element_func(self[key]);
+	}
     }
 };
 
