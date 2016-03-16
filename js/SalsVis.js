@@ -51,7 +51,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     var options = {
 	physics : {
 	    stabilization : {
-		iterations : 10
+		iterations : 100
 	    }
 	},
 	layout : {
