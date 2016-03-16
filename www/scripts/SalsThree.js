@@ -15,10 +15,10 @@ if (sals.three.package_loaded) {
     };
     
     sals.three.sals_three__init_meta = function(self) {
-	var vertical_angle_of_view = self.three.sals_three__vertical_angle_of_view(self);
-	var aspect_ratio           = self.three.sals_three__aspect_ratio(self);
-	var near_plane_distance    = self.three.sals_three__near_plane_distance(self);
-	var far_plane_distance     = self.three.sals_three__far_plane_distance(self);
+	var vertical_angle_of_view = sals.three.sals_three__vertical_angle_of_view(self);
+	var aspect_ratio           = sals.three.sals_three__aspect_ratio(self);
+	var near_plane_distance    = sals.three.sals_three__near_plane_distance(self);
+	var far_plane_distance     = sals.three.sals_three__far_plane_distance(self);
 	var three_scene            = new THREE.Scene();
 	var three_camera           = new THREE.PerspectiveCamera(vertical_angle_of_view, aspect_ratio, near_plane_distance, far_plane_distance);
 	var three_renderer         = new THREE.WebGLRenderer();
