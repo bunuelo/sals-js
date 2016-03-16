@@ -6,6 +6,8 @@ if (sals.three.package_loaded) {
     
     sals.three.sals_three__new = function(width, height) {
 	var self        = sals.frame.frame__new();
+	sals.frame.frame__add_element(self, "width",                  width);
+	sals.frame.frame__add_element(self, "height",                 height);
 	sals.frame.frame__add_element(self, "vertical_angle_of_view", 75);
 	sals.frame.frame__add_element(self, "aspect_ratio",           width / height);
 	sals.frame.frame__add_element(self, "near_plane_distance",    0.1);
@@ -15,6 +17,8 @@ if (sals.three.package_loaded) {
     };
     
     sals.three.sals_three__init_meta = function(self) {
+	var width                  = sals.three.sals_three__width(self);
+	var height                 = sals.three.sals_three__height(self);
 	var vertical_angle_of_view = sals.three.sals_three__vertical_angle_of_view(self);
 	var aspect_ratio           = sals.three.sals_three__aspect_ratio(self);
 	var near_plane_distance    = sals.three.sals_three__near_plane_distance(self);
@@ -28,6 +32,14 @@ if (sals.three.package_loaded) {
 	sals.frame.frame__add_meta_element(self, "three_camera",   three_camera);
 	sals.frame.frame__add_meta_element(self, "three_renderer", three_renderer);
 	sals.frame.frame__add_meta_element(self, "initialized",    true);
+    };
+    
+    sals.three.sals_three__width = function(self) {
+	return sals.frame.frame__get_element(self, "width");
+    };
+    
+    sals.three.sals_three__height = function(self) {
+	return sals.frame.frame__get_element(self, "height");
     };
     
     sals.three.sals_three__vertical_angle_of_view = function(self) {
