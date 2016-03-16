@@ -39,21 +39,21 @@ sals.frame.frame__key_count = function(self) {
 };
 
 sals.frame.frame__get_element = function(self, key) {
-    if (! (key in self)) {
+    if (! (self.hasOwnProperty(key))) {
 	throw new Error("sals.frame.frame__get_element ERROR: self does not contain key (" + key + ").");
     }
     return self[key];
 };
 
 sals.frame.frame__set_element = function(self, key, value) {
-    if (! (key in self)) {
+    if (! (self.hasOwnProperty(key))) {
 	throw new Error("sals.frame.frame__set_element ERROR: self does not contain key (" + key + ").");
     }
     self[key] = value;
 };
 
 sals.frame.frame__add_element = function(self, key, value) {
-    if (key in self) {
+    if (self.hasOwnProperty(key)) {
 	throw new Error("sals.frame.frame__add_element ERROR: self already contains key (" + key + ").");
     }
     self[key] = value;
