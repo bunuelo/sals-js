@@ -72,10 +72,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
         var event_description = finishMessage;
 	console.log("event_description = " + event_description);
     });
-    var move_to_options = {
-	scale : 1.0 / 128
-    };
-    network.moveTo(move_to_options);
+    network.fit();
     return dom_element;
 };
 
