@@ -50,13 +50,32 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     };
     var options = {
 	physics : {
-	    stabilization : false // don't wait until network stabilizes before updating UI
+	    stabilization : {
+		iterations : 0; // don't wait until network stabilizes before updating UI
+	    }
 	},
 	layout : {
 	    improvedLayout : false
 	}
     };
     var network = new vis.Network(dom_element, data, options);
+    // add event listeners
+    network.on('select', function(params) {
+        var event_description = 'Selection: ' + params.nodes;
+	console.log("event_description = " + event_description);
+    });
+    network.on('stabilized', function (params) {
+        var event_description = 'Stabilization took ' + params.iterations + ' iterations.';
+	console.log("event_description = " + event_description);
+    });
+    network.on('animationFinished', function() {
+        var event_description = finishMessage;
+	console.log("event_description = " + event_description);
+    });
+    var move_to_options = {
+	scale : 0.125
+    };
+    network.moveTo(move_to_options);
     return dom_element;
 };
 
