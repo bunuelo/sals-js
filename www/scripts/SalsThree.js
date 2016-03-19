@@ -27,7 +27,6 @@ if (sals.three.package_loaded) {
 	var three_camera           = new THREE.PerspectiveCamera(vertical_angle_of_view, aspect_ratio, near_plane_distance, far_plane_distance);
 	var three_renderer         = new THREE.WebGLRenderer();
 	three_renderer.setSize(width, height);
-	three_renderer.domElement;
 	sals.frame.frame__add_meta_element(self, "three_scene",    three_scene);
 	sals.frame.frame__add_meta_element(self, "three_camera",   three_camera);
 	sals.frame.frame__add_meta_element(self, "three_renderer", three_renderer);

@@ -137,32 +137,40 @@ sals.go.go_game__board = function(self) {
 };
 
 sals.go.go_game__to_dom_element = function(self) {
-    var go_game_table                          = document.createElement("table");
-    var go_game_table__tr                      = document.createElement("tr");
-    var go_game_table__tr__game_board_td       = document.createElement("td");
-    var go_game_table__tr__textarea_td         = document.createElement("td");
-    var go_game_table__tr__visgraph_td         = document.createElement("td");
-    var go_game_table__tr__sals_three_td       = document.createElement("td");
-    var board                                  = sals.go.go_game__board(self);
-    var board__html                            = sals.go.go_game_board__to_html(board);
-    var board__graph                           = sals.go.go_game_board__to_graph(board);
-    var visgraph                               = sals.vis.sals_vis_graph__new(256, 512, board__graph);
-    var sals_three                             = sals.three.sals_three__new(256, 512);
-    var sals_three__dom_element                = sals.three.sals_three__dom_element(sals_three);
-    go_game_table__tr__game_board_td.innerHTML = board__html;
-    go_game_table__tr__textarea_td.innerHTML   = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
-    go_game_table__tr__visgraph_td.appendChild(visgraph);
-    go_game_table__tr__sals_three_td.appendChild(sals_three__dom_element);
+    var board             = sals.go.go_game__board(self);
+    var go_game_table__tr = document.createElement("tr");
+    (function() {
+	var board__html                            = sals.go.go_game_board__to_html(board);
+	var go_game_table__tr__game_board_td       = document.createElement("td");
+	go_game_table__tr__game_board_td.innerHTML = board__html;
+	go_game_table__tr.appendChild(go_game_table__tr__game_board_td);
+    })();
+    (function() {
+	var go_game_table__tr__textarea_td = document.createElement("td");
+	go_game_table__tr__textarea_td.innerHTML = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
+	go_game_table__tr.appendChild(go_game_table__tr__textarea_td);
+    })();
+    (function() {
+	var board__graph                   = sals.go.go_game_board__to_graph(board);
+	var visgraph                       = sals.vis.sals_vis_graph__new(512, 512, board__graph);
+	var go_game_table__tr__visgraph_td = document.createElement("td");
+	go_game_table__tr__visgraph_td.appendChild(visgraph);
+	go_game_table__tr.appendChild(go_game_table__tr__visgraph_td);
+    })();
+    //(function() {
+    //	var sals_three                       = sals.three.sals_three__new(256, 512);
+    //	var sals_three__dom_element          = sals.three.sals_three__dom_element(sals_three);
+    //	var go_game_table__tr__sals_three_td = document.createElement("td");
+    //	go_game_table__tr__sals_three_td.appendChild(sals_three__dom_element);
+    //	go_game_table__tr.appendChild(go_game_table__tr__sals_three_td);
+    //})();
+    var go_game_table = document.createElement("table");
     go_game_table.appendChild(go_game_table__tr);
-    go_game_table__tr.appendChild(go_game_table__tr__game_board_td);
-    go_game_table__tr.appendChild(go_game_table__tr__textarea_td);
-    go_game_table__tr.appendChild(go_game_table__tr__visgraph_td);
-    go_game_table__tr.appendChild(go_game_table__tr__sals_three_td);
     return go_game_table;
 };
 
 sals.go.test_go_game_element = function() {
-    var go_game        = sals.go.go_game__new(12, 12);
+    var go_game        = sals.go.go_game__new(8, 8);
     var go_game__board = sals.go.go_game__board(go_game);
     var white_cell     = sals.go.go_game_board__get_cell(go_game__board, 0, 0);
     sals.go.go_game_board_cell__set_state(white_cell, "white");
