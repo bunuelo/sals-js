@@ -6,7 +6,7 @@ sals.go = {};
 sals.go.go_game_board_cell__size = 16;
 
 sals.go.go_game_board_cell__new = function(state, north, south, east, west) {
-    var self = sals.frame.frame__new();
+    var self = sals.object.object__new("go_game_board_cell");
     sals.frame.frame__add_element(self, "state", state);
     sals.frame.frame__add_element(self, "north", north);
     sals.frame.frame__add_element(self, "south", south);
@@ -39,7 +39,7 @@ sals.go.go_game_board_cell__to_html = function(self) {
 // go_game_board
 
 sals.go.go_game_board__new = function(width, height) {
-    var self = sals.frame.frame__new();
+    var self = sals.object.object__new("go_game_board");
     var rows = sals.frame.frame__new();
     for (var y = 0; y < height; y ++) {
 	var row = sals.frame.frame__new();
@@ -126,7 +126,7 @@ sals.go.go_game_board__to_html = function(self) {
 };
 
 sals.go.go_game__new = function(width, height) {
-    var self          = sals.frame.frame__new();
+    var self          = sals.object.object__new("go_game");
     var go_game_board = sals.go.go_game_board__new(width, height);
     sals.frame.frame__add_element(self, "board", go_game_board);
     return self;
