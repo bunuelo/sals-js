@@ -51,6 +51,10 @@ sals.object.object_type__parents = function(self) {
     return sals.frame.frame__get_element(self, "parents");
 };
 
+sals.object.object_type__set_parents = function(self, value) {
+    return sals.frame.frame__set_element(self, "parents", value);
+};
+
 sals.object.object_type__add_parent = function(self, parent) {
     var parents = sals.object.object_type__parents(self);
     var new_cons = sals.cons.cons__new(parent, parents);
