@@ -42,11 +42,11 @@ sals.object.object_type__is_type = function(exp) {
 };
 
 sals.object.object_type__name = function(self) {
-    return self.frame.frame__get_element(self, "name");
+    return sals.frame.frame__get_element(self, "name");
 };
 
 sals.object.object_type__functions = function(self) {
-    return self.frame.frame__get_element(self, "functions");
+    return sals.frame.frame__get_element(self, "functions");
 };
 
 sals.object.object_type__add_function = function(self, function_name, func) {
