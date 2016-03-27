@@ -2,7 +2,7 @@
 sals.cons = {};
 
 (function() { // cons BEGIN
-    var object_type = sals.object.object_type__new("go_game");
+    var object_type = sals.object.object_type__new("cons");
     sals.object_registry.add_type(object_type);
     
     sals.cons.cons__new = function(car, cdr) {
