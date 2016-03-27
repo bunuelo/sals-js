@@ -81,6 +81,9 @@ sals.frame.frame__add_element = function(self, key, value) {
 };
 
 sals.frame.frame__contains_meta_key = function(self, key) {
+    if (! self.hasOwnProperty("__meta__")) {
+	return false;
+    }
     return (self["__meta__"].hasOwnProperty(key));
 };
 
