@@ -12,9 +12,10 @@ sals.object_registry.get_types = function() {
     return sals.object_registry.types;
 };
 
-sals.object_registry.add_type = function(type_name, object_type) {
-    var types = sals.object_registry.get_types();
-    sals.frame.frame__add_element(types, type_name, object_type);
+sals.object_registry.add_type = function(object_type) {
+    var types             = sals.object_registry.get_types();
+    var object_type__name = sals.object.object_type__name(object_type);
+    sals.frame.frame__add_element(types, object_type__name, object_type);
 };
 
 sals.object_registry.get_type = function(type_name) {

@@ -41,6 +41,10 @@ sals.object.object_type__is_type = function(exp) {
     return sals.object.object__is_type(exp, "object_type");
 };
 
+sals.object.object_type__name = function(self) {
+    return self.frame.frame__get_element(self, "name");
+};
+
 sals.object.object_type__functions = function(self) {
     return self.frame.frame__get_element(self, "functions");
 };
