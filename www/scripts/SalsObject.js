@@ -31,8 +31,10 @@ sals.object.object__is_type = function(exp, type) {
 
 sals.object.object_type__new = function(name) {
     var self      = sals.object.object__new("object_type");
+    var parents   = null;
     var functions = sals.frame.frame__new();
     sals.frame.frame__add_element(self, "name",      name);
+    sals.frame.frame__add_element(self, "parents",   parents);
     sals.frame.frame__add_element(self, "functions", functions);
     return self;
 };
