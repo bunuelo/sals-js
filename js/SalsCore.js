@@ -6,6 +6,7 @@ console.log("Loading SalsCore.js");
 
 sals.core.source_file_names = ["scripts/SalsFrame.js",
 			       "scripts/SalsObject.js",
+			       "scripts/SalsObjectRegistry.js",
 			       "scripts/SalsLogic.js",
 			       "scripts/SalsGraph.js",
 			       "scripts/SalsVis.js",
