@@ -55,6 +55,11 @@ sals.machine = {};
 	sals.frame.frame__set_element(self, "actions", actions);
     };
     
+    sals.machine.deliberate_plan__step = function(self) {
+	sals.core.log("deliberate_plan__step: here.");
+	
+    };
+    
 })(); // deliberate_plan END
 
 (function() { // deliberate_machine BEGIN
@@ -114,9 +119,9 @@ sals.machine = {};
     sals.machine.deliberate_machine__step = function(self) {
 	var plan = sals.machine.deliberate_machine__plan(self);
 	if (plan !== null) {
-	    sals.core.log("deliberate_machine__step: plan !== null");
+	    sals.machine.deliberate_plan__step(plan);
 	} else {
-	    sals.core.log("deliberate_machine__step: plan === null");
+	    sals.core.log("deliberate_machine__step error: plan === null");
 	}
     };
     
