@@ -142,9 +142,9 @@ sals.machine = {};
 (function() { // test deliberate_machine utilities BEGIN
     
     sals.machine.test_deliberate_machine__new = function() {
-	var deliberate_machine = sals.machine.deliberate_machine__new_empty();
-	var plan               = sals.machine.deliberate_plan__new_empty();
-	sals.machine.deliberate_machine__set_plan(deliberate_machine, plan);
+	var machine = sals.machine.deliberate_machine__new_empty();
+	var plan    = sals.machine.deliberate_plan__new([sals.machine.deliberate_action__new("eat", {"edible" : "tomato-1"})]);
+	sals.machine.deliberate_machine__set_plan(machine, plan);
 	return deliberate_machine;
     };
 
