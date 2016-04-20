@@ -20,6 +20,16 @@ sals.frame.frame__new = function() {
     return frame;
 };
 
+sals.frame.frame = function(initial_object) {
+    var self = sals.frame.frame__new();
+    var keys = Object.keys(initial_object);
+    for (key in keys) {
+	var value = initial_object[key];
+	sals.frame.frame__add_element(self, key, value);
+    }
+    return self;
+}
+
 sals.frame.frame__is_type = function(obj) {
     if (obj === null) {
 	return false;

@@ -30,10 +30,11 @@ sals.machine = {};
     };
     
     sals.machine.deliberate_action__execute = function(self) {
-	sals.core.log("deliberate_action__execute here.");
-	
+	var name            = sals.machine.deliberate_action__name(self);
+	var parameter_frame = sals.machine.deliberate_action__parameter_frame(self);
+	sals.core.log("deliberate_action__execute: name = " + name);
     };
-
+    
 })(); // deliberate_action END
 
 (function() { // deliberate_plan BEGIN
