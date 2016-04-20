@@ -286,7 +286,11 @@ if (window.webkitRequestAnimationFrame) {
 sals.go.render_state = null;
 
 sals.go.render_callback = function() {
-    sals.go.render_state__render(sals.go.render_state);
+    try {
+	sals.go.render_state__render(sals.go.render_state);
+    } catch (error) {
+	sals.core.log_error(error);
+    }
 };
 
 sals.go.start_game = function() {

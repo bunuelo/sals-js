@@ -61,7 +61,7 @@ sals.machine = {};
     };
     
     sals.machine.deliberate_plan__step = function(self) {
-	var actions      = sals.machine.deliberate_plan__actions(self);
+	var actions = sals.machine.deliberate_plan__actions(self);
 	if (actions.length > 0) {
 	    var first_action = actions[0];
 	    actions          = actions.slice(1);
