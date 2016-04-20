@@ -145,7 +145,7 @@ sals.machine = {};
 	var machine = sals.machine.deliberate_machine__new_empty();
 	var plan    = sals.machine.deliberate_plan__new([sals.machine.deliberate_action__new("eat", {"edible" : "tomato-1"})]);
 	sals.machine.deliberate_machine__set_plan(machine, plan);
-	return deliberate_machine;
+	return machine;
     };
 
     sals.machine.test_deliberate_machine = null;
