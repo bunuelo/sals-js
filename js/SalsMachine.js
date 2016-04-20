@@ -57,7 +57,7 @@ sals.machine = {};
     var object_type = sals.object.object_type__new("deliberate_machine");
     sals.object_registry.add_type(object_type);
     
-    sals.machine.deliberate_machine__new = function(value, program, stack, environment) {
+    sals.machine.deliberate_machine__new = function(value, frame, plan, environment) {
 	var self = sals.object.object__new("deliberate_machine");
 	sals.frame.frame__add_element(self, "value",       value);
 	sals.frame.frame__add_element(self, "frame",       frame);
@@ -68,10 +68,10 @@ sals.machine = {};
     
     sals.machine.deliberate_machine__new_empty = function() {
 	var value       = null;
-	var program     = null;
-	var stack       = null;
+	var frame       = null;
+	var plan        = null;
 	var environment = null;
-	return sals.machine.deliberate_machine__new(value, program, stack, environment);
+	return sals.machine.deliberate_machine__new(value, frame, plan, environment);
     };
     
     sals.machine.deliberate_machine__value = function(self) {
