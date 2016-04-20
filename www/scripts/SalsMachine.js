@@ -122,7 +122,7 @@ sals.machine = {};
 	    sals.machine.test_deliberate_machine = sals.machine.deliberate_machine__new_empty();
 	} else {
 	    // test update
-	    sals.machine.test_deliberate_machine__step(sals.machine.test_deliberate_machine);
+	    sals.machine.deliberate_machine__step(sals.machine.test_deliberate_machine);
 	}
     };
     
