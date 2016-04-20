@@ -240,6 +240,6 @@ sals.go.render_callback = function() {
 };
 
 sals.go.start_game = function() {
-    sals.go.render_state = sals.go.new_render_state(4, 4);
+    sals.go.render_state = sals.go.render_state__new(4, 4);
     sals.go.on_each_frame(sals.go.render_callback);
 }
