@@ -144,11 +144,11 @@ sals.machine = {};
     
     sals.machine.test_deliberate_machine__new = function() {
 	var machine = sals.machine.deliberate_machine__new_empty();
-	var plan    = sals.machine.deliberate_plan__new([sals.machine.deliberate_action__new("eat", {"edible" : "tomato-1"})]);
+	var plan    = sals.machine.deliberate_plan__new([sals.machine.deliberate_action__new("eat", sals.frame.frame({"edible" : "tomato-1"}))]);
 	sals.machine.deliberate_machine__set_plan(machine, plan);
 	return machine;
     };
-
+    
     sals.machine.test_deliberate_machine = null;
     
     sals.machine.test = function(render_state) {
