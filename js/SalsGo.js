@@ -272,6 +272,7 @@ if (window.webkitRequestAnimationFrame) {
 	var nanoseconds_since_1970            = sals.core.nanoseconds_since_1970();
 	if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= sals.core.nanoseconds_per_second)) {
 	    last_print_nanoseconds_since_1970 = nanoseconds_since_1970;
+	    sals.go.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
 	    sals.core.log("render_callback: fps = " + sals.go.render_state__get_frames_per_second(self));
 	}
     };
