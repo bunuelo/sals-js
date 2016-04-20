@@ -216,10 +216,30 @@ if (window.webkitRequestAnimationFrame) {
 
 }
 
+(function () { // render_state BEGIN
+    var object_type = sals.object.object_type__new("render_state");
+    sals.object_registry.add_type(object_type);
+    
+    sals.go.render_state__new = function(width, height) {
+	var self    = sals.object.object__new("render_state");
+	var go_game = sals.go.go_game__new(width, height);
+	sals.frame.frame__add_element(self, "go_game", go_game);
+	return self;
+    };
+    
+    sals.go.render_state__go_game = function(self) {
+	return sals.frame.frame__get_element(self, "go_game");
+    };
+    
+})(); // render_state END
+
+sals.go.render_state = null;
+
 sals.go.render_callback = function() {
     sals.core.log("render_callback: here.");
 };
 
 sals.go.start_game = function() {
+    sals.go.render_state = sals.go.new_render_state(4, 4);
     sals.go.on_each_frame(sals.go.render_callback);
 }
