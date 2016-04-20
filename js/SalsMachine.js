@@ -6,26 +6,26 @@ sals.machine = {};
     var object_type = sals.object.object_type__new("deliberate_action");
     sals.object_registry.add_type(object_type);
     
-    sals.deliberate_action.deliberate_action__new = function(name, parameter_frame) {
+    sals.machine.deliberate_action__new = function(name, parameter_frame) {
 	var self = sals.object.object__new("deliberate_action");
 	sals.frame.frame__add_element(self, "name",            name);
 	sals.frame.frame__add_element(self, "parameter_frame", parameter_frame);
 	return self;
     };
     
-    sals.deliberate_action.deliberate_action__name = function(self) {
+    sals.machine.deliberate_action__name = function(self) {
 	return sals.frame.frame__get_element(self, "name");
     };
     
-    sals.deliberate_action.deliberate_action__set_name = function(self, name) {
+    sals.machine.deliberate_action__set_name = function(self, name) {
 	sals.frame.frame__set_element(self, "name", name);
     };
     
-    sals.deliberate_action.deliberate_action__parameter_frame = function(self) {
+    sals.machine.deliberate_action__parameter_frame = function(self) {
 	return sals.frame.frame__get_element(self, "parameter_frame");
     };
     
-    sals.deliberate_action.deliberate_action__set_parameter_frame = function(self, parameter_frame) {
+    sals.machine.deliberate_action__set_parameter_frame = function(self, parameter_frame) {
 	sals.frame.frame__set_element(self, "parameter_frame", parameter_frame);
     };
     
@@ -36,17 +36,17 @@ sals.machine = {};
     var object_type = sals.object.object_type__new("deliberate_plan");
     sals.object_registry.add_type(object_type);
     
-    sals.deliberate_plan.deliberate_plan__new = function(actions) {
+    sals.machine.deliberate_plan__new = function(actions) {
 	var self = sals.object.object__new("deliberate_plan");
 	sals.frame.frame__add_element(self, "actions", actions);
 	return self;
     };
     
-    sals.deliberate_plan.deliberate_plan__actions = function(self) {
+    sals.machine.deliberate_plan__actions = function(self) {
 	return sals.frame.frame__get_element(self, "actions");
     };
     
-    sals.deliberate_plan.deliberate_plan__set_actions = function(self, actions) {
+    sals.machine.deliberate_plan__set_actions = function(self, actions) {
 	sals.frame.frame__set_element(self, "actions", actions);
     };
     
