@@ -21,8 +21,8 @@ sals.frame.frame__new = function() {
 };
 
 sals.frame.frame = function(initial_object) {
-    var self = sals.frame.frame__new();
-    var keys = Object.keys(initial_object);
+    var self         = sals.frame.frame__new();
+    var keys         = Object.keys(initial_object);
     var keys__length = keys.length;
     var keys__index  = 0;
     while (keys__index < keys__length) {
