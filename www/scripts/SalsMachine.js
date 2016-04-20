@@ -42,6 +42,11 @@ sals.machine = {};
 	return self;
     };
     
+    sals.machine.deliberate_plan__new_empty = function() {
+	var actions = [];
+	return sals.machine.deliberate_plan__new(actions);
+    };
+    
     sals.machine.deliberate_plan__actions = function(self) {
 	return sals.frame.frame__get_element(self, "actions");
     };
@@ -119,12 +124,19 @@ sals.machine = {};
 
 (function() { // test deliberate_machine utilities BEGIN
     
+    sals.machine.test_deliberate_machine__new = function() {
+	var deliberate_machine = sals.machine.deliberate_machine__new_empty();
+	var plan               = sals.machine.deliberate_plan__new_empty();
+	sals.machine.deliberate_machine__set_plan(deliberate_machine, plan);
+	return deliberate_machine;
+    };
+
     sals.machine.test_deliberate_machine = null;
     
     sals.machine.test = function(render_state) {
 	if (sals.machine.test_deliberate_machine === null) {
 	    // test initialize
-	    sals.machine.test_deliberate_machine = sals.machine.deliberate_machine__new_empty();
+	    sals.machine.test_deliberate_machine = sals.machine.test_deliberate_machine__new();
 	} else {
 	    // test update
 	    sals.machine.deliberate_machine__step(sals.machine.test_deliberate_machine);
