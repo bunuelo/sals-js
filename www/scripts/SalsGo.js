@@ -231,12 +231,16 @@ if (window.webkitRequestAnimationFrame) {
 	return sals.frame.frame__get_element(self, "go_game");
     };
     
+    sals.go.render_state__render = function(self) {
+	sals.core.log("render_callback: here.");
+    };
+    
 })(); // render_state END
 
 sals.go.render_state = null;
 
 sals.go.render_callback = function() {
-    sals.core.log("render_callback: here.");
+    sals.go.render_state__render(sals.go.render_state);
 };
 
 sals.go.start_game = function() {
