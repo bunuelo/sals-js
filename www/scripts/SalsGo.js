@@ -223,7 +223,10 @@ if (window.webkitRequestAnimationFrame) {
     sals.go.render_state__new = function(width, height) {
 	var self    = sals.object.object__new("render_state");
 	var go_game = sals.go.go_game__new(width, height);
-	sals.frame.frame__add_element(self, "go_game", go_game);
+	sals.frame.frame__add_element(self, "go_game",                           go_game);
+	sals.frame.frame__add_element(self, "frame_count",                       0);
+	sals.frame.frame__add_element(self, "start_nanoseconds_since_1970",      sals.core.nanoseconds_since_1970());
+	sals.frame.frame__add_element(self, "last_print_nanoseconds_since_1970", null);
 	return self;
     };
     
@@ -231,8 +234,45 @@ if (window.webkitRequestAnimationFrame) {
 	return sals.frame.frame__get_element(self, "go_game");
     };
     
+    sals.go.render_state__frame_count = function(self) {
+	return sals.frame.frame__get_element(self, "frame_count");
+    };
+    
+    sals.go.render_state__set_frame_count = function(self, value) {
+	return sals.frame.frame__set_element(self, "frame_count", value);
+    };
+    
+    sals.go.render_state__start_nanoseconds_since_1970 = function(self) {
+	return sals.frame.frame__get_element(self, "start_nanoseconds_since_1970");
+    };
+    
+    sals.go.render_state__set_start_nanoseconds_since_1970 = function(self, value) {
+	return sals.frame.frame__set_element(self, "start_nanoseconds_since_1970", value);
+    };
+    
+    sals.go.render_state__last_print_nanoseconds_since_1970 = function(self) {
+	return sals.frame.frame__get_element(self, "last_print_nanoseconds_since_1970");
+    };
+    
+    sals.go.render_state__set_last_print_nanoseconds_since_1970 = function(self, value) {
+	return sals.frame.frame__set_element(self, "last_print_nanoseconds_since_1970", value);
+    };
+    
+    sals.go.render_state__get_frames_per_second = function(self) {
+	var frame_count                  = sals.go.render_state__frame_count(self);
+	var start_nanoseconds_since_1970 = sals.go.render_state__start_nanoseconds_since_1970(self);
+	var nanoseconds_since_1970       = sals.core.nanoseconds_since_1970();
+	var elapsed_nanoseconds          = nanoseconds_since_1970 - start_nanoseconds_since_1970;
+	var frames_per_second            = frame_count * sals.core.nanoseconds_per_second / elapsed_nanoseconds;
+	return frames_per_second;
+    };
+
     sals.go.render_state__render = function(self) {
-	sals.core.log("render_callback: here.");
+	var last_print_nanoseconds_since_1970 = sals.go.render_state__last_print_nanoseconds_since_1970(self);
+	var nanoseconds_since_1970            = sals.core.nanoseconds_since_1970();
+	if (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= sals.core.nanoseconds_per_second) {
+	    sals.core.log("render_callback: fps = " + sals.go.render_state__get_frames_per_second(self));
+	}
     };
     
 })(); // render_state END

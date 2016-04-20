@@ -36,11 +36,23 @@ sals.core.success_loading = function(done_loading_files_callback) {
     sals.core.load_next_file(done_loading_files_callback);
 };
 
+sals.core.nanoseconds_per_second  = 1000000000;
+sals.core.microseconds_per_second = 1000000;
+sals.core.milliseconds_per_second = 1000;
+
+sals.core.milliseconds_since_1970 = function() {
+    return new Date().getTime();
+};
+
+sals.core.nanoseconds_since_1970 = function() {
+    return sals.core.milliseconds_since_1970() * 1000000.0;
+};
+
 sals.core.load_next_file = function(done_loading_files_callback) {
     if (sals.core.total_load_count < sals.core.source_file_names.length) {
 	var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
 	var script           = document.createElement("script");
-	script.src           = script_file_name + "?" + new Date().getTime();
+	script.src           = script_file_name + "?" + sals.core.nanoseconds_since_1970();
 	script.onload        = function() {sals.core.success_loading(done_loading_files_callback)};
 	script.onerror       = sals.core.error_loading;
 	document.body.appendChild(script);
