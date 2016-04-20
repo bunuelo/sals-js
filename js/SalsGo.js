@@ -268,6 +268,7 @@ if (window.webkitRequestAnimationFrame) {
     };
 
     sals.go.render_state__render = function(self) {
+	var frame_count                       = sals.go.render_state__frame_count(self);
 	var last_print_nanoseconds_since_1970 = sals.go.render_state__last_print_nanoseconds_since_1970(self);
 	var nanoseconds_since_1970            = sals.core.nanoseconds_since_1970();
 	if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= sals.core.nanoseconds_per_second)) {
@@ -275,6 +276,8 @@ if (window.webkitRequestAnimationFrame) {
 	    sals.go.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
 	    sals.core.log("render_callback: fps = " + sals.go.render_state__get_frames_per_second(self));
 	}
+	frame_count = frame_count + 1;
+	sals.go.render_state__set_frame_count(self, frame_count);
     };
     
 })(); // render_state END
