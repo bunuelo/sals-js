@@ -107,7 +107,12 @@ sals.machine = {};
     };
     
     sals.machine.deliberate_machine__step = function(self) {
-	sals.core.log("deliberate_machine__step here.");
+	var plan = sals.machine.deliberate_machine__plan(self);
+	if (plan !== null) {
+	    sals.core.log("deliberate_machine__step: plan !== null");
+	} else {
+	    sals.core.log("deliberate_machine__step: plan === null");
+	}
     };
     
 })(); // deliberate_machine END
