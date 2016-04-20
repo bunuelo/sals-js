@@ -32,7 +32,7 @@ sals.machine = {};
     sals.machine.deliberate_action__execute = function(self) {
 	var name            = sals.machine.deliberate_action__name(self);
 	var parameter_frame = sals.machine.deliberate_action__parameter_frame(self);
-	sals.core.log("deliberate_action__execute: name = " + name);
+	sals.core.log("deliberate_action__execute: name = " + name + ", frame = " + sals.frame.frame__to_string(parameter_frame));
     };
     
 })(); // deliberate_action END
