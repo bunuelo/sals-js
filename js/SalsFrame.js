@@ -29,6 +29,7 @@ sals.frame.frame = function(initial_object) {
 	var key   = keys[keys__index];
 	var value = initial_object[key];
 	sals.frame.frame__add_element(self, key, value);
+	keys__index ++;
     }
     return self;
 }
