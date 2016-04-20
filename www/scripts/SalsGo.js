@@ -194,4 +194,32 @@ sals.go.test_go_game_element = function() {
     return sals.go.go_game__to_dom_element(go_game);
 };
 
+if (window.webkitRequestAnimationFrame) {
 
+    sals.go.on_each_frame = function(callback) {
+	var closure_callback = function() { callback(); webkitRequestAnimationFrame(_callback); }
+	closure_callback();
+    };
+
+} else if (window.mozRequestAnimationFrame) {
+
+    sals.go.on_each_frame = function(callback) {
+	var closure_callback = function() { callback(); mozRequestAnimationFrame(_callback); }
+	closure_callback();
+    };
+
+} else {
+
+    sals.go.on_each_frame = function(callback) {
+	setInterval(callback, 1000 / 60);
+    }
+
+}
+
+sals.go.render_callback = function() {
+    sals.core.log("render_callback: here.");
+};
+
+sals.go.start_game = function() {
+    sals.go.on_each_frame(sals.go.render_callback);
+}

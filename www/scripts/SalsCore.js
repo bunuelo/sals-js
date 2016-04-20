@@ -20,6 +20,10 @@ sals.core.log_error = function(error) {
     console.log("Sals Error: " + error.message + "\n" + error.stack);
 };
 
+sals.core.log = function(message) {
+    console.log("Sals Log: " + message);
+};
+
 sals.core.error_loading = function() {
     var script_file_name = window.sals_source_file_names[sals.core.total_load_count];
     console.log("Error loading " + script_file_name); 
