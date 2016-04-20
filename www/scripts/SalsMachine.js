@@ -29,6 +29,11 @@ sals.machine = {};
 	sals.frame.frame__set_element(self, "parameter_frame", parameter_frame);
     };
     
+    sals.machine.deliberate_action__execute = function(self) {
+	sals.core.log("deliberate_action__execute here.");
+	
+    };
+
 })(); // deliberate_action END
 
 (function() { // deliberate_plan BEGIN
@@ -56,8 +61,15 @@ sals.machine = {};
     };
     
     sals.machine.deliberate_plan__step = function(self) {
-	sals.core.log("deliberate_plan__step: here.");
-	
+	var actions      = sals.machine.deliberate_plan__actions(self);
+	if (actions.length > 0) {
+	    var first_action = actions[0];
+	    actions          = actions.slice(1);
+	    sals.machine.deliberate_plan__set_actions(actions);
+	    sals.machine.deliberate_action__execute(first_action);
+	} else {
+	    sals.core.log("deliberate_plan__step error: actions.length == 0");
+	}
     };
     
 })(); // deliberate_plan END
