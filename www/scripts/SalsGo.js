@@ -270,7 +270,8 @@ if (window.webkitRequestAnimationFrame) {
     sals.go.render_state__render = function(self) {
 	var last_print_nanoseconds_since_1970 = sals.go.render_state__last_print_nanoseconds_since_1970(self);
 	var nanoseconds_since_1970            = sals.core.nanoseconds_since_1970();
-	if (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= sals.core.nanoseconds_per_second) {
+	if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= sals.core.nanoseconds_per_second)) {
+	    last_print_nanoseconds_since_1970 = nanoseconds_since_1970;
 	    sals.core.log("render_callback: fps = " + sals.go.render_state__get_frames_per_second(self));
 	}
     };
