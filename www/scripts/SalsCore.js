@@ -10,6 +10,7 @@ sals.core.source_file_names = ["scripts/SalsFrame.js",
 			       "scripts/SalsCons.js",
 			       "scripts/SalsLogic.js",
 			       "scripts/SalsGraph.js",
+			       "scripts/SalsMachine.js",
 			       "scripts/SalsVis.js",
 			       "scripts/SalsThree.js",
 			       "scripts/SalsGo.js"];
