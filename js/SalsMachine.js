@@ -91,7 +91,7 @@ sals.machine = {};
 	return sals.frame.frame__get_element(self, "frame");
     };
     
-    sals.machine.deliberate_machine__set_frame = function(self, program) {
+    sals.machine.deliberate_machine__set_frame = function(self, frame) {
 	sals.frame.frame__set_element(self, "frame", frame);
     };
     
@@ -99,7 +99,7 @@ sals.machine = {};
 	return sals.frame.frame__get_element(self, "plan");
     };
     
-    sals.machine.deliberate_machine__set_plan = function(self, program) {
+    sals.machine.deliberate_machine__set_plan = function(self, plan) {
 	sals.frame.frame__set_element(self, "plan", plan);
     };
     
