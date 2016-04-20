@@ -65,7 +65,7 @@ sals.machine = {};
 	if (actions.length > 0) {
 	    var first_action = actions[0];
 	    actions          = actions.slice(1);
-	    sals.machine.deliberate_plan__set_actions(plan, actions);
+	    sals.machine.deliberate_plan__set_actions(self, actions);
 	    sals.machine.deliberate_action__execute(first_action);
 	} else {
 	    sals.core.log("deliberate_plan__step error: actions.length == 0");
