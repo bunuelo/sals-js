@@ -32,7 +32,7 @@ sals.machine = {};
     sals.machine.deliberate_action__execute = function(self) {
 	var transitive_verb = sals.machine.deliberate_action__transitive_verb(self);
 	var parameter_frame = sals.machine.deliberate_action__parameter_frame(self);
-	sals.core.log("deliberate_action__execute: transitive_verb = " + transitive_verb + ", frame = " + sals.frame.frame__to_string(parameter_frame));
+	sals.core.log("deliberate_action__execute: transitive_verb = " + sals.primitive.string__to_string(transitive_verb) + ", frame = " + sals.frame.frame__to_string(parameter_frame));
     };
     
 })(); // deliberate_action END
