@@ -6,19 +6,19 @@ sals.machine = {};
     var object_type = sals.object.object_type__new("deliberate_action");
     sals.object_registry.add_type(object_type);
     
-    sals.machine.deliberate_action__new = function(verb, parameter_frame) {
+    sals.machine.deliberate_action__new = function(transitive_verb, parameter_frame) {
 	var self = sals.object.object__new("deliberate_action");
-	sals.frame.frame__add_element(self, "verb",            verb);
+	sals.frame.frame__add_element(self, "transitive_verb", transitive_verb);
 	sals.frame.frame__add_element(self, "parameter_frame", parameter_frame);
 	return self;
     };
     
-    sals.machine.deliberate_action__name = function(self) {
-	return sals.frame.frame__get_element(self, "name");
+    sals.machine.deliberate_action__transitive_verb = function(self) {
+	return sals.frame.frame__get_element(self, "transitive_verb");
     };
     
-    sals.machine.deliberate_action__set_name = function(self, name) {
-	sals.frame.frame__set_element(self, "name", name);
+    sals.machine.deliberate_action__set_transitive_verb = function(self, transitive_verb) {
+	sals.frame.frame__set_element(self, "transitive_verb", transitive_verb);
     };
     
     sals.machine.deliberate_action__parameter_frame = function(self) {
@@ -30,9 +30,9 @@ sals.machine = {};
     };
     
     sals.machine.deliberate_action__execute = function(self) {
-	var name            = sals.machine.deliberate_action__name(self);
+	var transitive_verb = sals.machine.deliberate_action__transitive_verb(self);
 	var parameter_frame = sals.machine.deliberate_action__parameter_frame(self);
-	sals.core.log("deliberate_action__execute: name = " + name + ", frame = " + sals.frame.frame__to_string(parameter_frame));
+	sals.core.log("deliberate_action__execute: transitive_verb = " + transitive_verb + ", frame = " + sals.frame.frame__to_string(parameter_frame));
     };
     
 })(); // deliberate_action END
