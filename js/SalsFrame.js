@@ -153,7 +153,7 @@ sals.frame.frame__to_string_with_uid_frame = function(self, uid_frame) {
 		} else {
 		    value_str = "" + value;
 		}
-		str += (key + ":" + value_str);
+		str += (sals.primitive.string__to_string(key) + ":" + sals.primitive.string__to_string(value_str));
 		key_index ++;
 	    });
 	    str += "}";

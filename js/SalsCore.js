@@ -4,7 +4,8 @@ sals.core = {};
 
 console.log("Loading SalsCore.js");
 
-sals.core.source_file_names = ["scripts/SalsFrame.js",
+sals.core.source_file_names = ["scripts/SalsPrimitive.js",
+			       "scripts/SalsFrame.js",
 			       "scripts/SalsObject.js",
 			       "scripts/SalsObjectRegistry.js",
 			       "scripts/SalsCons.js",
