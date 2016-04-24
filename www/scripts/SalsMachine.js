@@ -6,9 +6,9 @@ sals.machine = {};
     var object_type = sals.object.object_type__new("deliberate_action");
     sals.object_registry.add_type(object_type);
     
-    sals.machine.deliberate_action__new = function(name, parameter_frame) {
+    sals.machine.deliberate_action__new = function(verb, parameter_frame) {
 	var self = sals.object.object__new("deliberate_action");
-	sals.frame.frame__add_element(self, "name",            name);
+	sals.frame.frame__add_element(self, "verb",            verb);
 	sals.frame.frame__add_element(self, "parameter_frame", parameter_frame);
 	return self;
     };
@@ -144,14 +144,14 @@ sals.machine = {};
     
     sals.machine.test_deliberate_machine__new = function() {
 	var machine = sals.machine.deliberate_machine__new_empty();
-	var plan    = sals.machine.deliberate_plan__new([sals.machine.deliberate_action__new("eat", sals.frame.frame({"edible" : "tomato-1"}))]);
+	var plan    = sals.machine.deliberate_plan__new([sals.machine.deliberate_action__new("to eat", sals.frame.frame({"direct-object" : "the tomato"}))]);
 	sals.machine.deliberate_machine__set_plan(machine, plan);
 	return machine;
     };
     
     sals.machine.test_deliberate_machine = null;
     
-    sals.machine.test = function(render_state) {
+    sals.machine.step_test_deliberate_machine = function(render_state) {
 	if (sals.machine.test_deliberate_machine === null) {
 	    // test initialize
 	    sals.machine.test_deliberate_machine = sals.machine.test_deliberate_machine__new();
