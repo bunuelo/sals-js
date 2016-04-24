@@ -6,10 +6,12 @@ sals.machine = {};
     var object_type = sals.object.object_type__new("deliberate_action");
     sals.object_registry.add_type(object_type);
     
-    sals.machine.deliberate_action__new = function(transitive_verb, parameter_frame) {
+    sals.machine.deliberate_action__new = function(transitive_verb, parameter_frame, precondition, postcondition) {
 	var self = sals.object.object__new("deliberate_action");
 	sals.frame.frame__add_element(self, "transitive_verb", transitive_verb);
 	sals.frame.frame__add_element(self, "parameter_frame", parameter_frame);
+	sals.frame.frame__add_element(self, "precondition",    precondition);
+	sals.frame.frame__add_element(self, "postcondition",   postcondition);
 	return self;
     };
     
@@ -143,8 +145,14 @@ sals.machine = {};
 (function() { // test deliberate_machine utilities BEGIN
     
     sals.machine.test_deliberate_machine__new = function() {
-	var machine = sals.machine.deliberate_machine__new_empty();
-	var plan    = sals.machine.deliberate_plan__new([sals.machine.deliberate_action__new("to eat", sals.frame.frame({"direct-object" : "the tomato"}))]);
+	var machine                                  = sals.machine.deliberate_machine__new_empty();
+	var action__to_eat_the_tomato__precondition  = null;
+	var action__to_eat_the_tomato__postcondition = null;
+	var action__to_eat_the_tomato                = sals.machine.deliberate_action__new("to eat",
+											   sals.frame.frame({"direct-object" : "the tomato"}),
+											   action__to_eat_the_tomato__precondition,
+											   action__to_eat_the_tomato__postcondition);
+	var plan                                     = sals.machine.deliberate_plan__new([action__to_eat_the_tomato]);
 	sals.machine.deliberate_machine__set_plan(machine, plan);
 	return machine;
     };
