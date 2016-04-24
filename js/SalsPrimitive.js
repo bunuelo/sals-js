@@ -46,6 +46,7 @@ sals.primitive.string__to_string = function(self) {
 		var quote_protect_replacements__key   = quote_protect_replacements__keys[quote_protect_replacements__keys__index];
 		var quote_protect_replacements__value = quote_protect_replacements[quote_protect_replacements__key];
 		protected_string                      = sals.primitive.string__replace_all(protected_string, quote_protect_replacements__key, quote_protect_replacements__value);
+		quote_protect_replacements__keys__index ++;
 	    }
 	})();
 	return "\"" + protected_string + "\"";
