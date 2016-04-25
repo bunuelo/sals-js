@@ -89,6 +89,10 @@ sals.logic = {};
 	return sals.frame.frame__set_element(self, "parameter_frame", value);
     };
     
+    sals.logic.predicate__to_string = function(self) {
+	return sals.frame.frame__to_string(self);
+    };
+    
 })(); // predicate END
 
 sals.logic.test_logic = function() {
@@ -96,6 +100,6 @@ sals.logic.test_logic = function() {
     var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
     var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
     
-    console.log("test_logic here (2).");
+    console.log("test_logic: predicate = " + sals.logic.predicate__to_string(predicate));
 };
 
