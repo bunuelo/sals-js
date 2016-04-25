@@ -149,7 +149,7 @@ sals.machine = {};
 	var action__to_eat_the_tomato__precondition  = null;
 	var action__to_eat_the_tomato__postcondition = null;
 	var action__to_eat_the_tomato                = sals.machine.deliberate_action__new("to eat",
-											   sals.frame.frame({"direct-object" : "the tomato"}),
+											   sals.frame.frame({"" : "the tomato"}),
 											   action__to_eat_the_tomato__precondition,
 											   action__to_eat_the_tomato__postcondition);
 	var plan                                     = sals.machine.deliberate_plan__new([action__to_eat_the_tomato]);
