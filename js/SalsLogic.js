@@ -7,7 +7,7 @@ sals.logic = {};
     
     sals.logic.parameter_type__new = function(noun_reference) {
 	self = sals.object.object__new("parameter_type");
-	sals.frame__add_element(self, "noun_reference", noun_reference);
+	sals.frame.frame__add_element(self, "noun_reference", noun_reference);
 	return self;
     };
     
@@ -16,11 +16,11 @@ sals.logic = {};
     };
     
     sals.logic.parameter_type__noun_reference = function(self) {
-	return sals.frame__get_element(self, "noun_reference");
+	return sals.frame.frame__get_element(self, "noun_reference");
     };
     
     sals.logic.parameter_type__set_noun_reference = function(self, value) {
-	return sals.frame__set_element(self, "noun_reference", value);
+	return sals.frame.frame__set_element(self, "noun_reference", value);
     };
     
 })(); // parameter_type END
@@ -31,8 +31,8 @@ sals.logic = {};
     
     sals.logic.predicate_type__new = function(verb_transitive, parameter_type_frame) {
 	self = sals.object.object__new("predicate_type");
-	sals.frame__add_element(self, "verb_transitive", verb_transitive);
-	sals.frame__add_element(self, "parameter_type_frame", parameter_type_frame);
+	sals.frame.frame__add_element(self, "verb_transitive", verb_transitive);
+	sals.frame.frame__add_element(self, "parameter_type_frame", parameter_type_frame);
 	return self;
     };
     
@@ -41,19 +41,19 @@ sals.logic = {};
     };
     
     sals.logic.predicate_type__verb_transitive = function(self) {
-	return sals.frame__get_element(self, "verb_transitive");
+	return sals.frame.frame__get_element(self, "verb_transitive");
     };
     
     sals.logic.predicate_type__set_verb_transitive = function(self, value) {
-	return sals.frame__set_element(self, "verb_transitive", value);
+	return sals.frame.frame__set_element(self, "verb_transitive", value);
     };
     
     sals.logic.predicate_type__parameter_type_frame = function(self) {
-	return sals.frame__get_element(self, "parameter_type_frame");
+	return sals.frame.frame__get_element(self, "parameter_type_frame");
     };
     
     sals.logic.predicate_type__set_parameter_type_frame = function(self, value) {
-	return sals.frame__set_element(self, "parameter_type_frame", value);
+	return sals.frame.frame__set_element(self, "parameter_type_frame", value);
     };
     
 })(); // predicate_type END
@@ -64,8 +64,8 @@ sals.logic = {};
     
     sals.logic.predicate__new = function(type, parameter_frame) {
 	self = sals.object.object__new("predicate");
-	sals.frame__add_element(self, "type",            type);
-	sals.frame__add_element(self, "parameter_frame", parameter_frame);
+	sals.frame.frame__add_element(self, "type",            type);
+	sals.frame.frame__add_element(self, "parameter_frame", parameter_frame);
 	return self;
     };
     
@@ -74,19 +74,19 @@ sals.logic = {};
     };
     
     sals.logic.predicate__verb_transitive = function(self) {
-	return sals.frame__get_element(self, "verb_transitive");
+	return sals.frame.frame__get_element(self, "verb_transitive");
     };
     
     sals.logic.predicate__set_verb_transitive = function(self, value) {
-	return sals.frame__set_element(self, "verb_transitive", value);
+	return sals.frame.frame__set_element(self, "verb_transitive", value);
     };
     
     sals.logic.predicate__parameter_frame = function(self) {
-	return sals.frame__get_element(self, "parameter_frame");
+	return sals.frame.frame__get_element(self, "parameter_frame");
     };
     
     sals.logic.predicate__set_parameter_frame = function(self, value) {
-	return sals.frame__set_element(self, "parameter_frame", value);
+	return sals.frame.frame__set_element(self, "parameter_frame", value);
     };
     
 })(); // predicate END
