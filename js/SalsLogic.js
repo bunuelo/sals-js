@@ -160,6 +160,21 @@ sals.logic.test_logic = function() {
 	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "black stone 1", "immediately above" : "black stone 2"}));
 	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
     })();
+    (function() { // black stone 1 to be immediately below black stone 2
+	var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a stone", "immediately below" : sals.logic.parameter_type__new("a stone")}));
+	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "black stone 1", "immediately below" : "black stone 2"}));
+	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    })();
+    (function() { // black stone 1 to be immediately to the right of black stone 2
+	var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a stone", "immediately to the right of" : sals.logic.parameter_type__new("a stone")}));
+	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "black stone 1", "immediately to the right of" : "black stone 2"}));
+	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    })();
+    (function() { // black stone 1 to be immediately to the left of black stone 2
+	var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a stone", "immediately to the left of" : sals.logic.parameter_type__new("a stone")}));
+	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "black stone 1", "immediately to the left of" : "black stone 2"}));
+	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    })();
     console.log("test_logic: predicate_set = " + sals.logic.predicate_set__to_string(predicate_set));
 };
 
