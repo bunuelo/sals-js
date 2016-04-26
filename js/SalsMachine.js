@@ -163,12 +163,11 @@ sals.machine = {};
     sals.machine.test_deliberate_machine = null;
     
     sals.machine.step_test_deliberate_machine = function(render_state) {
-	if (sals.machine.test_deliberate_machine === null) {
-	    // test initialize
-	    sals.machine.test_deliberate_machine = sals.machine.test_deliberate_machine__new();
+	if (sals.machine.test_deliberate_machine !== null) {
+	    return sals.machine.deliberate_machine__step(sals.machine.test_deliberate_machine);
 	} else {
-	    // test update
-	    sals.machine.deliberate_machine__step(sals.machine.test_deliberate_machine);
+	    sals.machine.test_deliberate_machine = sals.machine.test_deliberate_machine__new();
+	    return true;
 	}
     };
     
