@@ -9,7 +9,7 @@ sals.object.object__new = function(type) {
     return self;
 };
 
-sals.object.object__get_type = function(exp) {
+sals.object.object__type = function(exp) {
     if (exp === null) {
 	return null;
     } else {
@@ -22,7 +22,7 @@ sals.object.object__get_type = function(exp) {
 };
 
 sals.object.object__is_type = function(exp, type) {
-    return (sals.object.object__get_type(exp) === type);
+    return (sals.object.object__type(exp) === type);
 };
 
 // object END
@@ -73,6 +73,24 @@ sals.object.object_type__add_function = function(self, function_name, func) {
 sals.object.object_type__get_function = function(self, function_name) {
     var functions = sals.object.object_type__functions(self);
     return sals.frame.frame__get_element(functions, function_name);
+};
+
+sals.object.throw_new_object_type_error = function(correct_type, incorrect_type, incorrect_object) {
+    var message =
+	("{" + (("type"             + ":" + "type_error")                                       + "," +
+		("incorrect_object" + ":" + sals.primitive.string__to_string(incorrect_object)) + "," +
+		("incorrect_type"   + ":" + sals.primitive.string__to_string(incorrect_type))   + "," +
+		("correct_type"     + ":" + sals.primitive.string__to_string(correct_type)))          + "}");
+    sals.core.throw_new_error(message);
+};
+
+sals.object.object_type__assert = function(correct_type, exp) {
+    if (! sals.object.object__is_type(exp, correct_type)) {
+	(function() {
+	    var incorrect_type = sals.object.object__type(exp);
+	    sals.core.throw_new_object_type_error(correct_type, incorrect_type, exp);
+	})();
+    }
 };
 
 // object_type END

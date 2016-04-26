@@ -16,10 +16,12 @@ sals.logic = {};
     };
     
     sals.logic.parameter_type__noun_reference = function(self) {
+	sals.object.object_type__assert("parameter_type", self);
 	return sals.frame.frame__get_element(self, "noun_reference");
     };
     
     sals.logic.parameter_type__set_noun_reference = function(self, value) {
+	sals.object.object_type__assert("parameter_type", self);
 	return sals.frame.frame__set_element(self, "noun_reference", value);
     };
     
@@ -41,18 +43,22 @@ sals.logic = {};
     };
     
     sals.logic.predicate_type__verb_transitive = function(self) {
+	sals.object.object_type__assert("predicate_type", self);
 	return sals.frame.frame__get_element(self, "verb_transitive");
     };
     
     sals.logic.predicate_type__set_verb_transitive = function(self, value) {
+	sals.object.object_type__assert("predicate_type", self);
 	return sals.frame.frame__set_element(self, "verb_transitive", value);
     };
     
     sals.logic.predicate_type__parameter_type_frame = function(self) {
+	sals.object.object_type__assert("predicate_type", self);
 	return sals.frame.frame__get_element(self, "parameter_type_frame");
     };
     
     sals.logic.predicate_type__set_parameter_type_frame = function(self, value) {
+	sals.object.object_type__assert("predicate_type", self);
 	return sals.frame.frame__set_element(self, "parameter_type_frame", value);
     };
     
@@ -74,22 +80,27 @@ sals.logic = {};
     };
     
     sals.logic.predicate__verb_transitive = function(self) {
+	sals.object.object_type__assert("predicate", self);
 	return sals.frame.frame__get_element(self, "verb_transitive");
     };
     
     sals.logic.predicate__set_verb_transitive = function(self, value) {
+	sals.object.object_type__assert("predicate", self);
 	return sals.frame.frame__set_element(self, "verb_transitive", value);
     };
     
     sals.logic.predicate__parameter_frame = function(self) {
+	sals.object.object_type__assert("predicate", self);
 	return sals.frame.frame__get_element(self, "parameter_frame");
     };
     
     sals.logic.predicate__set_parameter_frame = function(self, value) {
+	sals.object.object_type__assert("predicate", self);
 	return sals.frame.frame__set_element(self, "parameter_frame", value);
     };
     
     sals.logic.predicate__to_string = function(self) {
+	sals.object.object_type__assert("predicate", self);
 	return sals.frame.frame__to_string(self);
     };
     
