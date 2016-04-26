@@ -101,7 +101,23 @@ sals.logic = {};
     
     sals.logic.predicate__to_string = function(self) {
 	sals.object.object_type__assert("predicate", self);
-	return sals.frame.frame__to_string(self);
+	var verb_transitive               = sals.logic.predicate__verb_transitive(self);
+	var parameter_frame               = sals.logic.predicate__parameter_frame(self);
+	var subject                       = sals.frame.frame_get_element(parameter_frame, "subject");
+	var string                        = "" + subject + " " + verb_transitive + " ";
+	var parameter_frame__keys         = sals.frame.frame__keys(parameter_frame);
+	var parameter_frame__keys__length = sals.primitive.array__length(parameter_frame__keys);
+	var parameter_frame__keys__index  = 0;
+	while (parameter_frame__keys__index < parameter_frame__keys__length) {
+	    (function() {
+		var parameter_frame__key   = sals.primitive.array__get_element(parameter_frame__keys, parameter_frame__keys__index);
+		var parameter_frame__value = sals.frame.frame__get_element(parameter_frame, parameter_frame__key);
+		string = string + " " + parameter_frame__key + " " parameter_frame__value;
+	    })();
+	    parameter_frame__keys__index ++;
+	}
+	
+	return string;
     };
     
 })(); // predicate END

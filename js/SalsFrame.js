@@ -50,6 +50,39 @@ sals.frame.frame__key_count = function(self) {
     return Object.keys(self).length - 1;
 };
 
+sals.frame.frame__keys = function(self) {
+    var keys              = sals.primitive.array__new_empty();
+    var meta_keys         = Object.keys(self);
+    var meta_keys__length = sals.primitive.array__length(meta_keys);
+    var meta_keys__index  = 0;
+    while (meta_keys__index < meta_keys__length) {
+	var meta_key = sals.primitive.array__get_element(meta_keys, meta_keys__index);
+	if (meta_key !== "__meta__") {
+	    sals.primitive.array__push(keys, meta_key);
+	}
+	meta_keys__index ++;
+    }
+    return keys;
+};
+
+sals.frame.frame__values = function(self) {
+    var values            = sals.primitive.array__new_empty();
+    var meta_keys         = Object.keys(self);
+    var meta_keys__length = sals.primitive.array__length(meta_keys);
+    var meta_keys__index  = 0;
+    while (meta_keys__index < meta_keys__length) {
+	var meta_key = sals.primitive.array__get_element(meta_keys, meta_keys__index);
+	if (meta_key !== "__meta__") {
+	    (function() {
+		var value = self[meta_key];
+		sals.primitive.array__push(values, value);
+	    })();
+	}
+	meta_keys__index ++;
+    }
+    return values;
+};
+
 sals.frame.frame__get_meta_element = function(self, key) {
     if (! (self["__meta__"].hasOwnProperty(key))) {
 	throw new Error("sals.frame.frame__get_element ERROR: self does not contain key (" + key + ").");
