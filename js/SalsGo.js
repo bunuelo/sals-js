@@ -275,7 +275,11 @@ if (window.webkitRequestAnimationFrame) {
 	    last_print_nanoseconds_since_1970 = nanoseconds_since_1970;
 	    sals.go.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
 	    sals.core.log("render_callback: fps = " + sals.go.render_state__get_frames_per_second(self));
-	    sals.machine.step_test_deliberate_machine(self);
+	}
+	if (sals.machine.step_test_deliberate_machine !== null) {
+	    if (! sals.machine.step_test_deliberate_machine(self)) {
+		sals.machine.step_test_deliberate_machine = null;
+	    }
 	}
 	frame_count = frame_count + 1;
 	sals.go.render_state__set_frame_count(self, frame_count);

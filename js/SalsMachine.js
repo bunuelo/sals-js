@@ -35,6 +35,7 @@ sals.machine = {};
 	var transitive_verb = sals.machine.deliberate_action__transitive_verb(self);
 	var parameter_frame = sals.machine.deliberate_action__parameter_frame(self);
 	sals.core.log("deliberate_action__execute: transitive_verb = " + sals.primitive.string__to_string(transitive_verb) + ", frame = " + sals.frame.frame__to_string(parameter_frame));
+	return true; // keep running.
     };
     
 })(); // deliberate_action END
@@ -69,9 +70,10 @@ sals.machine = {};
 	    var first_action = actions[0];
 	    actions          = actions.slice(1);
 	    sals.machine.deliberate_plan__set_actions(self, actions);
-	    sals.machine.deliberate_action__execute(first_action);
+	    return sals.machine.deliberate_action__execute(first_action);
 	} else {
 	    sals.core.log("deliberate_plan__step error: actions.length == 0");
+	    return false;
 	}
     };
     
@@ -134,9 +136,10 @@ sals.machine = {};
     sals.machine.deliberate_machine__step = function(self) {
 	var plan = sals.machine.deliberate_machine__plan(self);
 	if (plan !== null) {
-	    sals.machine.deliberate_plan__step(plan);
+	    return sals.machine.deliberate_plan__step(plan);
 	} else {
 	    sals.core.log("deliberate_machine__step error: plan === null");
+	    return false;
 	}
     };
     
