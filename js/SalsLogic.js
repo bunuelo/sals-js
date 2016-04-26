@@ -112,7 +112,7 @@ sals.logic = {};
 	    (function() {
 		var parameter_frame__key   = sals.primitive.array__get_element(parameter_frame__keys, parameter_frame__keys__index);
 		var parameter_frame__value = sals.frame.frame__get_element(parameter_frame, parameter_frame__key);
-		string = string + " " + parameter_frame__key + " " parameter_frame__value;
+		string = string + " " + parameter_frame__key + " " + parameter_frame__value;
 	    })();
 	    parameter_frame__keys__index ++;
 	}
