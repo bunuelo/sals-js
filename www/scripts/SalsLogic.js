@@ -106,11 +106,53 @@ sals.logic = {};
     
 })(); // predicate END
 
+(function() { // predicate_set BEGIN
+    var object_type = sals.object.object_type__new("predicate_set");
+    sals.object_registry.add_type(object_type);
+    
+    sals.logic.predicate_set__new = function(predicates) {
+	self = sals.object.object__new("predicate_set");
+	sals.frame.frame__add_element(self, "predicates", predicates);
+	return self;
+    };
+    
+    sals.logic.predicate_set__new_empty = function() {
+	var predicates = sals.primitive.array__new(0);
+	return sals.logic.predicate_set__new(predicates);
+    };
+    
+    sals.logic.predicate_set__is_type = function(exp) {
+	return sals.object.object__is_type(exp, "predicate_set");
+    };
+    
+    sals.logic.predicate_set__predicates = function(self) {
+	sals.object.object_type__assert("predicate_set", self);
+	return sals.frame.frame__get_element(self, "predicates");
+    };
+    
+    sals.logic.predicate_set__set_predicates = function(self, value) {
+	sals.object.object_type__assert("predicate_set", self);
+	return sals.frame.frame__set_element(self, "predicates", value);
+    };
+    
+    sals.logic.predicate_set__add_predicate = function(self, predicate) {
+	var predicates = sals.logic.predicate_set__predicates(self);
+	sals.primitive.array__push(predicates, predicate);
+    };
+    
+    sals.logic.predicate_set__to_string = function(self) {
+	sals.object.object_type__assert("predicate_set", self);
+	return sals.frame.frame__to_string(self);
+    };
+    
+})(); // predicate_set END
+
 sals.logic.test_logic = function() {
     console.log("test_logic here.");
     var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
     var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
-    
-    console.log("test_logic: predicate = " + sals.logic.predicate__to_string(predicate));
+    var predicate_set  = sals.logic.predicate_set__new_empty();
+    sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    console.log("test_logic: predicate_set = " + sals.logic.predicate_set__to_string(predicate_set));
 };
 

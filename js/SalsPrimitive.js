@@ -1,6 +1,8 @@
 
 sals.primitive = {};
 
+// string
+
 sals.primitive.string__new = function(value) {
     var self = value;
     return self;
@@ -58,3 +60,33 @@ sals.primitive.string__to_string = function(self) {
 	}
     }
 };
+
+// array
+
+sals.primitive.array__new = function(length) {
+    var self;
+    if (length == 0) {
+	self = new Array();
+    } else {
+	self = new Array(length);
+    }
+    return self;
+};
+
+sals.primitive.array__length = function(self) {
+    return self.length;
+};
+
+sals.primitive.array__get_element = function(self, index) {
+    return self[index];
+};
+
+sals.primitive.array__set_element = function(self, index, value) {
+    self[index] = value;
+};
+
+sals.primitive.array__push = function(self, value) {
+    self.push(value);
+};
+
+
