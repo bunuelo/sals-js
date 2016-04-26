@@ -46,6 +46,13 @@ sals.frame_array = {};
 	return sals.frame.frame__set_element(self, index, value);
     };
     
+    sals.logic.frame_array__push = function(self, value) {
+	sals.object.object_type__assert("frame_array", self);
+	var index = sals.frame_array__length(self);
+	sals.frame_array__set_length(self, index + 1);
+	sals.frame_array__set_element(self, index, value);
+    };
+    
     sals.logic.frame_array__to_string = function(self) {
 	sals.object.object_type__assert("frame_array", self);
 	return sals.frame.frame__to_string(self);
