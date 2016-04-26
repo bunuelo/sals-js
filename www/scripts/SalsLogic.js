@@ -149,10 +149,17 @@ sals.logic = {};
 
 sals.logic.test_logic = function() {
     console.log("test_logic here.");
-    var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
-    var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
     var predicate_set  = sals.logic.predicate_set__new_empty();
-    sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    (function() { // the green block to be on the table
+	var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
+	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
+	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    })();
+    (function() { // black stone 1 to be immediately above black stone 2
+	var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a stone", "immediately above" : sals.logic.parameter_type__new("a stone")}));
+	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "black stone 1", "immediately above" : "black stone 2"}));
+	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    })();
     console.log("test_logic: predicate_set = " + sals.logic.predicate_set__to_string(predicate_set));
 };
 
