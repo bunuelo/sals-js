@@ -164,8 +164,10 @@ sals.machine = {};
     
     sals.machine.step_test_deliberate_machine = function(render_state) {
 	if (sals.machine.test_deliberate_machine !== null) {
+	    // step initialized test machine
 	    return sals.machine.deliberate_machine__step(sals.machine.test_deliberate_machine);
 	} else {
+	    // initialize test machine
 	    sals.machine.test_deliberate_machine = sals.machine.test_deliberate_machine__new();
 	    return true;
 	}

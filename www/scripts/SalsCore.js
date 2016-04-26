@@ -15,7 +15,8 @@ sals.core.source_file_names = ["scripts/SalsPrimitive.js",
 			       "scripts/SalsMachine.js",
 			       "scripts/SalsVis.js",
 			       "scripts/SalsThree.js",
-			       "scripts/SalsGo.js"];
+			       "scripts/SalsGo.js",
+			       "scripts/SalsRender.js"];
 
 sals.core.total_load_count = 0;
 
