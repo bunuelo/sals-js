@@ -35,13 +35,11 @@ sals.frame.frame = function(initial_object) {
 }
 
 sals.frame.frame__is_type = function(obj) {
-    if (obj === null) {
-	return false;
-    }
-    if (typeof(obj) === "object") {
-	return true;
-    }
-    return false;
+    return ((obj                     !== null)        &&
+	    (typeof(obj)             === "object")    &&
+	    (obj["__meta__"]         !== "undefined") &&
+	    (typeof(obj["__meta__"]) === "object")    &&
+	    (obj["__meta__"]["uid"]  !== "undefined"));
 };
 
 sals.frame.frame__uid = function(self) {
