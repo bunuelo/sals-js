@@ -7,7 +7,7 @@ window.onload = function() {
 	try {
 	    var go_game_element = sals.go.test_go_game_element();
 	    document.body.appendChild(go_game_element);
-	    sals.go.start_game();
+	    sals.render.start_game();
 	} catch (error) {
 	    sals.core.log_error(error);
 	}
