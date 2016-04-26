@@ -25,11 +25,11 @@ sals.core.date_time_string = function() {
 };
 
 sals.core.log_error = function(error) {
-    console.log(sals.core.date_time_string() + "Sals Error: " + error.message + "\n" + error.stack);
+    console.log(sals.core.date_time_string() + " -- SALS ERROR: " + error.message + "\n" + error.stack);
 };
 
 sals.core.log = function(message) {
-    console.log(sals.core.date_time_string() + "Sals Log: " + message);
+    console.log(sals.core.date_time_string() + " -- SALS LOG: " + message);
 };
 
 sals.core.throw_new_error = function(message) {
