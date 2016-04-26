@@ -117,7 +117,7 @@ sals.logic = {};
     };
     
     sals.logic.predicate_set__new_empty = function() {
-	var predicates = sals.primitive.array__new(0);
+	var predicates = sals.frame_array.frame_array__new(0);
 	return sals.logic.predicate_set__new(predicates);
     };
     
@@ -137,7 +137,7 @@ sals.logic = {};
     
     sals.logic.predicate_set__add_predicate = function(self, predicate) {
 	var predicates = sals.logic.predicate_set__predicates(self);
-	sals.primitive.array__push(predicates, predicate);
+	sals.frame_array.frame_array__push(predicates, predicate);
     };
     
     sals.logic.predicate_set__to_string = function(self) {
