@@ -26,14 +26,30 @@ sals.frame_array = {};
 	return sals.object.object__is_type(exp, "frame_array");
     };
     
-    sals.frame_array.frame_array__length = function(self) {
+    sals.frame_array.frame_array__length_without_reflection = function(self) {
 	sals.object.object_type__assert("frame_array", self);
 	return sals.frame.frame__get_element(self, "length");
     };
     
+    sals.frame_array.frame_array__length = function(self) {
+	sals.object.object_type__assert("frame_array", self);
+	return sals.frame_array.frame_array__length_without_reflection(self);
+    };
+    
+    sals.frame_array.frame_array__set_length_without_reflection = function(self, value) {
+	sals.object.object_type__assert("frame_array", self);
+	var length = sals.frame_array.frame_array__length_without_reflection(self);
+	var index  = length;
+	while (index < value) {
+	    sals.frame.frame__add_element(self, index, null);
+	    index ++;
+	}
+	return sals.frame.frame__set_element(self, "length", value);
+    };
+    
     sals.frame_array.frame_array__set_length = function(self, value) {
 	sals.object.object_type__assert("frame_array", self);
-	return sals.frame.frame__set_element(self, "length", value);
+	return sals.frame_array.frame_array__set_length_without_reflection(self, value);
     };
     
     sals.frame_array.frame_array__get_element = function(self, index) {
