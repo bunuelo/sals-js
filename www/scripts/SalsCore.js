@@ -20,12 +20,16 @@ sals.core.source_file_names = ["scripts/SalsPrimitive.js",
 
 sals.core.total_load_count = 0;
 
+sals.core.date_time_string = function() {
+    return "" + new Date().toString();
+};
+
 sals.core.log_error = function(error) {
-    console.log("Sals Error: " + error.message + "\n" + error.stack);
+    console.log(sals.core.date_time_string() + "Sals Error: " + error.message + "\n" + error.stack);
 };
 
 sals.core.log = function(message) {
-    console.log("Sals Log: " + message);
+    console.log(sals.core.date_time_string() + "Sals Log: " + message);
 };
 
 sals.core.throw_new_error = function(message) {
