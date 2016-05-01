@@ -126,7 +126,7 @@ sals.logic = {};
 	var to_english_string = subject;
 	var type              = sals.logic.predicate__type(self);
 	var verb_transitive   = sals.logic.predicate_type__verb_transitive(type);
-	if (verb_transitive.includes(" to be")) {
+	if (verb_transitive.includes("to be")) {
 	    verb_transitive = verb_transitive.split("to be").join("is");
 	}
 	to_english_string                 = to_english_string + " " + verb_transitive;
@@ -136,8 +136,10 @@ sals.logic = {};
 	while (parameter_frame__keys__index < parameter_frame__keys__length) {
 	    (function() {
 		var parameter_frame__key   = sals.primitive.array__get_element(parameter_frame__keys, parameter_frame__keys__index);
-		var parameter_frame__value = sals.frame.frame__get_element(parameter_frame, parameter_frame__key);
-		to_english_string          = to_english_string + " " + parameter_frame__key + " " + parameter_frame__value;
+		if (parameter_frame__key !== "subject") {
+		    var parameter_frame__value = sals.frame.frame__get_element(parameter_frame, parameter_frame__key);
+		    to_english_string          = to_english_string + " " + parameter_frame__key + " " + parameter_frame__value;
+		}
 	    })();
 	    parameter_frame__keys__index ++;
 	}
