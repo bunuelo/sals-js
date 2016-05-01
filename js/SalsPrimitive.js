@@ -63,14 +63,22 @@ sals.primitive.string__to_string = function(self) {
 
 // array
 
+sals.primitive.array__new_empty = function() {
+    return new Array();
+};
+
 sals.primitive.array__new = function(length) {
     var self;
     if (length == 0) {
-	self = new Array();
+	self = sals.primitive.array__new_empty();
     } else {
 	self = new Array(length);
     }
     return self;
+};
+
+sals.primitive.array__new_empty = function() {
+    return sals.primitive.array__new(0);
 };
 
 sals.primitive.array__length = function(self) {
