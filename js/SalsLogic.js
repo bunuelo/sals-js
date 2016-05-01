@@ -119,6 +119,10 @@ sals.logic = {};
 	return string;
     };
     
+    sals.logic.predicate__to_english_string = function(self) {
+	return "a predicate is true";
+    };
+    
 })(); // predicate END
 
 (function() { // predicate_set BEGIN
@@ -162,7 +166,18 @@ sals.logic = {};
     
     sals.logic.predicate_set__to_english_string = function(self) {
 	sals.object.object_type__assert("predicate_set", self);
-	return "something";
+	var to_english_string = "It is true that";
+	var predicates         = sals.logic.predicate_set__predicates(self);
+	var predicates__length = sals.primitive.array__length(predicates);
+	var predicates__index  = 0;
+	while (predicates__index < predicates__length) {
+	    (function() {
+		var predicate = sals.primitive.array__get_element(predicates, predicates__index);
+		to_english_string = english_string + ((predicates__index == 0) ? "" : " and") + " " + sals.logic.predicate__to_english_string(predicate);
+	    })();
+	    predicates__index ++;
+	}
+	return ;
     };
     
 })(); // predicate_set END
