@@ -177,7 +177,7 @@ sals.logic = {};
 	    })();
 	    predicates__index ++;
 	}
-	return ;
+	return to_english_string;
     };
     
 })(); // predicate_set END
