@@ -77,10 +77,6 @@ sals.primitive.array__new = function(length) {
     return self;
 };
 
-sals.primitive.array__new_empty = function() {
-    return sals.primitive.array__new(0);
-};
-
 sals.primitive.array__length = function(self) {
     return self.length;
 };
