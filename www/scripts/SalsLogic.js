@@ -126,7 +126,6 @@ sals.logic = {};
 	var to_english_string = subject;
 	var type              = sals.logic.predicate__type(self);
 	var verb_transitive   = sals.logic.predicate_type__verb_transitive(type);
-	var verb_transitive   = sals.logic.predicate__verb_transitive(self);
 	if (verb_transitive.includes(" to be")) {
 	    verb_transitive = verb_transitive.split("to be").join("is");
 	}
