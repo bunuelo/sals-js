@@ -166,7 +166,7 @@ sals.logic = {};
     
     sals.logic.predicate_set__to_english_string = function(self) {
 	sals.object.object_type__assert("predicate_set", self);
-	var to_english_string = "It is true that";
+	var to_english_string = "it is true that";
 	var predicates         = sals.logic.predicate_set__predicates(self);
 	var predicates__length = sals.primitive.array__length(predicates);
 	var predicates__index  = 0;
@@ -181,6 +181,18 @@ sals.logic = {};
     };
     
 })(); // predicate_set END
+
+(function() { // general English helper functions
+    
+    sals.logic.english_string__sentencify = function(english_string) {
+	var english_string__ch0 = english_string[0];
+	if (english_string__ch0 >= 'a' && english_string__ch0 <= 'z') {
+	    english_string__ch0 = english_string__ch0 - ('a' - 'A');
+	}
+	return (english_string__ch0 + english_string.substring(1, english_string.length) + ".");
+    };
+    
+})();
 
 sals.logic.test_logic = function() {
     console.log("test_logic here.");
@@ -210,6 +222,6 @@ sals.logic.test_logic = function() {
 	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "black stone 1", "immediately to the left of" : "black stone 2"}));
 	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
     })();
-    console.log("test_logic: predicate_set = " + sals.logic.predicate_set__to_english_string(predicate_set));
+    console.log("test_logic: predicate_set = " + sals.logic.english_string__sentencify(sals.logic.predicate_set__to_english_string(predicate_set)));
 };
 
