@@ -186,9 +186,7 @@ sals.logic = {};
     
     sals.logic.english_string__sentencify = function(english_string) {
 	var english_string__ch0 = english_string[0];
-	if (english_string__ch0 >= 'a' && english_string__ch0 <= 'z') {
-	    english_string__ch0 = english_string__ch0 - ('a' - 'A');
-	}
+	english_string__ch0 = english_string__ch0.toUpperCase();
 	return (english_string__ch0 + english_string.substring(1, english_string.length) + ".");
     };
     
