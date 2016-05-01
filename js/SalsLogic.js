@@ -189,7 +189,7 @@ sals.logic = {};
     
     sals.logic.predicate_set__to_english_string = function(self) {
 	sals.object.object_type__assert("predicate_set", self);
-	var to_english_string = "it is true that";
+	var to_english_string = "";
 	var predicates         = sals.logic.predicate_set__predicates(self);
 	var predicates__length = sals.primitive.array__length(predicates);
 	var predicates__index  = 0;
