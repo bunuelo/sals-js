@@ -173,7 +173,7 @@ sals.logic = {};
 	while (predicates__index < predicates__length) {
 	    (function() {
 		var predicate = sals.primitive.array__get_element(predicates, predicates__index);
-		to_english_string = to_english_string + ((predicates__index == 0) ? "" : " and") + " " + sals.logic.predicate__to_english_string(predicate);
+		to_english_string = to_english_string + ((predicates__index == 0) ? "" : ((predicates__index < predicates_length - 1) ? "," : " and")) + " " + sals.logic.predicate__to_english_string(predicate);
 	    })();
 	    predicates__index ++;
 	}
