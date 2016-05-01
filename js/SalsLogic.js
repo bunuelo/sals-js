@@ -79,14 +79,14 @@ sals.logic = {};
 	return sals.object.object__is_type(exp, "predicate");
     };
     
-    sals.logic.predicate__verb_transitive = function(self) {
+    sals.logic.predicate__type = function(self) {
 	sals.object.object_type__assert("predicate", self);
-	return sals.frame.frame__get_element(self, "verb_transitive");
+	return sals.frame.frame__get_element(self, "type");
     };
     
-    sals.logic.predicate__set_verb_transitive = function(self, value) {
+    sals.logic.predicate__set_type = function(self, value) {
 	sals.object.object_type__assert("predicate", self);
-	return sals.frame.frame__set_element(self, "verb_transitive", value);
+	return sals.frame.frame__set_element(self, "type", value);
     };
     
     sals.logic.predicate__parameter_frame = function(self) {
@@ -101,7 +101,8 @@ sals.logic = {};
     
     sals.logic.predicate__to_string = function(self) {
 	sals.object.object_type__assert("predicate", self);
-	var verb_transitive               = sals.logic.predicate__verb_transitive(self);
+	var type                          = sals.logic.predicate__type(self);
+	var verb_transitive               = sals.logic.predicate_type__verb_transitive(type);
 	var parameter_frame               = sals.logic.predicate__parameter_frame(self);
 	var subject                       = sals.frame.frame_get_element(parameter_frame, "subject");
 	var string                        = "" + subject + " " + verb_transitive + " ";
@@ -120,13 +121,16 @@ sals.logic = {};
     };
     
     sals.logic.predicate__to_english_string = function(self) {
-	var verb_transitive = sals.logic.predicate__verb_transitive(self);
+	var parameter_frame   = sals.logic.predicate__parameter_frame(self);
+	var subject           = sals.frame.frame__get_element(parameter_frame, "subject");
+	var to_english_string = subject;
+	var type              = sals.logic.predicate__type(self);
+	var verb_transitive   = sals.logic.predicate_type__verb_transitive(type);
+	var verb_transitive   = sals.logic.predicate__verb_transitive(self);
 	if (verb_transitive.includes(" to be")) {
 	    verb_transitive = verb_transitive.split("to be").join("is");
 	}
-	var parameter_frame               = sals.logic.predicate__parameter_frame(self);
-	var subject                       = sals.frame.frame__get_element(parameter_frame, "subject");
-	var to_english_string = subject + verb_transitive;
+	to_english_string                 = to_english_string + " " + verb_transitive;
 	var parameter_frame__keys         = sals.frame.frame__keys(parameter_frame);
 	var parameter_frame__keys__length = sals.primitive.array__length(parameter_frame__keys);
 	var parameter_frame__keys__index  = 0;
@@ -134,7 +138,7 @@ sals.logic = {};
 	    (function() {
 		var parameter_frame__key   = sals.primitive.array__get_element(parameter_frame__keys, parameter_frame__keys__index);
 		var parameter_frame__value = sals.frame.frame__get_element(parameter_frame, parameter_frame__key);
-		to_english_string = to_english_string + " " + parameter_frame__key + " " + parameter_frame__value;
+		to_english_string          = to_english_string + " " + parameter_frame__key + " " + parameter_frame__value;
 	    })();
 	    parameter_frame__keys__index ++;
 	}
