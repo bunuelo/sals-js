@@ -116,7 +116,6 @@ sals.logic = {};
 	    })();
 	    parameter_frame__keys__index ++;
 	}
-	
 	return string;
     };
     
@@ -161,6 +160,11 @@ sals.logic = {};
 	return sals.frame.frame__to_string(self);
     };
     
+    sals.logic.predicate_set__to_english_string = function(self) {
+	sals.object.object_type__assert("predicate_set", self);
+	return "something";
+    };
+    
 })(); // predicate_set END
 
 sals.logic.test_logic = function() {
@@ -191,6 +195,6 @@ sals.logic.test_logic = function() {
 	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "black stone 1", "immediately to the left of" : "black stone 2"}));
 	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
     })();
-    console.log("test_logic: predicate_set = " + sals.logic.predicate_set__to_string(predicate_set));
+    console.log("test_logic: predicate_set = " + sals.logic.predicate_set__to_english_string(predicate_set));
 };
 
