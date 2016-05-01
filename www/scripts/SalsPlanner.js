@@ -26,6 +26,15 @@ sals.planner = {};
 	return sals.frame.frame__set_element(self, "object_type_frame", value);
     };
     
+    sals.planner.planner_domain__add_object_type = function(self, name, object_type) {
+	var object_type_frame = sals.planner.planner_domain__object_type_frame(self);
+	if (! sals.frame.frame__contains_key(object_type_frame, name)) {
+	    sals.frame.frame__add_element(object_type_frame, name, object_type);
+	} else {
+	    sals.core.throw_new_error("planner_domain__add_object_type ERROR: object_type (" + name + ") already in planner domain.");
+	}
+    };
+    
     sals.planner.planner_domain__action_type_frame = function(self) {
 	sals.object.object_type__assert("planner_domain", self);
 	return sals.frame.frame__get_element(self, "action_type_frame");
@@ -34,6 +43,15 @@ sals.planner = {};
     sals.planner.planner_domain__set_action_type_frame = function(self, value) {
 	sals.object.object_type__assert("planner_domain", self);
 	return sals.frame.frame__set_element(self, "action_type_frame", value);
+    };
+    
+    sals.planner.planner_domain__add_action_type = function(self, name, action_type) {
+	var action_type_frame = sals.planner.planner_domain__action_type_frame(self);
+	if (! sals.frame.frame__contains_key(action_type_frame, name)) {
+	    sals.frame.frame__add_element(action_type_frame, name, action_type);
+	} else {
+	    sals.core.throw_new_error("planner_domain__add_action_type ERROR: action_type (" + name + ") already in planner domain.");
+	}
     };
     
     sals.planner.planner_domain__to_string = function(self) {
