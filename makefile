@@ -88,7 +88,7 @@ compile-webpage:
 	chmod -R a+rx ./www/
 
 upload-webpage: compile-webpage
-	rsync -avz ./www/ bomorgan@bomorgan.com:bomorgan/sals/
+	rsync -avz ./www/ bomorgan@sals.bomorgan.io:sals.bomorgan.io/public/
 
 git-pull:
 	git pull
