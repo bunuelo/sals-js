@@ -1,7 +1,8 @@
-default: less-usage
+default: print-usage
 
 TEXT_EDITOR        = emacs
 GIT_COMMIT_MESSAGE = "editing..."
+REMOTE_DIRECTORY   = bomorgan@sals.bomorgan.io:sals.bomorgan.io/public/
 
 less-usage:
 	make -s print-usage | less
@@ -9,65 +10,42 @@ less-usage:
 print-usage:
 	@echo ""
 	@echo "USAGE"
-	@echo ""
 	@echo "  make <command>"
-	@echo ""
 	@echo ""
 	@echo "COMMANDS"
 	@echo ""
 	@echo "  print-usage"
-	@echo ""
 	@echo "    - prints this usage message"
 	@echo ""
-	@echo ""
 	@echo "  start-editor"
-	@echo ""
 	@echo "    - $(TEXT_EDITOR) is used to edit all source files"
 	@echo ""
-	@echo ""
 	@echo "  compile-webpage"
-	@echo ""
 	@echo "    - compiles the required source files into the ./www directory"
 	@echo ""
-	@echo ""
 	@echo "  upload-webpage"
-	@echo ""
 	@echo "    - compiles and uses rsync over ssh to update the remote bomorgan.com/sals"
 	@echo "      directory"
 	@echo ""
-	@echo ""
 	@echo "  git-pull"
-	@echo ""
 	@echo "    - pulls from remote repository"
 	@echo ""
-	@echo ""
 	@echo "  git-push"
-	@echo ""
 	@echo "    - pushes to remote repository"
 	@echo ""
-	@echo ""
 	@echo "  git-commit"
-	@echo ""
 	@echo "    - uses \"$(GIT_COMMIT_MESSAGE)\" as git commit message"
 	@echo ""
-	@echo ""
 	@echo "  git-add"
-	@echo ""
 	@echo "    - add --all files to reflect the current directory exactly"
 	@echo ""
-	@echo ""
 	@echo "  git-development-cycle"
-	@echo ""
 	@echo "    - git-pull, compile-webpage, git-add, git-commit, git-push"
 	@echo ""
-	@echo ""
 	@echo "DATE"
-	@echo ""
 	@echo "  This documentation was last edited on April 18, 2016."
 	@echo ""
-	@echo ""
 	@echo "AUTHORS"
-	@echo ""
 	@echo "  Bo Morgan"
 	@echo ""
 
@@ -88,7 +66,7 @@ compile-webpage:
 	chmod -R a+rx ./www/
 
 upload-webpage: compile-webpage
-	rsync -avz ./www/ bomorgan@sals.bomorgan.io:sals.bomorgan.io/public/
+	rsync -avz ./www/ $(REMOTE_DIRECTORY)
 
 git-pull:
 	git pull
