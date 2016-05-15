@@ -57,9 +57,9 @@ compile-webpage:
 	mkdir -p ./www/scripts/
 	mkdir -p ./www/scripts/third-party/
 	mkdir -p ./www/images/
-	cp ./html/*.html ./www/
-	cp ./js/*.js ./www/scripts/
-	cp ./js/third-party/*.js ./www/scripts/third-party
+	cp ./html/* ./www/
+	cp ./js/* ./www/scripts/
+	cp ./js/third-party/* ./www/scripts/third-party
 	cp ./images/go_stone_white.png ./www/images/
 	cp ./images/go_stone_black.png ./www/images/
 	cp ./images/go_empty_cell.png ./www/images/
