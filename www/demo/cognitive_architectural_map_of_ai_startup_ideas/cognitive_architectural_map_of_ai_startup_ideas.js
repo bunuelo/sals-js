@@ -13,6 +13,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Medicine\nProduct Market",
 	"Consumer\nProduct Market",
     ];
+    var emotion_machine_layer__height = 400;
     var emotion_machine_layers = [
 	"Emotion Machine\nBuilt-In Reactive Layer",
 	"Emotion Machine\nLearned Reactive Layer",
@@ -43,7 +44,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		font  : {color : 'rgba(0,0,0,1)'},
 		fixed : true,
 		x     : 0,
-		y     : (((emotion_machine_layers.length - 1) * 400) - (index * 400))
+		y     : (((emotion_machine_layers.length - 1) * emotion_machine_layer__height) - (index * emotion_machine_layer__height))
 	    };
 	    emotion_machine_layer__node["vis_node"] = emotion_machine_layer__node__vis_node;
 	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
@@ -62,7 +63,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		    hover     : "rgba(0,0,0,1)",
 		},
 		font   : {color : "rgba(0,0,0,1)"},
-		length : 400
+		length : emotion_machine_layer__height
 	    };
 	    edge["vis_edge"] = edge__vis_edge;
 	    sals.graph.graph__add_edge(graph, edge);
