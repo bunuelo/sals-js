@@ -77,8 +77,10 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 };
 
 sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
-    var dom_element = sals.vis.vis_graph__new(width, height, graph);
-    return dom_element;
+    var self      = document.createElement("div");
+    var vis_graph = sals.vis.vis_graph__new(width, height, graph);
+    self.appendChild(vis_graph);
+    return self;
 };
 
 // sals_vis_graph
