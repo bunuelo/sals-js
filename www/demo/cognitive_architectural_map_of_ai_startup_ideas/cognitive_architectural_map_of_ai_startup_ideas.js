@@ -14,12 +14,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Consumer Products",
     ];
     var emotion_machine_layers = [
-	"Built-In Reactive",
-	"Learned Reactive",
-	"Deliberative",
-	"Reflective",
-	"Self-Reflective",
-	"Self-Conscious"
+	"Emotion Machine\nBuilt-In Reactive\nLayer",
+	"Emotion Machine\nLearned Reactive\nLayer",
+	"Emotion Machine\nDeliberative\nLayer",
+	"Emotion Machine\nReflective\nLayer",
+	"Emotion Machine\nSelf-Reflective\nLayer",
+	"Emotion Machine\nSelf-Conscious\nLayer"
     ];
     var graph = sals.graph.graph__new();
     (function() {
