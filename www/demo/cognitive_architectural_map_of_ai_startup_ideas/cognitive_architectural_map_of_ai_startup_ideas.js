@@ -79,15 +79,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Emotion Machine\nSelf-Conscious Layer"
     ];
     var graph = sals.graph.graph__new();
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer", 0, 0, 0, (emotion_machine_layers.length * 400), emotion_machine_layers);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Product Market", 1000, 0, 1000, (emotion_machine_layers.length * 400), markets);
-    (function() {
-	for (var index = 0; index < markets.length; index ++) {
-	    var market       = markets[index];
-	    var market__node = sals.graph.graph_node__new(market);
-	    sals.graph.graph__add_node(graph, market__node);
-	}
-    })();
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer",    0, 0,    0, (emotion_machine_layers.length * 400), emotion_machine_layers);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Product Market",           1000, 0, 1000,                (markets.length * 400), markets);
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
