@@ -50,7 +50,8 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 		hover     : "rgba(0,0,0,1)",
 	    },
 	    font   : {color : "rgba(0,0,0,1)",
-		      face  : "Times New Roman"}
+		      face  : "Times New Roman"},
+	    length : 100
 	};
 	vis_edges_array.push(vis_edge);
     });
