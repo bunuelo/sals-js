@@ -13,6 +13,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Medicine",
 	"Consumer Products",
     ];
+    var graph = sals.graph.graph__new();
     (function() {
 	for (var index = 0; index < markets.length; index ++) {
 	    var market       = markets[index];
@@ -20,7 +21,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    sals.graph.graph__add_node(graph, market__node);
 	}
     })();
-    var graph  = sals.graph.graph__new();
     var node_a = sals.graph.graph_node__new("A");
     sals.graph.graph__add_node(graph, node_a);
     var node_b = sals.graph.graph_node__new("B");
