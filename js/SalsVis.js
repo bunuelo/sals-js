@@ -51,7 +51,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	    },
 	    font   : {color : "rgba(0,0,0,1)",
 		      face  : "Times New Roman"},
-	    length : 1000
+	    length : 256
 	};
 	vis_edges_array.push(vis_edge);
     });
