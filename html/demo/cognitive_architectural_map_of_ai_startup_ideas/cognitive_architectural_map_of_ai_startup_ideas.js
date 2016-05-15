@@ -22,6 +22,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Emotion Machine\nSelf-Reflective Layer",
 	"Emotion Machine\nSelf-Conscious Layer"
     ];
+    var emotion_machine_layers__pin = true;
     var node_emotion_machine_layer_map = {};
     var graph = sals.graph.graph__new();
     (function() {
@@ -41,11 +42,15 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 			background : 'rgba(255,255,255,1)'
 		    }
 		},
-		font  : {color : 'rgba(0,0,0,1)'},
-		fixed : true,
-		x     : 0,
-		y     : (((emotion_machine_layers.length - 1) * emotion_machine_layer__height) - (index * emotion_machine_layer__height))
+		font  : {color : 'rgba(0,0,0,1)'}
 	    };
+	    if (emotion_machine_layers__pin) {
+		sals.vis.object__soft_merge_recursive(emotion_machine_layer__node__vis_node, {
+		    fixed : true,
+		    x     : 0,
+		    y     : (((emotion_machine_layers.length - 1) * emotion_machine_layer__height) - (index * emotion_machine_layer__height))
+		});
+	    }
 	    emotion_machine_layer__node["vis_node"] = emotion_machine_layer__node__vis_node;
 	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
 	    sals.graph.graph__add_node(graph, emotion_machine_layer__node);
@@ -76,12 +81,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    sals.graph.graph__add_node(graph, market__node);
 	}
     })();
-    var node_a = sals.graph.graph_node__new("A");
-    sals.graph.graph__add_node(graph, node_a);
-    var node_b = sals.graph.graph_node__new("B");
-    sals.graph.graph__add_node(graph, node_b);
-    var edge_c_a_b = sals.graph.graph_edge__new("C", node_a, node_b);
-    sals.graph.graph__add_edge(graph, edge_c_a_b);
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
