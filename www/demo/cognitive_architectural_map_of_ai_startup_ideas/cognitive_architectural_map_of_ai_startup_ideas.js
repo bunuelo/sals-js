@@ -135,12 +135,22 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     (function() {
 	for(var index = 0; index < edges.length; index ++) {
 	    var edge       = edges[index];
-	    var edge__subject             = edge[0];
-	    var edge__subject__graph_node = node_concept_map[edge__subject];
-	    var edge__relation            = edge[1];
-	    var edge__object              = edge[2];
-	    var edge__object__graph_node  = node_concept_map[edge__object];
-	    var edge__graph_edge          = sals.graph.graph_edge__new(edge__relation, edge__subject__graph_node, edge__object__graph_node);
+	    var edge__subject              = edge[0];
+	    var edge__subject__graph_node  = node_concept_map[edge__subject];
+	    var edge__relation             = edge[1];
+	    var edge__object               = edge[2];
+	    var edge__object__graph_node   = node_concept_map[edge__object];
+	    var edge__graph_edge           = sals.graph.graph_edge__new(edge__relation, edge__subject__graph_node, edge__object__graph_node);
+	    var edge__graph_edge__vis_edge = {
+		color  : {
+		    color     : "rgba(0,0,0,1)",
+		    highlight : "rgba(0,0,0,1)",
+		    hover     : "rgba(0,0,0,1)",
+		},
+		font   : {color : "rgba(0,0,0,1)"},
+		length : 400
+	    };
+	    edge__graph_edge["vis_edge"] = edge__graph_edge__vis_edge;
 	    sals.graph.graph__add_edge(graph, edge__graph_edge);
 	}
     })();
