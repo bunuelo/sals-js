@@ -6,6 +6,61 @@ if (typeof(sals["demo"]) == "undefined") {
 
 sals.demo.ai_startup_idea = {};
 
+sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, relationship, x0, y0, x1, y1, concepts) {
+    var concept__height = 400;
+    var concepts__pin = true;
+    var node_concept_map = {};
+    (function() {
+	for (var index = 0; index < concepts.length; index ++) {
+	    var concept                 = concepts[index];
+	    var concept__node           = sals.graph.graph_node__new(concept);
+	    var concept__node__vis_node = {
+		color  : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)',
+		    highlight  : {
+			border     : 'rgba(0,0,0,1)',
+			background : 'rgba(255,255,255,1)'
+		    },
+		    hover : {
+			border     : 'rgba(0,0,0,1)',
+			background : 'rgba(255,255,255,1)'
+		    }
+		},
+		font  : {color : 'rgba(0,0,0,1)'}
+	    };
+	    if (concepts__pin) {
+		sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
+		    fixed : true,
+		    x     : 0,
+		    y     : (((concepts.length - 1) * concept__height) - (index * concept__height))
+		});
+	    }
+	    concept__node["vis_node"] = concept__node__vis_node;
+	    node_concept_map[concept] = concept__node;
+	    sals.graph.graph__add_node(graph, concept__node);
+	}
+	for (var index = 0; index < concepts.length - 1; index ++) {
+	    var lower_concept       = concepts[index];
+	    var lower_concept__node = node_concept_map[lower_concept];
+	    var upper_concept       = concepts[index + 1];
+	    var upper_concept__node = node_concept_map[upper_concept];
+	    var edge                              = sals.graph.graph_edge__new("Up One\nEmotion Machine Layer", lower_concept__node, upper_concept__node);
+	    var edge__vis_edge                    = {
+		color  : {
+		    color     : "rgba(0,0,0,1)",
+		    highlight : "rgba(0,0,0,1)",
+		    hover     : "rgba(0,0,0,1)",
+		},
+		font   : {color : "rgba(0,0,0,1)"},
+		length : concept__height
+	    };
+	    edge["vis_edge"] = edge__vis_edge;
+	    sals.graph.graph__add_edge(graph, edge);
+	}
+    })();
+};
+
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var markets = [
 	"Cloud Service\nProduct Market",
@@ -25,55 +80,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var emotion_machine_layers__pin = true;
     var node_emotion_machine_layer_map = {};
     var graph = sals.graph.graph__new();
-    (function() {
-	for (var index = 0; index < emotion_machine_layers.length; index ++) {
-	    var emotion_machine_layer                 = emotion_machine_layers[index];
-	    var emotion_machine_layer__node           = sals.graph.graph_node__new(emotion_machine_layer);
-	    var emotion_machine_layer__node__vis_node = {
-		color  : {
-		    border     : 'rgba(0,0,0,1)',
-		    background : 'rgba(255,255,255,1)',
-		    highlight  : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)'
-		    },
-		    hover : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)'
-		    }
-		},
-		font  : {color : 'rgba(0,0,0,1)'}
-	    };
-	    if (emotion_machine_layers__pin) {
-		sals.vis.object__soft_merge_recursive(emotion_machine_layer__node__vis_node, {
-		    fixed : true,
-		    x     : 0,
-		    y     : (((emotion_machine_layers.length - 1) * emotion_machine_layer__height) - (index * emotion_machine_layer__height))
-		});
-	    }
-	    emotion_machine_layer__node["vis_node"] = emotion_machine_layer__node__vis_node;
-	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
-	    sals.graph.graph__add_node(graph, emotion_machine_layer__node);
-	}
-	for (var index = 0; index < emotion_machine_layers.length - 1; index ++) {
-	    var lower_emotion_machine_layer       = emotion_machine_layers[index];
-	    var lower_emotion_machine_layer__node = node_emotion_machine_layer_map[lower_emotion_machine_layer];
-	    var upper_emotion_machine_layer       = emotion_machine_layers[index + 1];
-	    var upper_emotion_machine_layer__node = node_emotion_machine_layer_map[upper_emotion_machine_layer];
-	    var edge                              = sals.graph.graph_edge__new("Up One\nEmotion Machine Layer", lower_emotion_machine_layer__node, upper_emotion_machine_layer__node);
-	    var edge__vis_edge                    = {
-		color  : {
-		    color     : "rgba(0,0,0,1)",
-		    highlight : "rgba(0,0,0,1)",
-		    hover     : "rgba(0,0,0,1)",
-		},
-		font   : {color : "rgba(0,0,0,1)"},
-		length : emotion_machine_layer__height
-	    };
-	    edge["vis_edge"] = edge__vis_edge;
-	    sals.graph.graph__add_edge(graph, edge);
-	}
-    })();
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer", 0, 0, 0, (emotion_machine_layers.length * 400), emotion_machine_layers);
     (function() {
 	for (var index = 0; index < markets.length; index ++) {
 	    var market       = markets[index];
