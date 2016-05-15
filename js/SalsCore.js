@@ -4,21 +4,21 @@ sals.core = {};
 
 console.log("Loading SalsCore.js");
 
-sals.core.source_file_names = ["scripts/SalsPrimitive.js",
-			       "scripts/SalsFrame.js",
-			       "scripts/SalsObject.js",
-			       "scripts/SalsObjectRegistry.js",
-			       "scripts/SalsFrameArray.js",
-			       "scripts/SalsCons.js",
-			       "scripts/SalsLogic.js",
-			       "scripts/SalsGraph.js",
-			       "scripts/SalsPlanner.js",
-			       "scripts/SalsHashMatrix.js",
-			       "scripts/SalsMachine.js",
-			       "scripts/SalsVis.js",
-			       "scripts/SalsThree.js",
-			       "scripts/SalsGo.js",
-			       "scripts/SalsRender.js"];
+sals.core.source_file_names = ["/scripts/SalsPrimitive.js",
+			       "/scripts/SalsFrame.js",
+			       "/scripts/SalsObject.js",
+			       "/scripts/SalsObjectRegistry.js",
+			       "/scripts/SalsFrameArray.js",
+			       "/scripts/SalsCons.js",
+			       "/scripts/SalsLogic.js",
+			       "/scripts/SalsGraph.js",
+			       "/scripts/SalsPlanner.js",
+			       "/scripts/SalsHashMatrix.js",
+			       "/scripts/SalsMachine.js",
+			       "/scripts/SalsVis.js",
+			       "/scripts/SalsThree.js",
+			       "/scripts/SalsGo.js",
+			       "/scripts/SalsRender.js"];
 
 sals.core.total_load_count = 0;
 
@@ -40,7 +40,7 @@ sals.core.throw_new_error = function(message) {
 };
 
 sals.core.error_loading = function() {
-    var script_file_name = window.sals_source_file_names[sals.core.total_load_count];
+    var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
     console.log("Error loading " + script_file_name); 
 };
 
