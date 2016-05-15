@@ -14,7 +14,19 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	    id    : graph__node__uid,
 	    label : graph__node__label,
 	    shape : "ellipse",
-	    color : "rgba(255,255,255,1)"
+	    color : {
+		border     : 'rgba(0,0,0,1)',
+		background : 'rgba(255,255,255,1)',
+		highlight  : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)'
+		},
+		hover : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)'
+		}
+	    },
+	    font : {color : 'rgba(0,0,0,1)'}
 	};
 	vis_nodes_array.push(vis_node);
     });
