@@ -10,7 +10,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     sals.frame.frame__foreach_key(graph__nodes, function(graph__node__uid) {
 	var graph__node        = sals.frame.frame__get_element(graph__nodes, graph__node__uid);
 	var graph__node__label = sals.graph.graph_node__label(graph__node);
-	var vis_node           = graph_node["vis_node"];
+	var vis_node           = graph__node["vis_node"];
 	if (typeof(vis_node) == "undefined") {
 	    vis_node = {
 		id    : graph__node__uid,
