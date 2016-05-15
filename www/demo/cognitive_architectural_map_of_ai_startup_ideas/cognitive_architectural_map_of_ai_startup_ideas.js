@@ -22,7 +22,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Emotion Machine\nSelf-Reflective Layer",
 	"Emotion Machine\nSelf-Conscious Layer"
     ];
-    var emotion_machine_layers__pin = true;
+    var emotion_machine_layers__pin = false;
     var node_emotion_machine_layer_map = {};
     var graph = sals.graph.graph__new();
     (function() {
