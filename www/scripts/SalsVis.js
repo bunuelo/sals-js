@@ -77,16 +77,26 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 };
 
 sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
-    var self      = document.createElement("div");
+    var self                   = document.createElement("div");
     self.style.backgroundColor = "#000000";
-    self.style.width = width + "px";
-    self.style.height = height + "px";
+    self.style.width           = width + "px";
+    self.style.height          = height + "px";
     (function() {
-	var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
-	vis_graph.style.position = "absolute";
-	vis_graph.style.left = 1+'px';
-	vis_graph.style.top = 1+'px';
-	self.appendChild(vis_graph);
+	var white_rectangle                   = document.createElement("div");
+	white_rectangle.style.backgroundColor = "#ffffff";
+	white_rectangle.style.width           = (width - 2) + "px";
+	white_rectangle.style.height          = (height - 2) + "px";
+	white_rectangle.style.position        = "absolute";
+	white_rectangle.style.left            = 1+'px';
+	white_rectangle.style.top             = 1+'px';
+	self.appendChild(white_rectangle);
+	(function() {
+	    var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
+	    //vis_graph.style.position = "absolute";
+	    //vis_graph.style.left = 1+'px';
+	    //vis_graph.style.top = 1+'px';
+	    white_rectangle.appendChild(vis_graph);
+	})();
     })();
     return self;
 };
