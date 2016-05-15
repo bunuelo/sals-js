@@ -7,7 +7,20 @@ if (typeof(sals["demo"]) == "undefined") {
 sals.demo.ai_startup_idea = {};
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
-    var graph = sals.graph.graph__new();
+    var markets = [
+	"Cloud Service",
+	"Education",
+	"Medicine",
+	"Consumer Products",
+    ];
+    (function() {
+	for (var index = 0; index < markets.length; index ++) {
+	    var market       = markets[index];
+	    var market__node = sals.graph.graph_node__new(market);
+	    sals.graph.graph__add_node(graph, market__node);
+	}
+    })();
+    var graph  = sals.graph.graph__new();
     var node_a = sals.graph.graph_node__new("A");
     sals.graph.graph__add_node(graph, node_a);
     var node_b = sals.graph.graph_node__new("B");
