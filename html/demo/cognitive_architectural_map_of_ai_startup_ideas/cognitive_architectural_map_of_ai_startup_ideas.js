@@ -105,19 +105,25 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	computer_science_field,
 	artificial_intelligence_field
     ];
-    var neural_network_technology          = "Neural Network\nTechnology";
-    var deep_learning_technology           = "Deep Learning\nTechnology";
-    var forward_planning_technology        = "Forward Planning\nTechnology";
-    var probabilistic_reasoning_technology = "Probabilistic Reasoning\nTechnology";
+    var neural_network_technology               = "Neural Network\nTechnology";
+    var deep_learning_technology                = "Deep Learning\nTechnology";
+    var recurrent_neural_network_technology     = "Recurrent Neural Network\nTechnology";
+    var convolutional_neural_network_technology = "Convolutional Neural Network\nTechnology";
+    var forward_planning_technology             = "Forward Planning\nTechnology";
+    var probabilistic_reasoning_technology      = "Probabilistic Reasoning\nTechnology";
     var technologies = [
 	neural_network_technology,
 	deep_learning_technology,
+	recurrent_neural_network_technology,
+	convolutional_neural_network_technology,
 	forward_planning_technology,
 	probabilistic_reasoning_technology
     ];
     var subtechnology_relationship = "subtechnology";
     var edges = [
 	[neural_network_technology, subtechnology_relationship, deep_learning_technology]
+	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology]
+	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology]
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
@@ -148,7 +154,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		    hover     : "rgba(0,0,0,1)",
 		},
 		font   : {color : "rgba(0,0,0,1)"},
-		length : 400
+		length : 200
 	    };
 	    edge__graph_edge["vis_edge"] = edge__graph_edge__vis_edge;
 	    sals.graph.graph__add_edge(graph, edge__graph_edge);
