@@ -77,21 +77,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 };
 
 sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
-    var dom_element = document.createElement("div");
-    dom_element.style.background = "#000000";
-    dom_element.style.width      = "" + width  + "px";
-    dom_element.style.height     = "" + height + "px";
-    var background_dom_element = document.createElement("div");
-    background_dom_element.style.left       = "" + 1 + "px";
-    background_dom_element.style.top        = "" + 1 + "px";
-    background_dom_element.style.background = "#ffffff";
-    background_dom_element.style.width      = "" + (width  - 2)  + "px";
-    background_dom_element.style.height     = "" + (height - 2) + "px";
-    dom_element.appendChild(background_dom_element);
-    var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
-    vis_graph.offsetLeft = 0;
-    vis_graph.offsetTop  = 0;
-    background_dom_element.appendChild(vis_graph);
+    var dom_element = sals.vis.vis_graph__new(width, height, graph);
     return dom_element;
 };
 
