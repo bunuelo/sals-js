@@ -90,6 +90,13 @@ sals.frame.frame__get_meta_element = function(self, key) {
     return self["__meta__"][key];
 };
 
+sals.frame.frame__try_get_element = function(self, key) {
+    if (! (self.hasOwnProperty(key))) {
+	return null;
+    }
+    return self[key];
+};
+
 sals.frame.frame__get_element = function(self, key) {
     if (! (self.hasOwnProperty(key))) {
 	throw new Error("sals.frame.frame__get_element ERROR: self does not contain key (" + key + ").");
