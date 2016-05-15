@@ -92,9 +92,9 @@ sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
 	self.appendChild(white_rectangle);
 	(function() {
 	    var vis_graph = sals.vis.vis_graph__new(width - 64, height - 64, graph);
-	    //vis_graph.style.position = "absolute";
-	    //vis_graph.style.left = 1+'px';
-	    //vis_graph.style.top = 1+'px';
+	    vis_graph.style.position = "absolute";
+	    vis_graph.style.left = 0+'px';
+	    vis_graph.style.top = 0+'px';
 	    white_rectangle.appendChild(vis_graph);
 	})();
     })();
