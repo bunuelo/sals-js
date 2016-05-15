@@ -77,6 +77,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 };
 
 sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
+    var border                 = 1;
     var self                   = document.createElement("div");
     self.style.backgroundColor = "#000000";
     self.style.width           = width + "px";
@@ -85,18 +86,18 @@ sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
 	var white_rectangle                   = document.createElement("div");
 	white_rectangle.style.backgroundColor = "#ffffff";
 	white_rectangle.style.position        = "absolute";
-	white_rectangle.style.left            = 8+32+'px';
-	white_rectangle.style.top             = 8+32+'px';
-	white_rectangle.style.width           = (width - 64) + "px";
-	white_rectangle.style.height          = (height - 64) + "px";
+	white_rectangle.style.left            = 8+border+'px';
+	white_rectangle.style.top             = 8+border+'px';
+	white_rectangle.style.width           = (width - (border * 2)) + "px";
+	white_rectangle.style.height          = (height - (border * 2)) + "px";
 	self.appendChild(white_rectangle);
 	(function() {
-	    var vis_graph = sals.vis.vis_graph__new(width - 64, height - 64, graph);
+	    var vis_graph = sals.vis.vis_graph__new(width - (border * 2), height - (border * 2), graph);
 	    vis_graph.style.position = "absolute";
 	    vis_graph.style.left     = 0 + "px";
 	    vis_graph.style.top      = 0 + "px";
-	    vis_graph.style.width    = (width - 64) + "px";
-	    vis_graph.style.height   = (height - 64) + "px";
+	    vis_graph.style.width    = (width - (border * 2)) + "px";
+	    vis_graph.style.height   = (height - (border * 2)) + "px";
 	    white_rectangle.appendChild(vis_graph);
 	})();
     })();
