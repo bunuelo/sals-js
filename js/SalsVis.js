@@ -10,25 +10,28 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     sals.frame.frame__foreach_key(graph__nodes, function(graph__node__uid) {
 	var graph__node        = sals.frame.frame__get_element(graph__nodes, graph__node__uid);
 	var graph__node__label = sals.graph.graph_node__label(graph__node);
-	var vis_node           = {
-	    id    : graph__node__uid,
-	    label : graph__node__label,
-	    shape : "ellipse",
-	    color : {
-		border     : 'rgba(0,0,0,1)',
-		background : 'rgba(255,255,255,1)',
-		highlight  : {
+	var vis_node           = graph_node["vis_node"];
+	if (typeof(vis_node) == "undefined") {
+	    vis_node = {
+		id    : graph__node__uid,
+		label : graph__node__label,
+		shape : "ellipse",
+		color : {
 		    border     : 'rgba(0,0,0,1)',
-		    background : 'rgba(255,255,255,1)'
+		    background : 'rgba(255,255,255,1)',
+		    highlight  : {
+			border     : 'rgba(0,0,0,1)',
+			background : 'rgba(255,255,255,1)'
+		    },
+		    hover : {
+			border     : 'rgba(0,0,0,1)',
+			background : 'rgba(255,255,255,1)'
+		    }
 		},
-		hover : {
-		    border     : 'rgba(0,0,0,1)',
-		    background : 'rgba(255,255,255,1)'
-		}
-	    },
-	    font : {color : 'rgba(0,0,0,1)',
-		    face  : "Times New Roman"}
-	};
+		font : {color : 'rgba(0,0,0,1)',
+			face  : "Times New Roman"}
+	    };
+	}
 	vis_nodes_array.push(vis_node);
     });
     
@@ -39,20 +42,23 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var graph__edge__from_node__uid = sals.frame.frame__uid(graph__edge__from_node);
 	var graph__edge__to_node        = sals.graph.graph_edge__to_node(graph__edge);
 	var graph__edge__to_node__uid   = sals.frame.frame__uid(graph__edge__to_node);
-	var vis_edge = {
-	    from   : graph__edge__from_node__uid,
-	    to     : graph__edge__to_node__uid,
-	    label  : graph__edge__label,
-	    arrows : "to",
-	    color  : {
-		color     : "rgba(0,0,0,1)",
-		highlight : "rgba(0,0,0,1)",
-		hover     : "rgba(0,0,0,1)",
-	    },
-	    font   : {color : "rgba(0,0,0,1)",
-		      face  : "Times New Roman"},
-	    length : 200
-	};
+	var vis_edge                    = graph__edge["vis_edge"];
+	if (typeof(vis_edge) == "undefined") {
+	    vis_edge = {
+		from   : graph__edge__from_node__uid,
+		to     : graph__edge__to_node__uid,
+		label  : graph__edge__label,
+		arrows : "to",
+		color  : {
+		    color     : "rgba(0,0,0,1)",
+		    highlight : "rgba(0,0,0,1)",
+		    hover     : "rgba(0,0,0,1)",
+		},
+		font   : {color : "rgba(0,0,0,1)",
+			  face  : "Times New Roman"},
+		length : 200
+	    };
+	}
 	vis_edges_array.push(vis_edge);
     });
     
