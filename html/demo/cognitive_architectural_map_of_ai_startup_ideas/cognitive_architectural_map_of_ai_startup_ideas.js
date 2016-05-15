@@ -28,23 +28,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var emotion_machine_layer = emotion_machine_layers[index];
 	    var emotion_machine_layer__node = sals.graph.graph_node__new(emotion_machine_layer);
 	    var emotion_machine_layer__node__vis_node = {
-		id    : graph__node__uid,
-		label : graph__node__label,
-		shape : "ellipse",
-		color : {
-		    border     : 'rgba(0,0,0,1)',
-		    background : 'rgba(255,255,255,1)',
-		    highlight  : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)'
-		    },
-		    hover : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)'
-		    }
-		},
-		font : {color : 'rgba(255,0,0,1)',
-			face  : "Times New Roman"}
+		font : {color : 'rgba(255,0,0,1)'}
 	    };
 	    emotion_machine_layer__node["vis_node"] = emotion_machine_layer__node__vis_node;
 	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
