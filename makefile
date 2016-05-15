@@ -57,12 +57,12 @@ compile-webpage:
 	mkdir -p ./www/scripts/
 	mkdir -p ./www/scripts/third-party/
 	mkdir -p ./www/images/
-	cp ./html/* ./www/
-	cp ./js/* ./www/scripts/
-	cp ./js/third-party/* ./www/scripts/third-party
-	cp ./images/go_stone_white.png ./www/images/
-	cp ./images/go_stone_black.png ./www/images/
-	cp ./images/go_empty_cell.png ./www/images/
+	cp -af ./html/* ./www/
+	cp -af ./js/* ./www/scripts/
+	cp -af ./js/third-party/* ./www/scripts/third-party
+	cp -af ./images/go_stone_white.png ./www/images/
+	cp -af ./images/go_stone_black.png ./www/images/
+	cp -af ./images/go_empty_cell.png ./www/images/
 	chmod -R a+rx ./www/
 
 upload-webpage: compile-webpage
