@@ -85,13 +85,13 @@ sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
 	var white_rectangle                   = document.createElement("div");
 	white_rectangle.style.backgroundColor = "#ffffff";
 	white_rectangle.style.position        = "absolute";
-	white_rectangle.style.left            = 1+'px';
-	white_rectangle.style.top             = 1+'px';
-	white_rectangle.style.width           = (width - 2) + "px";
-	white_rectangle.style.height          = (height - 2) + "px";
+	white_rectangle.style.left            = 10+'px';
+	white_rectangle.style.top             = 10+'px';
+	white_rectangle.style.width           = (width - 20) + "px";
+	white_rectangle.style.height          = (height - 20) + "px";
 	self.appendChild(white_rectangle);
 	(function() {
-	    var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
+	    var vis_graph = sals.vis.vis_graph__new(width - 40, height - 40, graph);
 	    //vis_graph.style.position = "absolute";
 	    //vis_graph.style.left = 1+'px';
 	    //vis_graph.style.top = 1+'px';
