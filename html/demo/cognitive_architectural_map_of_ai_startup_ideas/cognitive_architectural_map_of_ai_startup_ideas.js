@@ -121,7 +121,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     (function() {
 	for(var index = 0; index < technologies.length; index ++) {
 	    var technology       = technologies[index];
-	    var technology__node = sals.graph.new_node(technology);
+	    var technology__node = sals.graph.new_graph_node(technology);
 	    sals.graph.graph__add_node(graph, technology__node);
 	}
     })();
