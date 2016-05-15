@@ -13,7 +13,22 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Medicine",
 	"Consumer Products",
     ];
+    var emotion_machine_layers = [
+	"Built-In Reactive",
+	"Learned Reactive",
+	"Deliberative",
+	"Reflective",
+	"Self-Reflective",
+	"Self-Conscious"
+    ];
     var graph = sals.graph.graph__new();
+    (function() {
+	for (var index = 0; index < emotion_machine_layers.length; index ++) {
+	    var emotion_machine_layer = emotion_machine_layers[index];
+	    var emotion_machine_layer__node = sals.graph.graph_node__new(emotion_machine_layer);
+	    sals.graph.graph__add_node(graph, emotion_machine_layer__node);
+	}
+    })();
     (function() {
 	for (var index = 0; index < markets.length; index ++) {
 	    var market       = markets[index];
