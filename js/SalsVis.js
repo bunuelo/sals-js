@@ -85,8 +85,8 @@ sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
 	var white_rectangle                   = document.createElement("div");
 	white_rectangle.style.backgroundColor = "#ffffff";
 	white_rectangle.style.position        = "absolute";
-	white_rectangle.style.left            = 32+'px';
-	white_rectangle.style.top             = 32+'px';
+	white_rectangle.style.left            = 16+32+'px';
+	white_rectangle.style.top             = 16+32+'px';
 	white_rectangle.style.width           = (width - 64) + "px";
 	white_rectangle.style.height          = (height - 64) + "px";
 	self.appendChild(white_rectangle);
