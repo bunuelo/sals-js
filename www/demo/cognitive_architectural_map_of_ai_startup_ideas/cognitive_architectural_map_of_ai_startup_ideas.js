@@ -6,10 +6,9 @@ if (typeof(sals["demo"]) == "undefined") {
 
 sals.demo.ai_startup_idea = {};
 
-sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, relationship, x0, y0, x1, y1, concepts) {
+sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, node_concept_map, relationship, x0, y0, x1, y1, concepts) {
     var concept__height = 400;
     var concepts__pin = true;
-    var node_concept_map = {};
     (function() {
 	for (var index = 0; index < concepts.length; index ++) {
 	    var x                       = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
@@ -107,22 +106,42 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	artificial_intelligence_field
     ];
     var neural_network_technology          = "Neural Network\nTechnology";
+    var deep_learning_technology           = "Deep Learning\nTechnology";
     var forward_planning_technology        = "Forward Planning\nTechnology";
     var probabilistic_reasoning_technology = "Probabilistic Reasoning\nTechnology";
     var technologies = [
 	neural_network_technology,
+	deep_learning_technology,
 	forward_planning_technology,
 	probabilistic_reasoning_technology
     ];
-    var graph = sals.graph.graph__new();
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine\nLayer",    0, 2000,    0,    0, layers);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                                0,    0, 2000,    0, fields);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                             2000,    0, 2000, 2000, markets);
+    var subtechnology_relationship = "subtechnology";
+    var edges = [
+	[neural_network_technology, subtechnology_relationship, deep_learning_technology]
+    ];
+    var node_concept_map = {};
+    var graph            = sals.graph.graph__new();
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, "Up One\nEmotion Machine\nLayer",    0, 2000,    0,    0, layers);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                                0,    0, 2000,    0, fields);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                             2000,    0, 2000, 2000, markets);
     (function() {
 	for(var index = 0; index < technologies.length; index ++) {
 	    var technology       = technologies[index];
 	    var technology__node = sals.graph.graph_node__new(technology);
 	    sals.graph.graph__add_node(graph, technology__node);
+	    node_concept_map[technology] = technology__node;
+	}
+    })();
+    (function() {
+	for(var index = 0; index < edges.length; index ++) {
+	    var edge       = edges[index];
+	    var edge__subject             = edge[0];
+	    var edge__subject__graph_node = node_concept_map[edge__subject];
+	    var edge__relation            = edge[1];
+	    var edge__object              = edge[2];
+	    var edge__object__graph_node  = node_concept_map[edge__object];
+	    var edge__graph_edge          = sals.graph.graph_edge__new(edge__relation, edge__subject__graph_node, edge__object__graph_node);
+	    sals.graph.graph__add_edge(graph, technology__node);
 	}
     })();
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
