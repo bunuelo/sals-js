@@ -82,11 +82,11 @@ sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
     self.style.width = width + "px";
     self.style.height = height + "px";
     (function() {
-	//var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
-	//vis_graph.style.position = "absolute";
-	//vis_graph.style.left = 1+'px';
-	//vis_graph.style.top = 1+'px';
-	//self.appendChild(vis_graph);
+	var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
+	vis_graph.style.position = "absolute";
+	vis_graph.style.left = 1+'px';
+	vis_graph.style.top = 1+'px';
+	self.appendChild(vis_graph);
     })();
     return self;
 };
