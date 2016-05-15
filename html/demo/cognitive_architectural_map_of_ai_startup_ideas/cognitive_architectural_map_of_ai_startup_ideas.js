@@ -78,9 +78,19 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Emotion Machine\nSelf-Reflective Layer",
 	"Emotion Machine\nSelf-Conscious Layer"
     ];
+    var cognitive_sciences = [
+	"Cognitive Science\nAnthropology Field",
+	"Cognitive Science\nNeuroscience Field",
+	"Cognitive Science\nPsychology Field",
+	"Cognitive Science\nLinguistics Field",
+	"Cognitive Science\nPhilosophy Field",
+	"Cognitive Science\nComputer Science Field",
+	"Cognitive Science\nArtificial Intelligence Field"
+    ];
     var graph = sals.graph.graph__new();
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer",    0, 0,    0, (emotion_machine_layers.length * 400), emotion_machine_layers);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Product Market",           1000, 0, 1000,                (markets.length * 400), markets);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer",    0, 2000,    0,    0, emotion_machine_layers);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Cognitive Science",           0,    0, 2000,    0, cognitive_sciences);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Product Market",           2000,    0, 2000, 2000, markets);
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
