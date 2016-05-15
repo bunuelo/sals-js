@@ -54,12 +54,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var edge                              = sals.graph.graph_edge__new("Up One\nEmotion Machine Layer", lower_emotion_machine_layer__node, upper_emotion_machine_layer__node);
 	    var edge__vis_edge                    = {
 		color  : {
-		    color     : "rgba(0,255,0,1)",
+		    color     : "rgba(0,0,0,1)",
 		    highlight : "rgba(0,0,0,1)",
 		    hover     : "rgba(0,0,0,1)",
 		},
 		font   : {color : "rgba(0,0,0,1)"},
-		length : 400
+		length : 200
 	    };
 	    edge["vis_edge"] = edge__vis_edge;
 	    sals.graph.graph__add_edge(graph, edge);
