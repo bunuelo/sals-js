@@ -12,8 +12,8 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, relationship
     var node_concept_map = {};
     (function() {
 	for (var index = 0; index < concepts.length; index ++) {
-	    var x                       = x0 + (x1 - x0) * index / (concepts.length - 1);
-	    var y                       = y0 + (y1 - y0) * index / (concepts.length - 1);
+	    var x                       = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
+	    var y                       = y0 + (y1 - y0) * (index + 1) / (concepts.length + 1);
 	    var concept                 = concepts[index];
 	    var concept__node           = sals.graph.graph_node__new(concept);
 	    var concept__node__vis_node = {
