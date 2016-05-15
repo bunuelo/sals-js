@@ -25,10 +25,22 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var graph = sals.graph.graph__new();
     (function() {
 	for (var index = 0; index < emotion_machine_layers.length; index ++) {
-	    var emotion_machine_layer = emotion_machine_layers[index];
-	    var emotion_machine_layer__node = sals.graph.graph_node__new(emotion_machine_layer);
+	    var emotion_machine_layer                 = emotion_machine_layers[index];
+	    var emotion_machine_layer__node           = sals.graph.graph_node__new(emotion_machine_layer);
 	    var emotion_machine_layer__node__vis_node = {
-		font : {color : 'rgba(255,0,0,1)'}
+		color : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)',
+		    highlight  : {
+			border     : 'rgba(0,0,0,1)',
+			background : 'rgba(255,255,255,1)'
+		    },
+		    hover : {
+			border     : 'rgba(0,0,0,1)',
+			background : 'rgba(255,255,255,1)'
+		    }
+		},
+		font : {color : 'rgba(0,0,0,1)'}
 	    };
 	    emotion_machine_layer__node["vis_node"] = emotion_machine_layer__node__vis_node;
 	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
@@ -40,6 +52,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var upper_emotion_machine_layer       = emotion_machine_layers[index + 1];
 	    var upper_emotion_machine_layer__node = node_emotion_machine_layer_map[upper_emotion_machine_layer];
 	    var edge                              = sals.graph.graph_edge__new("Up One\nEmotion Machine Layer", lower_emotion_machine_layer__node, upper_emotion_machine_layer__node);
+	    var edge__vis_edge                    = {
+		color  : {
+		    color     : "rgba(0,255,0,1)",
+		    highlight : "rgba(0,0,0,1)",
+		    hover     : "rgba(0,0,0,1)",
+		},
+		font   : {color : "rgba(0,0,0,1)"},
+		length : 400
+	    };
+	    edge["vis_edge"] = edge__vis_edge;
 	    sals.graph.graph__add_edge(graph, edge);
 	}
     })();
