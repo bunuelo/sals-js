@@ -80,6 +80,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var graph = sals.graph.graph__new();
     sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer", 0, 0, 0, (emotion_machine_layers.length * 400), emotion_machine_layers);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Product Market", 1000, 0, 1000, (emotion_machine_layers.length * 400), markets);
     (function() {
 	for (var index = 0; index < markets.length; index ++) {
 	    var market       = markets[index];
