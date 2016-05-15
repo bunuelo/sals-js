@@ -62,7 +62,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		    hover     : "rgba(0,0,0,1)",
 		},
 		font   : {color : "rgba(0,0,0,1)"},
-		length : 200
+		length : 400
 	    };
 	    edge["vis_edge"] = edge__vis_edge;
 	    sals.graph.graph__add_edge(graph, edge);
