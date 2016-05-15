@@ -1,5 +1,9 @@
 console.log("Loading cognitive_architectural_map_of_ai_startup_ideas.js");
 
+if (typeof(sals["demo"]) == "undefined") {
+    sals.demo = {};
+}
+
 sals.demo.ai_startup_idea = {};
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
