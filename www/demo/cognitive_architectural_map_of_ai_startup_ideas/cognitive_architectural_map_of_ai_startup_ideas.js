@@ -8,10 +8,10 @@ sals.demo.ai_startup_idea = {};
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var markets = [
-	"Cloud Service",
-	"Education",
-	"Medicine",
-	"Consumer Products",
+	"Cloud Service Product Market",
+	"Education Product Market",
+	"Medicine Product Market",
+	"Consumer Product Market",
     ];
     var emotion_machine_layers = [
 	"Emotion Machine\nBuilt-In Reactive Layer",
