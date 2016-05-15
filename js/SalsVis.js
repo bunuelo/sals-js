@@ -78,6 +78,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 
 sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
     var self      = document.createElement("div");
+    self.style.backgroundColor = "#000000";
     var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
     vis_graph.style.position = "absolute";
     vis_graph.style.left = 1+'px';
