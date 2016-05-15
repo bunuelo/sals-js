@@ -26,8 +26,6 @@ sals.vis.object__soft_merge_recursive = function(destination, source) {
 	    // Property in destination object set; update its value.
 	    if ( source[key].constructor==Object ) {
 		destination[key] = sals.vis.object__soft_merge_recursive(destination[key], source[key]);
-	    } else {
-		destination[key] = source[key];
 	    }
 	} catch(e) {
 	    // Property in destination object not set; create it and set its value.
