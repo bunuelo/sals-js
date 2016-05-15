@@ -66,28 +66,45 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, relationship
 };
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
+    var cloud_service_product_market = "Cloud Service\nProduct Market";
+    var education_product_market     = "Education\nProduct Market";
+    var medicine_product_market      = "Medicine\nProduct Market";
+    var consumer_product_market      = "Consumer\nProduct Market";
     var markets = [
-	"Cloud Service\nProduct Market",
-	"Education\nProduct Market",
-	"Medicine\nProduct Market",
-	"Consumer\nProduct Market",
+	cloud_service_product_market,
+	education_product_market,
+	medicine_product_market,
+	consumer_product_market
     ];
-    var emotion_machine_layers = [
-	"Emotion Machine\nBuilt-In Reactive Layer",
-	"Emotion Machine\nLearned Reactive Layer",
-	"Emotion Machine\nDeliberative Layer",
-	"Emotion Machine\nReflective Layer",
-	"Emotion Machine\nSelf-Reflective Layer",
-	"Emotion Machine\nSelf-Conscious Layer"
+    var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer";
+    var learned_reactive_layer  = "Emotion Machine\nLearned Reactive Layer";
+    var deliberative_layer      = "Emotion Machine\nDeliberative Layer";
+    var reflective_layer        = "Emotion Machine\nReflective Layer";
+    var self_reflective_layer   = "Emotion Machine\nSelf-Reflective Layer";
+    var self_conscious_layer    = "Emotion Machine\nSelf-Conscious Layer";
+    var layers = [
+	built_in_reactive_layer,
+	learned_reactive_layer,
+	deliberative_layer,
+	reflective_layer,
+	self_reflective_layer,
+	self_conscious_layer
     ];
+    var anthropology_field            = "Cognitive Science\nAnthropology Field";
+    var neuroscience_field            = "Cognitive Science\nNeuroscience Field";
+    var psychology_field              = "Cognitive Science\nPsychology Field";
+    var linguistics_field             = "Cognitive Science\nLinguistics Field";
+    var philosophy_field              = "Cognitive Science\nPhilosophy Field";
+    var computer_science_field        = "Cognitive Science\nComputer Science Field";
+    var artificial_intelligence_field = "Cognitive Science\nArtificial Intelligence Field";
     var cognitive_sciences = [
-	"Cognitive Science\nAnthropology Field",
-	"Cognitive Science\nNeuroscience Field",
-	"Cognitive Science\nPsychology Field",
-	"Cognitive Science\nLinguistics Field",
-	"Cognitive Science\nPhilosophy Field",
-	"Cognitive Science\nComputer Science Field",
-	"Cognitive Science\nArtificial Intelligence Field"
+	anthropology_field,
+	neuroscience_field,
+	psychology_field,
+	linguistics_field,
+	philosophy_field,
+	computer_science_field,
+	artificial_intelligence_field
     ];
     var graph = sals.graph.graph__new();
     sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine\nLayer",    0, 2000,    0,    0, emotion_machine_layers);
