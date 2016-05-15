@@ -8,11 +8,11 @@ sals.vis.vis_graph__new = function(width, height, graph) {
     var vis_nodes_array = [];
     var vis_edges_array = [];
     sals.frame.frame__foreach_key(graph__nodes, function(graph__node__uid) {
-	var graph__node        = sals.frame.frame__get_element(graph__nodes, graph__node__uid);
-	var graph__node__label = sals.graph.graph_node__label(graph__node);
-	var vis_node           = graph__node["vis_node"];
-	if (typeof(vis_node) == "undefined") {
-	    vis_node = {
+	var graph__node           = sals.frame.frame__get_element(graph__nodes, graph__node__uid);
+	var graph__node__label    = sals.graph.graph_node__label(graph__node);
+	var graph__node__vis_node = graph__node["vis_node"];
+	if (typeof(graph__node__vis_node) == "undefined") {
+	    graph__node__vis_node = {
 		id    : graph__node__uid,
 		label : graph__node__label,
 		shape : "ellipse",
@@ -32,7 +32,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 			face  : "Times New Roman"}
 	    };
 	}
-	vis_nodes_array.push(vis_node);
+	vis_nodes_array.push(graph__node__vis_node);
     });
     
     sals.frame.frame__foreach_key(graph__edges, function(graph__edge__uid) {
@@ -42,9 +42,9 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var graph__edge__from_node__uid = sals.frame.frame__uid(graph__edge__from_node);
 	var graph__edge__to_node        = sals.graph.graph_edge__to_node(graph__edge);
 	var graph__edge__to_node__uid   = sals.frame.frame__uid(graph__edge__to_node);
-	var vis_edge                    = graph__edge["vis_edge"];
-	if (typeof(vis_edge) == "undefined") {
-	    vis_edge = {
+	var graph__edge__vis_edge       = graph__edge["vis_edge"];
+	if (typeof(graph__edge__vis_edge) == "undefined") {
+	    graph__edge__vis_edge = {
 		from   : graph__edge__from_node__uid,
 		to     : graph__edge__to_node__uid,
 		label  : graph__edge__label,
@@ -59,7 +59,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 		length : 200
 	    };
 	}
-	vis_edges_array.push(vis_edge);
+	vis_edges_array.push(graph__edge__vis_edge);
     });
     
     // create an array with nodes
