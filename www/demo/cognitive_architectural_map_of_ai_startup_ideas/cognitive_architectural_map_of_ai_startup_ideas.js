@@ -42,23 +42,25 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, relationship
 	    node_concept_map[concept] = concept__node;
 	    sals.graph.graph__add_node(graph, concept__node);
 	}
-	for (var index = 0; index < concepts.length - 1; index ++) {
-	    var lower_concept       = concepts[index];
-	    var lower_concept__node = node_concept_map[lower_concept];
-	    var upper_concept       = concepts[index + 1];
-	    var upper_concept__node = node_concept_map[upper_concept];
-	    var edge                              = sals.graph.graph_edge__new(relationship, lower_concept__node, upper_concept__node);
-	    var edge__vis_edge                    = {
-		color  : {
-		    color     : "rgba(0,0,0,1)",
-		    highlight : "rgba(0,0,0,1)",
-		    hover     : "rgba(0,0,0,1)",
-		},
-		font   : {color : "rgba(0,0,0,1)"},
-		length : concept__height
-	    };
-	    edge["vis_edge"] = edge__vis_edge;
-	    sals.graph.graph__add_edge(graph, edge);
+	if (relationship !== null) {
+	    for (var index = 0; index < concepts.length - 1; index ++) {
+		var lower_concept       = concepts[index];
+		var lower_concept__node = node_concept_map[lower_concept];
+		var upper_concept       = concepts[index + 1];
+		var upper_concept__node = node_concept_map[upper_concept];
+		var edge                              = sals.graph.graph_edge__new(relationship, lower_concept__node, upper_concept__node);
+		var edge__vis_edge                    = {
+		    color  : {
+			color     : "rgba(0,0,0,1)",
+			highlight : "rgba(0,0,0,1)",
+			hover     : "rgba(0,0,0,1)",
+		    },
+		    font   : {color : "rgba(0,0,0,1)"},
+		    length : concept__height
+		};
+		edge["vis_edge"] = edge__vis_edge;
+		sals.graph.graph__add_edge(graph, edge);
+	    }
 	}
     })();
 };
@@ -89,8 +91,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var graph = sals.graph.graph__new();
     sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer",    0, 2000,    0,    0, emotion_machine_layers);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Cognitive Science",           0,    0, 2000,    0, cognitive_sciences);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Next Product Market",           2000,    0, 2000, 2000, markets);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                               0,    0, 2000,    0, cognitive_sciences);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                            2000,    0, 2000, 2000, markets);
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
