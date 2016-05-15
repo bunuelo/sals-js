@@ -59,8 +59,8 @@ window.onload = function() {
     console.log("Executing window.onload");
     var success_callback = function() {
 	try {
-	    var width  = 1000;
-	    var height = 500;
+	    var width  = 640;
+	    var height = 320;
 	    var element = sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element(width, height);
 	    document.body.appendChild(element);
 	} catch (error) {
