@@ -53,10 +53,6 @@ start-editor:
 	$(TEXT_EDITOR) makefile *.md html/*.html js/*.js
 
 compile-webpage:
-	mkdir -p ./www/
-	mkdir -p ./www/scripts/
-	mkdir -p ./www/scripts/third-party/
-	mkdir -p ./www/images/
 	rm -Rf ./www/
 	mkdir -p ./www
 	cp -af ./html/* ./www/
@@ -66,6 +62,8 @@ compile-webpage:
 	rm -Rf ./www/scripts/third-party
 	mkdir -p ./www/scripts/third-party
 	cp -af ./js/third-party/* ./www/scripts/third-party
+	rm -Rf ./www/images
+	mkdir -p ./www/images/
 	cp -af ./images/go_stone_white.png ./www/images/
 	cp -af ./images/go_stone_black.png ./www/images/
 	cp -af ./images/go_empty_cell.png ./www/images/
