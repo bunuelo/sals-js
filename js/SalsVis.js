@@ -78,7 +78,10 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 
 sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
     var self      = document.createElement("div");
-    var vis_graph = sals.vis.vis_graph__new(width, height, graph);
+    var vis_graph = sals.vis.vis_graph__new(width - 2, height - 2, graph);
+    vis_graph.style.position = "absolute";
+    vis_graph.style.left = 1+'px';
+    vis_graph.style.top = 1+'px';
     self.appendChild(vis_graph);
     return self;
 };
