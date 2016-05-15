@@ -8,6 +8,7 @@ sals.demo.ai_startup_idea = {};
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var market__height = 400;
+    var graph          = sals.graph.graph__new();
     (function() {
 	var emotion_machine_layer__height = 400;
 	var emotion_machine_layers = [
