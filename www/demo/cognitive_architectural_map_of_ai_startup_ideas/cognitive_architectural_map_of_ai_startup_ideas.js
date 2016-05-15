@@ -106,10 +106,25 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	computer_science_field,
 	artificial_intelligence_field
     ];
+    var neural_network_technology          = "Neural Network\nTechnology";
+    var forward_planning_technology        = "Forward Planning\nTechnology";
+    var probabilistic_reasoning_technology = "Probabilistic Reasoning\nTechnology";
+    var technologies = [
+	neural_network_technology,
+	forward_planning_technology,
+	probabilistic_reasoning_technology
+    ];
     var graph = sals.graph.graph__new();
     sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine\nLayer",    0, 2000,    0,    0, layers);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                                0,    0, 2000,    0, fields);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                             2000,    0, 2000, 2000, markets);
+    (function() {
+	for(var index = 0; index < technologies.length; index ++) {
+	    var technology       = technologies[index];
+	    var technology__node = sals.graph.new_node(technology);
+	    sals.graph.graph__add_node(graph, technology__node);
+	}
+    })();
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
