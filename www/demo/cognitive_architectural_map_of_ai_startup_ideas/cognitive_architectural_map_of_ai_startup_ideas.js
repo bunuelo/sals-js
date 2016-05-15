@@ -21,12 +21,22 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Emotion Machine\nSelf-Reflective Layer",
 	"Emotion Machine\nSelf-Conscious Layer"
     ];
+    var node_emotion_machine_layer_map = {};
     var graph = sals.graph.graph__new();
     (function() {
 	for (var index = 0; index < emotion_machine_layers.length; index ++) {
 	    var emotion_machine_layer = emotion_machine_layers[index];
 	    var emotion_machine_layer__node = sals.graph.graph_node__new(emotion_machine_layer);
+	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
 	    sals.graph.graph__add_node(graph, emotion_machine_layer__node);
+	}
+	for (var index = 0; index < emotion_machine_layers.length - 1; index ++) {
+	    var lower_emotion_machine_layer       = emotion_machine_layers[index];
+	    var lower_emotion_machine_layer__node = node_emotion_machine_layer_map[lower_emotion_machine_layer];
+	    var upper_emotion_machine_layer       = emotion_machine_layers[index + 1];
+	    var upper_emotion_machine_layer__node = node_emotion_machine_layer_map[upper_emotion_machine_layer];
+	    var edge                              = sals.graph.graph_node__new("Up One\nEmotion Machine Layer", lower_emotion_machine_layer__node, upper_emotion_machine_layer__node);
+	    sals.graph.graph__add_edge(graph, edge);
 	}
     })();
     (function() {
