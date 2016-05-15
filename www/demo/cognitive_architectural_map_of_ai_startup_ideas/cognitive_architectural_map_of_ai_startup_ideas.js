@@ -141,7 +141,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var edge__object              = edge[2];
 	    var edge__object__graph_node  = node_concept_map[edge__object];
 	    var edge__graph_edge          = sals.graph.graph_edge__new(edge__relation, edge__subject__graph_node, edge__object__graph_node);
-	    sals.graph.graph__add_edge(graph, technology__node);
+	    sals.graph.graph__add_edge(graph, edge__graph_edge);
 	}
     })();
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
