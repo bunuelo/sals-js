@@ -28,7 +28,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var emotion_machine_layer                 = emotion_machine_layers[index];
 	    var emotion_machine_layer__node           = sals.graph.graph_node__new(emotion_machine_layer);
 	    var emotion_machine_layer__node__vis_node = {
-		color : {
+		color  : {
 		    border     : 'rgba(0,0,0,1)',
 		    background : 'rgba(255,255,255,1)',
 		    highlight  : {
@@ -40,7 +40,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 			background : 'rgba(255,255,255,1)'
 		    }
 		},
-		font : {color : 'rgba(0,0,0,1)'}
+		font  : {color : 'rgba(0,0,0,1)'}
+		fixed : true,
+		x     : 0,
+		y     : (index * 400)
 	    };
 	    emotion_machine_layer__node["vis_node"] = emotion_machine_layer__node__vis_node;
 	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
