@@ -26,7 +26,8 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 		    background : 'rgba(255,255,255,1)'
 		}
 	    },
-	    font : {color : 'rgba(0,0,0,1)'}
+	    font : {color : 'rgba(0,0,0,1)',
+		    face  : "Times New Roman"}
 	};
 	vis_nodes_array.push(vis_node);
     });
@@ -48,7 +49,8 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 		highlight : "rgba(0,0,0,1)",
 		hover     : "rgba(0,0,0,1)",
 	    },
-	    font   : {color : 'rgba(0,0,0,1)'}
+	    font   : {color : "rgba(0,0,0,1)",
+		      face  : "Times New Roman"}
 	};
 	vis_edges_array.push(vis_edge);
     });
