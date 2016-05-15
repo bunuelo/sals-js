@@ -90,9 +90,9 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	"Cognitive Science\nArtificial Intelligence Field"
     ];
     var graph = sals.graph.graph__new();
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine Layer",    0, 2000,    0,    0, emotion_machine_layers);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                               0,    0, 2000,    0, cognitive_sciences);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                            2000,    0, 2000, 2000, markets);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, "Up One\nEmotion Machine\nLayer",    0, 2000,    0,    0, emotion_machine_layers);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                                0,    0, 2000,    0, cognitive_sciences);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, null,                             2000,    0, 2000, 2000, markets);
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
