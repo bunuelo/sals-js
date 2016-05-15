@@ -121,8 +121,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var subtechnology_relationship = "subtechnology";
     var edges = [
-	[neural_network_technology, subtechnology_relationship, deep_learning_technology]
-	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology]
+	[neural_network_technology, subtechnology_relationship, deep_learning_technology],
+	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology],
 	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology]
     ];
     var node_concept_map = {};
