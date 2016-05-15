@@ -1,5 +1,42 @@
 sals.vis = {};
 
+
+// Recursively merge properties of two objects, overriding values in destination object.
+sals.vis.object__hard_merge_recursive = function(destination, source) {
+    for (var key in source) {
+	try {
+	    // Property in destination object set; update its value.
+	    if ( source[key].constructor==Object ) {
+		destination[key] = sals.vis.object__hard_merge_recursive(destination[key], source[key]);
+	    } else {
+		destination[key] = source[key];
+	    }
+	} catch(e) {
+	    // Property in destination object not set; create it and set its value.
+	    destination[key] = source[key];
+	}
+    }
+    return destination;
+}
+
+// Recursively merge properties of two objects without overriding values in destination
+sals.vis.object__soft_merge_recursive = function(destination, source) {
+    for (var key in source) {
+	try {
+	    // Property in destination object set; update its value.
+	    if ( source[key].constructor==Object ) {
+		destination[key] = sals.vis.object__soft_merge_recursive(destination[key], source[key]);
+	    } else {
+		destination[key] = source[key];
+	    }
+	} catch(e) {
+	    // Property in destination object not set; create it and set its value.
+	    destination[key] = source[key];
+	}
+    }
+    return destination;
+}
+
 // vis_graph
 
 sals.vis.vis_graph__new = function(width, height, graph) {
@@ -12,26 +49,27 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var graph__node__label    = sals.graph.graph_node__label(graph__node);
 	var graph__node__vis_node = graph__node["vis_node"];
 	if (typeof(graph__node__vis_node) == "undefined") {
-	    graph__node__vis_node = {
-		id    : graph__node__uid,
-		label : graph__node__label,
-		shape : "ellipse",
-		color : {
-		    border     : 'rgba(0,0,0,1)',
-		    background : 'rgba(255,255,255,1)',
-		    highlight  : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)'
-		    },
-		    hover : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)'
-		    }
-		},
-		font : {color : 'rgba(0,0,0,1)',
-			face  : "Times New Roman"}
-	    };
+	    graph__node__vis_node = {};
 	}
+	sals.vis.object__soft_merge_recursive(graph__node__vis_node, {
+	    id    : graph__node__uid,
+	    label : graph__node__label,
+	    shape : "ellipse",
+	    color : {
+		border     : 'rgba(0,0,0,1)',
+		background : 'rgba(255,255,255,1)',
+		highlight  : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)'
+		},
+		hover : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)'
+		}
+	    },
+	    font : {color : 'rgba(0,0,0,1)',
+		    face  : "Times New Roman"}
+	});
 	vis_nodes_array.push(graph__node__vis_node);
     });
     
@@ -44,21 +82,22 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	var graph__edge__to_node__uid   = sals.frame.frame__uid(graph__edge__to_node);
 	var graph__edge__vis_edge       = graph__edge["vis_edge"];
 	if (typeof(graph__edge__vis_edge) == "undefined") {
-	    graph__edge__vis_edge = {
-		from   : graph__edge__from_node__uid,
-		to     : graph__edge__to_node__uid,
-		label  : graph__edge__label,
-		arrows : "to",
-		color  : {
-		    color     : "rgba(0,0,0,1)",
-		    highlight : "rgba(0,0,0,1)",
-		    hover     : "rgba(0,0,0,1)",
-		},
-		font   : {color : "rgba(0,0,0,1)",
-			  face  : "Times New Roman"},
-		length : 200
-	    };
+	    graph__edge__vis_edge = {};
 	}
+	sals.vis.object__soft_merge_recursive(graph__edge__vis_edge, {
+	    from   : graph__edge__from_node__uid,
+	    to     : graph__edge__to_node__uid,
+	    label  : graph__edge__label,
+	    arrows : "to",
+	    color  : {
+		color     : "rgba(0,0,0,1)",
+		highlight : "rgba(0,0,0,1)",
+		hover     : "rgba(0,0,0,1)",
+	    },
+	    font   : {color : "rgba(0,0,0,1)",
+		      face  : "Times New Roman"},
+	    length : 200
+	});
 	vis_edges_array.push(graph__edge__vis_edge);
     });
     
