@@ -43,7 +43,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		font  : {color : 'rgba(0,0,0,1)'},
 		fixed : true,
 		x     : 0,
-		y     : (index * 400)
+		y     : (((emotion_machine_layers.length - 1) * 400) - (index * 400))
 	    };
 	    emotion_machine_layer__node["vis_node"] = emotion_machine_layer__node__vis_node;
 	    node_emotion_machine_layer_map[emotion_machine_layer] = emotion_machine_layer__node;
