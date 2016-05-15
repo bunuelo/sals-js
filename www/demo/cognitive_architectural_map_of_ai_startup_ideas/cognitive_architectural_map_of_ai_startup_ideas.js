@@ -8,7 +8,12 @@ sals.demo.ai_startup_idea = {};
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var market__height = 400;
-    var graph          = sals.graph.graph__new();
+    var markets = [
+	"Cloud Service\nProduct Market",
+	"Education\nProduct Market",
+	"Medicine\nProduct Market",
+	"Consumer\nProduct Market",
+    ];
     (function() {
 	var emotion_machine_layer__height = 400;
 	var emotion_machine_layers = [
@@ -71,46 +76,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		sals.graph.graph__add_edge(graph, edge);
 	    }
 	})();
-    })();
-    (function() {
-	var market__height = 400;
-	var markets = [
-	    "Cloud Service\nProduct Market",
-	    "Education\nProduct Market",
-	    "Medicine\nProduct Market",
-	    "Consumer\nProduct Market",
-	];
-	var markets__pin = true;
-	var node_market_map = {};
-	var graph = sals.graph.graph__new();
 	(function() {
 	    for (var index = 0; index < markets.length; index ++) {
-		var market                 = markets[index];
-		var market__node           = sals.graph.graph_node__new(market);
-		var market__node__vis_node = {
-		    color  : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)',
-			highlight  : {
-			    border     : 'rgba(0,0,0,1)',
-			    background : 'rgba(255,255,255,1)'
-			},
-			hover : {
-			    border     : 'rgba(0,0,0,1)',
-			    background : 'rgba(255,255,255,1)'
-			}
-		    },
-		    font  : {color : 'rgba(0,0,0,1)'}
-		};
-		if (markets__pin) {
-		    sals.vis.object__soft_merge_recursive(market__node__vis_node, {
-			fixed : true,
-			x     : 1000,
-			y     : (((markets.length - 1) * market__height) - (index * market__height))
-		    });
-		}
-		market__node["vis_node"] = market__node__vis_node;
-		node_market_map[market] = market__node;
+		var market       = markets[index];
+		var market__node = sals.graph.graph_node__new(market);
 		sals.graph.graph__add_node(graph, market__node);
 	    }
 	})();
