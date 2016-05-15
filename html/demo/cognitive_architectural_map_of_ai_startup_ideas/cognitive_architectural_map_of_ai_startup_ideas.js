@@ -35,7 +35,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var lower_emotion_machine_layer__node = node_emotion_machine_layer_map[lower_emotion_machine_layer];
 	    var upper_emotion_machine_layer       = emotion_machine_layers[index + 1];
 	    var upper_emotion_machine_layer__node = node_emotion_machine_layer_map[upper_emotion_machine_layer];
-	    var edge                              = sals.graph.graph_node__new("Up One\nEmotion Machine Layer", lower_emotion_machine_layer__node, upper_emotion_machine_layer__node);
+	    var edge                              = sals.graph.graph_edge__new("Up One\nEmotion Machine Layer", lower_emotion_machine_layer__node, upper_emotion_machine_layer__node);
 	    sals.graph.graph__add_edge(graph, edge);
 	}
     })();
