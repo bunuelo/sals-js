@@ -30,9 +30,9 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 	    from   : graph__edge__from_node__uid,
 	    to     : graph__edge__to_node__uid,
 	    label  : graph__edge__label,
-	    arrows : "to"
-	    color : {color     : "rgba(1,1,1,1)",
-		     highlight : "rgba(0,0,0,1)"}
+	    arrows : "to",
+	    color  : {color     : "rgba(1,1,1,1)",
+		      highlight : "rgba(0,0,0,1)"}
 	};
 	vis_edges_array.push(vis_edge);
     });
