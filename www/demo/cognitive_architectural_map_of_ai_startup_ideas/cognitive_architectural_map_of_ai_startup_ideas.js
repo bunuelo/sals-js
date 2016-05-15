@@ -40,7 +40,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 			background : 'rgba(255,255,255,1)'
 		    }
 		},
-		font  : {color : 'rgba(0,0,0,1)'}
+		font  : {color : 'rgba(0,0,0,1)'},
 		fixed : true,
 		x     : 0,
 		y     : (index * 400)
