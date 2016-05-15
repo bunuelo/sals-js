@@ -61,7 +61,7 @@ window.onload = function() {
 	try {
 	    var width   = window.innerWidth;
 	    var height  = window.innerHeight;
-	    var element = sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element(width, height);
+	    var element = sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element(width - 16, height - 16);
 	    document.body.appendChild(element);
 	} catch (error) {
 	    sals.core.log_error(error);
