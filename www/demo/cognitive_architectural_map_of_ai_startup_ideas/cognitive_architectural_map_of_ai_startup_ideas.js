@@ -154,7 +154,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var computational_implementation_relationship = "computational\nimplementation";
     // product relationships
     var parent_product_relationship               = "parent\nproduct";
-    var sold_in_market                            = "sold\nin\nmarket";
+    var sold_in_market_relationship               = "sold\nin\nmarket";
     var edges = [
 	[plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer],
