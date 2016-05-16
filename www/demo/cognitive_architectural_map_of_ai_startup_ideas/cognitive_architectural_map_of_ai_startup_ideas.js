@@ -127,19 +127,21 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var subtechnology_relationship     = "subtechnology";
     var used_to_implement_relationship = "used to implement";
+    var used_in_layer_relationship     = "used in layer";
     var theory_of_field_relationship   = "theory of field";
     var edges = [
-	[neural_network_technology, subtechnology_relationship, deep_learning_technology],
-	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology],
-	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology],
-	[neural_network_technology, used_to_implement_relationship, learned_reactive_layer],
-	[neural_network_technology, theory_of_field_relationship, neuroscience_field],
+	[plan_space_planning_technology, used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, used_to_implement_relationship, deliberative_layer],
 	[state_space_planning_technology, subtechnology_relationship, monte_carlo_tree_search_technology],
 	[state_space_planning_technology, used_to_implement_relationship, plan_space_planning_technology],
-	[plan_space_planning_technology, used_to_implement_relationship, reflective_layer],
 	[reinforcement_learning_technology, used_to_implement_relationship, deliberative_layer],
 	[reinforcement_learning_technology, used_to_implement_relationship, learned_reactive_layer],
+	[neural_network_technology, subtechnology_relationship, deep_learning_technology],
+	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology],
+	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology],
+	[neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
+	[neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
+	[neural_network_technology, theory_of_field_relationship, neuroscience_field],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
