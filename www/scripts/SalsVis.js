@@ -144,7 +144,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 sals.vis.graph__to_vis_graph_dom_element = function(graph, width, height) {
     var border                 = 1;
     var self                   = document.createElement("div");
-    self.style.backgroundColor = "#000000";
+    self.style.backgroundColor = "#7f7f7f";
     self.style.width           = width + "px";
     self.style.height          = height + "px";
     (function() {
