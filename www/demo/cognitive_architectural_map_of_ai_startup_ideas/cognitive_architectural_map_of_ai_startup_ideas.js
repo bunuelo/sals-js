@@ -129,16 +129,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, "Up One\nEmotion Machine\nLayer",    0, 2000,    0,    0, layers);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                                0,    0, 2000,    0, fields);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                             2000,    0, 2000, 2000, markets);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, "Up One\nEmotion Machine\nLayer", -1000,  1000, -1000, -1000, layers);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                             -1000, -1000,  1000, -1000, fields);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                              1000, -1000,  1000,  1000, markets);
     (function() {
 	for(var index = 0; index < technologies.length; index ++) {
 	    var technology       = technologies[index];
 	    var technology__node = sals.graph.graph_node__new(technology);
 	    technology__node["vis_node"] = {
-		x     : 1000,
-		y     : 1000
+		x : 0,
+		y : 0
 	    };
 	    sals.graph.graph__add_node(graph, technology__node);
 	    node_concept_map[technology] = technology__node;
