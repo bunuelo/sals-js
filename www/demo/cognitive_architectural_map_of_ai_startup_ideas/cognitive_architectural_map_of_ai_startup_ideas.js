@@ -109,7 +109,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var deep_learning_technology                = "Deep Learning\nTechnology";
     var recurrent_neural_network_technology     = "Recurrent\nNeural Network\nTechnology";
     var convolutional_neural_network_technology = "Convolutional\nNeural Network\nTechnology";
-    var forward_planning_technology             = "Forward Planning\nTechnology";
+    var state_space_planning_technology         = "State-Space Planning\nTechnology";
+    var plan_space_planning_technology          = "Plan-Space Planning\nTechnology";
     var monte_carlo_tree_search_technology      = "Monte Carlo Tree Search\nTechnology";
     var probabilistic_reasoning_technology      = "Probabilistic Reasoning\nTechnology";
     var reinforcement_learning_technology       = "Reinforcement Learning\nTechnology";
@@ -118,7 +119,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	deep_learning_technology,
 	recurrent_neural_network_technology,
 	convolutional_neural_network_technology,
-	forward_planning_technology,
+	state_space_planning_technology,
+	plan_space_planning_technology,
 	monte_carlo_tree_search_technology,
 	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
@@ -130,8 +132,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology],
 	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology],
 	[neural_network_technology, used_to_implement_relationship, learned_reactive_layer],
-	[forward_planning_technology, used_to_implement_relationship, deliberative_layer],
-	[forward_planning_technology, subtechnology_relationship, monte_carlo_tree_search_technology],
+	[state_space_planning_technology, used_to_implement_relationship, deliberative_layer],
+	[state_space_planning_technology, subtechnology_relationship, monte_carlo_tree_search_technology],
+	[state_space_planning_technology, used_to_implement_relationship, plan_space_planning_technology],
+	[plan_space_planning_technology, used_to_implement_relationship, reflective_layer],
 	[reinforcement_learning_technology, used_to_implement_relationship, deliberative_layer],
 	[reinforcement_learning_technology, used_to_implement_relationship, learned_reactive_layer],
     ];
