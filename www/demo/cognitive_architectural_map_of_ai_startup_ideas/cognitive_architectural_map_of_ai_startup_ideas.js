@@ -105,9 +105,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	computer_science_field,
 	artificial_intelligence_field
     ];
-    var rate_endoded_neural_communication_model = "Rate Encoded\nNeural Communication\nTheory";
+    var rate_endoded_neural_communication_theory  = "Rate Encoded\nNeural Communication\nTheory";
+    var spike_endoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
     var theories = [
-	rate_endoded_neural_communication_model,
+	rate_endoded_neural_communication_theory,
+	spike_endoded_neural_communication_theory,
     ];
     var neural_network_technology                           = "Neural Network\nTechnology";
     var feedforward_backpropogate_neural_network_technology = "Feedforward Backpropogate\nNeural Network\nTechnology";
@@ -153,7 +155,9 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
 	[neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
 	[neural_network_technology, implementation_of_theory_relationship, rate_endoded_neural_communication_model],
-	[rate_endoded_neural_communication_model, theory_of_field_relationship, neuroscience_field],
+	// theories
+	[rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
+	[spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
