@@ -111,6 +111,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var convolutional_neural_network_technology = "Convolutional\nNeural Network\nTechnology";
     var forward_planning_technology             = "Forward Planning\nTechnology";
     var probabilistic_reasoning_technology      = "Probabilistic Reasoning\nTechnology";
+    var reinforcement_learning_technology       = "Reinforcement Learning\nTechnology";
     var technologies = [
 	neural_network_technology,
 	deep_learning_technology,
@@ -118,6 +119,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	convolutional_neural_network_technology,
 	forward_planning_technology,
 	probabilistic_reasoning_technology
+	reinforcement_learning_technology
     ];
     var subtechnology_relationship     = "subtechnology";
     var used_to_implement_relationship = "used to implement";
@@ -127,6 +129,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology],
 	[neural_network_technology, used_to_implement_relationship, learned_reactive_layer],
 	[forward_planning_technology, used_to_implement_relationship, deliberative_layer],
+	[reinforcement_learning_technology, used_to_implement_relationship, deliberative_layer],
+	[reinforcement_learning_technology, used_to_implement_relationship, learned_reactive_layer],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
