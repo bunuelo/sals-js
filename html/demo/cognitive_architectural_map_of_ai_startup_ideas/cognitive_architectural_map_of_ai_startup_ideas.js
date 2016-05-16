@@ -65,15 +65,15 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, node_concept
 };
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
-    var cloud_service_product_market = "Cloud Service\nProduct Market";
-    var education_product_market     = "Education\nProduct Market";
-    var medicine_product_market      = "Medicine\nProduct Market";
-    var consumer_product_market      = "Consumer\nProduct Market";
+    var cloud_service_market = "Cloud Service\nMarket";
+    var education_market     = "Education\nMarket";
+    var medicine_market      = "Medicine\nMarket";
+    var consumer_market      = "Consumer\nMarket";
     var markets = [
-	cloud_service_product_market,
-	education_product_market,
-	medicine_product_market,
-	consumer_product_market
+	cloud_service_market,
+	education_market,
+	medicine_market,
+	consumer_market
     ];
     var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer";
     var learned_reactive_layer  = "Emotion Machine\nLearned Reactive Layer";
@@ -145,13 +145,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	wearable_technology_product,
 	fitbit_wearable_technology_product
     ];
-    var parent_product_relationship               = "parent\nproduct";
+    
     var parent_technology_relationship            = "parent\ntechnology";
     var parent_theory_relationship                = "parent\ntheory";
     var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
     var used_in_layer_relationship                = "used in\nlayer";
     var theory_of_field_relationship              = "theory of\nfield";
     var computational_implementation_relationship = "computational\nimplementation";
+    // product relationships
+    var parent_product_relationship               = "parent\nproduct";
+    var sold_in_market                            = "sold\nin\nmarket";
     var edges = [
 	[plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer],
@@ -176,6 +179,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[spike_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
 	// products
 	[fitbit_wearable_technology_product, parent_product_relationship, wearable_technology_product],
+	[wearable_technology_product, sold_in_market_relationship, consumer_market],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
