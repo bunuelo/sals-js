@@ -126,6 +126,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology],
 	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology],
 	[neural_network_technology, used_to_implement_relationship, learned_reactive_layer],
+	[forward_planning_technology, used_to_implement_relationship, deliberative_layer],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
