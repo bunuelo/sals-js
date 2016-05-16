@@ -136,7 +136,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	for(var index = 0; index < technologies.length; index ++) {
 	    var technology       = technologies[index];
 	    var technology__node = sals.graph.graph_node__new(technology);
-	    var technology__node["vis_node"] = {
+	    technology__node["vis_node"] = {
 		x     : 1000,
 		y     : 1000
 	    };
