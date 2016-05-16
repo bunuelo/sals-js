@@ -137,12 +137,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
     ];
-    var parent_technology_relationship        = "parent\ntechnology";
-    var parent_theory_relationship            = "parent\ntheory";
-    var can_be_used_to_implement_relationship = "can be\nused to\nimplement";
-    var used_in_layer_relationship            = "used in\nlayer";
-    var theory_of_field_relationship          = "theory of\nfield";
-    var implementation_of_theory_relationship = "implementation of\ntheory";
+    var parent_technology_relationship            = "parent\ntechnology";
+    var parent_theory_relationship                = "parent\ntheory";
+    var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
+    var used_in_layer_relationship                = "used in\nlayer";
+    var theory_of_field_relationship              = "theory of\nfield";
+    var computational_implementation_relationship = "computational\nimplementation";
     var edges = [
 	[plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer],
@@ -157,7 +157,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[self_organizing_maps_neural_network_technology, parent_technology_relationship, neural_network_technology],
 	[neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
 	[neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
-	[neural_network_technology, implementation_of_theory_relationship, rate_endoded_neural_communication_theory],
+	[rate_endoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_neural_network_technology],
 	// theories
 	[neural_communication_theory, theory_of_field_relationship, neuroscience_field],
 	[rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
