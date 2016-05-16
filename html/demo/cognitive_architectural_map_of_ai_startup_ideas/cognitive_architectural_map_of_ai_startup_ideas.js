@@ -137,19 +137,19 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
     ];
-    var parent_technology_relationship        = "parent technology";
-    var parent_theory_relationship            = "parent theory";
-    var used_to_implement_relationship        = "used to implement";
-    var used_in_layer_relationship            = "used in layer";
-    var theory_of_field_relationship          = "theory of field";
-    var implementation_of_theory_relationship = "implementation of theory";
+    var parent_technology_relationship        = "parent\ntechnology";
+    var parent_theory_relationship            = "parent\ntheory";
+    var can_be_used_to_implement_relationship = "can be\nused to implement";
+    var used_in_layer_relationship            = "used in\nlayer";
+    var theory_of_field_relationship          = "theory of\nfield";
+    var implementation_of_theory_relationship = "implementation of\ntheory";
     var edges = [
-	[plan_space_planning_technology, used_to_implement_relationship, reflective_layer],
-	[state_space_planning_technology, used_to_implement_relationship, deliberative_layer],
+	[plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer],
+	[state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer],
 	[monte_carlo_tree_search_technology, parent_technology_relationship, state_space_planning_technology],
-	[state_space_planning_technology, used_to_implement_relationship, plan_space_planning_technology],
-	[reinforcement_learning_technology, used_to_implement_relationship, deliberative_layer],
-	[reinforcement_learning_technology, used_to_implement_relationship, learned_reactive_layer],
+	[state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology],
+	[reinforcement_learning_technology, can_be_used_to_implement_relationship, deliberative_layer],
+	[reinforcement_learning_technology, can_be_used_to_implement_relationship, learned_reactive_layer],
 	[deep_learning_technology, parent_technology_relationship, neural_network_technology],
 	[feedforward_backpropogate_neural_network_technology, parent_technology_relationship, neural_network_technology],
 	[recurrent_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_neural_network_technology],
