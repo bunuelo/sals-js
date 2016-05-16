@@ -117,6 +117,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
     var deep_learning_technology                                       = "Deep Learning\nTechnology";
     var recurrent_artificial_neural_network_technology                 = "Recurrent\nArtificial Neural Network\nTechnology";
+    var bidirectional_recurrent_artificial_neural_network_technology   = "Bidirectional Recurrent\nArtificial Neural Network\nTechnology";
     var convolutional_artificial_neural_network_technology             = "Convolutional\nArtificial Neural Network\nTechnology";
     var self_organizing_maps_artificial_neural_network_technology      = "Self-Organizing Maps\nArtificial Neural Network\nTechnology";
     var state_space_planning_technology                                = "State-Space Planning\nTechnology";
@@ -129,6 +130,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	feedforward_backpropogate_artificial_neural_network_technology,
 	deep_learning_technology,
 	recurrent_artificial_neural_network_technology,
+	bidirectional_recurrent_artificial_neural_network_technology,
 	convolutional_artificial_neural_network_technology,
 	self_organizing_maps_artificial_neural_network_technology,
 	state_space_planning_technology,
@@ -153,6 +155,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[deep_learning_technology, parent_technology_relationship, artificial_neural_network_technology],
 	[feedforward_backpropogate_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
 	[recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
+	[bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology],
 	[convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
 	[self_organizing_maps_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
 	[artificial_neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
