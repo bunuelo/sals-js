@@ -118,7 +118,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	recurrent_neural_network_technology,
 	convolutional_neural_network_technology,
 	forward_planning_technology,
-	probabilistic_reasoning_technology
+	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
     ];
     var subtechnology_relationship     = "subtechnology";
