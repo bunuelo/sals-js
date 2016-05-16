@@ -154,7 +154,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[self_organizing_maps_neural_network_technology, parent_technology_relationship, neural_network_technology],
 	[neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
 	[neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
-	[neural_network_technology, implementation_of_theory_relationship, rate_endoded_neural_communication_model],
+	[neural_network_technology, implementation_of_theory_relationship, rate_endoded_neural_communication_theory],
 	// theories
 	[rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
 	[spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
