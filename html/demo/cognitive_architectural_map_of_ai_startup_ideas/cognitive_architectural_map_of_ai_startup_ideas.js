@@ -113,7 +113,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	rate_endoded_neural_communication_theory,
 	spike_endoded_neural_communication_theory,
     ];
-    var neural_network_technology                           = "Neural Network\nTechnology";
+    var artificial_neural_network_technology                = "Artificial\nNeural Network\nTechnology";
     var feedforward_backpropogate_neural_network_technology = "Feedforward Backpropogate\nNeural Network\nTechnology";
     var deep_learning_technology                            = "Deep Learning\nTechnology";
     var recurrent_neural_network_technology                 = "Recurrent\nNeural Network\nTechnology";
@@ -150,14 +150,14 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology],
 	[reinforcement_learning_technology, can_be_used_to_implement_relationship, deliberative_layer],
 	[reinforcement_learning_technology, can_be_used_to_implement_relationship, learned_reactive_layer],
-	[deep_learning_technology, parent_technology_relationship, neural_network_technology],
-	[feedforward_backpropogate_neural_network_technology, parent_technology_relationship, neural_network_technology],
-	[recurrent_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_neural_network_technology],
-	[convolutional_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_neural_network_technology],
-	[self_organizing_maps_neural_network_technology, parent_technology_relationship, neural_network_technology],
-	[neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
-	[neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
-	[rate_endoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_neural_network_technology],
+	[deep_learning_technology, parent_technology_relationship, artificial_neural_network_technology],
+	[feedforward_backpropogate_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
+	[recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
+	[convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
+	[self_organizing_maps_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
+	[artificial_neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
+	[artificial_neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
+	[rate_endoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_artificial_neural_network_technology],
 	// theories
 	[neural_communication_theory, theory_of_field_relationship, neuroscience_field],
 	[rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
