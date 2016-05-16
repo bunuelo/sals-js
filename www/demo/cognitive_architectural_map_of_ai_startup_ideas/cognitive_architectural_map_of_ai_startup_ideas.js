@@ -113,24 +113,24 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	rate_endoded_neural_communication_theory,
 	spike_endoded_neural_communication_theory,
     ];
-    var artificial_neural_network_technology                = "Artificial\nNeural Network\nTechnology";
-    var feedforward_backpropogate_neural_network_technology = "Feedforward Backpropogate\nNeural Network\nTechnology";
-    var deep_learning_technology                            = "Deep Learning\nTechnology";
-    var recurrent_neural_network_technology                 = "Recurrent\nNeural Network\nTechnology";
-    var convolutional_neural_network_technology             = "Convolutional\nNeural Network\nTechnology";
-    var self_organizing_maps_neural_network_technology      = "Self-Organizing Maps\nNeural Network\nTechnology";
-    var state_space_planning_technology                     = "State-Space Planning\nTechnology";
-    var plan_space_planning_technology                      = "Plan-Space Planning\nTechnology";
-    var monte_carlo_tree_search_technology                  = "Monte Carlo Tree Search\nTechnology";
-    var probabilistic_reasoning_technology                  = "Probabilistic Reasoning\nTechnology";
-    var reinforcement_learning_technology                   = "Reinforcement Learning\nTechnology";
+    var artificial_neural_network_technology                           = "Artificial\nNeural Network\nTechnology";
+    var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
+    var deep_learning_technology                                       = "Deep Learning\nTechnology";
+    var recurrent_artificial_neural_network_technology                 = "Recurrent\nArtificial Neural Network\nTechnology";
+    var convolutional_artificial_neural_network_technology             = "Convolutional\nArtificial Neural Network\nTechnology";
+    var self_organizing_maps_artificial_neural_network_technology      = "Self-Organizing Maps\nArtificial Neural Network\nTechnology";
+    var state_space_planning_technology                                = "State-Space Planning\nTechnology";
+    var plan_space_planning_technology                                 = "Plan-Space Planning\nTechnology";
+    var monte_carlo_tree_search_technology                             = "Monte Carlo Tree Search\nTechnology";
+    var probabilistic_reasoning_technology                             = "Probabilistic Reasoning\nTechnology";
+    var reinforcement_learning_technology                              = "Reinforcement Learning\nTechnology";
     var technologies = [
-	neural_network_technology,
-	feedforward_backpropogate_neural_network_technology,
+	artificial_neural_network_technology,
+	feedforward_backpropogate_artificial_neural_network_technology,
 	deep_learning_technology,
-	recurrent_neural_network_technology,
-	convolutional_neural_network_technology,
-	self_organizing_maps_neural_network_technology,
+	recurrent_artificial_neural_network_technology,
+	convolutional_artificial_neural_network_technology,
+	self_organizing_maps_artificial_neural_network_technology,
 	state_space_planning_technology,
 	plan_space_planning_technology,
 	monte_carlo_tree_search_technology,
