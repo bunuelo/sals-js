@@ -139,7 +139,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
     ];
-    var wearable_technology_product = "Wearable Technology\nProduct";
+    var wearable_technology_product        = "Wearable Technology\nProduct";
+    var fitbit_wearable_technology_product = "Fitbit\nWearable Technology\nProduct";
     var products = [
 	wearable_technology_product,
 	fitbit_wearable_technology_product
