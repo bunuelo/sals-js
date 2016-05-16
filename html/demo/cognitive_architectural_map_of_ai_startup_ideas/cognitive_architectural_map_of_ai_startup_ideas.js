@@ -105,30 +105,39 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	computer_science_field,
 	artificial_intelligence_field
     ];
-    var neural_network_technology               = "Neural Network\nTechnology";
-    var deep_learning_technology                = "Deep Learning\nTechnology";
-    var recurrent_neural_network_technology     = "Recurrent\nNeural Network\nTechnology";
-    var convolutional_neural_network_technology = "Convolutional\nNeural Network\nTechnology";
-    var state_space_planning_technology         = "State-Space Planning\nTechnology";
-    var plan_space_planning_technology          = "Plan-Space Planning\nTechnology";
-    var monte_carlo_tree_search_technology      = "Monte Carlo Tree Search\nTechnology";
-    var probabilistic_reasoning_technology      = "Probabilistic Reasoning\nTechnology";
-    var reinforcement_learning_technology       = "Reinforcement Learning\nTechnology";
+    var rate_endoded_neural_communication_model = "Rate Encoded Neural Communication Model";
+    var theories = [
+	rate_endoded_neural_communication_model,
+    ];
+    var neural_network_technology                           = "Neural Network\nTechnology";
+    var feedforward_backpropogate_neural_network_technology = "Feedforward Backpropogate\nNeural Network\nTechnology";
+    var deep_learning_technology                            = "Deep Learning\nTechnology";
+    var recurrent_neural_network_technology                 = "Recurrent\nNeural Network\nTechnology";
+    var convolutional_neural_network_technology             = "Convolutional\nNeural Network\nTechnology";
+    var self_organizing_maps_neural_network_technology      = "Self-Organizing Maps\nNeural Network\nTechnology";
+    var state_space_planning_technology                     = "State-Space Planning\nTechnology";
+    var plan_space_planning_technology                      = "Plan-Space Planning\nTechnology";
+    var monte_carlo_tree_search_technology                  = "Monte Carlo Tree Search\nTechnology";
+    var probabilistic_reasoning_technology                  = "Probabilistic Reasoning\nTechnology";
+    var reinforcement_learning_technology                   = "Reinforcement Learning\nTechnology";
     var technologies = [
 	neural_network_technology,
+	feedforward_backpropogate_neural_network_technology,
 	deep_learning_technology,
 	recurrent_neural_network_technology,
 	convolutional_neural_network_technology,
+	self_organizing_maps_neural_network_technology,
 	state_space_planning_technology,
 	plan_space_planning_technology,
 	monte_carlo_tree_search_technology,
 	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
     ];
-    var subtechnology_relationship     = "subtechnology";
-    var used_to_implement_relationship = "used to implement";
-    var used_in_layer_relationship     = "used in layer";
-    var theory_of_field_relationship   = "theory of field";
+    var parent_technology_relationship        = "parent technology";
+    var used_to_implement_relationship        = "used to implement";
+    var used_in_layer_relationship            = "used in layer";
+    var theory_of_field_relationship          = "theory of field";
+    var implementation_of_theory_relationship = "implementation of theory";
     var edges = [
 	[plan_space_planning_technology, used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, used_to_implement_relationship, deliberative_layer],
@@ -136,12 +145,15 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[state_space_planning_technology, used_to_implement_relationship, plan_space_planning_technology],
 	[reinforcement_learning_technology, used_to_implement_relationship, deliberative_layer],
 	[reinforcement_learning_technology, used_to_implement_relationship, learned_reactive_layer],
-	[neural_network_technology, subtechnology_relationship, deep_learning_technology],
-	[neural_network_technology, subtechnology_relationship, recurrent_neural_network_technology],
-	[neural_network_technology, subtechnology_relationship, convolutional_neural_network_technology],
+	[deep_learning_technology, parent_technology_relationship, neural_network_technology],
+	[feedforward_backpropogate_neural_network_technology, parent_technology_relationship, neural_network_technology],
+	[recurrent_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_neural_network_technology],
+	[convolutional_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_neural_network_technology],
+	[self_organizing_maps_neural_network_technology, parent_technology_relationship, neural_network_technology],
 	[neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
 	[neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
-	[neural_network_technology, theory_of_field_relationship, neuroscience_field],
+	[neural_network_technology, implementation_of_theory_relationship, rate_endoded_neural_communication_model],
+	[rate_endoded_neural_communication_model, theory_of_field_relationship, neuroscience_field],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
@@ -158,6 +170,18 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    };
 	    sals.graph.graph__add_node(graph, technology__node);
 	    node_concept_map[technology] = technology__node;
+	}
+    })();
+    (function() {
+	for(var index = 0; index < theories.length; index ++) {
+	    var theory       = theories[index];
+	    var theory__node = sals.graph.graph_node__new(theory);
+	    theory__node["vis_node"] = {
+		x : 0,
+		y : 0
+	    };
+	    sals.graph.graph__add_node(graph, theory__node);
+	    node_concept_map[theory] = theory__node;
 	}
     })();
     (function() {
