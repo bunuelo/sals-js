@@ -139,13 +139,14 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
     ];
-    var wearable_technology_product        = "Wearable Technology\nProduct";
-    var fitbit_wearable_technology_product = "Fitbit\nWearable Technology\nProduct";
+    var wearable_technology_product                       = "Wearable Technology\nProduct";
+    var health_monitor_wearable_technology_product        = "Health Monitor\nWearable Technology\nProduct";
+    var fitbit_health_monitor_wearable_technology_product = "Fitbit\nHealth Monitor\nWearable Technology\nProduct";
     var products = [
 	wearable_technology_product,
-	fitbit_wearable_technology_product
+	health_monitor_wearable_technology_product,
+	fitbit_health_monitor_wearable_technology_product,
     ];
-    
     var parent_technology_relationship            = "parent\ntechnology";
     var parent_theory_relationship                = "parent\ntheory";
     var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
@@ -178,7 +179,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
 	[spike_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
 	// products
-	[fitbit_wearable_technology_product, parent_product_relationship, wearable_technology_product],
+	[health_monitor_wearable_technology_product, parent_product_relationship, wearable_technology_product],
+	[fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product],
 	[wearable_technology_product, sold_in_market_relationship, consumer_market],
     ];
     var node_concept_map = {};
