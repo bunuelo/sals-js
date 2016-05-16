@@ -139,7 +139,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var parent_technology_relationship        = "parent\ntechnology";
     var parent_theory_relationship            = "parent\ntheory";
-    var can_be_used_to_implement_relationship = "can be\nused to implement";
+    var can_be_used_to_implement_relationship = "can be\nused to\nimplement";
     var used_in_layer_relationship            = "used in\nlayer";
     var theory_of_field_relationship          = "theory of\nfield";
     var implementation_of_theory_relationship = "implementation of\ntheory";
