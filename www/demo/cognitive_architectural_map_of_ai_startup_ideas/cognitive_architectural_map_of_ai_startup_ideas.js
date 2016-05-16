@@ -141,7 +141,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var edges = [
 	[plan_space_planning_technology, used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, used_to_implement_relationship, deliberative_layer],
-	[state_space_planning_technology, subtechnology_relationship, monte_carlo_tree_search_technology],
+	[monte_carlo_tree_search_technology, parent_technology_relationship, state_space_planning_technology],
 	[state_space_planning_technology, used_to_implement_relationship, plan_space_planning_technology],
 	[reinforcement_learning_technology, used_to_implement_relationship, deliberative_layer],
 	[reinforcement_learning_technology, used_to_implement_relationship, learned_reactive_layer],
