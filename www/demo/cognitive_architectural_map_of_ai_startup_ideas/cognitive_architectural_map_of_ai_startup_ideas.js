@@ -139,6 +139,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	probabilistic_reasoning_technology,
 	reinforcement_learning_technology
     ];
+    var wearable_technology_product = "Wearable Technology\nProduct";
+    var products = [
+	wearable_technology_product
+    ];
     var parent_technology_relationship            = "parent\ntechnology";
     var parent_theory_relationship                = "parent\ntheory";
     var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
@@ -167,6 +171,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[rate_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
 	[spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
 	[spike_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
+	
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
@@ -195,6 +200,18 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    };
 	    sals.graph.graph__add_node(graph, theory__node);
 	    node_concept_map[theory] = theory__node;
+	}
+    })();
+    (function() {
+	for(var index = 0; index < products.length; index ++) {
+	    var product       = products[index];
+	    var product__node = sals.graph.graph_node__new(product);
+	    product__node["vis_node"] = {
+		x : 0,
+		y : 0
+	    };
+	    sals.graph.graph__add_node(graph, product__node);
+	    node_concept_map[product] = product__node;
 	}
     })();
     (function() {
