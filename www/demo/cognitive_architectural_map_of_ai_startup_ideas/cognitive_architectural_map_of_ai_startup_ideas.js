@@ -141,8 +141,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var wearable_technology_product = "Wearable Technology\nProduct";
     var products = [
-	wearable_technology_product
+	wearable_technology_product,
+	fitbit_wearable_technology_product
     ];
+    var parent_product_relationship               = "parent\nproduct";
     var parent_technology_relationship            = "parent\ntechnology";
     var parent_theory_relationship                = "parent\ntheory";
     var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
@@ -171,7 +173,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[rate_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
 	[spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
 	[spike_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
-	
+	// products
+	[fitbit_wearable_technology_product, parent_product_relationship, wearable_technology_product],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
