@@ -105,7 +105,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	computer_science_field,
 	artificial_intelligence_field
     ];
-    var rate_endoded_neural_communication_model = "Rate Encoded Neural Communication Model";
+    var rate_endoded_neural_communication_model = "Rate Encoded\nNeural Communication\nTheory";
     var theories = [
 	rate_endoded_neural_communication_model,
     ];
