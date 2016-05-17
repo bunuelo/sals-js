@@ -216,6 +216,36 @@ sals.pattern.expression__to_string = function(expression) {
 //      if the answer to the question is no, this removes evidential support for this implication and all knowledge derived from it.
 //        in the case of losing evidential support, a search for new evidential support for a similar conjunctive implication could be initiated in the hopes of not needing to remove all derived knowledge.
 // 
+//   create an implication pattern space
+// 
+//     (command ["the fact that (1) " ?X " and (2) " ?Y " implies that " ?Z]
+//       (assert `(command (and ?X ?Y)
+//                         ?Z)))
+// 
+//     (command ["the fact (1) artistotle is a man and (2) all mans are mortal implies artistotle is a man"]
+//       (assert `(command (and "artistotle is a man" "all mans are mortal")
+//                         "artistotle is mortal")))
+//     
+//     (command ["the fact aristotle is a man implies aristotle was once a boy"]
+//       (assert `(command "aristotle is a man"
+//                         "aristotle was once a boy")))
+//     
+//     (command ["the fact " ?X " implies " ?Y]
+//       (assert `(command ?X ?Y)))
+// 
+//     Applicable commands fire automatically, generating new true knowledge.
+// 
+//     1. (pattern_set (command ["the fact aristotle is a man implies aristotle was once a boy"]
+//                              (assert `(command ["aristotle is a man"]
+//                                                ["aristotle was once a boy"])))
+//                     ["the fact aristotle is a man implies aristotle was once a boy"])
+// 
+//     2. (pattern_set (command ["the fact aristotle is a man implies aristotle was once a boy"]
+//                              (assert `(command ["aristotle is a man"]
+//                                                ["aristotle was once a boy"])))
+//                     ["the fact aristotle is a man implies aristotle was once a boy"]
+//                     (command "aristotle is a man"
+//                              "aristotle was once a boy"))     // depending on first two patterns
 
 sals.pattern.test_pattern = function() {
     sals.core.log("test_pattern HERE.");
