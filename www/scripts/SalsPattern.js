@@ -67,7 +67,7 @@ sals.pattern.test_pattern = function() {
     while (test_patterns__index < test_patterns__length) {
 	(function() {
 	    var test_pattern = test_patterns[test_patterns__index];
-	    sals.core.log("input__pattern = " + sals.pattern.pattern__to_string(input__pattern));
+	    sals.core.log("test_pattern = " + sals.pattern.pattern__to_string(test_pattern));
 	})();
 	test_patterns__index ++;
     }
