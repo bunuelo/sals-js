@@ -24,7 +24,7 @@ sals.pattern = {};
     };
     
     sals.pattern.pattern_variable__to_string = function(self) {
-	var array = sals.pattern.pattern_variable__array(self);
+	var name = sals.pattern.pattern_variable__name(self);
 	var to_string = "(? " + name + ")";
 	return to_string;
     };
