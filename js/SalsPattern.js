@@ -40,10 +40,11 @@ sals.pattern = {};
     
 })(); // pattern END
 
-sals.pattern.test_pattern = function() {
-    sals.core.log("test_pattern HERE.");
+sals.pattern.generate_test_patterns = function() {
     var inputs         = ["the dog is brown",
-			  "the fox is red"];
+			  "the fox is red",
+			  "the fox is green"];
+    var patterns       = [];
     var inputs__length = inputs.length;
     var inputs__index  = 0;
     while (inputs__index < inputs__length) {
@@ -51,9 +52,24 @@ sals.pattern.test_pattern = function() {
 	    var input = inputs[inputs__index];
 	    sals.core.log("input = " + input);
 	    var input__pattern = sals.pattern.pattern__new_from_string(input);
-	    sals.core.log("input__pattern = " + sals.pattern.pattern__to_string(input__pattern));
+	    patterns.push(input__pattern);
 	})();
 	inputs__index ++;
+    }
+    return patterns;
+};
+
+sals.pattern.test_pattern = function() {
+    sals.core.log("test_pattern HERE.");
+    var test_patterns         = sals.pattern.generate_test_patterns();
+    var test_patterns__length = test_patterns.length;
+    var test_patterns__index  = 0;
+    while (test_patterns__index < test_patterns__length) {
+	(function() {
+	    var test_pattern = test_patterns[test_patterns__index];
+	    sals.core.log("input__pattern = " + sals.pattern.pattern__to_string(input__pattern));
+	})();
+	test_patterns__index ++;
     }
     sals.core.log("test_pattern DONE.");
 };
