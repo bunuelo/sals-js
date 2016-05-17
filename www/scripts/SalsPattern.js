@@ -55,7 +55,7 @@ sals.pattern = {};
     
     sals.pattern.pattern__to_string = function(self) {
 	var array = sals.pattern.pattern__array(self);
-	var to_string = "(pattern";
+	var to_string = "(";
 	var array__length = array.length;
 	var array__index  = 0;
 	while (array__index < array__length) {
