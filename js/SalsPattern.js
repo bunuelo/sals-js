@@ -11,6 +11,10 @@ sals.pattern = {};
 	return self;
     };
     
+    sals.pattern.pattern_variable__is_type = function(exp) {
+	return sals.object.object__is_type(exp, "pattern_variable");
+    };
+    
     sals.pattern.pattern_variable__name = function(self) {
 	return sals.frame.frame__get_element(self, "name");
     };
@@ -35,6 +39,10 @@ sals.pattern = {};
 	var self = sals.object.object__new("pattern");
 	sals.frame.frame__add_element(self, "array", array);
 	return self;
+    };
+    
+    sals.pattern.pattern__is_type = function(exp) {
+	return sals.object.object__is_type(exp, "pattern");
     };
     
     sals.pattern.pattern__array = function(self) {
@@ -76,6 +84,10 @@ sals.pattern = {};
 	return self;
     };
     
+    sals.pattern.pattern_and__is_type = function(exp) {
+	return sals.object.object__is_type(exp, "pattern_and");
+    };
+    
     sals.pattern.pattern_and__expressions = function(self) {
 	return sals.frame.frame__get_element(self, "expressions");
     };
@@ -107,45 +119,57 @@ sals.pattern = {};
     var object_type = sals.object.object_type__new("pattern_implies");
     sals.object_registry.add_type(object_type);
     
-    sals.pattern.pattern_implies__new = function(expressions) {
+    sals.pattern.pattern_implies__new = function(antecedent, consequent) {
 	var self = sals.object.object__new("pattern_implies");
-	sals.frame.frame__add_element(self, "expressions", expressions);
+	sals.frame.frame__add_element(self, "antecedent", antecedent);
+	sals.frame.frame__add_element(self, "consequent", consequent);
 	return self;
     };
     
-    sals.pattern.pattern_implies__expressions = function(self) {
-	return sals.frame.frame__get_element(self, "expressions");
+    sals.pattern.pattern_implies__is_type = function(exp) {
+	return sals.object.object__is_type(exp, "pattern_implies");
     };
     
-    sals.pattern.pattern_implies__set_expressions = function(self, value) {
-	sals.frame.frame__set_element(self, "expressions", value);
+    sals.pattern.pattern_implies__antecedent = function(self) {
+	return sals.frame.frame__get_element(self, "antecedent");
+    };
+    
+    sals.pattern.pattern_implies__set_antecedent = function(self, value) {
+	sals.frame.frame__set_element(self, "antecedent", value);
+    };
+    
+    sals.pattern.pattern_implies__consequent = function(self) {
+	return sals.frame.frame__get_element(self, "consequent");
+    };
+    
+    sals.pattern.pattern_implies__set_consequent = function(self, value) {
+	sals.frame.frame__set_element(self, "consequent", value);
     };
     
     sals.pattern.pattern_implies__to_string = function(self) {
-	var expressions         = sals.pattern.pattern_implies__expressions(self);
-	var to_string           = "(";
-	var expressions__length = expressions.length;
-	var expressions__index  = 0;
-	while (expressions__index < expressions__length) {
-	    (function() {
-		var expression         = expressions[expressions__index];
-		var expression__string = "" + sals.pattern.pattern__to_string(expression);
-		to_string += ((expressions__index == 0) ? "" : " && ") + expression__string;
-	    })();
-	    expressions__index ++;
-	}
-	to_string += ")";
+	var antecedent = sals.pattern.pattern_implies__antecedent(self);
+	var consequent = sals.pattern.pattern_implies__antecedent(self);
+	var to_string  = "(" + sals.pattern.expression__to_string(antecedent) + " => " + sals.pattern.expression__to_string(consequent) + ")";
 	return to_string;
     };
     
 })(); // pattern_implies END
 
+sals.pattern.expression__to_string = function(expression) {
+    if      (sals.pattern.pattern_variable__is_type(expression)) {return sals.pattern.pattern_variable__to_string(expression);}
+    else if (sals.pattern.pattern__is_type(expression))          {return sals.pattern.pattern__to_string(expression);}
+    else if (sals.pattern.pattern_and__is_type(expression))      {return sals.pattern.pattern_and__to_string(expression);}
+    else if (sals.pattern.pattern_implies__is_type(expression))  {return sals.pattern.pattern_implies__to_string(expression);}
+    return "(expression)";
+};
+
 sals.pattern.test_pattern = function() {
     sals.core.log("test_pattern HERE.");
-    var x = sals.pattern.pattern__new_from_string("aristotle is a man");
-    var y = sals.pattern.pattern__new_from_string("all mans are mortal");
-    var z = sals.pattern.pattern__new_from_string("aristotle is mortal");
-    var and = sals.pattern.pattern_and__new([x, y]);
-    sals.core.log("and = " + sals.pattern.pattern_and__to_string(and));
+    var x       = sals.pattern.pattern__new_from_string("aristotle is a man");
+    var y       = sals.pattern.pattern__new_from_string("all mans are mortal");
+    var z       = sals.pattern.pattern__new_from_string("aristotle is mortal");
+    var and     = sals.pattern.pattern_and__new([x, y]);
+    var implies = sals.pattern.pattern_implies__new([and, z]);
+    sals.core.log("implies = " + sals.pattern.expression__to_string(implies));
     sals.core.log("test_pattern DONE.");
 };
