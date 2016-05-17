@@ -55,14 +55,14 @@ sals.pattern = {};
     
     sals.pattern.pattern__to_string = function(self) {
 	var array = sals.pattern.pattern__array(self);
-	var to_string = "(";
+	var to_string = "[";
 	var array__length = array.length;
 	var array__index  = 0;
 	while (array__index < array__length) {
 	    to_string += " " + sals.pattern.expression__to_string(array[array__index]);
 	    array__index ++;
 	}
-	to_string += ")";
+	to_string += "]";
 	return to_string;
     };
     
