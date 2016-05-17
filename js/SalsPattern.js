@@ -7,7 +7,7 @@ sals.pattern = {};
     
     sals.pattern.pattern__new = function(array) {
 	var self = sals.object.object__new("pattern");
-	sals.frame.frame__add_element(self, "array", state);
+	sals.frame.frame__add_element(self, "array", array);
 	return self;
     };
     
