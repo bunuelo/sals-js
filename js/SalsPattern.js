@@ -85,9 +85,9 @@ sals.pattern = {};
     };
     
     sals.pattern.pattern_and__to_string = function(self) {
-	var expression          = sals.pattern.pattern_and__expression(self);
+	var expressions         = sals.pattern.pattern_and__expressions(self);
 	var to_string           = "(";
-	var expressions__length = array.length;
+	var expressions__length = expressions.length;
 	var expressions__index  = 0;
 	while (expressions__index < expressions__length) {
 	    (function() {
