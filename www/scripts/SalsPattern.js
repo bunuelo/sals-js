@@ -205,6 +205,18 @@ sals.pattern.expression__to_string = function(expression) {
     return "\"" + expression + "\"";
 };
 
+// implies(and(X, Y), Z): optimal question asking for implication mining
+//
+//  q0(y/n) -> q1(y/n) -> q2(y/n) -> q3(y/n)
+// 
+//  knowledge_actions
+// 
+//    fact1 and fact2 fit the conjunctive antecedent pattern of an implication, so we question whether the consequent is true.
+//      if the answer to the question is yes, we assert the consequent and mark it as depending on the implication and the two facts used to derive it.
+//      if the answer to the question is no, this removes evidential support for this implication and all knowledge derived from it.
+//        in the case of losing evidential support, a search for new evidential support for a similar conjunctive implication could be initiated in the hopes of not needing to remove all derived knowledge.
+// 
+
 sals.pattern.test_pattern = function() {
     sals.core.log("test_pattern HERE.");
     (function() {
@@ -215,7 +227,7 @@ sals.pattern.test_pattern = function() {
 	var implies = sals.pattern.pattern_implies__new(and, z);
 	sals.core.log("implies = " + sals.pattern.expression__to_string(implies));
     })();
-    (function() {
+    (function() { // the most general logical relationship pattern
 	var gx       = sals.pattern.pattern__new([sals.pattern.pattern_variable__new("X"), "a", sals.pattern.pattern_variable__new("Y")]);
 	var gy       = sals.pattern.pattern__new(["all", sals.pattern.pattern_variable__new("Y"), "s are ", sals.pattern.pattern_variable__new("Z")]);
 	var gz       = sals.pattern.pattern__new([sals.pattern.pattern_variable__new("X"), sals.pattern.pattern_variable__new("Z")]);
@@ -223,7 +235,7 @@ sals.pattern.test_pattern = function() {
 	var gimplies = sals.pattern.pattern_implies__new(gand, gz);
 	sals.core.log("gimplies = " + sals.pattern.expression__to_string(gimplies));
     })();
-    (function() {
+    (function() { // a test starting set of patterns from which "aristotle is a mortal" should be derived, using the above learned general rule along with this set of patterns.
 	var pattern_set = sals.pattern.pattern_set__new([sals.pattern.pattern__new(["aristotle is a man"]),
 							 sals.pattern.pattern__new(["all mans are mortal"])]);
 	sals.core.log("pattern_set = " + sals.pattern.expression__to_string(pattern_set));
