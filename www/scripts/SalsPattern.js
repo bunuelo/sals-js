@@ -169,7 +169,7 @@ sals.pattern.test_pattern = function() {
     var y       = sals.pattern.pattern__new_from_string("all mans are mortal");
     var z       = sals.pattern.pattern__new_from_string("aristotle is mortal");
     var and     = sals.pattern.pattern_and__new([x, y]);
-    var implies = sals.pattern.pattern_implies__new([and, z]);
+    var implies = sals.pattern.pattern_implies__new(and, z);
     sals.core.log("implies = " + sals.pattern.expression__to_string(implies));
     sals.core.log("test_pattern DONE.");
 };
