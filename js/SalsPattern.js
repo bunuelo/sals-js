@@ -103,6 +103,43 @@ sals.pattern = {};
     
 })(); // pattern_and END
 
+(function() { // pattern_implies
+    var object_type = sals.object.object_type__new("pattern_implies");
+    sals.object_registry.add_type(object_type);
+    
+    sals.pattern.pattern_implies__new = function(expressions) {
+	var self = sals.object.object__new("pattern_implies");
+	sals.frame.frame__add_element(self, "expressions", expressions);
+	return self;
+    };
+    
+    sals.pattern.pattern_implies__expressions = function(self) {
+	return sals.frame.frame__get_element(self, "expressions");
+    };
+    
+    sals.pattern.pattern_implies__set_expressions = function(self, value) {
+	sals.frame.frame__set_element(self, "expressions", value);
+    };
+    
+    sals.pattern.pattern_implies__to_string = function(self) {
+	var expressions         = sals.pattern.pattern_implies__expressions(self);
+	var to_string           = "(";
+	var expressions__length = expressions.length;
+	var expressions__index  = 0;
+	while (expressions__index < expressions__length) {
+	    (function() {
+		var expression         = expressions[expressions__index];
+		var expression__string = "" + sals.pattern.pattern__to_string(expression);
+		to_string += ((expressions__index == 0) ? "" : " && ") + expression__string;
+	    })();
+	    expressions__index ++;
+	}
+	to_string += ")";
+	return to_string;
+    };
+    
+})(); // pattern_implies END
+
 sals.pattern.generate_test_patterns = function() {
     var inputs         = ["aristotle is a man",
 			  "all men are mortal",
@@ -110,8 +147,6 @@ sals.pattern.generate_test_patterns = function() {
     //var inputs         = ["(? X) is a (? Y)",
     //			  "all (? Y)s are (? Z)",
     //			  "(? X) is (? Z)"];
-    var and            = sals.pattern.pattern_and__new([inputs[0], inputs[1]]);
-    sals.core.log("and = " + sals.pattern.pattern_and__to_string(and));
     var patterns       = [];
     var inputs__length = inputs.length;
     var inputs__index  = 0;
@@ -139,5 +174,8 @@ sals.pattern.test_pattern = function() {
 	})();
 	test_patterns__index ++;
     }
+    var and = sals.pattern.pattern_and__new([test_patterns[0],
+					     test_patterns[1]]);
+    sals.core.log("and = " + sals.pattern.pattern_and__to_string(and));
     sals.core.log("test_pattern DONE.");
 };
