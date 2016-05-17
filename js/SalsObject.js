@@ -22,7 +22,7 @@ sals.object.object__type = function(exp) {
 };
 
 sals.object.object__is_type = function(exp, type) {
-b    return (sals.object.object__type(exp) === type);
+    return (sals.object.object__type(exp) === type);
 };
 
 // object END
