@@ -170,6 +170,12 @@ sals.pattern.test_pattern = function() {
     var z       = sals.pattern.pattern__new_from_string("aristotle is mortal");
     var and     = sals.pattern.pattern_and__new([x, y]);
     var implies = sals.pattern.pattern_implies__new(and, z);
+    var gx       = sals.pattern.pattern__new(["(? X)", "a", "(? Y)"]);
+    var gy       = sals.pattern.pattern__new(["all", "(? Y)", "s are ", "(? Z)"]);
+    var gz       = sals.pattern.pattern__new(["(? X)", "(? Z)"]);
+    var gand     = sals.pattern.pattern_and__new([gx, gy]);
+    var gimplies = sals.pattern.pattern_implies__new(gand, gz);
     sals.core.log("implies = " + sals.pattern.expression__to_string(implies));
+    sals.core.log("gimplies = " + sals.pattern.expression__to_string(gimplies));
     sals.core.log("test_pattern DONE.");
 };
