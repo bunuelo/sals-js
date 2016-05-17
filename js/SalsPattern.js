@@ -25,7 +25,7 @@ sals.pattern = {};
     
     sals.pattern.pattern_variable__to_string = function(self) {
 	var name = sals.pattern.pattern_variable__name(self);
-	var to_string = "(? " + name + ")";
+	var to_string = "?" + name;
 	return to_string;
     };
     
