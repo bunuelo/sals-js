@@ -48,7 +48,7 @@ sals.pattern.test_pattern = function() {
 	    var input = inputs[inputs__index];
 	    sals.core.log("input = " + input);
 	    var input__pattern = sals.pattern.pattern__new_from_string(input);
-	    sals.core.log("input__pattern = " + input__pattern);
+	    sals.core.log("input__pattern = " + sals.pattern.pattern__to_string(input__pattern));
 	})();
 	inputs__index ++;
     }
