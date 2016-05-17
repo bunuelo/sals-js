@@ -92,7 +92,7 @@ sals.pattern = {};
 	while (expressions__index < expressions__length) {
 	    (function() {
 		var expression         = expressions[expressions__index];
-		var expression__string = "" + expression;
+		var expression__string = "" + sals.pattern.pattern__to_string(expression);
 		to_string += ((expressions__index == 0) ? "" : " && ") + "\"" + expression__string + "\"";
 	    })();
 	    expressions__index ++;
