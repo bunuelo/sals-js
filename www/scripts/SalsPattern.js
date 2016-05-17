@@ -33,13 +33,8 @@ sals.pattern = {};
     };
     
     sals.pattern.pattern__new_from_string = function(str) {
-	var str__length = str.length;
-	var array       = new Array(str__length);
-	var str__index = 0;
-	while (str__index < str__length) {
-	    array[str__index] = str[str__index];
-	    str__index ++;
-	}
+	var array = new Array(1);
+	array[0] = str;
 	return sals.pattern.pattern__new(array);
     };
     
