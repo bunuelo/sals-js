@@ -93,7 +93,7 @@ sals.pattern = {};
 	    (function() {
 		var expression         = expressions[expressions__index];
 		var expression__string = "" + sals.pattern.pattern__to_string(expression);
-		to_string += ((expressions__index == 0) ? "" : " && ") + "\"" + expression__string + "\"";
+		to_string += ((expressions__index == 0) ? "" : " && ") + expression__string;
 	    })();
 	    expressions__index ++;
 	}
