@@ -155,6 +155,47 @@ sals.pattern = {};
     
 })(); // pattern_implies END
 
+(function() { // knowledge_base
+    var object_type = sals.object.object_type__new("knowledge_base");
+    sals.object_registry.add_type(object_type);
+    
+    sals.pattern.knowledge_base__new = function(expressions) {
+	var self = sals.object.object__new("knowledge_base");
+	sals.frame.frame__add_element(self, "expressions", expressions);
+	return self;
+    };
+    
+    sals.pattern.knowledge_base__is_type = function(exp) {
+	return sals.object.object__is_type(exp, "knowledge_base");
+    };
+    
+    sals.pattern.knowledge_base__expressions = function(self) {
+	return sals.frame.frame__get_element(self, "expressions");
+    };
+    
+    sals.pattern.knowledge_base__set_expressions = function(self, value) {
+	sals.frame.frame__set_element(self, "expressions", value);
+    };
+    
+    sals.pattern.knowledge_base__to_string = function(self) {
+	var expressions         = sals.pattern.knowledge_base__expressions(self);
+	var to_string           = "(knowledge_base ";
+	var expressions__length = expressions.length;
+	var expressions__index  = 0;
+	while (expressions__index < expressions__length) {
+	    (function() {
+		var expression         = expressions[expressions__index];
+		var expression__string = "" + sals.pattern.pattern__to_string(expression);
+		to_string += " " + expression__string;
+	    })();
+	    expressions__index ++;
+	}
+	to_string += ")";
+	return to_string;
+    };
+    
+})(); // knowledge_base END
+
 sals.pattern.expression__to_string = function(expression) {
     if      (sals.pattern.pattern_variable__is_type(expression)) {return sals.pattern.pattern_variable__to_string(expression);}
     else if (sals.pattern.pattern__is_type(expression))          {return sals.pattern.pattern__to_string(expression);}
