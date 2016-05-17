@@ -191,6 +191,7 @@ sals.go.test_go_game_element = function() {
     var black_cell = sals.go.go_game_board__get_cell(go_game__board, 1, 1);
     sals.go.go_game_board_cell__set_state(black_cell, "black");
     sals.logic.test_logic();
+    sals.pattern.test_pattern();
     return sals.go.go_game__to_dom_element(go_game);
 };
 
