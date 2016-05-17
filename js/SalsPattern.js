@@ -140,42 +140,12 @@ sals.pattern = {};
     
 })(); // pattern_implies END
 
-sals.pattern.generate_test_patterns = function() {
-    var inputs         = ["aristotle is a man",
-			  "all men are mortal",
-			  "artistotle is mortal"];
-    //var inputs         = ["(? X) is a (? Y)",
-    //			  "all (? Y)s are (? Z)",
-    //			  "(? X) is (? Z)"];
-    var patterns       = [];
-    var inputs__length = inputs.length;
-    var inputs__index  = 0;
-    while (inputs__index < inputs__length) {
-	(function() {
-	    var input = inputs[inputs__index];
-	    sals.core.log("input = " + input);
-	    var input__pattern = sals.pattern.pattern__new_from_string(input);
-	    patterns.push(input__pattern);
-	})();
-	inputs__index ++;
-    }
-    return patterns;
-};
-
 sals.pattern.test_pattern = function() {
     sals.core.log("test_pattern HERE.");
-    var test_patterns         = sals.pattern.generate_test_patterns();
-    var test_patterns__length = test_patterns.length;
-    var test_patterns__index  = 0;
-    while (test_patterns__index < test_patterns__length) {
-	(function() {
-	    var test_pattern = test_patterns[test_patterns__index];
-	    sals.core.log("test_pattern = " + sals.pattern.pattern__to_string(test_pattern));
-	})();
-	test_patterns__index ++;
-    }
-    var and = sals.pattern.pattern_and__new([test_patterns[0],
-					     test_patterns[1]]);
+    var x = sals.pattern.pattern__new_from_string("aristotle is a man");
+    var y = sals.pattern.pattern__new_from_string("all mans are mortal");
+    var z = sals.pattern.pattern__new_from_string("aristotle is mortal");
+    var and = sals.pattern.pattern_and__new([x, y]);
     sals.core.log("and = " + sals.pattern.pattern_and__to_string(and));
     sals.core.log("test_pattern DONE.");
 };
