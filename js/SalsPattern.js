@@ -148,7 +148,7 @@ sals.pattern = {};
     
     sals.pattern.pattern_implies__to_string = function(self) {
 	var antecedent = sals.pattern.pattern_implies__antecedent(self);
-	var consequent = sals.pattern.pattern_implies__antecedent(self);
+	var consequent = sals.pattern.pattern_implies__consequent(self);
 	var to_string  = "(" + sals.pattern.expression__to_string(antecedent) + " => " + sals.pattern.expression__to_string(consequent) + ")";
 	return to_string;
     };
