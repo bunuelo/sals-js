@@ -28,4 +28,16 @@ sals.pattern = {};
 
 sals.pattern.test_pattern = function() {
     sals.core.log("test_pattern HERE.");
+    var inputs         = ["the dog is brown",
+			  "the fox is red"];
+    var inputs__length = inputs.length;
+    var inputs__index  = 0;
+    while (inputs__index < inputs__length) {
+	(function() {
+	    var input = inputs[inputs__index];
+	    sals.core.log("input = " + input);
+	})();
+	inputs__index ++;
+    }
+    sals.core.log("test_pattern DONE.");
 };
