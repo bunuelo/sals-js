@@ -59,7 +59,7 @@ sals.pattern = {};
 	var array__length = array.length;
 	var array__index  = 0;
 	while (array__index < array__length) {
-	    to_string += " \"" + array[array__index] + "\"";
+	    to_string += " " + sals.pattern.expression__to_string(array[array__index]) + "\"";
 	    array__index ++;
 	}
 	to_string += ")";
@@ -160,7 +160,7 @@ sals.pattern.expression__to_string = function(expression) {
     else if (sals.pattern.pattern__is_type(expression))          {return sals.pattern.pattern__to_string(expression);}
     else if (sals.pattern.pattern_and__is_type(expression))      {return sals.pattern.pattern_and__to_string(expression);}
     else if (sals.pattern.pattern_implies__is_type(expression))  {return sals.pattern.pattern_implies__to_string(expression);}
-    return "(expression)";
+    return "\"" + expression + "\"";
 };
 
 sals.pattern.test_pattern = function() {
