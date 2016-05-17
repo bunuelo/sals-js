@@ -26,6 +26,7 @@ sals.pattern = {};
 	var array__index  = 0;
 	while (array__index < array__length) {
 	    to_string += " \"" + array[array__index] + "\"";
+	    array__index ++;
 	}
 	to_string += ")";
 	return to_string;
