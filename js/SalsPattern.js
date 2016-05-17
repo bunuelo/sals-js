@@ -28,6 +28,7 @@ sals.pattern = {};
 	    to_string += " \"" + array[array__index] + "\"";
 	}
 	to_string += ")";
+	return to_string;
     };
     
     sals.pattern.pattern__new_from_string = function(str) {
