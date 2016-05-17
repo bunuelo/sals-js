@@ -59,7 +59,7 @@ sals.pattern = {};
 	var array__length = array.length;
 	var array__index  = 0;
 	while (array__index < array__length) {
-	    to_string += " " + sals.pattern.expression__to_string(array[array__index]);
+	    to_string += ((array__index == 0) ? "" : " ") + sals.pattern.expression__to_string(array[array__index]);
 	    array__index ++;
 	}
 	to_string += "]";
