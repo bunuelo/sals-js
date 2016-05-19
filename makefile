@@ -10,9 +10,22 @@ less-usage:
 print-usage:
 	@echo ""
 	@echo "USAGE"
+	@echo ""
 	@echo "  make <command>"
 	@echo ""
 	@echo "COMMANDS"
+	@echo ""
+	@echo "  print-usage"
+	@echo "  start-editor"
+	@echo "  compile-webpage"
+	@echo "  upload-webpage"
+	@echo "  git-pull"
+	@echo "  git-push"
+	@echo "  git-commit"
+	@echo "  git-add"
+	@echo "  git-development-cycle"
+	@echo ""
+	@echo "COMMANDS' DESCRIPTIONS"
 	@echo ""
 	@echo "  print-usage"
 	@echo "    - prints this usage message"
@@ -43,10 +56,12 @@ print-usage:
 	@echo "    - git-pull, compile-webpage, git-add, git-commit, git-push"
 	@echo ""
 	@echo "DATE"
+	@echo ""
 	@echo "  This documentation was last edited on April 18, 2016."
 	@echo ""
 	@echo "AUTHORS"
-	@echo "  Bo Morgan"
+	@echo ""
+	@echo "  Bo Morgan <bo.morgan@bomorgan.io>"
 	@echo ""
 
 start-editor:
@@ -85,6 +100,6 @@ git-add:
 	git add --all .
 
 git-development-cycle:
-	make git-pull; make compile-webpage; make git-add; make git-commit; make git-push
+	make git-pull; make compile-webpage; make git-add; make git-commit; make git-push; make upload-webpage
 
 
