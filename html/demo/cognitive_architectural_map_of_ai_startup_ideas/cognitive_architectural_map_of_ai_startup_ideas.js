@@ -98,6 +98,39 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
     })();
 };
 
+{ // propogate_node_data BEGIN
+    
+    sals.propogate_node_data__new() {
+	var self = sals.frame.frame__new();
+	sals.frame.frame__add_element(self, "source_frame", sals.frame.frame__new());
+	return self;
+    };
+    
+    sals.propogate_node_data__source_frame(self) {
+	return sals.frame.frame__get_element(self, "source_frame");
+    };
+    
+    sals.propogate_node_data__set_source_frame(self, value) {
+	return sals.frame.frame__set_element(self, "source_frame", value);
+    };
+    
+    sals.propogate_node_data__set_source_value(self, source_key, value) {
+	var source_frame = sals.propogate_node_data__source_frame(self);
+	sals.frame.frame__set_element(source_frame, source_key, value);
+    };
+    
+    sals.propogate_node_data__get_source_value(self, source_key) {
+	var source_frame = sals.propogate_node_data__source_frame(self);
+	return sals.frame.frame__get_element(source_frame, source_key);
+    };
+    
+} // propogate_node_data END
+
+sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
+    sals.core.log("iterate HERE.");
+    //sals.propogate_node_data__new();
+};
+
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var cloud_service_market = "Cloud Service\nMarket";
     var education_market     = "Education\nMarket";
@@ -301,6 +334,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    sals.graph.graph__add_edge(graph, edge__graph_edge);
 	}
     })();
+    sals.demo.ai_startup_idea.propogation__iterate(graph);
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
