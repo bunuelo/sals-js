@@ -54,6 +54,18 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		//sals.core.log("rgb = " + r + "," + g + "," + b);
 		var concept                 = concepts[index];
 		var concept__node           = sals.graph.graph_node__new(concept);
+		(function() { // propograte_node_data initialized and used here.
+		    var propogate_node_data       = sals.demo.ai_startup_idea.propogate_node_data__new();
+		    var propogate_node_data_frame = sals.frame.frame__new();
+		    sals.propogate_node_data__set_source_value(propogate_node_data, concept, propogate_node_data_frame);
+		    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
+		    sals.frame.frame__add_element(propogate_node_data_frame, "color_pin_active",    color_pin_active);
+		    sals.frame.frame__add_element(propogate_node_data_frame, "x",                   x);
+		    sals.frame.frame__add_element(propogate_node_data_frame, "y",                   y);
+		    sals.frame.frame__add_element(propogate_node_data_frame, "r",                   r);
+		    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   g);
+		    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   b);
+		})();
 		var concept__node__vis_node = {};
 		if (position_pin_active) {
 		    sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
