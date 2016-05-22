@@ -197,21 +197,35 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
 			    var node_done = false;
 			    // modify variables here.
 			    (function() {
-				var nx = x;
-				var ny = y;
-				var position_done = ((sals.math.abs(nx - x) < 0.1) && 
-						     (sals.math.abs(ny - y) < 0.1));
-				x = nx;
-				y = ny;
-				var nr = r;
-				var ng = g;
-				var nb = b;
-				r = nr;
-				g = ng;
-				b = nb;
-				var color_done = ((sals.math.abs(nr - r) < 0.1) && 
-						  (sals.math.abs(ng - g) < 0.1) && 
-						  (sals.math.abs(nb - b) < 0.1));
+				var position_done;
+				if (position_pin_active) {
+				    position_done = true;
+				} else {
+				    (function() {
+					var nx = x;
+					var ny = y;
+					position_done = ((sals.math.abs(nx - x) < 0.1) && 
+							 (sals.math.abs(ny - y) < 0.1));
+					x = nx;
+					y = ny;
+				    })();
+				}
+				var color_done;
+				if (color_pin_active) {
+				    color_done = true;
+				} else {
+				    (function() {
+					var nr = r;
+					var ng = g;
+					var nb = b;
+					r = nr;
+					g = ng;
+					b = nb;
+					color_done = ((sals.math.abs(nr - r) < 0.1) && 
+						      (sals.math.abs(ng - g) < 0.1) && 
+						      (sals.math.abs(nb - b) < 0.1));
+				    })();
+				}
 				node_done = (color_done && position_done);
 			    })();
 			    if (! node_done) {
