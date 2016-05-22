@@ -8,26 +8,26 @@ sals.demo.ai_startup_idea = {};
 
 { // propogate_node_data BEGIN
     
-    sals.propogate_node_data__new = function() {
+    sals.demo.ai_startup_idea.propogate_node_data__new = function() {
 	var self = sals.frame.frame__new();
 	sals.frame.frame__add_element(self, "source_frame", sals.frame.frame__new());
 	return self;
     };
     
-    sals.propogate_node_data__source_frame = function(self) {
+    sals.demo.ai_startup_idea.propogate_node_data__source_frame = function(self) {
 	return sals.frame.frame__get_element(self, "source_frame");
     };
     
-    sals.propogate_node_data__set_source_frame = function(self, value) {
+    sals.demo.ai_startup_idea.propogate_node_data__set_source_frame = function(self, value) {
 	return sals.frame.frame__set_element(self, "source_frame", value);
     };
     
-    sals.propogate_node_data__set_source_value = function(self, source_key, value) {
+    sals.demo.ai_startup_idea.propogate_node_data__set_source_value = function(self, source_key, value) {
 	var source_frame = sals.propogate_node_data__source_frame(self);
 	sals.frame.frame__set_element(source_frame, source_key, value);
     };
     
-    sals.propogate_node_data__get_source_value = function(self, source_key) {
+    sals.demo.ai_startup_idea.propogate_node_data__get_source_value = function(self, source_key) {
 	var source_frame = sals.propogate_node_data__source_frame(self);
 	return sals.frame.frame__get_element(source_frame, source_key);
     };
@@ -57,7 +57,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		(function() { // propograte_node_data initialized and used here.
 		    var propogate_node_data       = sals.demo.ai_startup_idea.propogate_node_data__new();
 		    var propogate_node_data_frame = sals.frame.frame__new();
-		    sals.propogate_node_data__set_source_value(propogate_node_data, concept, propogate_node_data_frame);
+		    sals.demo.ai_startup_idea.propogate_node_data__set_source_value(propogate_node_data, concept, propogate_node_data_frame);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "color_pin_active",    color_pin_active);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "x",                   x);
