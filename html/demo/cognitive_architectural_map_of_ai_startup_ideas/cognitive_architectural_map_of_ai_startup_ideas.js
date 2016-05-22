@@ -176,11 +176,13 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
     (function() {
 	var done = false;
 	while (! done) {
+	    sals.core.log("iterate not done HERE.");
 	    done = true;
 	    (function() {
 		var graph_nodes               = sals.graph.graph__nodes(graph);
 		var graph_nodes__length       = graph_nodes.length;
 		var graph_nodes__index        = 0;
+		sals.core.log("iterate graph_nodes__length = " + graph_nodes__length);
 		while (graph_nodes__index < graph_nodes__length) {
 		    (function() {
 			sals.core.log("iterate graph_node HERE.");
