@@ -42,15 +42,16 @@ sals.demo.ai_startup_idea = {};
 	return sals.frame.frame__get_element(source_frame, source_key);
     };
     
-    sals.demo.ai_startup_idea.propogate_node_data__to_vis_node = function(self) {
-	var vis_node = {};
-	var position_pin_active = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
-	var color_pin_active    = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
-	var x                   = sals.frame.frame__get_element(propogate_node_data_frame, "x");
-	var y                   = sals.frame.frame__get_element(propogate_node_data_frame, "y");
-	var r                   = sals.frame.frame__get_element(propogate_node_data_frame, "r");
-	var g                   = sals.frame.frame__get_element(propogate_node_data_frame, "g");
-	var b                   = sals.frame.frame__get_element(propogate_node_data_frame, "b");
+    sals.demo.ai_startup_idea.propogate_node_data__to_vis_node = function(self, source_key) {
+	var vis_node                  = {};
+	var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(propogate_node_data, source_key);
+	var position_pin_active       = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
+	var color_pin_active          = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
+	var x                         = sals.frame.frame__get_element(propogate_node_data_frame, "x");
+	var y                         = sals.frame.frame__get_element(propogate_node_data_frame, "y");
+	var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
+	var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
+	var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
 	if (position_pin_active) {
 	    sals.vis.object__soft_merge_recursive(vis_node, {
 		fixed : true,
@@ -126,7 +127,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		    sals.frame.frame__add_element(propogate_node_data_frame, "r",                   r);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   g);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   b);
-		    var concept__node__vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data);
+		    var concept__node__vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data, concept);
 		    //sals.core.log("final_concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
 		    concept__node["vis_node"] = concept__node__vis_node;
 		})();
