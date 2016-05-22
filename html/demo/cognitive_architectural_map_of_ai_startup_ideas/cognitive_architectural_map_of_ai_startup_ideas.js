@@ -24,7 +24,29 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 	    var b                       = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
 	    var concept                 = concepts[index];
 	    var concept__node           = sals.graph.graph_node__new(concept);
-	    var concept__node__vis_node = {
+	    var concept__node__vis_node = {};
+	    if (position_pin_active) {
+		sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
+		    fixed : true,
+		    x     : x,
+		    y     : y
+		});
+	    }
+	    if (color_pin_active) {
+		(function() {
+		    var rgb_string = "rgba(" + baas['math']['floor'](255 * r) + "," + baas['math']['floor'](255 * g) + "," + baas['math']['floor'](255 * b) + ",1)";
+		    sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
+			background : rgb_string,
+			highlight  : {
+			    background : rgb_string
+			},
+			hover : {
+			    background : rgb_string
+			}
+		    })();
+		});
+	    }
+	    sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
 		color  : {
 		    border     : 'rgba(0,0,0,1)',
 		    background : 'rgba(255,255,255,1)',
@@ -38,28 +60,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		    }
 		},
 		font  : {color : 'rgba(0,0,0,1)'}
-	    };
-	    if (position_pin_active) {
-		sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
-		    fixed : true,
-		    x     : x,
-		    y     : y
-		});
-	    }
-	    if (color_pin_active) {
-		(function() {
-		    var rgb_string = "rgba(" + baas['math']['floor'](255 * r) + "," + baas['math']['floor'](255 * g) + "," + baas['math']['floor'](255 * b) + ",1)";
-		    sals.vis.object__hard_merge_recursive(concept__node__vis_node, {
-			background : rgb_string,
-			highlight  : {
-			    background : rgb_string
-			},
-			hover : {
-			    background : rgb_string
-			}
-		    })();
-		});
-	    }
+	    });
 	    concept__node["vis_node"] = concept__node__vis_node;
 	    node_concept_map[concept] = concept__node;
 	    sals.graph.graph__add_node(graph, concept__node);
