@@ -6,9 +6,16 @@ if (typeof(sals["demo"]) == "undefined") {
 
 sals.demo.ai_startup_idea = {};
 
-sals.demo.ai_startup_idea.graph__add_concept_line = function(graph, node_concept_map, relationship, x0, y0, x1, y1, concepts) {
+sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
+							     node_concept_map,
+							     relationship,
+							     concepts,
+							     position_pin_active,
+							     x0, y0, x1, y1,
+							     color_pin_active,
+							     r0, g0, b0, r1, g1, b1) {
     var concept__height = 400;
-    var concepts__pin = true;
+    var concepts__pin   = true;
     (function() {
 	for (var index = 0; index < concepts.length; index ++) {
 	    var x                       = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
@@ -185,9 +192,30 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, "Up One\nEmotion Machine\nLayer", -1000,  1000, -1000, -1000, layers);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                             -1000, -1000,  1000, -1000, fields);
-    sals.demo.ai_startup_idea.graph__add_concept_line(graph, node_concept_map, null,                              1000, -1000,  1000,  1000, markets);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph,
+						      node_concept_map,
+						      "Up One\nEmotion Machine\nLayer",
+						      layers,
+						      true,
+						      -1000,  1000, -1000, -1000,
+						      true,
+						      1, 0, 0, 1, 0, 0);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph,
+						      node_concept_map,
+						      null,
+						      fields,
+						      true,
+						      -1000, -1000,  1000, -1000,
+						      true,
+						      0, 1, 0, 0, 1, 0);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph,
+						      node_concept_map,
+						      null,
+						      markets,
+						      true,
+						      1000, -1000,  1000,  1000,
+						      true,
+						      0, 0, 1, 0, 0, 1);
     (function() {
 	for(var index = 0; index < technologies.length; index ++) {
 	    var technology       = technologies[index];

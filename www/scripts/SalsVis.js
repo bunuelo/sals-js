@@ -1,6 +1,5 @@
 sals.vis = {};
 
-
 // Recursively merge properties of two objects, overriding values in destination object.
 sals.vis.object__hard_merge_recursive = function(destination, source) {
     for (var key in source) {
