@@ -23,7 +23,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		var r                       = (concepts.length != 1) ? (r0 + (r1 - r0) * index / (concepts.length - 1)) : r0;
 		var g                       = (concepts.length != 1) ? (g0 + (g1 - g0) * index / (concepts.length - 1)) : g0;
 		var b                       = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
-		sals.core.log("rgb = " + r + "," + g + "," + b);
+		//sals.core.log("rgb = " + r + "," + g + "," + b);
 		var concept                 = concepts[index];
 		var concept__node           = sals.graph.graph_node__new(concept);
 		var concept__node__vis_node = {};
@@ -37,7 +37,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		if (color_pin_active) {
 		    (function() {
 			var rgb_string = "rgba(" + sals['math']['floor'](255 * r) + "," + sals['math']['floor'](255 * g) + "," + sals['math']['floor'](255 * b) + ",1)";
-			sals.core.log("rgb_string = " + rgb_string);
+			//sals.core.log("rgb_string = " + rgb_string);
 			sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
 			    background : rgb_string,
 			    highlight  : {
@@ -47,6 +47,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 				background : rgb_string
 			    }
 			});
+			sals.core.log("concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
 		    })();
 		}
 		sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
