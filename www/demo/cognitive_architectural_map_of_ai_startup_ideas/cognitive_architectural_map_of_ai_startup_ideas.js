@@ -23,12 +23,12 @@ sals.demo.ai_startup_idea = {};
     };
     
     sals.demo.ai_startup_idea.propogate_node_data__set_source_value = function(self, source_key, value) {
-	var source_frame = sals.propogate_node_data__source_frame(self);
+	var source_frame = sals.demo.ai_startup_idea.propogate_node_data__source_frame(self);
 	sals.frame.frame__set_element(source_frame, source_key, value);
     };
     
     sals.demo.ai_startup_idea.propogate_node_data__get_source_value = function(self, source_key) {
-	var source_frame = sals.propogate_node_data__source_frame(self);
+	var source_frame = sals.demo.ai_startup_idea.propogate_node_data__source_frame(self);
 	return sals.frame.frame__get_element(source_frame, source_key);
     };
     
