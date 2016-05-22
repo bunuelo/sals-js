@@ -108,15 +108,14 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
     (function() {
 	for (var index = 0; index < concepts.length; index ++) {
 	    (function() {
-		var x                       = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
-		var y                       = y0 + (y1 - y0) * (index + 1) / (concepts.length + 1);
-		var r                       = (concepts.length != 1) ? (r0 + (r1 - r0) * index / (concepts.length - 1)) : r0;
-		var g                       = (concepts.length != 1) ? (g0 + (g1 - g0) * index / (concepts.length - 1)) : g0;
-		var b                       = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
-		//sals.core.log("rgb = " + r + "," + g + "," + b);
 		var concept                 = concepts[index];
 		var concept__node           = sals.graph.graph_node__new(concept);
 		(function() { // propograte_node_data initialized and used here.
+		    var x                         = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
+		    var y                         = y0 + (y1 - y0) * (index + 1) / (concepts.length + 1);
+		    var r                         = (concepts.length != 1) ? (r0 + (r1 - r0) * index / (concepts.length - 1)) : r0;
+		    var g                         = (concepts.length != 1) ? (g0 + (g1 - g0) * index / (concepts.length - 1)) : g0;
+		    var b                         = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
 		    var propogate_node_data       = sals.demo.ai_startup_idea.propogate_node_data__new();
 		    var propogate_node_data_frame = sals.frame.frame__new();
 		    sals.demo.ai_startup_idea.propogate_node_data__add_source_value(propogate_node_data, concept, propogate_node_data_frame);
