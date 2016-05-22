@@ -42,6 +42,57 @@ sals.demo.ai_startup_idea = {};
 	return sals.frame.frame__get_element(source_frame, source_key);
     };
     
+    sals.demo.ai_startup_idea.propogate_node_data__to_vis_node = function(self) {
+	var vis_node = {};
+	var position_pin_active = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
+	var color_pin_active    = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
+	var x                   = sals.frame.frame__get_element(propogate_node_data_frame, "x");
+	var y                   = sals.frame.frame__get_element(propogate_node_data_frame, "y");
+	var r                   = sals.frame.frame__get_element(propogate_node_data_frame, "r");
+	var g                   = sals.frame.frame__get_element(propogate_node_data_frame, "g");
+	var b                   = sals.frame.frame__get_element(propogate_node_data_frame, "b");
+	if (position_pin_active) {
+	    sals.vis.object__soft_merge_recursive(vis_node, {
+		fixed : true,
+		x     : x,
+		y     : y
+	    });
+	}
+	if (color_pin_active) {
+	    (function() {
+		var rgb_string = "rgba(" + sals['math']['floor'](255 * r) + "," + sals['math']['floor'](255 * g) + "," + sals['math']['floor'](255 * b) + ",1)";
+		//sals.core.log("rgb_string = " + rgb_string);
+		sals.vis.object__soft_merge_recursive(vis_node, {
+		    color  : {
+			background : rgb_string,
+			highlight  : {
+			    background : rgb_string
+			},
+			hover : {
+			    background : rgb_string
+			}
+		    }
+		});
+	    })();
+	}
+	sals.vis.object__soft_merge_recursive(vis_node, {
+	    color  : {
+		border     : 'rgba(0,0,0,1)',
+		background : 'rgba(255,255,255,1)',
+		highlight  : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)'
+		},
+		hover : {
+		    border     : 'rgba(0,0,0,1)',
+		    background : 'rgba(255,255,255,1)'
+		}
+	    },
+	    font  : {color : 'rgba(0,0,0,1)'}
+	});
+	return vis_node;
+    };
+    
 } // propogate_node_data END
 
 sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
@@ -75,50 +126,10 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		    sals.frame.frame__add_element(propogate_node_data_frame, "r",                   r);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   g);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   b);
+		    var concept__node__vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data);
+		    //sals.core.log("final_concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
+		    concept__node["vis_node"] = concept__node__vis_node;
 		})();
-		var concept__node__vis_node = {};
-		if (position_pin_active) {
-		    sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
-			fixed : true,
-			x     : x,
-			y     : y
-		    });
-		}
-		if (color_pin_active) {
-		    (function() {
-			var rgb_string = "rgba(" + sals['math']['floor'](255 * r) + "," + sals['math']['floor'](255 * g) + "," + sals['math']['floor'](255 * b) + ",1)";
-			//sals.core.log("rgb_string = " + rgb_string);
-			sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
-			    color  : {
-				background : rgb_string,
-				highlight  : {
-				    background : rgb_string
-				},
-				hover : {
-				    background : rgb_string
-				}
-			    }
-			});
-			//sals.core.log("concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
-		    })();
-		}
-		sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
-		    color  : {
-			border     : 'rgba(0,0,0,1)',
-			background : 'rgba(255,255,255,1)',
-			highlight  : {
-			    border     : 'rgba(0,0,0,1)',
-			    background : 'rgba(255,255,255,1)'
-			},
-			hover : {
-			    border     : 'rgba(0,0,0,1)',
-			    background : 'rgba(255,255,255,1)'
-			}
-		    },
-		    font  : {color : 'rgba(0,0,0,1)'}
-		});
-		//sals.core.log("final_concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
-		concept__node["vis_node"] = concept__node__vis_node;
 		node_concept_map[concept] = concept__node;
 		sals.graph.graph__add_node(graph, concept__node);
 	    })();
