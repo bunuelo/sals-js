@@ -178,34 +178,44 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
 	while (! done) {
 	    done = true;
 	    (function() {
-		var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(self, source_key);
-		var position_pin_active       = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
-		var color_pin_active          = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
-		var x                         = sals.frame.frame__get_element(propogate_node_data_frame, "x");
-		var y                         = sals.frame.frame__get_element(propogate_node_data_frame, "y");
-		var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
-		var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
-		var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
-		(function() {
-		    var node_done = false;
-		    // modify variables here.
+		var graph_nodes               = sals.graph.graph__nodes(graph);
+		var graph_nodes__length       = graph_nodes.length;
+		var graph_nodes__index        = 0;
+		while (graph_nodes__index < graph_nodes__length) {
 		    (function() {
-			var nx = x;
-			var ny = y;
-			var position_done = ((sals.math.abs(nx - x) < 0.1) && 
-					     (sals.math.abs(ny - y) < 0.1));
-			var nr = r;
-			var ng = g;
-			var nb = b;
-			var color_done = ((sals.math.abs(nr - r) < 0.1) && 
-					  (sals.math.abs(ng - g) < 0.1) && 
-					  (sals.math.abs(nb - b) < 0.1));
-			node_done = (color_done && position_done);
+			var graph_node                = graph_nodes[graph_nodes__index];
+			var propogate_node_data       = graph_node["propogate_node_data"];
+			var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(propogate_node_data, source_key);
+			var position_pin_active       = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
+			var color_pin_active          = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
+			var x                         = sals.frame.frame__get_element(propogate_node_data_frame, "x");
+			var y                         = sals.frame.frame__get_element(propogate_node_data_frame, "y");
+			var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
+			var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
+			var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
+			(function() {
+			    var node_done = false;
+			    // modify variables here.
+			    (function() {
+				var nx = x;
+				var ny = y;
+				var position_done = ((sals.math.abs(nx - x) < 0.1) && 
+						     (sals.math.abs(ny - y) < 0.1));
+				var nr = r;
+				var ng = g;
+				var nb = b;
+				var color_done = ((sals.math.abs(nr - r) < 0.1) && 
+						  (sals.math.abs(ng - g) < 0.1) && 
+						  (sals.math.abs(nb - b) < 0.1));
+				node_done = (color_done && position_done);
+			    })();
+			    if (! node_done) {
+				done = false;
+			    }
+			})();
 		    })();
-		    if (! node_done) {
-			done = false;
-		    }
-		})();
+		    graph_nodes__index ++;
+		}
 	    })();
 	}
     })();
