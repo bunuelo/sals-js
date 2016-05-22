@@ -44,7 +44,7 @@ sals.demo.ai_startup_idea = {};
     
     sals.demo.ai_startup_idea.propogate_node_data__to_vis_node = function(self, source_key) {
 	var vis_node                  = {};
-	var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(propogate_node_data, source_key);
+	var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(self, source_key);
 	var position_pin_active       = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
 	var color_pin_active          = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
 	var x                         = sals.frame.frame__get_element(propogate_node_data_frame, "x");
