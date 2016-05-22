@@ -108,8 +108,8 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
     (function() {
 	for (var index = 0; index < concepts.length; index ++) {
 	    (function() {
-		var concept                 = concepts[index];
-		var concept__node           = sals.graph.graph_node__new(concept);
+		var concept       = concepts[index];
+		var concept__node = sals.graph.graph_node__new(concept);
 		(function() { // propograte_node_data initialized and used here.
 		    var x                         = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
 		    var y                         = y0 + (y1 - y0) * (index + 1) / (concepts.length + 1);
@@ -163,9 +163,59 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
     })();
 };
 
+sals.demo.ai_startup_idea.propogation__sum = function(graph_node, relationship, source_key) {
+    
+};
+
+sals.demo.ai_startup_idea.propogation__count = function(graph_node, relationship, source_key) {
+    
+};
+
 sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
     sals.core.log("iterate HERE.");
-    //sals.propogate_node_data__new();
+    (function() {
+	var done = false;
+	while (! done) {
+	    done = true;
+	    (function() {
+		var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(self, source_key);
+		var position_pin_active       = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
+		var color_pin_active          = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
+		var x                         = sals.frame.frame__get_element(propogate_node_data_frame, "x");
+		var y                         = sals.frame.frame__get_element(propogate_node_data_frame, "y");
+		var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
+		var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
+		var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
+		(function() {
+		    var node_done = false;
+		    // modify variables here.
+		    (function() {
+			var nx = x;
+			var ny = y;
+			var position_done = ((sals.math.abs(nx - x) < 0.1) && 
+					     (sals.math.abs(ny - y) < 0.1));
+			var nr = r;
+			var ng = g;
+			var nb = b;
+			var color_done = ((sals.math.abs(nr - r) < 0.1) && 
+					  (sals.math.abs(ng - g) < 0.1) && 
+					  (sals.math.abs(nb - b) < 0.1));
+			node_done = (color_done && position_done);
+		    })();
+		    if (! node_done) {
+			done = false;
+		    }
+		})();
+	    })();
+	}
+    })();
+    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
+    sals.frame.frame__add_element(propogate_node_data_frame, "color_pin_active",    color_pin_active);
+    sals.frame.frame__add_element(propogate_node_data_frame, "x",                   x);
+    sals.frame.frame__add_element(propogate_node_data_frame, "y",                   y);
+    sals.frame.frame__add_element(propogate_node_data_frame, "r",                   r);
+    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   g);
+    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   b);
 };
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
