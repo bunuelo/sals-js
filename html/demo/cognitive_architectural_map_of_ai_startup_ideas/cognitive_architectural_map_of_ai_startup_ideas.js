@@ -67,7 +67,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		(function() { // propograte_node_data initialized and used here.
 		    var propogate_node_data       = sals.demo.ai_startup_idea.propogate_node_data__new();
 		    var propogate_node_data_frame = sals.frame.frame__new();
-		    sals.demo.ai_startup_idea.propogate_node_data__set_source_value(propogate_node_data, concept, propogate_node_data_frame);
+		    sals.demo.ai_startup_idea.propogate_node_data__add_source_value(propogate_node_data, concept, propogate_node_data_frame);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "color_pin_active",    color_pin_active);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "x",                   x);
