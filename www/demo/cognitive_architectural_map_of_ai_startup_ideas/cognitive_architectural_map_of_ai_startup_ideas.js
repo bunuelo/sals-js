@@ -127,6 +127,8 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		    sals.frame.frame__add_element(propogate_node_data_frame, "r",                   r);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   g);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   b);
+		})();
+		(function() {
 		    var concept__node__vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data, concept);
 		    //sals.core.log("final_concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
 		    concept__node["vis_node"] = concept__node__vis_node;
