@@ -15,11 +15,13 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 							     color_pin_active,
 							     r0, g0, b0, r1, g1, b1) {
     var concept__height = 400;
-    var concepts__pin   = true;
     (function() {
 	for (var index = 0; index < concepts.length; index ++) {
 	    var x                       = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
 	    var y                       = y0 + (y1 - y0) * (index + 1) / (concepts.length + 1);
+	    var r                       = (concepts.length != 1) ? (r0 + (r1 - r0) * index / (concepts.length - 1)) : r0;
+	    var g                       = (concepts.length != 1) ? (g0 + (g1 - g0) * index / (concepts.length - 1)) : g0;
+	    var b                       = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
 	    var concept                 = concepts[index];
 	    var concept__node           = sals.graph.graph_node__new(concept);
 	    var concept__node__vis_node = {
@@ -37,11 +39,25 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		},
 		font  : {color : 'rgba(0,0,0,1)'}
 	    };
-	    if (concepts__pin) {
+	    if (position_pin_active) {
 		sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
 		    fixed : true,
 		    x     : x,
 		    y     : y
+		});
+	    }
+	    if (color_pin_active) {
+		(function() {
+		    var rgb_string = "rgba(" + baas['math']['floor'](255 * r) + "," + baas['math']['floor'](255 * g) + "," + baas['math']['floor'](255 * b) + ",1)";
+		    sals.vis.object__hard_merge_recursive(concept__node__vis_node, {
+			background : rgb_string,
+			highlight  : {
+			    background : rgb_string
+			},
+			hover : {
+			    background : rgb_string
+			}
+		    })();
 		});
 	    }
 	    concept__node["vis_node"] = concept__node__vis_node;
