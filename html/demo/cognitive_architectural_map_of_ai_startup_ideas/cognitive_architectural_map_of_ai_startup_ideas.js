@@ -183,6 +183,7 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
 		var graph_nodes__index        = 0;
 		while (graph_nodes__index < graph_nodes__length) {
 		    (function() {
+			sals.core.log("iterate graph_node HERE.");
 			var graph_node                = graph_nodes[graph_nodes__index];
 			var propogate_node_data       = graph_node["propogate_node_data"];
 			var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(propogate_node_data, source_key);
