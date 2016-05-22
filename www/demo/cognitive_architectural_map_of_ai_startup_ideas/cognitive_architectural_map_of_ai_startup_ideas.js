@@ -49,7 +49,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 				}
 			    }
 			});
-			sals.core.log("concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
+			//sals.core.log("concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
 		    })();
 		}
 		sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
@@ -67,7 +67,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		    },
 		    font  : {color : 'rgba(0,0,0,1)'}
 		});
-		sals.core.log("final_concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
+		//sals.core.log("final_concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
 		concept__node["vis_node"] = concept__node__vis_node;
 		node_concept_map[concept] = concept__node;
 		sals.graph.graph__add_node(graph, concept__node);
