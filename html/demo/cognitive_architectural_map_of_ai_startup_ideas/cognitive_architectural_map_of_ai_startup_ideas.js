@@ -39,12 +39,14 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 			var rgb_string = "rgba(" + sals['math']['floor'](255 * r) + "," + sals['math']['floor'](255 * g) + "," + sals['math']['floor'](255 * b) + ",1)";
 			//sals.core.log("rgb_string = " + rgb_string);
 			sals.vis.object__soft_merge_recursive(concept__node__vis_node, {
-			    background : rgb_string,
-			    highlight  : {
-				background : rgb_string
-			    },
-			    hover : {
-				background : rgb_string
+			    color  : {
+				background : rgb_string,
+				highlight  : {
+				    background : rgb_string
+				},
+				hover : {
+				    background : rgb_string
+				}
 			    }
 			});
 			sals.core.log("concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
