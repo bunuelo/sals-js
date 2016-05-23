@@ -434,31 +434,35 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var parent_product_relationship               = "parent\nproduct";
     var sold_in_market_relationship               = "sold\nin\nmarket";
     var edges = [
+	// technologies connect to layers
 	[plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer],
-	[monte_carlo_tree_search_technology, parent_technology_relationship, state_space_planning_technology],
-	[state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology],
 	[reinforcement_learning_technology, can_be_used_to_implement_relationship, deliberative_layer],
 	[reinforcement_learning_technology, can_be_used_to_implement_relationship, learned_reactive_layer],
+	[artificial_neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
+	[artificial_neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
+	// technologies connect to technologies
+	[monte_carlo_tree_search_technology, parent_technology_relationship, state_space_planning_technology],
+	[state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology],
 	[deep_learning_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
 	[feedforward_backpropogate_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
 	[recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
 	[bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology],
 	[convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
 	[self_organizing_maps_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
-	[artificial_neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
-	[artificial_neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
 	[rate_endoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_artificial_neural_network_technology],
-	// theories
+	// theories connect to fields
 	[neural_communication_theory, theory_of_field_relationship, neuroscience_field],
 	[rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
-	[rate_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
 	[spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field],
+	// theories connect to theories
+	[rate_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
 	[spike_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
-	// products
+	// products connect to markets
+	[wearable_technology_product, sold_in_market_relationship, consumer_market],
+	// products connect to products
 	[health_monitor_wearable_technology_product, parent_product_relationship, wearable_technology_product],
 	[fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product],
-	[wearable_technology_product, sold_in_market_relationship, consumer_market],
     ];
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
@@ -468,7 +472,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      "Up One\nEmotion Machine\nLayer",
 						      layers,
 						      true,
-						      -1000,  1000, -1000, -1000,
+						      0,  1000, -1000, -1000,
 						      true,
 						      1, 0.5, 0.5, 1, 0.5, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
@@ -486,7 +490,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      null,
 						      markets,
 						      true,
-						      1000, -1000,  1000,  1000,
+						      1000, -1000,  0,  1000,
 						      true,
 						      0.5, 0.5, 1, 0.5, 0.5, 1);
     (function() {
