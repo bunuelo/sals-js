@@ -37,6 +37,11 @@ sals.demo.ai_startup_idea = {};
 	return sals.frame.frame__remove_element(source_frame, source_key);
     };
     
+    sals.demo.ai_startup_idea.propogate_node_data__try_get_source_value = function(self, source_key) {
+	var source_frame = sals.demo.ai_startup_idea.propogate_node_data__source_frame(self);
+	return sals.frame.frame__try_get_element(source_frame, source_key);
+    };
+    
     sals.demo.ai_startup_idea.propogate_node_data__get_source_value = function(self, source_key) {
 	var source_frame = sals.demo.ai_startup_idea.propogate_node_data__source_frame(self);
 	return sals.frame.frame__get_element(source_frame, source_key);
@@ -208,13 +213,13 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 			    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   0.5);
 			    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   0.5);
 			}
-			var position_pin_active       = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
-			var color_pin_active          = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
-			var x                         = sals.frame.frame__get_element(propogate_node_data_frame, "x");
-			var y                         = sals.frame.frame__get_element(propogate_node_data_frame, "y");
-			var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
-			var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
-			var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
+			var position_pin_active = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
+			var color_pin_active    = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
+			var x                   = sals.frame.frame__get_element(propogate_node_data_frame, "x");
+			var y                   = sals.frame.frame__get_element(propogate_node_data_frame, "y");
+			var r                   = sals.frame.frame__get_element(propogate_node_data_frame, "r");
+			var g                   = sals.frame.frame__get_element(propogate_node_data_frame, "g");
+			var b                   = sals.frame.frame__get_element(propogate_node_data_frame, "b");
 			(function() {
 			    var node_done = false;
 			    // modify variables here.
