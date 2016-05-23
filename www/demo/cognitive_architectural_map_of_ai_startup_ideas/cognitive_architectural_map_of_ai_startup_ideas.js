@@ -97,6 +97,7 @@ sals.demo.ai_startup_idea = {};
 } // propogate_node_data END
 
 sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
+							     source_key,
 							     node_concept_map,
 							     relationship,
 							     concepts,
@@ -118,7 +119,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		    var b                         = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
 		    var propogate_node_data       = sals.demo.ai_startup_idea.propogate_node_data__new();
 		    var propogate_node_data_frame = sals.frame.frame__new();
-		    sals.demo.ai_startup_idea.propogate_node_data__add_source_value(propogate_node_data, concept, propogate_node_data_frame);
+		    sals.demo.ai_startup_idea.propogate_node_data__add_source_value(propogate_node_data, source_key, propogate_node_data_frame);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "color_pin_active",    color_pin_active);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "x",                   x);
@@ -171,7 +172,7 @@ sals.demo.ai_startup_idea.propogation__count = function(graph_node, relationship
     
 };
 
-sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
+sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
     sals.core.log("iterate HERE.");
     (function() {
 	var done = false;
@@ -372,6 +373,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
+						      "Map 1",
 						      node_concept_map,
 						      "Up One\nEmotion Machine\nLayer",
 						      layers,
@@ -380,6 +382,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      true,
 						      1, 0.5, 0.5, 1, 0.5, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
+						      "Map 1",
 						      node_concept_map,
 						      null,
 						      fields,
@@ -388,6 +391,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      true,
 						      0.5, 1, 0.5, 0.5, 1, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
+						      "Map 1",
 						      node_concept_map,
 						      null,
 						      markets,
@@ -453,7 +457,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    sals.graph.graph__add_edge(graph, edge__graph_edge);
 	}
     })();
-    sals.demo.ai_startup_idea.propogation__iterate(graph);
+    sals.demo.ai_startup_idea.propogation__iterate(graph, "Map 1");
     return sals.vis.graph__to_vis_graph_dom_element(graph, width, height);
 };
 
