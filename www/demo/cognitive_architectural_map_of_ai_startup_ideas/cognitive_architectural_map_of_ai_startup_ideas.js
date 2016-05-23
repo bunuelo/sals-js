@@ -57,30 +57,26 @@ sals.demo.ai_startup_idea = {};
 	var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
 	var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
 	var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
-	if (position_pin_active) {
+	sals.vis.object__soft_merge_recursive(vis_node, {
+	    fixed : position_pin_active,
+	    x     : x,
+	    y     : y
+	});
+	(function() {
+	    var rgb_string = "rgba(" + sals['math']['floor'](255 * r) + "," + sals['math']['floor'](255 * g) + "," + sals['math']['floor'](255 * b) + ",1)";
+	    //sals.core.log("rgb_string = " + rgb_string);
 	    sals.vis.object__soft_merge_recursive(vis_node, {
-		fixed : true,
-		x     : x,
-		y     : y
-	    });
-	}
-	if (color_pin_active) {
-	    (function() {
-		var rgb_string = "rgba(" + sals['math']['floor'](255 * r) + "," + sals['math']['floor'](255 * g) + "," + sals['math']['floor'](255 * b) + ",1)";
-		//sals.core.log("rgb_string = " + rgb_string);
-		sals.vis.object__soft_merge_recursive(vis_node, {
-		    color  : {
-			background : rgb_string,
-			highlight  : {
-			    background : rgb_string
-			},
-			hover : {
-			    background : rgb_string
-			}
+		color  : {
+		    background : rgb_string,
+		    highlight  : {
+			background : rgb_string
+		    },
+		    hover : {
+			background : rgb_string
 		    }
-		});
-	    })();
-	}
+		}
+	    });
+	})();
 	sals.vis.object__soft_merge_recursive(vis_node, {
 	    color  : {
 		border     : 'rgba(0,0,0,1)',
