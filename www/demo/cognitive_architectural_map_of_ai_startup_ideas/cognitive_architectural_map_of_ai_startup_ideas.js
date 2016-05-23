@@ -283,15 +283,32 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 				    color_done = true;
 				} else {
 				    (function() {
-					var nr = r;
-					var ng = g;
-					var nb = b;
-					r = nr;
-					g = ng;
-					b = nb;
+					var nr;
+					var ng;
+					var nb;
+					if (color_pin_active) {
+					    nr = r;
+					    ng = g;
+					    nb = b;
+					} else {
+					    (function() {
+						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r");
+						var r_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "r");
+						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g");
+						var g_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "g");
+						var b_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "b");
+						var b_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "b");
+						nr          = (r_count == 0) ? r : (r_sum / r_count);
+						ng          = (g_count == 0) ? g : (g_sum / g_count);
+						nb          = (b_count == 0) ? b : (b_sum / b_count);
+					    })();
+					}
 					color_done = ((sals.math.abs(nr - r) < 0.001) && 
 						      (sals.math.abs(ng - g) < 0.001) && 
 						      (sals.math.abs(nb - b) < 0.001));
+					r = nr;
+					g = ng;
+					b = nb;
 				    })();
 				}
 				node_done = (color_done && position_done);
