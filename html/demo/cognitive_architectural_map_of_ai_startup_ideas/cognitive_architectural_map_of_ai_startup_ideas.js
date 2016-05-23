@@ -551,7 +551,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      "Up One\nEmotion Machine\nLayer",
 						      layers,
 						      true,
-						      -1000,  1000, -1000, -1000,
+						      -1000, -1000, -1000,  1000,
 						      true,
 						      1, 0.5, 0.5, 1, 0.5, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
