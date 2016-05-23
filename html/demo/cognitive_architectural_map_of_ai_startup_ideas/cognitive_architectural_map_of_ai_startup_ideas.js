@@ -112,12 +112,16 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		var concept       = concepts[index];
 		var concept__node = sals.graph.graph_node__new(concept);
 		(function() { // propograte_node_data initialized and used here.
-		    var x                         = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
-		    var y                         = y0 + (y1 - y0) * (index + 1) / (concepts.length + 1);
-		    var r                         = (concepts.length != 1) ? (r0 + (r1 - r0) * index / (concepts.length - 1)) : r0;
-		    var g                         = (concepts.length != 1) ? (g0 + (g1 - g0) * index / (concepts.length - 1)) : g0;
-		    var b                         = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
-		    var propogate_node_data       = sals.demo.ai_startup_idea.propogate_node_data__new();
+		    var x                   = x0 + (x1 - x0) * (index + 1) / (concepts.length + 1);
+		    var y                   = y0 + (y1 - y0) * (index + 1) / (concepts.length + 1);
+		    var r                   = (concepts.length != 1) ? (r0 + (r1 - r0) * index / (concepts.length - 1)) : r0;
+		    var g                   = (concepts.length != 1) ? (g0 + (g1 - g0) * index / (concepts.length - 1)) : g0;
+		    var b                   = (concepts.length != 1) ? (b0 + (b1 - b0) * index / (concepts.length - 1)) : b0;
+		    var propogate_node_data = concept__node["propogate_node_data"];
+		    if (typeof(propogate_node_data) == "undefined") {
+			propogate_node_data = sals.demo.ai_startup_idea.propogate_node_data__new();
+			concept__node["propogate_node_data"] = propogate_node_data;
+		    }
 		    var propogate_node_data_frame = sals.frame.frame__new();
 		    sals.demo.ai_startup_idea.propogate_node_data__add_source_value(propogate_node_data, source_key, propogate_node_data_frame);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
@@ -127,7 +131,6 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		    sals.frame.frame__add_element(propogate_node_data_frame, "r",                   r);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   g);
 		    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   b);
-		    concept__node["propogate_node_data"] = propogate_node_data;
 		})();
 		(function() {
 		    var propogate_node_data     = concept__node["propogate_node_data"];
@@ -187,9 +190,24 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 		while (graph_nodes__index < graph_nodes__length) {
 		    (function() {
 			sals.core.log("iterate graph_node HERE.");
-			var graph_node                = graph_nodes[graph_nodes__index];
-			var propogate_node_data       = graph_node["propogate_node_data"];
+			var graph_node          = graph_nodes[graph_nodes__index];
+			var propogate_node_data = graph_node["propogate_node_data"];
+			if (typeof(propogate_node_data) == "undefined") {
+			    propogate_node_data = sals.demo.ai_startup_idea.propogate_node_data__new();
+			    graph_node["propogate_node_data"] = propogate_node_data;
+			}
 			var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(propogate_node_data, source_key);
+			if (typeof(propogate_node_data_frame) == "undefined") {
+			    propogate_node_data_frame = sals.frame.frame__new();
+			    sals.demo.ai_startup_idea.propogate_node_data__add_source_value(propogate_node_data, source_key, propogate_node_data_frame);
+			    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", false);
+			    sals.frame.frame__add_element(propogate_node_data_frame, "color_pin_active",    false);
+			    sals.frame.frame__add_element(propogate_node_data_frame, "x",                   0);
+			    sals.frame.frame__add_element(propogate_node_data_frame, "y",                   0);
+			    sals.frame.frame__add_element(propogate_node_data_frame, "r",                   0.5);
+			    sals.frame.frame__add_element(propogate_node_data_frame, "g",                   0.5);
+			    sals.frame.frame__add_element(propogate_node_data_frame, "b",                   0.5);
+			}
 			var position_pin_active       = sals.frame.frame__get_element(propogate_node_data_frame, "position_pin_active");
 			var color_pin_active          = sals.frame.frame__get_element(propogate_node_data_frame, "color_pin_active");
 			var x                         = sals.frame.frame__get_element(propogate_node_data_frame, "x");
