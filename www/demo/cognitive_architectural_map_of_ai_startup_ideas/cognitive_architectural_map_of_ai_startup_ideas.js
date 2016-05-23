@@ -251,12 +251,21 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 				    position_done = true;
 				} else {
 				    (function() {
-					var x_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "x");
-					var x_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "x");
-					var y_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "y");
-					var y_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "y");
-					var nx      = (x_count == 0) ? x : (x_sum / x_count);
-					var ny      = (y_count == 0) ? y : (y_sum / y_count);
+					var nx;
+					var ny;
+					if (position_pin_active) {
+					    nx = x;
+					    ny = y;
+					} else {
+					    (function() {
+						var x_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "x");
+						var x_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "x");
+						var y_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "y");
+						var y_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "y");
+						nx      = (x_count == 0) ? x : (x_sum / x_count);
+						ny      = (y_count == 0) ? y : (y_sum / y_count);
+					    })();
+					}
 					position_done = ((sals.math.abs(nx - x) < 0.1) && 
 							 (sals.math.abs(ny - y) < 0.1));
 					x = nx;
