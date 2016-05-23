@@ -385,35 +385,34 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ];
     
     // theory BEGIN
+    var theories = [];
     var neural_communication_theory = "Neural Communication\nTheory";
+    theories.push(neural_communication_theory);
     edges.push([neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
     var rate_endoded_neural_communication_theory = "Rate Encoded\nNeural Communication\nTheory";
+    theories.push(rate_endoded_neural_communication_theory);
     edges.push([rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
     var spike_endoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
+    theories.push(spike_endoded_neural_communication_theory);
     edges.push([spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
     var social_emotional_learning_theory = "Social Emotional Learning\nTheory";
+    theories.push(social_emotional_learning_theory);
     edges.push([social_emotional_learning_theory, theory_of_field_relationship, neuroscience_field]);
     edges.push([social_emotional_learning_theory, theory_of_field_relationship, psychology_field]);
     var vertical_control_horizontal_communication_theory = "Vertical Control\nHorizontal Communication\nTheory"
+    theories.push(vertical_control_horizontal_communication_theory);
     edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, neuroscience_field]);
     edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, psychology_field]);
     var mirror_neuron_theory = "Mirror Neuron\nTheory"
+    theories.push(mirror_neuron_theory);
     edges.push([mirror_neuron_theory, theory_of_field_relationship, neuroscience_field]);
     var mindset_self_concept_theory = "Mindset Self-Concept\nTheory"
+    theories.push(mindset_self_concept_theory);
     edges.push([mindset_self_concept_theory, theory_of_field_relationship, psychology_field]);
     var theory_of_mind_theory = "Theory of Mind\nTheory"
+    theories.push(theory_of_mind_theory);
     edges.push([theory_of_mind_theory, theory_of_field_relationship, neuroscience_field]);
     edges.push([theory_of_mind_theory, theory_of_field_relationship, psychology_field]);
-    var theories = [
-	neural_communication_theory,
-	rate_endoded_neural_communication_theory,
-	spike_endoded_neural_communication_theory,
-	social_emotional_learning_theory,
-	vertical_control_horizontal_communication_theory,
-	mirror_neuron_theory,
-	mindset_self_concept_theory,
-	theory_of_mind_theory
-    ];
     // theory END
     
     var artificial_neural_network_technology                           = "Artificial\nNeural Network\nTechnology";
