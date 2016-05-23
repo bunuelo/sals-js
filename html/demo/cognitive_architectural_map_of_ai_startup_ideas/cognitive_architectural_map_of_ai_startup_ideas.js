@@ -382,13 +382,23 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	computer_science_field,
 	artificial_intelligence_field
     ];
-    var neural_communication_theory               = "Neural Communication\nTheory";
-    var rate_endoded_neural_communication_theory  = "Rate Encoded\nNeural Communication\nTheory";
-    var spike_endoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
+    var neural_communication_theory                      = "Neural Communication\nTheory";
+    var rate_endoded_neural_communication_theory         = "Rate Encoded\nNeural Communication\nTheory";
+    var spike_endoded_neural_communication_theory        = "Spike Encoded\nNeural Communication\nTheory";
+    var social_emotional_learning_theory                 = "Social Emotional Learning\nTheory";
+    var vertical_control_horizontal_communication_theory = "Vertical Control\nHorizontal Communication\nTheory"
+    var mirror_neuron_theory                             = "Mirror Neuron\nTheory"
+    var mindset_self_concept_theory                      = "Mindset Self-Concept\nTheory"
+    var theory_of_mind_theory                            = "Theory of Mind\nTheory"
     var theories = [
 	neural_communication_theory,
 	rate_endoded_neural_communication_theory,
 	spike_endoded_neural_communication_theory,
+	social_emotional_learning_theory,
+	vertical_control_horizontal_communication_theory,
+	mirror_neuron_theory,
+	mindset_self_concept_theory,
+	theory_of_mind_theory
     ];
     var artificial_neural_network_technology                           = "Artificial\nNeural Network\nTechnology";
     var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
