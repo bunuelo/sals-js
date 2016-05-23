@@ -290,7 +290,7 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 			sals.frame.frame__set_element(propogate_node_data_frame, "b",                   b);
 			(function() {
 			    var vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data, source_key);
-			    sals.core.log("vis_node = " + JSON.stringify(vis_node));
+			    //sals.core.log("vis_node = " + JSON.stringify(vis_node));
 			    graph_node["vis_node"] = vis_node;
 			})();
 		    })();
