@@ -265,9 +265,9 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 					} else {
 					    (function() {
 						var x_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "x");
-						var x_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "x");
+						var x_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "x") + 1;
 						var y_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "y");
-						var y_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "y");
+						var y_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "y") + 1;
 						nx          = (x_count == 0) ? x : (x_sum / x_count);
 						ny          = (y_count == 0) ? y : (y_sum / y_count);
 					    })();
