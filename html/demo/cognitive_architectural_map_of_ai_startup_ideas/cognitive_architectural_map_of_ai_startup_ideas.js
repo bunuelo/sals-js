@@ -201,8 +201,8 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 			    propogate_node_data = sals.demo.ai_startup_idea.propogate_node_data__new();
 			    graph_node["propogate_node_data"] = propogate_node_data;
 			}
-			var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__get_source_value(propogate_node_data, source_key);
-			if (typeof(propogate_node_data_frame) == "undefined") {
+			var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__try_get_source_value(propogate_node_data, source_key);
+			if (propogate_node_data_frame === null) {
 			    propogate_node_data_frame = sals.frame.frame__new();
 			    sals.demo.ai_startup_idea.propogate_node_data__add_source_value(propogate_node_data, source_key, propogate_node_data_frame);
 			    sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", false);
