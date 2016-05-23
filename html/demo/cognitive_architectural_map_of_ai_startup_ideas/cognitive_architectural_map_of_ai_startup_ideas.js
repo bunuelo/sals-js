@@ -342,6 +342,7 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 };
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
+    var edges                = [];
     var cloud_service_market = "Cloud Service\nMarket";
     var education_market     = "Education\nMarket";
     var medicine_market      = "Medicine\nMarket";
@@ -443,7 +444,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // product relationships
     var parent_product_relationship               = "parent\nproduct";
     var sold_in_market_relationship               = "sold\nin\nmarket";
-    var edges = [
+    edges = edges.concat([
 	// technologies connect to layers
 	[plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer],
 	[state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer],
@@ -473,7 +474,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	// products connect to products
 	[health_monitor_wearable_technology_product, parent_product_relationship, wearable_technology_product],
 	[fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product],
-    ];
+    ]);
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
