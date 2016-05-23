@@ -292,11 +292,11 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 					    nb = b;
 					} else {
 					    (function() {
-						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r") + 255;
+						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r") + 1.0;
 						var r_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "r");
-						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g") + 255;
+						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g") + 1.0;
 						var g_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "g");
-						var b_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "b") + 255;
+						var b_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "b") + 1.0;
 						var b_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "b");
 						nr          = (r_count == 0) ? r : (r_sum / r_count);
 						ng          = (g_count == 0) ? g : (g_sum / g_count);
