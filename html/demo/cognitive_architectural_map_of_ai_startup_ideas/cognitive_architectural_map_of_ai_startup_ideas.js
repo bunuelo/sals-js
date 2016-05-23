@@ -569,7 +569,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      null,
 						      markets,
 						      true,
-						      1000, -1000,  1000,  1000,
+						      1000,  1000,  1000, -1000,
 						      true,
 						      0.5, 1, 0.5, 0.5, 1, 0.5);
     (function() {
