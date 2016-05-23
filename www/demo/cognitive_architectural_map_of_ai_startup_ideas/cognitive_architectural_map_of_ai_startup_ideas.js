@@ -178,8 +178,11 @@ sals.demo.ai_startup_idea.propogation__foreach = function(graph, graph_node, sou
 	    var propogate_node_data = neighbor["propogate_node_data"];
 	    if (typeof(propogate_node_data) != "undefined") {
 		(function() {
-		    var value = sals.frame.frame__get_element(propogate_node_data_frame, value_name)
-		    value_func(value);
+		    var propogate_node_data_frame = sals.demo.ai_startup_idea.propogate_node_data__try_get_source_value(propogate_node_data, source_key);
+		    if (propogate_node_data_frame !== null) {
+			var value = sals.frame.frame__get_element(propogate_node_data_frame, value_name)
+			value_func(value);
+		    }
 		})();
 	    }
 	})();
