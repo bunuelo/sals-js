@@ -301,6 +301,9 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 						nr          = (r_count == 0) ? r : (r_sum / r_count);
 						ng          = (g_count == 0) ? g : (g_sum / g_count);
 						nb          = (b_count == 0) ? b : (b_sum / b_count);
+						if (nr > 255) {nr = 255;}
+						if (ng > 255) {ng = 255;}
+						if (nb > 255) {nb = 255;}
 					    })();
 					}
 					color_done = ((sals.math.abs(nr - r) < 0.001) && 
