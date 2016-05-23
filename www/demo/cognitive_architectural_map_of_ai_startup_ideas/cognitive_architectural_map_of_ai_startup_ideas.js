@@ -248,9 +248,9 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 					r = nr;
 					g = ng;
 					b = nb;
-					color_done = ((sals.math.abs(nr - r) < 0.1) && 
-						      (sals.math.abs(ng - g) < 0.1) && 
-						      (sals.math.abs(nb - b) < 0.1));
+					color_done = ((sals.math.abs(nr - r) < 0.001) && 
+						      (sals.math.abs(ng - g) < 0.001) && 
+						      (sals.math.abs(nb - b) < 0.001));
 				    })();
 				}
 				node_done = (color_done && position_done);
@@ -266,6 +266,10 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 			sals.frame.frame__set_element(propogate_node_data_frame, "r",                   r);
 			sals.frame.frame__set_element(propogate_node_data_frame, "g",                   g);
 			sals.frame.frame__set_element(propogate_node_data_frame, "b",                   b);
+			(function() {
+			    var vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data, source_key);
+			    graph_node["vis_node"] = vis_node;
+			})();
 		    })();
 		    graph_nodes__index ++;
 		}
