@@ -131,7 +131,7 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
 		})();
 		(function() {
 		    var propogate_node_data     = concept__node["propogate_node_data"];
-		    var concept__node__vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data, concept);
+		    var concept__node__vis_node = sals.demo.ai_startup_idea.propogate_node_data__to_vis_node(propogate_node_data, source_key);
 		    //sals.core.log("final_concept__node__vis_node.json = " + JSON.stringify(concept__node__vis_node));
 		    concept__node["vis_node"] = concept__node__vis_node;
 		})();
