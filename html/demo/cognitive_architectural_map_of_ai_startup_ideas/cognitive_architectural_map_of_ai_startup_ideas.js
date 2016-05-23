@@ -345,9 +345,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var edges                = [];
     
     // market BEGIN
+    var markets = [];
     {
-    var cloud_service_market = "Cloud Service\nMarket";
-    markets.push(cloud_service_market);
+	var cloud_service_market = "Cloud Service\nMarket";
+	markets.push(cloud_service_market);
     }
     {
 	var education_market = "Education\nMarket";
