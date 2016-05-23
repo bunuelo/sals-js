@@ -343,78 +343,135 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var edges                = [];
+    
+    // market BEGIN
+    {
     var cloud_service_market = "Cloud Service\nMarket";
-    var education_market     = "Education\nMarket";
-    var medicine_market      = "Medicine\nMarket";
-    var consumer_market      = "Consumer\nMarket";
-    var markets = [
-	cloud_service_market,
-	education_market,
-	medicine_market,
-	consumer_market
-    ];
-    var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer";
-    var learned_reactive_layer  = "Emotion Machine\nLearned Reactive Layer";
-    var deliberative_layer      = "Emotion Machine\nDeliberative Layer";
-    var reflective_layer        = "Emotion Machine\nReflective Layer";
-    var self_reflective_layer   = "Emotion Machine\nSelf-Reflective Layer";
-    var self_conscious_layer    = "Emotion Machine\nSelf-Conscious Layer";
-    var layers = [
-	built_in_reactive_layer,
-	learned_reactive_layer,
-	deliberative_layer,
-	reflective_layer,
-	self_reflective_layer,
-	self_conscious_layer
-    ];
-    var anthropology_field            = "Cognitive Science\nAnthropology Field";
-    var neuroscience_field            = "Cognitive Science\nNeuroscience Field";
-    var psychology_field              = "Cognitive Science\nPsychology Field";
-    var linguistics_field             = "Cognitive Science\nLinguistics Field";
-    var philosophy_field              = "Cognitive Science\nPhilosophy Field";
-    var computer_science_field        = "Cognitive Science\nComputer Science Field";
-    var artificial_intelligence_field = "Cognitive Science\nArtificial Intelligence Field";
-    var fields = [
-	anthropology_field,
-	neuroscience_field,
-	psychology_field,
-	linguistics_field,
-	philosophy_field,
-	computer_science_field,
-	artificial_intelligence_field
-    ];
+    markets.push(cloud_service_market);
+    }
+    {
+	var education_market = "Education\nMarket";
+	markets.push(education_market);
+    }
+    {
+	var medicine_market = "Medicine\nMarket";
+	markets.push(medicine_market);
+    }
+    {
+	var consumer_market = "Consumer\nMarket";
+	markets.push(consumer_market);
+    }
+    // market END
+    
+    // layer BEGIN
+    var layers = [];
+    {
+	var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer";
+	layers.push(built_in_reactive_layer);
+    }
+    {
+	var learned_reactive_layer = "Emotion Machine\nLearned Reactive Layer";
+	layers.push(learned_reactive_layer);
+    }
+    {
+	var deliberative_layer = "Emotion Machine\nDeliberative Layer";
+	layers.push(deliberative_layer);
+    }
+    {
+	var reflective_layer = "Emotion Machine\nReflective Layer";
+	layers.push(reflective_layer);
+    }
+    {
+	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer";
+	layers.push(self_reflective_layer);
+    }
+    {
+	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer";
+	layers.push(self_conscious_layer);
+    }
+    // layer END
+    
+    // field BEGIN
+    var fields = [];
+    {
+	var anthropology_field = "Cognitive Science\nAnthropology Field";
+	fields.push(anthropology_field);
+    }
+    {
+	var neuroscience_field = "Cognitive Science\nNeuroscience Field";
+	fields.push(neuroscience_field);
+    }
+    {
+	var psychology_field = "Cognitive Science\nPsychology Field";
+	fields.push(psychology_field);
+    }
+    {
+	var linguistics_field = "Cognitive Science\nLinguistics Field";
+	fields.push(linguistics_field);
+    }
+    {
+	var philosophy_field = "Cognitive Science\nPhilosophy Field";
+	fields.push(philosophy_field);
+    }
+    {
+	var computer_science_field = "Cognitive Science\nComputer Science Field";
+	fields.push(computer_science_field);
+    }
+    {
+	var artificial_intelligence_field = "Cognitive Science\nArtificial Intelligence Field";
+	fields.push(artificial_intelligence_field);
+    }
+    // field END
     
     // theory BEGIN
     var theories = [];
-    var neural_communication_theory = "Neural Communication\nTheory";
-    theories.push(neural_communication_theory);
-    edges.push([neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
-    var rate_endoded_neural_communication_theory = "Rate Encoded\nNeural Communication\nTheory";
-    theories.push(rate_endoded_neural_communication_theory);
-    edges.push([rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
-    var spike_endoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
-    theories.push(spike_endoded_neural_communication_theory);
-    edges.push([spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
-    var social_emotional_learning_theory = "Social Emotional Learning\nTheory";
-    theories.push(social_emotional_learning_theory);
-    edges.push([social_emotional_learning_theory, theory_of_field_relationship, neuroscience_field]);
-    edges.push([social_emotional_learning_theory, theory_of_field_relationship, psychology_field]);
-    var vertical_control_horizontal_communication_theory = "Vertical Control\nHorizontal Communication\nTheory"
-    theories.push(vertical_control_horizontal_communication_theory);
-    edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, neuroscience_field]);
-    edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, psychology_field]);
-    var mirror_neuron_theory = "Mirror Neuron\nTheory"
-    theories.push(mirror_neuron_theory);
-    edges.push([mirror_neuron_theory, theory_of_field_relationship, neuroscience_field]);
-    var mindset_self_concept_theory = "Mindset Self-Concept\nTheory"
-    theories.push(mindset_self_concept_theory);
-    edges.push([mindset_self_concept_theory, theory_of_field_relationship, psychology_field]);
-    var theory_of_mind_theory = "Theory of Mind\nTheory"
-    theories.push(theory_of_mind_theory);
-    edges.push([theory_of_mind_theory, theory_of_field_relationship, neuroscience_field]);
-    edges.push([theory_of_mind_theory, theory_of_field_relationship, psychology_field]);
+    {
+	var neural_communication_theory = "Neural Communication\nTheory";
+	theories.push(neural_communication_theory);
+	edges.push([neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
+    }
+    {
+	var rate_endoded_neural_communication_theory = "Rate Encoded\nNeural Communication\nTheory";
+	theories.push(rate_endoded_neural_communication_theory);
+	edges.push([rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
+    }
+    {
+	var spike_endoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
+	theories.push(spike_endoded_neural_communication_theory);
+	edges.push([spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
+    }
+    {
+	var social_emotional_learning_theory = "Social Emotional Learning\nTheory";
+	theories.push(social_emotional_learning_theory);
+	edges.push([social_emotional_learning_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([social_emotional_learning_theory, theory_of_field_relationship, psychology_field]);
+    }
+    {
+	var vertical_control_horizontal_communication_theory = "Vertical Control\nHorizontal Communication\nTheory"
+	theories.push(vertical_control_horizontal_communication_theory);
+	edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, psychology_field]);
+    }
+    {
+	var mirror_neuron_theory = "Mirror Neuron\nTheory"
+	theories.push(mirror_neuron_theory);
+	edges.push([mirror_neuron_theory, theory_of_field_relationship, neuroscience_field]);
+    }
+    {
+	var mindset_self_concept_theory = "Mindset Self-Concept\nTheory"
+	theories.push(mindset_self_concept_theory);
+	edges.push([mindset_self_concept_theory, theory_of_field_relationship, psychology_field]);
+    }
+    {
+	var theory_of_mind_theory = "Theory of Mind\nTheory"
+	theories.push(theory_of_mind_theory);
+	edges.push([theory_of_mind_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([theory_of_mind_theory, theory_of_field_relationship, psychology_field]);
+    }
     // theory END
     
+    // technology BEGIN
+    var technologies = [];
     var artificial_neural_network_technology                           = "Artificial\nNeural Network\nTechnology";
     var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
     var deep_learning_technology                                       = "Deep Learning\nTechnology";
@@ -427,20 +484,20 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var monte_carlo_tree_search_technology                             = "Monte Carlo Tree Search\nTechnology";
     var probabilistic_reasoning_technology                             = "Probabilistic Reasoning\nTechnology";
     var reinforcement_learning_technology                              = "Reinforcement Learning\nTechnology";
-    var technologies = [
-	artificial_neural_network_technology,
-	feedforward_backpropogate_artificial_neural_network_technology,
-	deep_learning_technology,
-	recurrent_artificial_neural_network_technology,
-	bidirectional_recurrent_artificial_neural_network_technology,
-	convolutional_artificial_neural_network_technology,
-	self_organizing_maps_artificial_neural_network_technology,
-	state_space_planning_technology,
-	plan_space_planning_technology,
-	monte_carlo_tree_search_technology,
-	probabilistic_reasoning_technology,
-	reinforcement_learning_technology
-    ];
+    technologies.push(artificial_neural_network_technology);
+    technologies.push(feedforward_backpropogate_artificial_neural_network_technology);
+    technologies.push(deep_learning_technology);
+    technologies.push(recurrent_artificial_neural_network_technology);
+    technologies.push(bidirectional_recurrent_artificial_neural_network_technology);
+    technologies.push(convolutional_artificial_neural_network_technology);
+    technologies.push(self_organizing_maps_artificial_neural_network_technology);
+    technologies.push(state_space_planning_technology);
+    technologies.push(plan_space_planning_technology);
+    technologies.push(monte_carlo_tree_search_technology);
+    technologies.push(probabilistic_reasoning_technology);
+    technologies.push(reinforcement_learning_technology);
+    // technology END
+    
     var wearable_technology_product                       = "Wearable Technology\nProduct";
     var health_monitor_wearable_technology_product        = "Health Monitor\nWearable Technology\nProduct";
     var fitbit_health_monitor_wearable_technology_product = "Fitbit\nHealth Monitor\nWearable Technology\nProduct";
