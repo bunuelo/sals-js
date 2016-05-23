@@ -180,7 +180,7 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph) {
 	    done = true;
 	    (function() {
 		var graph_nodes               = sals.frame.frame__values(sals.graph.graph__nodes(graph));
-		var graph_nodes__length       = graph_nodes;
+		var graph_nodes__length       = graph_nodes.length;
 		var graph_nodes__index        = 0;
 		sals.core.log("iterate graph_nodes__length = " + graph_nodes__length);
 		while (graph_nodes__index < graph_nodes__length) {
