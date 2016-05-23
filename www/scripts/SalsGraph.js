@@ -96,3 +96,25 @@ sals.graph.graph__add_frame_recursively = function(self, frame) {
     var frame_uid_map = sals.frame.frame__new();
     sals.graph.graph__add_frame_recursively_with_frame_uid_map(self, frame, frame_uid_map);
 };
+
+sals.graph.graph__get_node_neighbors = function(graph, graph_node) {
+    var neighbors            = [];
+    var graph__edges         = sals.frame.frame__values(sals.graph.graph__edges(graph));
+    var graph__edges__length = graph__edges.length;
+    var graph__edges__index  = 0;
+    while (graph__edges__index < graph__edges__length) {
+	(function() {
+	    var graph__edge            = graph__edges[graph__edges__index];
+	    var graph__edge__from_node = sals.graph.graph_edge__from_node(graph__edge);
+	    var graph__edge__to_node   = sals.graph.graph_edge__to_node(graph__edge);
+	    if (graph_edge__from_node === graph_node) {
+		neighbors.push(graph_edge__to_node);
+	    } else if (graph__edge_to_node === graph_node) {
+		neighbors.push(graph_edge__from_node);
+	    }
+	})();
+	graph__edges__index ++;
+    }
+    return neighbors;
+};
+

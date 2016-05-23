@@ -168,12 +168,38 @@ sals.demo.ai_startup_idea.graph__add_concept_line = function(graph,
     })();
 };
 
-sals.demo.ai_startup_idea.propogation__sum = function(graph_node, relationship, source_key) {
-    
+sals.demo.ai_startup_idea.propogation__foreach = function(graph, graph_node, source_key, value_name, value_func) {
+    var neighbors         = sals.graph.graph__get_node_neighbors(graph, graph_node);
+    var neighbors__length = neighbors.length;
+    var neighbors__index  = 0;
+    while (neighbors__index < neighbors__length) {
+	(function() {
+	    var neighbor            = neighbors[neighbors__index];
+	    var propogate_node_data = neighbor["propogate_node_data"];
+	    if (typeof(propogate_node_data) != "undefined") {
+		value_func(propogate_node_data);
+	    }
+	})();
+	neighbors__index ++;
+    }
 };
 
-sals.demo.ai_startup_idea.propogation__count = function(graph_node, relationship, source_key) {
-    
+sals.demo.ai_startup_idea.propogation__sum = function(graph, graph_node, source_key, value_name) {
+    var sum = 0;
+    sals.demo.ai_startup_idea.propogation__foreach(graph, graph_node, source_key, value_name,
+						   function(value) {
+						       sum += value;					       
+						   });
+    return sum;
+};
+
+sals.demo.ai_startup_idea.propogation__count = function(graph, graph_node, source_key, value_name) {
+    var count = 0;
+    sals.demo.ai_startup_idea.propogation__foreach(graph, graph_node, source_key, value_name,
+						   function(value) {
+						       count ++;					       
+						   });
+    return count;
 };
 
 sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
