@@ -107,10 +107,10 @@ sals.graph.graph__get_node_neighbors = function(graph, graph_node) {
 	    var graph__edge            = graph__edges[graph__edges__index];
 	    var graph__edge__from_node = sals.graph.graph_edge__from_node(graph__edge);
 	    var graph__edge__to_node   = sals.graph.graph_edge__to_node(graph__edge);
-	    if (graph_edge__from_node === graph_node) {
-		neighbors.push(graph_edge__to_node);
-	    } else if (graph__edge_to_node === graph_node) {
-		neighbors.push(graph_edge__from_node);
+	    if (graph__edge__from_node === graph_node) {
+		neighbors.push(graph__edge__to_node);
+	    } else if (graph__edge__to_node === graph_node) {
+		neighbors.push(graph__edge__from_node);
 	    }
 	})();
 	graph__edges__index ++;
