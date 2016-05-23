@@ -236,13 +236,13 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 				done = false;
 			    }
 			})();
-			sals.frame.frame__add_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
-			sals.frame.frame__add_element(propogate_node_data_frame, "color_pin_active",    color_pin_active);
-			sals.frame.frame__add_element(propogate_node_data_frame, "x",                   x);
-			sals.frame.frame__add_element(propogate_node_data_frame, "y",                   y);
-			sals.frame.frame__add_element(propogate_node_data_frame, "r",                   r);
-			sals.frame.frame__add_element(propogate_node_data_frame, "g",                   g);
-			sals.frame.frame__add_element(propogate_node_data_frame, "b",                   b);
+			sals.frame.frame__set_element(propogate_node_data_frame, "position_pin_active", position_pin_active);
+			sals.frame.frame__set_element(propogate_node_data_frame, "color_pin_active",    color_pin_active);
+			sals.frame.frame__set_element(propogate_node_data_frame, "x",                   x);
+			sals.frame.frame__set_element(propogate_node_data_frame, "y",                   y);
+			sals.frame.frame__set_element(propogate_node_data_frame, "r",                   r);
+			sals.frame.frame__set_element(propogate_node_data_frame, "g",                   g);
+			sals.frame.frame__set_element(propogate_node_data_frame, "b",                   b);
 		    })();
 		    graph_nodes__index ++;
 		}
