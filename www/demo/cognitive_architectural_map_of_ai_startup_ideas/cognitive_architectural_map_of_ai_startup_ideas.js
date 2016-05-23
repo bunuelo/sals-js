@@ -545,13 +545,14 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     ]);
     var node_concept_map = {};
     var graph            = sals.graph.graph__new();
+    var map_size         = 2000;
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
 						      node_concept_map,
 						      "Up One\nEmotion Machine\nLayer",
 						      layers,
 						      true,
-						      -1000, -1000, -1000,  1000,
+						      -map_size, -map_size, -map_size,  map_size,
 						      true,
 						      1, 0.5, 0.5, 1, 0.5, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
@@ -560,7 +561,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      null,
 						      fields,
 						      true,
-						      -1000, -1000,  1000, -1000,
+						      -map_size, -map_size,  map_size, -map_size,
 						      true,
 						      0.5, 0.5, 1, 0.5, 0.5, 1);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
@@ -569,7 +570,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      null,
 						      markets,
 						      true,
-						      1000,  1000,  1000, -1000,
+						      map_size,  map_size,  map_size, -map_size,
 						      true,
 						      0.5, 1, 0.5, 0.5, 1, 0.5);
     (function() {
