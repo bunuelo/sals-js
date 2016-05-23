@@ -177,7 +177,10 @@ sals.demo.ai_startup_idea.propogation__foreach = function(graph, graph_node, sou
 	    var neighbor            = neighbors[neighbors__index];
 	    var propogate_node_data = neighbor["propogate_node_data"];
 	    if (typeof(propogate_node_data) != "undefined") {
-		value_func(propogate_node_data);
+		(function() {
+		    var value = sals.frame.frame__get_element(propogate_node_data_frame, value_name)
+		    value_func(value);
+		})();
 	    }
 	})();
 	neighbors__index ++;
