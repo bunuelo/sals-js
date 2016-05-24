@@ -407,31 +407,31 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // field BEGIN
     var fields = [];
     {
-	var anthropology_field = "Cognitive Science\nAnthropology Field";
+	var anthropology_field = "Anthropology\n(Cognitive Science)";
 	fields.push(anthropology_field);
     }
     {
-	var neuroscience_field = "Cognitive Science\nNeuroscience Field";
+	var neuroscience_field = "Neuroscience\n(Cognitive Science)";
 	fields.push(neuroscience_field);
     }
     {
-	var psychology_field = "Cognitive Science\nPsychology Field";
+	var psychology_field = "Psychology\n(Cognitive Science)";
 	fields.push(psychology_field);
     }
     {
-	var linguistics_field = "Cognitive Science\nLinguistics Field";
+	var linguistics_field = "Linguistics\n(Cognitive Science)";
 	fields.push(linguistics_field);
     }
     {
-	var philosophy_field = "Cognitive Science\nPhilosophy Field";
+	var philosophy_field = "Philosophy\n(Cognitive Science)";
 	fields.push(philosophy_field);
     }
     {
-	var computer_science_field = "Cognitive Science\nComputer Science Field";
+	var computer_science_field = "Computer Science\n(Cognitive Science)";
 	fields.push(computer_science_field);
     }
     {
-	var artificial_intelligence_field = "Cognitive Science\nArtificial Intelligence Field";
+	var artificial_intelligence_field = "Artificial Intelligence\n(Cognitive Science)";
 	fields.push(artificial_intelligence_field);
     }
     // field END
