@@ -90,8 +90,7 @@ sals.demo.ai_startup_idea = {};
 		    background : 'rgba(255,255,255,1)'
 		}
 	    },
-	    font  : {color : 'rgba(0,0,0,1)'},
-	    scaling : {label : {min : 0}}
+	    font  : {color : 'rgba(0,0,0,1)'}
 	});
 	return vis_node;
     };
@@ -425,6 +424,38 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     }
     // field END
     
+    // development_stage BEGIN
+    var development_stages = [];
+    {
+	var philosophy_development_stage = "Philosophy\nDevelopment Stage";
+	development_stages.push(philosophy_development_stage);
+    }
+    {
+	var mathematical_theory_development_stage = "Mathematical Theory\nDevelopment Stage";
+	development_stages.push(mathematical_theory_development_stage);
+    }
+    {
+	var computational_implementation_development_stage = "Computational Implementation\nDevelopment Stage";
+	development_stages.push(computational_implementation_development_stage);
+    }
+    {
+	var toy_problem_development_stage = "Toy Problem\nDevelopment Stage";
+	development_stages.push(toy_problem_development_stage);
+    }
+    {
+	var research_application_development_stage = "Research Application\nDevelopment Stage";
+	development_stages.push(research_application_development_stage);
+    }
+    {
+	var business_application_development_stage = "Business Application\nDevelopment Stage";
+	development_stages.push(business_application_development_stage);
+    }
+    {
+	var successful_startup_development_stage = "Successful Startup\nDevelopment Stage";
+	development_stages.push(successful_startup_development_stage);
+    }
+    // development_stage END
+    
     // theory BEGIN
     var theories = [];
     {
@@ -589,6 +620,15 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      -map_size, -map_size,  map_size, -map_size,
 						      true,
 						      0.5, 0.5, 1, 0.5, 0.5, 1);
+    sals.demo.ai_startup_idea.graph__add_concept_line(graph,
+						      "Map 1",
+						      node_concept_map,
+						      null,
+						      development_stages,
+						      true,
+						      -map_size, map_size, map_size, map_size,
+						      true,
+						      0.5, 0.5, 1, 1, 1, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
 						      node_concept_map,
