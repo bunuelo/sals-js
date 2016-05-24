@@ -541,7 +541,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var alpha_go_cognitive_architecture_theory = "Alpha Go\nCognitive Architecture\nTheory"
 	theories.push(alpha_go_cognitive_architecture_theory);
-	edges.push([alpha_go_cognitive_architecture_theory, parent_theory_relationship, cognitive_architecture_field]);
+	edges.push([alpha_go_cognitive_architecture_theory, parent_theory_relationship, cognitive_architecture_theory]);
     }
     // theory END
     
