@@ -292,12 +292,13 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 					    nb = b;
 					} else {
 					    (function() {
-						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r") + 1;
-						var r_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "r") + 1;
-						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g") + 1;
-						var g_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "g") + 1;
-						var b_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "b") + 1;
-						var b_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "b") + 1;
+						var white_weight = 0.05;
+						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r") + white_weight;
+						var r_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "r") + white_weight;
+						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g") + white_weight;
+						var g_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "g") + white_weight;
+						var b_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "b") + white_weight;
+						var b_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "b") + white_weight;
 						nr          = (r_count == 0) ? r : (r_sum / r_count);
 						ng          = (g_count == 0) ? g : (g_sum / g_count);
 						nb          = (b_count == 0) ? b : (b_sum / b_count);
