@@ -345,15 +345,15 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var edges                = [];
     
-    var parent_technology_relationship            = "parent\ntechnology";
-    var parent_theory_relationship                = "parent\ntheory";
-    var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
-    var used_in_layer_relationship                = "used in\nlayer";
-    var theory_of_field_relationship              = "theory of\nfield";
-    var computational_implementation_relationship = "computational\nimplementation";
+    var parent_technology_relationship        = "parent\ntechnology";
+    var parent_theory_relationship            = "parent\ntheory";
+    var can_be_used_to_implement_relationship = "can be\nused to\nimplement";
+    var used_in_layer_relationship            = "used in\nlayer";
+    var theory_of_field_relationship          = "theory of\nfield";
+    var technology_implements_theory          = "technology\nimplements\ntheory";
     // product relationships
-    var parent_product_relationship               = "parent\nproduct";
-    var sold_in_market_relationship               = "sold\nin\nmarket";
+    var parent_product_relationship           = "parent\nproduct";
+    var sold_in_market_relationship           = "sold\nin\nmarket";
     
     
     // market BEGIN
@@ -529,7 +529,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
 	technologies.push(feedforward_backpropogate_artificial_neural_network_technology);
 	edges.push([feedforward_backpropogate_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology]);
-	edges.push([feedforward_backpropogate_artificial_neural_network_technology, computational_implementation_relationship, rate_encoded_neural_communication_theory]);
+	edges.push([feedforward_backpropogate_artificial_neural_network_technology, technology_implements_theory, rate_encoded_neural_communication_theory]);
     }
     {
 	var deep_learning_technology = "Deep Learning\nTechnology";
