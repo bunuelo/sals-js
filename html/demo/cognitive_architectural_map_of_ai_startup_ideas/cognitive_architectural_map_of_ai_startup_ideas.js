@@ -515,6 +515,17 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([theory_of_mind_theory, theory_of_field_relationship, neuroscience_field]);
 	edges.push([theory_of_mind_theory, theory_of_field_relationship, psychology_field]);
     }
+    {
+	var metacognition_theory = "Metacognition\nTheory"
+	theories.push(metacognition_theory);
+	edges.push([metacognition_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([metacognition_theory, theory_of_field_relationship, psychology_field]);
+    }
+    {
+	var computational_metacognition_theory = "Computational Metacognition\nTheory"
+	theories.push(computational_metacognition_theory);
+	edges.push([computational_metacognition_theory, theory_of_field_relationship, artificial_intelligence_field]);
+    }
     // theory END
     
     // technology BEGIN
