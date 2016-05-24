@@ -553,15 +553,15 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([self_organizing_maps_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology]);
     }
     {
+	var plan_space_planning_technology = "Plan-Space Planning\nTechnology";
+	technologies.push(plan_space_planning_technology);
+	edges.push([plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer]);
+    }
+    {
 	var state_space_planning_technology = "State-Space Planning\nTechnology";
 	technologies.push(state_space_planning_technology);
 	edges.push([state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer]);
 	edges.push([state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology]);
-    }
-    {
-	var plan_space_planning_technology = "Plan-Space Planning\nTechnology";
-	technologies.push(plan_space_planning_technology);
-	edges.push([plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer]);
     }
     {
 	var monte_carlo_tree_search_technology = "Monte Carlo Tree Search\nTechnology";
