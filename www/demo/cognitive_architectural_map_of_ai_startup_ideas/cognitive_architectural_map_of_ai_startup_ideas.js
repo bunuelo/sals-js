@@ -526,6 +526,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	theories.push(computational_metacognition_theory);
 	edges.push([computational_metacognition_theory, theory_of_field_relationship, artificial_intelligence_field]);
     }
+    {
+	var computational_planning_theory = "Computational Planning\nTheory"
+	theories.push(computational_planning_theory);
+	edges.push([computational_planning_theory, theory_of_field_relationship, artificial_intelligence_field]);
+    }
+    {
+	var cognitive_architecture_theory = "Cognitive Architecture\nTheory"
+	theories.push(cognitive_architecture_theory);
+	edges.push([cognitive_architecture_theory, theory_of_field_relationship, artificial_intelligence_field]);
+    }
     // theory END
     
     // technology BEGIN
