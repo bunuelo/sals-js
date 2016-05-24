@@ -90,7 +90,8 @@ sals.demo.ai_startup_idea = {};
 		    background : 'rgba(255,255,255,1)'
 		}
 	    },
-	    font  : {color : 'rgba(0,0,0,1)'}
+	    font  : {color : 'rgba(0,0,0,1)'},
+	    scaling : {label : {min : 0.1}}
 	});
 	return vis_node;
     };
