@@ -473,30 +473,54 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     // technology BEGIN
     var technologies = [];
-    var artificial_neural_network_technology                           = "Artificial\nNeural Network\nTechnology";
-    var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
-    var deep_learning_technology                                       = "Deep Learning\nTechnology";
-    var recurrent_artificial_neural_network_technology                 = "Recurrent\nArtificial Neural Network\nTechnology";
-    var bidirectional_recurrent_artificial_neural_network_technology   = "Bidirectional Recurrent\nArtificial Neural Network\nTechnology";
-    var convolutional_artificial_neural_network_technology             = "Convolutional\nArtificial Neural Network\nTechnology";
-    var self_organizing_maps_artificial_neural_network_technology      = "Self-Organizing Maps\nArtificial Neural Network\nTechnology";
-    var state_space_planning_technology                                = "State-Space Planning\nTechnology";
-    var plan_space_planning_technology                                 = "Plan-Space Planning\nTechnology";
-    var monte_carlo_tree_search_technology                             = "Monte Carlo Tree Search\nTechnology";
-    var probabilistic_reasoning_technology                             = "Probabilistic Reasoning\nTechnology";
-    var reinforcement_learning_technology                              = "Reinforcement Learning\nTechnology";
-    technologies.push(artificial_neural_network_technology);
-    technologies.push(feedforward_backpropogate_artificial_neural_network_technology);
-    technologies.push(deep_learning_technology);
-    technologies.push(recurrent_artificial_neural_network_technology);
-    technologies.push(bidirectional_recurrent_artificial_neural_network_technology);
-    technologies.push(convolutional_artificial_neural_network_technology);
-    technologies.push(self_organizing_maps_artificial_neural_network_technology);
-    technologies.push(state_space_planning_technology);
-    technologies.push(plan_space_planning_technology);
-    technologies.push(monte_carlo_tree_search_technology);
-    technologies.push(probabilistic_reasoning_technology);
-    technologies.push(reinforcement_learning_technology);
+    {
+	var artificial_neural_network_technology = "Artificial\nNeural Network\nTechnology";
+	technologies.push(artificial_neural_network_technology);
+    }
+    {
+	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
+	technologies.push(feedforward_backpropogate_artificial_neural_network_technology);
+    }
+    {
+	var deep_learning_technology = "Deep Learning\nTechnology";
+	technologies.push(deep_learning_technology);
+    }
+    {
+	var recurrent_artificial_neural_network_technology = "Recurrent\nArtificial Neural Network\nTechnology";
+	technologies.push(recurrent_artificial_neural_network_technology);
+    }
+    {
+	var bidirectional_recurrent_artificial_neural_network_technology = "Bidirectional Recurrent\nArtificial Neural Network\nTechnology";
+	technologies.push(bidirectional_recurrent_artificial_neural_network_technology);
+    }
+    {
+	var convolutional_artificial_neural_network_technology = "Convolutional\nArtificial Neural Network\nTechnology";
+	technologies.push(convolutional_artificial_neural_network_technology);
+    }
+    {
+	var self_organizing_maps_artificial_neural_network_technology = "Self-Organizing Maps\nArtificial Neural Network\nTechnology";
+	technologies.push(self_organizing_maps_artificial_neural_network_technology);
+    }
+    {
+	var state_space_planning_technology = "State-Space Planning\nTechnology";
+	technologies.push(state_space_planning_technology);
+    }
+    {
+	var plan_space_planning_technology = "Plan-Space Planning\nTechnology";
+	technologies.push(plan_space_planning_technology);
+    }
+    {
+	var monte_carlo_tree_search_technology = "Monte Carlo Tree Search\nTechnology";
+	technologies.push(monte_carlo_tree_search_technology);
+    }
+    {
+	var probabilistic_reasoning_technology = "Probabilistic Reasoning\nTechnology";
+	technologies.push(probabilistic_reasoning_technology);
+    }
+    {
+	var reinforcement_learning_technology = "Reinforcement Learning\nTechnology";
+	technologies.push(reinforcement_learning_technology);
+    }
     // technology END
     
     var wearable_technology_product                       = "Wearable Technology\nProduct";
