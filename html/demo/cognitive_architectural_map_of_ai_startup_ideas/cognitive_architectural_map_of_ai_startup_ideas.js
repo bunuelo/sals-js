@@ -539,7 +539,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([cognitive_architecture_theory, theory_of_field_relationship, neuroscience_field]);
     }
     {
-	var alpha_go_cognitive_architecture_theory = "Alpha Go\nCognitive Architecture\nTheory"
+	var alpha_go_cognitive_architecture_theory = "DeepMind's Alpha Go\nCognitive Architecture\nTheory"
 	theories.push(alpha_go_cognitive_architecture_theory);
 	edges.push([alpha_go_cognitive_architecture_theory, parent_theory_relationship, cognitive_architecture_theory]);
     }
