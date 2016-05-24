@@ -535,6 +535,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var cognitive_architecture_theory = "Cognitive Architecture\nTheory"
 	theories.push(cognitive_architecture_theory);
 	edges.push([cognitive_architecture_theory, theory_of_field_relationship, artificial_intelligence_field]);
+	edges.push([cognitive_architecture_theory, theory_of_field_relationship, psychology_field]);
+	edges.push([cognitive_architecture_theory, theory_of_field_relationship, neuroscience_field]);
     }
     // theory END
     
