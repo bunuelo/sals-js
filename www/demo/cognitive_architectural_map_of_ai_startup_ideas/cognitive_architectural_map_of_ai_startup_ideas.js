@@ -222,7 +222,7 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 		sals.core.log("iterate graph_nodes__length = " + graph_nodes__length);
 		while (graph_nodes__index < graph_nodes__length) {
 		    (function() {
-			sals.core.log("iterate graph_node HERE.");
+			//sals.core.log("iterate graph_node HERE.");
 			var graph_node          = graph_nodes[graph_nodes__index];
 			var propogate_node_data = graph_node["propogate_node_data"];
 			if (typeof(propogate_node_data) == "undefined") {
@@ -292,12 +292,12 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 					    nb = b;
 					} else {
 					    (function() {
-						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r") + 0.05;
-						var r_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "r");
-						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g") + 0.05;
-						var g_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "g");
-						var b_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "b") + 0.05;
-						var b_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "b");
+						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r") + 1;
+						var r_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "r") + 1;
+						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g") + 1;
+						var g_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "g") + 1;
+						var b_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "b") + 1;
+						var b_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "b") + 1;
 						nr          = (r_count == 0) ? r : (r_sum / r_count);
 						ng          = (g_count == 0) ? g : (g_sum / g_count);
 						nb          = (b_count == 0) ? b : (b_sum / b_count);
