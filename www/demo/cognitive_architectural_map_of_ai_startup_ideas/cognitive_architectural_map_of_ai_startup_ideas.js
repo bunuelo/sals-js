@@ -91,7 +91,7 @@ sals.demo.ai_startup_idea = {};
 		}
 	    },
 	    font  : {color : 'rgba(0,0,0,1)'},
-	    scaling : {label : {min : 0.1}}
+	    scaling : {label : {min : 0}}
 	});
 	return vis_node;
     };
