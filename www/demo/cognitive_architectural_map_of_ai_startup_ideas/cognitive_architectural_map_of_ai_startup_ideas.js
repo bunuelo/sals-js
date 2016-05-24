@@ -503,6 +503,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     }
     // theory END
     
+    var parent_technology_relationship            = "parent\ntechnology";
+    var parent_theory_relationship                = "parent\ntheory";
+    var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
+    var used_in_layer_relationship                = "used in\nlayer";
+    var theory_of_field_relationship              = "theory of\nfield";
+    var computational_implementation_relationship = "computational\nimplementation";
+    // product relationships
+    var parent_product_relationship               = "parent\nproduct";
+    var sold_in_market_relationship               = "sold\nin\nmarket";
+    
     // technology BEGIN
     var technologies = [];
     {
@@ -514,31 +524,38 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
 	technologies.push(feedforward_backpropogate_artificial_neural_network_technology);
+	edges.push([feedforward_backpropogate_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology]);
     }
     {
 	var deep_learning_technology = "Deep Learning\nTechnology";
 	technologies.push(deep_learning_technology);
+	edges.push([deep_learning_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
     }
     {
 	var recurrent_artificial_neural_network_technology = "Recurrent\nArtificial Neural Network\nTechnology";
 	technologies.push(recurrent_artificial_neural_network_technology);
+	edges.push([recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
     }
     {
 	var bidirectional_recurrent_artificial_neural_network_technology = "Bidirectional Recurrent\nArtificial Neural Network\nTechnology";
 	technologies.push(bidirectional_recurrent_artificial_neural_network_technology);
+	edges.push([bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology]);
     }
     {
 	var convolutional_artificial_neural_network_technology = "Convolutional\nArtificial Neural Network\nTechnology";
 	technologies.push(convolutional_artificial_neural_network_technology);
+	edges.push([convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
     }
     {
 	var self_organizing_maps_artificial_neural_network_technology = "Self-Organizing Maps\nArtificial Neural Network\nTechnology";
 	technologies.push(self_organizing_maps_artificial_neural_network_technology);
+	edges.push([self_organizing_maps_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology]);
     }
     {
 	var state_space_planning_technology = "State-Space Planning\nTechnology";
 	technologies.push(state_space_planning_technology);
 	edges.push([state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer]);
+	edges.push([state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology]);
     }
     {
 	var plan_space_planning_technology = "Plan-Space Planning\nTechnology";
@@ -548,6 +565,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var monte_carlo_tree_search_technology = "Monte Carlo Tree Search\nTechnology";
 	technologies.push(monte_carlo_tree_search_technology);
+	edges.push([monte_carlo_tree_search_technology, parent_technology_relationship, state_space_planning_technology]);
     }
     {
 	var probabilistic_reasoning_technology = "Probabilistic Reasoning\nTechnology";
@@ -569,25 +587,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	health_monitor_wearable_technology_product,
 	fitbit_health_monitor_wearable_technology_product,
     ];
-    var parent_technology_relationship            = "parent\ntechnology";
-    var parent_theory_relationship                = "parent\ntheory";
-    var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
-    var used_in_layer_relationship                = "used in\nlayer";
-    var theory_of_field_relationship              = "theory of\nfield";
-    var computational_implementation_relationship = "computational\nimplementation";
-    // product relationships
-    var parent_product_relationship               = "parent\nproduct";
-    var sold_in_market_relationship               = "sold\nin\nmarket";
     edges = edges.concat([
-	// technologies connect to technologies
-	[monte_carlo_tree_search_technology, parent_technology_relationship, state_space_planning_technology],
-	[state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology],
-	[deep_learning_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
-	[feedforward_backpropogate_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
-	[recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
-	[bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology],
-	[convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology],
-	[self_organizing_maps_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology],
 	[rate_endoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_artificial_neural_network_technology],
 	// theories connect to theories
 	[rate_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
