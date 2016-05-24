@@ -479,7 +479,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var rate_encoded_neural_communication_theory = "Rate Encoded\nNeural Communication\nTheory";
 	theories.push(rate_encoded_neural_communication_theory);
 	edges.push([rate_encoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
-	edges.push([rate_encoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
 	edges.push([rate_encoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory]);
     }
     {
@@ -530,6 +529,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
 	technologies.push(feedforward_backpropogate_artificial_neural_network_technology);
 	edges.push([feedforward_backpropogate_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology]);
+	edges.push([feedforward_backpropogate_artificial_neural_network_technology, computational_implementation_relationship, rate_encoded_neural_communication_theory]);
     }
     {
 	var deep_learning_technology = "Deep Learning\nTechnology";
