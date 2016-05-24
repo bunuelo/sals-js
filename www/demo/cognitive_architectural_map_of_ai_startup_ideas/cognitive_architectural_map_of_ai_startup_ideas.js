@@ -476,14 +476,17 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
     }
     {
-	var rate_endoded_neural_communication_theory = "Rate Encoded\nNeural Communication\nTheory";
-	theories.push(rate_endoded_neural_communication_theory);
-	edges.push([rate_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
+	var rate_encoded_neural_communication_theory = "Rate Encoded\nNeural Communication\nTheory";
+	theories.push(rate_encoded_neural_communication_theory);
+	edges.push([rate_encoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([rate_encoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
+	edges.push([rate_encoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory]);
     }
     {
-	var spike_endoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
-	theories.push(spike_endoded_neural_communication_theory);
-	edges.push([spike_endoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
+	var spike_encoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
+	theories.push(spike_encoded_neural_communication_theory);
+	edges.push([spike_encoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([spike_encoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory]);
     }
     {
 	var social_emotional_learning_theory = "Social Emotional Learning\nTheory";
@@ -581,25 +584,22 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     }
     // technology END
     
-    var wearable_technology_product                       = "Wearable Technology\nProduct";
-    var health_monitor_wearable_technology_product        = "Health Monitor\nWearable Technology\nProduct";
-    var fitbit_health_monitor_wearable_technology_product = "Fitbit\nHealth Monitor\nWearable Technology\nProduct";
-    var products = [
-	wearable_technology_product,
-	health_monitor_wearable_technology_product,
-	fitbit_health_monitor_wearable_technology_product,
-    ];
-    edges = edges.concat([
-	[rate_endoded_neural_communication_theory, computational_implementation_relationship, feedforward_backpropogate_artificial_neural_network_technology],
-	// theories connect to theories
-	[rate_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
-	[spike_endoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory],
-	// products connect to markets
-	[wearable_technology_product, sold_in_market_relationship, consumer_market],
-	// products connect to products
-	[health_monitor_wearable_technology_product, parent_product_relationship, wearable_technology_product],
-	[fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product],
-    ]);
+    var products = [];
+    {
+	var wearable_technology_product = "Wearable Technology\nProduct";
+	products.push(wearable_technology_product);
+	edges.push([wearable_technology_product, sold_in_market_relationship, consumer_market]);
+    }
+    {
+	var health_monitor_wearable_technology_product = "Health Monitor\nWearable Technology\nProduct";
+	products.push(health_monitor_wearable_technology_product);
+	edges.push([health_monitor_wearable_technology_product, parent_product_relationship, wearable_technology_product]);
+    }
+    {
+	var fitbit_health_monitor_wearable_technology_product = "Fitbit\nHealth Monitor\nWearable Technology\nProduct";
+	products.push(fitbit_health_monitor_wearable_technology_product);
+	edges.push([fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product]);
+    }
     var node_concept_map               = {};
     var graph                          = sals.graph.graph__new();
     var map_size                       = 2000;
