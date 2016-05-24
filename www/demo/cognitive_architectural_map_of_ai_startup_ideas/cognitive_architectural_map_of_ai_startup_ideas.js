@@ -598,9 +598,13 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	[health_monitor_wearable_technology_product, parent_product_relationship, wearable_technology_product],
 	[fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product],
     ]);
-    var node_concept_map = {};
-    var graph            = sals.graph.graph__new();
-    var map_size         = 2000;
+    var node_concept_map               = {};
+    var graph                          = sals.graph.graph__new();
+    var map_size                       = 2000;
+    var layers__pin_colors             = false;
+    var fields__pin_colors             = false;
+    var development_stages__pin_colors = true;
+    var markets__pin_colors            = true;
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
 						      node_concept_map,
@@ -608,7 +612,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      layers,
 						      true,
 						      -map_size, -map_size, -map_size,  map_size,
-						      false,
+						      layers__pin_colors,
 						      1, 0.5, 0.5, 1, 0.5, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
@@ -617,7 +621,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      fields,
 						      true,
 						      -map_size, -map_size,  map_size, -map_size,
-						      false,
+						      fields__pin_colors,
 						      0.5, 0.5, 1, 0.5, 0.5, 1);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
@@ -626,7 +630,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      development_stages,
 						      true,
 						      -map_size, map_size, map_size, map_size,
-						      true,
+						      development_stages__pin_colors,
 						      1, 1, 1, 0.5, 1, 0.5);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
@@ -635,7 +639,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      markets,
 						      true,
 						      map_size,  map_size,  map_size, -map_size,
-						      true,
+						      markets__pin_colors,
 						      1, 1, 0.5, 1, 1, 0.5);
     (function() {
 	for(var index = 0; index < technologies.length; index ++) {
