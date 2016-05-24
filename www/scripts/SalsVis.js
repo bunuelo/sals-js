@@ -65,7 +65,7 @@ sals.vis.vis_graph__new = function(width, height, graph) {
 		}
 	    },
 	    font : {color : 'rgba(0,0,0,1)',
-		    face  : "Times New Roman"}
+		    face  : "Times New Roman"},
 	    scaling : {label : {min : 4}}
 	});
 	vis_nodes_array.push(graph__node__vis_node);
