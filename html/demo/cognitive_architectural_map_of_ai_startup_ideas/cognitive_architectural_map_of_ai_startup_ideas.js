@@ -508,6 +508,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var artificial_neural_network_technology = "Artificial\nNeural Network\nTechnology";
 	technologies.push(artificial_neural_network_technology);
+	edges.push([artificial_neural_network_technology, used_in_layer_relationship, learned_reactive_layer]);
+	edges.push([artificial_neural_network_technology, used_in_layer_relationship, built_in_reactive_layer]);
     }
     {
 	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
@@ -536,10 +538,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var state_space_planning_technology = "State-Space Planning\nTechnology";
 	technologies.push(state_space_planning_technology);
+	edges.push([state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer]);
     }
     {
 	var plan_space_planning_technology = "Plan-Space Planning\nTechnology";
 	technologies.push(plan_space_planning_technology);
+	edges.push([plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer]);
     }
     {
 	var monte_carlo_tree_search_technology = "Monte Carlo Tree Search\nTechnology";
@@ -552,6 +556,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var reinforcement_learning_technology = "Reinforcement Learning\nTechnology";
 	technologies.push(reinforcement_learning_technology);
+	edges.push([reinforcement_learning_technology, can_be_used_to_implement_relationship, deliberative_layer]);
+	edges.push([reinforcement_learning_technology, can_be_used_to_implement_relationship, learned_reactive_layer]);
     }
     // technology END
     
@@ -573,13 +579,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var parent_product_relationship               = "parent\nproduct";
     var sold_in_market_relationship               = "sold\nin\nmarket";
     edges = edges.concat([
-	// technologies connect to layers
-	[plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer],
-	[state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer],
-	[reinforcement_learning_technology, can_be_used_to_implement_relationship, deliberative_layer],
-	[reinforcement_learning_technology, can_be_used_to_implement_relationship, learned_reactive_layer],
-	[artificial_neural_network_technology, used_in_layer_relationship, learned_reactive_layer],
-	[artificial_neural_network_technology, used_in_layer_relationship, built_in_reactive_layer],
 	// technologies connect to technologies
 	[monte_carlo_tree_search_technology, parent_technology_relationship, state_space_planning_technology],
 	[state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology],
