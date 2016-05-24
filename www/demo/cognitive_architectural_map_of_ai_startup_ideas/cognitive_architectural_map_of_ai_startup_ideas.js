@@ -344,6 +344,17 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, height) {
     var edges                = [];
     
+    var parent_technology_relationship            = "parent\ntechnology";
+    var parent_theory_relationship                = "parent\ntheory";
+    var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
+    var used_in_layer_relationship                = "used in\nlayer";
+    var theory_of_field_relationship              = "theory of\nfield";
+    var computational_implementation_relationship = "computational\nimplementation";
+    // product relationships
+    var parent_product_relationship               = "parent\nproduct";
+    var sold_in_market_relationship               = "sold\nin\nmarket";
+    
+    
     // market BEGIN
     var markets = [];
     {
@@ -502,16 +513,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([theory_of_mind_theory, theory_of_field_relationship, psychology_field]);
     }
     // theory END
-    
-    var parent_technology_relationship            = "parent\ntechnology";
-    var parent_theory_relationship                = "parent\ntheory";
-    var can_be_used_to_implement_relationship     = "can be\nused to\nimplement";
-    var used_in_layer_relationship                = "used in\nlayer";
-    var theory_of_field_relationship              = "theory of\nfield";
-    var computational_implementation_relationship = "computational\nimplementation";
-    // product relationships
-    var parent_product_relationship               = "parent\nproduct";
-    var sold_in_market_relationship               = "sold\nin\nmarket";
     
     // technology BEGIN
     var technologies = [];
