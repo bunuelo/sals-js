@@ -18,7 +18,7 @@ sals.graph.graph_edge__new = function(label, from_node, to_node) {
     if ((typeof(label)     == "undefined") ||
 	(typeof(from_node) == "undefined") ||
 	(typeof(to_node)   == "undefined")) {
-	sals.core.throw_new_error("graph_edge__new ERROR: argument is undefined.");
+	sals.core.throw_new_error("graph_edge__new ERROR: argument is undefined (label=" + label + ", from_node=" + from_node + ", to_node=" + to_node + ").");
     }
     var self = sals.frame.frame__new();
     sals.frame.frame__add_element(self, "label",     label);
