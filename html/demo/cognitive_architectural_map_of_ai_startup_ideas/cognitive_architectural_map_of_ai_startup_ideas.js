@@ -979,6 +979,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     var products = [];
     {
+	var mind_upload_product = "Mind Upload\nProduct";
+	minor_markets.push(mind_upload_product);
+	edges.push([mind_upload_product, sold_in_market_relationship, mental_health_market]);
+	edges.push([mind_upload_product, sold_in_market_relationship, game_market]);
+    }
+    {
 	var prosthetic_limb_product = "Prosthetic Limb\nProduct";
 	minor_markets.push(prosthetic_limb_product);
 	edges.push([prosthetic_limb_product, sold_in_market_relationship, prosthetic_limb_market]);
