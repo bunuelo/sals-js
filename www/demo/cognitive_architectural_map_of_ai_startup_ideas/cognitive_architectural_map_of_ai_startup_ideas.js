@@ -496,31 +496,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    minor_markets.push(physical_health_market);
 	    edges.push([physical_health_market, parent_market_relationship, medicine_market]);
 	    {
-		var behavior_change_market = "Physical Behavior Change\nMarket";
-		minor_markets.push(behavior_change_market);
-		edges.push([behavior_change_market, parent_market_relationship, physical_health_market]);
-	    }
-	    {
-		var nutrition_market = "Nutrition\nPhysical Behavior Change\nMarket";
-		minor_markets.push(nutrition_market);
-		edges.push([nutrition_market, parent_market_relationship, behavior_change_market]);
-	    }
-	    {
-		var exercise_market = "Exercise\nPhysical Behavior Change\nMarket";
-		minor_markets.push(exercise_market);
-		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
-	    }
-	    {
-		var smoking_market = "Smoking\nPhysical Behavior Change\nMarket";
-		minor_markets.push(smoking_market);
-		edges.push([smoking_market, parent_market_relationship, behavior_change_market]);
-	    }
-	    {
-		var substance_abuse_market = "Substance Abuse\nPhysical Behavior Change\nMarket";
-		minor_markets.push(substance_abuse_market);
-		edges.push([substance_abuse_market, parent_market_relationship, behavior_change_market]);
-	    }
-	    {
 		var diabetes_market = "Diabetes\nMarket";
 		minor_markets.push(diabetes_market);
 		edges.push([diabetes_market, parent_market_relationship, physical_health_market]);
@@ -945,6 +920,44 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product]);
 	edges.push([fitbit_health_monitor_wearable_technology_product, can_be_implemented_with_relationship, signal_processing_technology]);
     }
+    
+    {
+	var nutrition_behavior_change_technology = "Nutrition\nBehavior Change\nTechnology";
+	technologies.push(nutrition_behavior_change_technology);
+    }
+    {
+	var nutrition_behavior_change_product = "Nutrition\nBehavior Change\nProduct";
+	products.push(nutrition_behavior_change_product);
+	edges.push([nutrition_behavior_change_product, can_be_implemented_with_relationship, nutrition_behavior_change_technology]);
+    }
+    {
+	var exercise_behavior_change_technology = "Exercise\nBehavior Change\nTechnology";
+	technologies.push(exercise_behavior_change_technology);
+    }
+    {
+	var exercise_behavior_change_product = "Exercise\nPhysical Behavior Change\nProduct";
+	products.push(exercise_behavior_change_product);
+	edges.push([exercise_behavior_change_product, can_be_implemented_with_relationship, exercise_behavior_change_technology]);
+    }
+    {
+	var smoking_behavior_change_technology = "Smoking\nBehavior Change\nTechnology";
+	technologies.push(smoking_behavior_change_technology);
+    }
+    {
+	var smoking_behavior_change_product = "Smoking\nPhysical Behavior Change\nProduct";
+	products.push(smoking_behavior_change_product);
+	edges.push([smoking_behavior_change_product, can_be_implemented_with_relationship, smoking_behavior_change_technology]);
+    }
+    {
+	var substance_abuse_behavior_change_technology = "Substance Abuse\nBehavior Change\nTechnology";
+	technologies.push(substance_abuse_behavior_change_technology);
+    }
+    {
+	var substance_abuse_behavior_change_product = "Substance Abuse\nPhysical Behavior Change\nProduct";
+	products.push(substance_abuse_behavior_change_product);
+	edges.push([substance_abuse_behavior_change_product, can_be_implemented_with_relationship, substance_abuse_behavior_change_technology]);
+    }
+    
     var node_concept_map               = {};
     var graph                          = sals.graph.graph__new();
     var map_size                       = 2000;
