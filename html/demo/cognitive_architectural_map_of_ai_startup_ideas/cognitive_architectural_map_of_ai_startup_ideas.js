@@ -348,7 +348,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var parent_technology_relationship        = "parent\ntechnology";
     var parent_theory_relationship            = "parent\ntheory";
     var can_be_implemented_with_relationship = "can be\nimplemented with";
-    var used_in_layer_relationship            = "used in\nlayer";
     var theory_of_field_relationship          = "theory of\nfield";
     var technology_implements_theory          = "technology\nimplements\ntheory";
     // product relationships
@@ -522,8 +521,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var artificial_neural_network_technology = "Artificial\nNeural Network\nTechnology";
 	technologies.push(artificial_neural_network_technology);
-	edges.push([artificial_neural_network_technology, used_in_layer_relationship, learned_reactive_layer]);
-	edges.push([artificial_neural_network_technology, used_in_layer_relationship, built_in_reactive_layer]);
+	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, artificial_neural_network_technology]);
+	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, artificial_neural_network_technology]);
     }
     {
 	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
