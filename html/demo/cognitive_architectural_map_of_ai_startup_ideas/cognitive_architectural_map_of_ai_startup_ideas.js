@@ -631,6 +631,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([sensor_input_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
     }
     {
+	var visual_sensor_input_technology = "Visual\nSensor Input\nTechnology";
+	technologies.push(visual_sensor_input_technology);
+	edges.push([visual_sensor_input_technology, parent_technology_relationship, sensor_input_technology]);
+    }
+    {
 	var motor_control_technology = "Motor Control\nTechnology";
 	technologies.push(motor_control_technology);
 	edges.push([motor_control_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
