@@ -383,7 +383,32 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var education_market = "Education\nMarket";
 	major_markets.push(education_market);
 	{
+	    var elementary_and_middle_school_market = "Elementary and Middle School\nMarket";
+	    minor_markets.push(elementary_and_middle_school_market);
+	    edges.push([elementary_and_middle_school_market, parent_market_relationship, education_market]);
+	}
+	{
+	    var high_school_market = "High School\nMarket";
+	    minor_markets.push(high_school_market);
+	    edges.push([high_school_market, parent_market_relationship, education_market]);
+	}
+	{
+	    var professional_education_market = "Professional Education\nMarket";
+	    minor_markets.push(professional_education_market);
+	    edges.push([professional_education_market, parent_market_relationship, education_market]);
+	}
+	{
+	    var skill_training_market = "Skill Training\nMarket";
+	    minor_markets.push(skill_training_market);
+	    edges.push([skill_training_market, parent_market_relationship, education_market]);
+	}
+	{
 	    var cognitive_development_market = "Cognitive Development\nMarket";
+	    minor_markets.push(cognitive_development_market);
+	    edges.push([cognitive_development_market, parent_market_relationship, education_market]);
+	}
+	{
+	    var cognitive_development_market = "Learning Disabilities\nMarket";
 	    minor_markets.push(cognitive_development_market);
 	    edges.push([cognitive_development_market, parent_market_relationship, education_market]);
 	}
