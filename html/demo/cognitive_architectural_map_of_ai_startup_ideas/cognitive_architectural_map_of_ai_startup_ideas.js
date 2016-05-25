@@ -939,7 +939,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var exercise_behavior_change_product = "Exercise\nPhysical Behavior Change\nProduct";
 	products.push(exercise_behavior_change_product);
 	edges.push([exercise_behavior_change_product, can_be_implemented_with_relationship, exercise_behavior_change_technology]);
-	edges.push([exercise_behavior_change_product, sold_in_market_relationship, physical_medicine_market]);
+	edges.push([exercise_behavior_change_product, sold_in_market_relationship, physical_health_market]);
     }
     {
 	var smoking_behavior_change_technology = "Smoking\nBehavior Change\nTechnology";
