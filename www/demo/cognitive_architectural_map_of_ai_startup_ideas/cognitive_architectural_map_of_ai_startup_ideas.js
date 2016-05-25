@@ -942,14 +942,29 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     var products = [];
     {
+	var executive_cognitive_development_technology = "Executive\nCognitive Development\nTechnology";
+	technologies.push(executive_cognitive_development_technology);
+	edges.push([executive_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
+    }
+    {
 	var executive_cognitive_development_product = "Executive\nCognitive Development\nProduct";
 	minor_markets.push(executive_cognitive_development_product);
 	edges.push([executive_cognitive_development_product, sold_in_market_relationship, executive_cognitive_development_market]);
     }
     {
+	var social_cognitive_development_technology = "Social\nCognitive Development\nTechnology";
+	technologies.push(social_cognitive_development_technology);
+	edges.push([social_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
+    }
+    {
 	var social_cognitive_development_product = "Social\nCognitive Development\nProduct";
 	minor_markets.push(social_cognitive_development_product);
 	edges.push([social_cognitive_development_product, sold_in_market_relationship, social_cognitive_development_market]);
+    }
+    {
+	var emotional_cognitive_development_technology = "Emotional\nCognitive Development\nTechnology";
+	technologies.push(emotional_cognitive_development_technology);
+	edges.push([emotional_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
     }
     {
 	var emotional_cognitive_development_product = "Emotional\nCognitive Development\nProduct";
