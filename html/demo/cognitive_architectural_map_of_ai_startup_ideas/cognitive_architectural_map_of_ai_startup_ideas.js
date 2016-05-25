@@ -531,6 +531,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([alpha_go_cognitive_architecture_theory, parent_theory_relationship, cognitive_architecture_theory]);
 	edges.push([alpha_go_cognitive_architecture_theory, technology_at_development_stage, toy_problem_development_stage]);
     }
+    {
+	var linear_algebra_theory = "Linear Algebra\nTheory";
+	technologies.push(linear_algebra_theory);
+	edges.push([linear_algebra_theory, theory_of_field_relationship, computer_science_field]);
+    }
+    {
+	var graph_theory = "Graph\nTheory";
+	technologies.push(graph_theory);
+	edges.push([graph_theory, theory_of_field_relationship, computer_science_field]);
+    }
     // theory END
     
     // technology BEGIN
@@ -564,11 +574,13 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var linear_algebra_technology = "Linear Algebra\nTechnology";
 	technologies.push(linear_algebra_technology);
+	edges.push([linear_algebra_technology, technology_implements_theory, linear_algebra_theory]);
     }
     {
 	var graph_technology = "Graph\nTechnology";
 	technologies.push(graph_technology);
 	edges.push([graph_technology, can_be_implemented_with_relationship, linear_algebra_technology]);
+	edges.push([graph_technology, technology_implements_theory, graph_theory]);
     }
     {
 	var semantic_graph_reasoning_technology = "Semantic Graph Reasoning\nTechnology";
