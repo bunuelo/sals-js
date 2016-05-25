@@ -592,11 +592,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([visual_input_technology, can_be_implemented_with_relationship, convolutional_artificial_neural_network_technology]);
     }
     {
-	var motor_control_technology = "Motor Control\nTechnology";
-	technologies.push(motor_control_technology);
-	edges.push([motor_control_technology, can_be_implemented_with_relationship, recurrent_artificial_neural_network_technology]);
-    }
-    {
 	var signal_processing_technology = "Signal Processing\nTechnology";
 	technologies.push(signal_processing_technology);
 	edges.push([signal_processing_technology, can_be_implemented_with_relationship, recurrent_artificial_neural_network_technology]);
