@@ -792,7 +792,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	for(var index = 0; index < minor_markets.length; index ++) {
 	    var minor_market       = minor_markets[index];
 	    var minor_market__node = sals.graph.graph_node__new(minor_market);
-	    technology__node["vis_node"] = {
+	    minor_market__node["vis_node"] = {
 		x : 0,
 		y : 0
 	    };
