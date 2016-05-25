@@ -566,11 +566,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([spiking_artificial_neural_network_technology, technology_implements_theory, spike_encoded_neural_communication_theory]);
     }
     {
-	var deep_learning_technology = "Deep Learning\nTechnology";
-	technologies.push(deep_learning_technology);
-	edges.push([deep_learning_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
-    }
-    {
 	var recurrent_artificial_neural_network_technology = "Recurrent\nArtificial Neural Network\nTechnology";
 	technologies.push(recurrent_artificial_neural_network_technology);
 	edges.push([recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
