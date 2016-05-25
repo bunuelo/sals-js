@@ -455,6 +455,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		minor_markets.push(cancer_market);
 		edges.push([cancer_market, parent_market_relationship, physical_health_market]);
 	    }
+	    {
+		var hiv_aids_market = "HIV/AIDS\nMarket";
+		minor_markets.push(hiv_aids_market);
+		edges.push([hiv_aids_market, parent_market_relationship, physical_health_market]);
+	    }
 	}
     }
     {
