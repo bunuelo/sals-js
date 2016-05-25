@@ -804,6 +804,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	theories.push(theory_of_mind_technology);
 	edges.push([theory_of_mind_technology, technology_at_development_stage, toy_problem_development_stage]);
 	edges.push([theory_of_mind_technology, technology_implements_theory, theory_of_mind_theory]);
+	edges.push([theory_of_mind_technology, can_be_implemented_with_relationship, plan_recognition_technology]);
     }
     {
 	var artificial_neural_network_technology = "Artificial\nNeural Network\nTechnology";
