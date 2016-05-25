@@ -706,30 +706,27 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var vertical_control_horizontal_communication_theory = "Vertical Control\nHorizontal Communication\nTheory"
 	theories.push(vertical_control_horizontal_communication_theory);
-	edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, neuroscience_field]);
-	edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, psychology_field]);
+	edges.push([vertical_control_horizontal_communication_theory, parent_theory_relationship, social_emotional_learning_theory]);
     }
     {
 	var mirror_neuron_theory = "Mirror Neuron\nTheory"
 	theories.push(mirror_neuron_theory);
-	edges.push([mirror_neuron_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([mirror_neuron_theory, parent_theory_relationship, social_emotional_learning_theory]);
     }
     {
 	var mindset_self_concept_theory = "Mindset Self-Concept\nTheory"
 	theories.push(mindset_self_concept_theory);
-	edges.push([mindset_self_concept_theory, theory_of_field_relationship, psychology_field]);
+	edges.push([mindset_self_concept_theory, parent_theory_relationship, social_emotional_learning_theory]);
     }
     {
 	var theory_of_mind_theory = "Theory of Mind\nTheory"
 	theories.push(theory_of_mind_theory);
-	edges.push([theory_of_mind_theory, theory_of_field_relationship, neuroscience_field]);
-	edges.push([theory_of_mind_theory, theory_of_field_relationship, psychology_field]);
+	edges.push([theory_of_mind_theory, parent_theory_relationship, social_emotional_learning_theory]);
     }
     {
 	var metacognition_theory = "Metacognition\nTheory"
 	theories.push(metacognition_theory);
-	edges.push([metacognition_theory, theory_of_field_relationship, neuroscience_field]);
-	edges.push([metacognition_theory, theory_of_field_relationship, psychology_field]);
+	edges.push([metacognition_theory, parent_theory_relationship, social_emotional_learning_theory]);
     }
     {
 	var computational_metacognition_theory = "Computational Metacognition\nTheory"
