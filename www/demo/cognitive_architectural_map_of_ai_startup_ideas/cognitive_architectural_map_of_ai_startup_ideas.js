@@ -669,6 +669,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var fitbit_health_monitor_wearable_technology_product = "Fitbit\nHealth Monitor\nWearable Technology\nProduct";
 	products.push(fitbit_health_monitor_wearable_technology_product);
 	edges.push([fitbit_health_monitor_wearable_technology_product, parent_product_relationship, health_monitor_wearable_technology_product]);
+	edges.push([fitbit_health_monitor_wearable_technology_product, can_be_implemented_with_relationship, signal_processing_technology]);
     }
     var node_concept_map               = {};
     var graph                          = sals.graph.graph__new();
