@@ -914,6 +914,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var speech_recognition_technology = "Speech Recognition\nTechnology";
 	technologies.push(speech_recognition_technology);
 	edges.push([speech_recognition_technology, parent_technology_relationship, auditory_input_technology]);
+	edges.push([auditory_input_technology, can_be_implemented_with_relationship, natural_language_technology]);
     }
     {
 	var motor_control_technology = "Motor Control\nTechnology";
