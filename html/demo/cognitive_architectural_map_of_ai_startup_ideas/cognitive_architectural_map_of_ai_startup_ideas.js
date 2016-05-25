@@ -1049,8 +1049,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var node_concept_map               = {};
     var graph                          = sals.graph.graph__new();
     var map_size                       = 2000;
-    var layers__pin_colors             = false;
-    var fields__pin_colors             = false;
+    var layers__pin_colors             = true;
+    var fields__pin_colors             = true;
+    //var layers__pin_colors             = false;
+    //var fields__pin_colors             = false;
     var development_stages__pin_colors = true;
     var major_markets__pin_colors            = false;
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
