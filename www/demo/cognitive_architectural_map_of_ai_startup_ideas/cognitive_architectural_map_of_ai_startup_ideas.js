@@ -353,7 +353,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // product relationships
     var parent_product_relationship           = "parent\nproduct";
     var sold_in_market_relationship           = "sold\nin\nmarket";
-    
+    var technology_at_development_stage       = "at\ndevelopment stage";
     
     // market BEGIN
     var markets = [];
@@ -596,6 +596,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	technologies.push(signal_processing_technology);
 	edges.push([signal_processing_technology, can_be_implemented_with_relationship, recurrent_artificial_neural_network_technology]);
 	edges.push([signal_processing_technology, can_be_implemented_with_relationship, bidirectional_recurrent_artificial_neural_network_technology]);
+	edges.push([signal_processing_technology, technology_at_development_stage, successful_startup_development_stage]);
     }
     {
 	var auditory_input_technology = "Auditory Input\nTechnology";
