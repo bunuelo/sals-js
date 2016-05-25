@@ -893,6 +893,22 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	technologies.push(motor_control_technology);
 	edges.push([motor_control_technology, can_be_implemented_with_relationship, recurrent_artificial_neural_network_technology]);
     }
+    {
+	var executive_cognitive_development_technology = "Executive\nCognitive Development\nTechnology";
+	technologies.push(executive_cognitive_development_technology);
+	edges.push([executive_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
+	edges.push([executive_cognitive_development_technology, technology_at_development_stage, successful_startup_development_stage]);
+    }
+    {
+	var social_cognitive_development_technology = "Social\nCognitive Development\nTechnology";
+	technologies.push(social_cognitive_development_technology);
+	edges.push([social_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
+    }
+    {
+	var emotional_cognitive_development_technology = "Emotional\nCognitive Development\nTechnology";
+	technologies.push(emotional_cognitive_development_technology);
+	edges.push([emotional_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
+    }
     // technology END
     
     // layer BEGIN
@@ -920,6 +936,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, state_space_planning_technology]);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, commonsense_reasoning_technology]);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, story_understanding_technology]);
+	edges.push([deliberative_layer, can_be_implemented_with_relationship, executive_cognitive_development_technology]);
     }
     {
 	var reflective_layer = "Emotion Machine\nReflective Layer\nTechnology";
@@ -927,26 +944,23 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([reflective_layer, can_be_implemented_with_relationship, alpha_go_technology]);
 	edges.push([reflective_layer, can_be_implemented_with_relationship, plan_space_planning_technology]);
 	edges.push([reflective_layer, can_be_implemented_with_relationship, story_understanding_technology]);
+	edges.push([reflective_layer, can_be_implemented_with_relationship, emotional_cognitive_development_technology]);
     }
     {
 	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer\nTechnology";
 	layers.push(self_reflective_layer);
 	edges.push([self_reflective_layer, can_be_implemented_with_relationship, story_understanding_technology]);
+	edges.push([self_reflective_layer, can_be_implemented_with_relationship, social_cognitive_development_technology]);
     }
     {
 	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer\nTechnology";
 	layers.push(self_conscious_layer);
 	edges.push([self_conscious_layer, can_be_implemented_with_relationship, story_understanding_technology]);
+	edges.push([self_conscious_layer, can_be_implemented_with_relationship, social_cognitive_development_technology]);
     }
     // layer END
     
     var products = [];
-    {
-	var executive_cognitive_development_technology = "Executive\nCognitive Development\nTechnology";
-	technologies.push(executive_cognitive_development_technology);
-	edges.push([executive_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
-	edges.push([executive_cognitive_development_technology, technology_at_development_stage, successful_startup_development_stage]);
-    }
     {
 	var executive_cognitive_development_product = "Executive\nCognitive Development\nProduct";
 	minor_markets.push(executive_cognitive_development_product);
@@ -954,20 +968,10 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([executive_cognitive_development_product, can_be_implemented_with_relationship, executive_cognitive_development_technology]);
     }
     {
-	var social_cognitive_development_technology = "Social\nCognitive Development\nTechnology";
-	technologies.push(social_cognitive_development_technology);
-	edges.push([social_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
-    }
-    {
 	var social_cognitive_development_product = "Social\nCognitive Development\nProduct";
 	minor_markets.push(social_cognitive_development_product);
 	edges.push([social_cognitive_development_product, sold_in_market_relationship, social_cognitive_development_market]);
 	edges.push([social_cognitive_development_product, can_be_implemented_with_relationship, social_cognitive_development_technology]);
-    }
-    {
-	var emotional_cognitive_development_technology = "Emotional\nCognitive Development\nTechnology";
-	technologies.push(emotional_cognitive_development_technology);
-	edges.push([emotional_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
     }
     {
 	var emotional_cognitive_development_product = "Emotional\nCognitive Development\nProduct";
