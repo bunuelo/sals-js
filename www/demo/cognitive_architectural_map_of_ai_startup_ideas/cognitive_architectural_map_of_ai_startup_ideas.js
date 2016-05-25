@@ -915,8 +915,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([brain_computer_interface_technology, technology_at_development_stage, research_application_development_stage]);
 	edges.push([brain_computer_interface_technology, technology_at_development_stage, successful_startup_development_stage]);
 	edges.push([brain_computer_interface_technology, technology_at_development_stage, toy_problem_development_stage]);
-	edges.push([brain_computer_interface_technology, technology_at_development_stage, computational_implementation_development_stage]);
-	edges.push([brain_computer_interface_technology, technology_at_development_stage, mathematical_theory_development_stage]);
     }
     {
 	var prosthetic_limb_technology = "Prosthetic Limb\nTechnology";
