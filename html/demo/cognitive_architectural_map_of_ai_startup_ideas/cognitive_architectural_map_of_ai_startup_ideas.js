@@ -564,7 +564,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var semantic_graph_reasoning_technology = "Semantic Graph Reasoning\nTechnology";
 	technologies.push(semantic_graph_reasoning_technology);
-	edges.push([semantic_graph_reasoning_technology, parent_technology_relationship, ]);
+	edges.push([semantic_graph_reasoning_technology, parent_technology_relationship, graph_technology]);
     }
     {
 	var commonsense_reasoning_technology = "Common Sense Reasoning\nTechnology";
