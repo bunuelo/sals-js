@@ -391,9 +391,109 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    minor_markets.push(mental_health_market);
 	    edges.push([mental_health_market, parent_market_relationship, medicine_market]);
 	    {
-		var autism_market = "Autism\nMarket";
-		minor_markets.push(autism_market);
-		edges.push([autism_market, parent_market_relationship, mental_health_market]);
+		var autistic_spectrum_market = "Autistic Spectrum\nMarket";
+		minor_markets.push(autistic_spectrum_market);
+		edges.push([autistic_spectrum_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var autistic_spectrum_market = "Autistic Spectrum\nMarket";
+		minor_markets.push(autistic_spectrum_market);
+		edges.push([autistic_spectrum_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Neurodevelopmental Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Schizophrenia Spectrum and Other Psychotic Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Bipolar and Related Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Depressive Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Anxiety Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Obsessive-Compulsive and Related Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Trauma- and Stressor-Related Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Dissociative Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Somatic Symptom Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Feeding and Eating Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Elimination Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Sleep-Wake Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Sexual Dysfunctions\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Gender Dysphoria\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Disruptive, Impulse Control and Conduct Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Substance Use and Addictive Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Neurocognitive Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Personality Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var _market = "Paraphilic Disorders\nMarket";
+		minor_markets.push(_market);
+		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	}
 	{
