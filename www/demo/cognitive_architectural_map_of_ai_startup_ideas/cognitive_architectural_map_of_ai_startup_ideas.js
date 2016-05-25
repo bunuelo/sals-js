@@ -430,7 +430,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    edges.push([home_entertainment_market, parent_market_relationship, consumer_product_market]);
 	}
 	{
-	    var personal_health_monitor_market = "Personal\nHealth Monitor\nMarket";
+	    var personal_health_monitor_market = "Personal Health\nMarket";
 	    minor_markets.push(personal_health_monitor_market);
 	    edges.push([personal_health_monitor_market, parent_market_relationship, consumer_product_market]);
 	}
