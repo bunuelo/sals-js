@@ -572,7 +572,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([semantic_graph_reasoning_technology, parent_technology_relationship, graph_technology]);
     }
     {
-	var commonsense_reasoning_technology = "Common Sense Reasoning\nTechnology";
+	var commonsense_reasoning_technology = "Commonsense Reasoning\nTechnology";
 	technologies.push(commonsense_reasoning_technology);
 	edges.push([commonsense_reasoning_technology, parent_technology_relationship, semantic_graph_reasoning_technology]);
     }
@@ -664,12 +664,14 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, alpha_go_technology]);
 	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, reinforcement_learning_technology]);
 	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, artificial_neural_network_technology]);
+	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, commonsense_reasoning_technology]);
     }
     {
 	var deliberative_layer = "Emotion Machine\nDeliberative Layer\nTechnology";
 	layers.push(deliberative_layer);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, alpha_go_technology]);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, state_space_planning_technology]);
+	edges.push([deliberative_layer, can_be_implemented_with_relationship, commonsense_reasoning_technology]);
     }
     {
 	var reflective_layer = "Emotion Machine\nReflective Layer\nTechnology";
