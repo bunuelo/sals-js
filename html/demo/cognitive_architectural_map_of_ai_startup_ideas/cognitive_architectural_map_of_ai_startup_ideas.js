@@ -391,6 +391,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    minor_markets.push(pharmaceutical_market);
 	    edges.push([pharmaceutical_market, parent_market_relationship, medicine_market]);
 	}
+	{
+	    var mental_health_market = "Mental Health\nMarket";
+	    minor_markets.push(mental_health_market);
+	    edges.push([mental_health_market, parent_market_relationship, medicine_market]);
+	}
+	{
+	    var physical_health_market = "Physical Health\nMarket";
+	    minor_markets.push(physical_health_market);
+	    edges.push([physical_health_market, parent_market_relationship, medicine_market]);
+	}
     }
     {
 	var entertainment_market = "Entertainment\nMarket";
