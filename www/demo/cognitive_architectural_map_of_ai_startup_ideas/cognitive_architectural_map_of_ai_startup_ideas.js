@@ -1063,7 +1063,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      true,
 						      -map_size, -map_size, -map_size,  map_size,
 						      layers__pin_colors,
-						      1, 1, 0.5, 1, 1, 0.5);
+						      1, 0, 0, 1, 0, 0);
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
 						      node_concept_map,
