@@ -412,6 +412,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	minor_markets.push(game_market);
 	edges.push([game_market, parent_market_relationship, entertainment_market]);
     }
+    {
+	var theme_park_market = "Theme Park\nMarket";
+	minor_markets.push(theme_park_market);
+	edges.push([theme_park_market, parent_market_relationship, entertainment_market]);
+    }
     
     // field BEGIN
     var fields = [];
