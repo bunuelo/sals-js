@@ -558,6 +558,20 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology]);
     }
     {
+	var graph_technology = "Graph\nTechnology";
+	technologies.push(graph_technology);
+    }
+    {
+	var semantic_graph_reasoning_technology = "Semantic Graph Reasoning\nTechnology";
+	technologies.push(semantic_graph_reasoning_technology);
+	edges.push([semantic_graph_reasoning_technology, parent_technology_relationship, ]);
+    }
+    {
+	var commonsense_reasoning_technology = "Common Sense Reasoning\nTechnology";
+	technologies.push(commonsense_reasoning_technology);
+	edges.push([commonsense_reasoning_technology, parent_technology_relationship, semantic_graph_reasoning_technology]);
+    }
+    {
 	var convolutional_artificial_neural_network_technology = "Convolutional\nArtificial Neural Network\nTechnology";
 	technologies.push(convolutional_artificial_neural_network_technology);
 	edges.push([convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
