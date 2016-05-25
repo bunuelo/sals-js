@@ -567,6 +567,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    }
 	}
     }
+    /*
     {
 	var entertainment_market = "Entertainment\nMarket";
 	major_markets.push(entertainment_market);
@@ -591,6 +592,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    edges.push([theme_park_market, parent_market_relationship, entertainment_market]);
 	}
     }
+    */
     {
 	var consumer_product_market = "Consumer Product\nMarket";
 	major_markets.push(consumer_product_market);
