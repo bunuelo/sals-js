@@ -533,12 +533,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     }
     {
 	var linear_algebra_theory = "Linear Algebra\nTheory";
-	technologies.push(linear_algebra_theory);
+	theories.push(linear_algebra_theory);
 	edges.push([linear_algebra_theory, theory_of_field_relationship, computer_science_field]);
     }
     {
 	var graph_theory = "Graph\nTheory";
-	technologies.push(graph_theory);
+	theories.push(graph_theory);
 	edges.push([graph_theory, theory_of_field_relationship, computer_science_field]);
     }
     // theory END
