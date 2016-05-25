@@ -401,94 +401,94 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([autistic_spectrum_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Neurodevelopmental Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var neurodevelopmental_disorders_market = "Neurodevelopmental Disorders\nMarket";
+		minor_markets.push(neurodevelopmental_disorders_market);
+		edges.push([neurodevelopmental_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Schizophrenia Spectrum Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var schizophrenia_spectrum_disorders_market = "Schizophrenia Spectrum Disorders\nMarket";
+		minor_markets.push(schizophrenia_spectrum_disorders_market);
+		edges.push([schizophrenia_spectrum_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Bipolar Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var bipolar_disorders_market = "Bipolar Disorders\nMarket";
+		minor_markets.push(bipolar_disorders_market);
+		edges.push([bipolar_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Depressive Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var depressive_disorders_market = "Depressive Disorders\nMarket";
+		minor_markets.push(depressive_disorders_market);
+		edges.push([depressive_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Anxiety Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var anxiety_disorders_market = "Anxiety Disorders\nMarket";
+		minor_markets.push(anxiety_disorders_market);
+		edges.push([anxiety_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Obsessive-Compulsive Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var obsessive_compulsive_disorders_market = "Obsessive-Compulsive Disorders\nMarket";
+		minor_markets.push(obsessive_compulsive_disorders_market);
+		edges.push([obsessive_compulsive_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Trauma-Related Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var trauma_related_disorders_market = "Trauma-Related Disorders\nMarket";
+		minor_markets.push(trauma_related_disorders_market);
+		edges.push([trauma_related_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Dissociative Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var dissociative_disorders_market = "Dissociative Disorders\nMarket";
+		minor_markets.push(dissociative_disorders_market);
+		edges.push([dissociative_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Somatic Symptom Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var somatic_symptom_disorders_market = "Somatic Symptom Disorders\nMarket";
+		minor_markets.push(somatic_symptom_disorders_market);
+		edges.push([somatic_symptom_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Feeding and Eating Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var feeding_and_eating_disorders_market = "Feeding and Eating Disorders\nMarket";
+		minor_markets.push(feeding_and_eating_disorders_market);
+		edges.push([feeding_and_eating_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Sleep-Wake Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var sleep_wake_disorders_market = "Sleep-Wake Disorders\nMarket";
+		minor_markets.push(sleep_wake_disorders_market);
+		edges.push([sleep_wake_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Sexual Dysfunctions\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var sexual_dysfunctions_market = "Sexual Dysfunctions\nMarket";
+		minor_markets.push(sexual_dysfunctions_market);
+		edges.push([sexual_dysfunctions_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Gender Dysphoria\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var gender_dysphoria_market = "Gender Dysphoria\nMarket";
+		minor_markets.push(gender_dysphoria_market);
+		edges.push([gender_dysphoria_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Disruptive,\nImpulse Control\nand Conduct Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var disruptive_impulse_control_and_conduct_disorders_market = "Disruptive,\nImpulse Control\nand Conduct Disordersa\nMarket";
+		minor_markets.push(disruptive_impulse_control_and_conduct_disorders_market);
+		edges.push([disruptive_impulse_control_and_conduct_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Substance Use\nand Addictive Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var substance_use_and_addictive_disorders_market = "Substance Use\nand Addictive Disorders\nMarket";
+		minor_markets.push(substance_use_and_addictive_disorders_market);
+		edges.push([substance_use_and_addictive_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Neurocognitive Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var neurocognitive_disorders_market = "Neurocognitive Disorders\nMarket";
+		minor_markets.push(neurocognitive_disorders_market);
+		edges.push([neurocognitive_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Personality Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var personality_disorders_market = "Personality Disorders\nMarket";
+		minor_markets.push(personality_disorders_market);
+		edges.push([personality_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Paraphilic Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
+		var paraphilic_disorders_market = "Paraphilic Disorders\nMarket";
+		minor_markets.push(paraphilic_disorders_market);
+		edges.push([paraphilic_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
 	}
 	{
