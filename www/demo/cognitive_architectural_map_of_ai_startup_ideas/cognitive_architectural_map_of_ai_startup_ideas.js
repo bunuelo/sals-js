@@ -694,6 +694,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // theory BEGIN
     var theories = [];
     {
+	var natural_language_theory = "Natural Language\nTheory";
+	theories.push(natural_language_theory);
+	edges.push([natural_language_theory, theory_of_field_relationship, linguistics_field]);
+    }
+    {
 	var neural_communication_theory = "Neural Communication\nTheory";
 	theories.push(neural_communication_theory);
 	edges.push([neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
