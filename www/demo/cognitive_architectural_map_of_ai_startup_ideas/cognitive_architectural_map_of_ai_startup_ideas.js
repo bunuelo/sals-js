@@ -657,10 +657,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var computer_science_field = "Computer Science\n(Cognitive Science)";
 	fields.push(computer_science_field);
     }
-    {
-	var artificial_intelligence_field = "Artificial Intelligence\n(Cognitive Science)";
-	fields.push(artificial_intelligence_field);
-    }
     // field END
     
     // development_stage BEGIN
@@ -749,17 +745,17 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var computational_metacognition_theory = "Computational Metacognition\nTheory"
 	theories.push(computational_metacognition_theory);
-	edges.push([computational_metacognition_theory, theory_of_field_relationship, artificial_intelligence_field]);
+	edges.push([computational_metacognition_theory, theory_of_field_relationship, computer_science_field]);
     }
     {
 	var computational_planning_theory = "Computational Planning\nTheory"
 	theories.push(computational_planning_theory);
-	edges.push([computational_planning_theory, theory_of_field_relationship, artificial_intelligence_field]);
+	edges.push([computational_planning_theory, theory_of_field_relationship, computer_science_field]);
     }
     {
 	var cognitive_architecture_theory = "Cognitive Architecture\nTheory"
 	theories.push(cognitive_architecture_theory);
-	edges.push([cognitive_architecture_theory, theory_of_field_relationship, artificial_intelligence_field]);
+	edges.push([cognitive_architecture_theory, theory_of_field_relationship, computer_science_field]);
 	edges.push([cognitive_architecture_theory, theory_of_field_relationship, psychology_field]);
 	edges.push([cognitive_architecture_theory, theory_of_field_relationship, neuroscience_field]);
     }
