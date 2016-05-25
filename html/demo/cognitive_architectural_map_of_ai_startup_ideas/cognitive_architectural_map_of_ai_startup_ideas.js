@@ -396,17 +396,17 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([behavior_change_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var nutrition_market = "Nutrition Behavior Change\nMarket";
+		var nutrition_market = "Nutrition\nBehavior Change\nMarket";
 		minor_markets.push(nutrition_market);
 		edges.push([nutrition_market, parent_market_relationship, behavior_change_market]);
 	    }
 	    {
-		var exercise_market = "Exercise Behavior Change\nMarket";
+		var exercise_market = "Exercise\nBehavior Change\nMarket";
 		minor_markets.push(exercise_market);
 		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
 	    }
 	    {
-		var exercise_market = "Smoking Behavior Change\nMarket";
+		var exercise_market = "Smoking\nBehavior Change\nMarket";
 		minor_markets.push(exercise_market);
 		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
 	    }
