@@ -624,6 +624,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, learned_reactive_layer]);
 	edges.push([alpha_go_technology, technology_implements_theory, alpha_go_cognitive_architecture_theory]);
     }
+    {
+	var sensor_input_technology = "Sensor Input\nTechnology";
+	technologies.push(sensor_input_technology);
+	edges.push([sensor_input_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
+    }
+    {
+	var motor_control_technology = "Motor Control\nTechnology";
+	technologies.push(motor_control_technology);
+	edges.push([motor_control_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
+    }
     // technology END
     
     var products = [];
