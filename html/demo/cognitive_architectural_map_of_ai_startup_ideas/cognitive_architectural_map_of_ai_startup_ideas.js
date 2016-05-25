@@ -414,6 +414,21 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var consumer_product_market = "Consumer Product\nMarket";
 	major_markets.push(consumer_product_market);
+	{
+	    var automobile_market = "Automobile\nMarket";
+	    minor_markets.push(automobile_market);
+	    edges.push([automobile_market, parent_market_relationship, consumer_product_market]);
+	}
+	{
+	    var mobile_app_market = "Mobile App\nMarket";
+	    minor_markets.push(mobile_app_market);
+	    edges.push([mobile_app_market, parent_market_relationship, consumer_product_market]);
+	}
+	{
+	    var home_entertainment_market = "Home Entertainment\nMarket";
+	    minor_markets.push(home_entertainment_market);
+	    edges.push([home_entertainment_market, parent_market_relationship, consumer_product_market]);
+	}
     }
     // market END
     
