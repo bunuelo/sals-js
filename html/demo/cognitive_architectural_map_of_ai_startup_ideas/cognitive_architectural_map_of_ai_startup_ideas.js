@@ -406,12 +406,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Schizophrenia Spectrum and Other Psychotic Disorders\nMarket";
+		var _market = "Schizophrenia Spectrum Disorders\nMarket";
 		minor_markets.push(_market);
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Bipolar and Related Disorders\nMarket";
+		var _market = "Bipolar Disorders\nMarket";
 		minor_markets.push(_market);
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
@@ -426,12 +426,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Obsessive-Compulsive and Related Disorders\nMarket";
+		var _market = "Obsessive-Compulsive Disorders\nMarket";
 		minor_markets.push(_market);
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Trauma- and Stressor-Related Disorders\nMarket";
+		var _market = "Trauma-Related Disorders\nMarket";
 		minor_markets.push(_market);
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
@@ -466,12 +466,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Disruptive, Impulse Control and Conduct Disorders\nMarket";
+		var _market = "Disruptive,\nImpulse Control\nand Conduct Disorders\nMarket";
 		minor_markets.push(_market);
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Substance Use and Addictive Disorders\nMarket";
+		var _market = "Substance Use\nand Addictive Disorders\nMarket";
 		minor_markets.push(_market);
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
