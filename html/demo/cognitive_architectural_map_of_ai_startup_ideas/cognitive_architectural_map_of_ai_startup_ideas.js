@@ -769,6 +769,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // technology BEGIN
     var technologies = [];
     {
+	var theory_of_mind_technology = "Theory of Mind\nTechnology"
+	theories.push(theory_of_mind_technology);
+	edges.push([theory_of_mind_technology, technology_at_development_stage, computational_implementation_development_stage]);
+	edges.push([theory_of_mind_technology, technology_implements_theory, theory_of_mind_theory]);
+    }
+    {
 	var artificial_neural_network_technology = "Artificial\nNeural Network\nTechnology";
 	technologies.push(artificial_neural_network_technology);
 	edges.push([artificial_neural_network_technology, technology_at_development_stage, successful_startup_development_stage]);
@@ -978,12 +984,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // layer END
     
     var products = [];
-    {
-	var mind_upload_product = "Mind Upload\nProduct";
-	minor_markets.push(mind_upload_product);
-	edges.push([mind_upload_product, sold_in_market_relationship, mental_health_market]);
-	edges.push([mind_upload_product, sold_in_market_relationship, game_market]);
-    }
     {
 	var prosthetic_limb_product = "Prosthetic Limb\nProduct";
 	minor_markets.push(prosthetic_limb_product);
