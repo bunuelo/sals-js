@@ -68,8 +68,8 @@ sals.demo.ai_startup_idea = {};
 		(b >= (red_stripe_b - red_stripe_radius)) && (b <= (red_stripe_b + red_stripe_radius))) {
 		if (red_stripe_enabled) {
 		    r = 1.0;
-		    g = 0.0;
-		    b = 0.0;
+		    g = 0.5;
+		    b = 0.5;
 		}
 	    }
 	})();
