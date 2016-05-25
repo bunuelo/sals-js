@@ -605,6 +605,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    edges.push([mobile_app_market, parent_market_relationship, consumer_product_market]);
 	}
 	{
+	    var toy_market = "Toy\nMarket";
+	    minor_markets.push(toy_market);
+	    edges.push([toy_market, parent_market_relationship, consumer_product_market]);
+	    {
+		var toy_robot_market = "Toy Robot\nMarket";
+		minor_markets.push(toy_robot_market);
+		edges.push([toy_robot_market, parent_market_relationship, toy_market]);
+	    }
+	}
+	{
 	    var home_entertainment_market = "Home Entertainment\nMarket";
 	    minor_markets.push(home_entertainment_market);
 	    edges.push([home_entertainment_market, parent_market_relationship, consumer_product_market]);
