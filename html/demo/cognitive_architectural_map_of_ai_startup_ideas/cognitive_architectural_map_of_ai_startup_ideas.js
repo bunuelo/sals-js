@@ -386,6 +386,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var medicine_market = "Medicine\nMarket";
 	major_markets.push(medicine_market);
+	{
+	    var pharmaceutical_market = "Pharmaceutical\nMarket";
+	    minor_markets.push(pharmaceutical_market);
+	    edges.push([pharmaceutical_market, parent_market_relationship, medicine_market]);
+	}
     }
     {
 	var entertainment_market = "Entertainment\nMarket";
