@@ -671,11 +671,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var mathematical_theory_development_stage = "Mathematical Theory\nDevelopment Stage";
 	development_stages.push(mathematical_theory_development_stage);
     }
-    */
     {
 	var computational_implementation_development_stage = "Computational Implementation\nDevelopment Stage";
 	development_stages.push(computational_implementation_development_stage);
     }
+    */
     {
 	var toy_problem_development_stage = "Toy Problem\nDevelopment Stage";
 	development_stages.push(toy_problem_development_stage);
@@ -802,7 +802,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var theory_of_mind_technology = "Theory of Mind\nTechnology"
 	theories.push(theory_of_mind_technology);
-	edges.push([theory_of_mind_technology, technology_at_development_stage, computational_implementation_development_stage]);
+	edges.push([theory_of_mind_technology, technology_at_development_stage, toy_problem_development_stage]);
 	edges.push([theory_of_mind_technology, technology_implements_theory, theory_of_mind_theory]);
     }
     {
