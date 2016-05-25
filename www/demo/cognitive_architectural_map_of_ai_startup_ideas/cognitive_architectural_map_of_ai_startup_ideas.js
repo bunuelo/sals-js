@@ -58,7 +58,7 @@ sals.demo.ai_startup_idea = {};
 	var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
 	var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
 	(function() { // red stripe
-	    var red_stripe_enabled = false;
+	    var red_stripe_enabled = true;
 	    var red_stripe_r       = 0.75;
 	    var red_stripe_g       = 1.0;
 	    var red_stripe_b       = 0.75;
