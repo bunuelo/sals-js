@@ -425,8 +425,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	fields.push(anthropology_field);
     }
     {
-	var cognitive_neuroscience_field = "Neuroscience\n(Cognitive Science)";
-	fields.push(cognitive_neuroscience_field);
+	var neuroscience_field = "Neuroscience\n(Cognitive Science)";
+	fields.push(neuroscience_field);
+    }
+    {
+	var psychology_field = "Psychology\n(Cognitive Science)";
+	fields.push(psychology_field);
     }
     {
 	var linguistics_field = "Linguistics\n(Cognitive Science)";
@@ -483,49 +487,53 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var neural_communication_theory = "Neural Communication\nTheory";
 	theories.push(neural_communication_theory);
-	edges.push([neural_communication_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
     }
     {
 	var rate_encoded_neural_communication_theory = "Rate Encoded\nNeural Communication\nTheory";
 	theories.push(rate_encoded_neural_communication_theory);
-	edges.push([rate_encoded_neural_communication_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([rate_encoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
 	edges.push([rate_encoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory]);
     }
     {
 	var spike_encoded_neural_communication_theory = "Spike Encoded\nNeural Communication\nTheory";
 	theories.push(spike_encoded_neural_communication_theory);
-	edges.push([spike_encoded_neural_communication_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([spike_encoded_neural_communication_theory, theory_of_field_relationship, neuroscience_field]);
 	edges.push([spike_encoded_neural_communication_theory, parent_theory_relationship, neural_communication_theory]);
     }
     {
 	var social_emotional_learning_theory = "Social Emotional Learning\nTheory";
 	theories.push(social_emotional_learning_theory);
-	edges.push([social_emotional_learning_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([social_emotional_learning_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([social_emotional_learning_theory, theory_of_field_relationship, psychology_field]);
     }
     {
 	var vertical_control_horizontal_communication_theory = "Vertical Control\nHorizontal Communication\nTheory"
 	theories.push(vertical_control_horizontal_communication_theory);
-	edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([vertical_control_horizontal_communication_theory, theory_of_field_relationship, psychology_field]);
     }
     {
 	var mirror_neuron_theory = "Mirror Neuron\nTheory"
 	theories.push(mirror_neuron_theory);
-	edges.push([mirror_neuron_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([mirror_neuron_theory, theory_of_field_relationship, neuroscience_field]);
     }
     {
 	var mindset_self_concept_theory = "Mindset Self-Concept\nTheory"
 	theories.push(mindset_self_concept_theory);
-	edges.push([mindset_self_concept_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([mindset_self_concept_theory, theory_of_field_relationship, psychology_field]);
     }
     {
 	var theory_of_mind_theory = "Theory of Mind\nTheory"
 	theories.push(theory_of_mind_theory);
-	edges.push([theory_of_mind_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([theory_of_mind_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([theory_of_mind_theory, theory_of_field_relationship, psychology_field]);
     }
     {
 	var metacognition_theory = "Metacognition\nTheory"
 	theories.push(metacognition_theory);
-	edges.push([metacognition_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([metacognition_theory, theory_of_field_relationship, neuroscience_field]);
+	edges.push([metacognition_theory, theory_of_field_relationship, psychology_field]);
     }
     {
 	var computational_metacognition_theory = "Computational Metacognition\nTheory"
@@ -541,7 +549,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var cognitive_architecture_theory = "Cognitive Architecture\nTheory"
 	theories.push(cognitive_architecture_theory);
 	edges.push([cognitive_architecture_theory, theory_of_field_relationship, artificial_intelligence_field]);
-	edges.push([cognitive_architecture_theory, theory_of_field_relationship, cognitive_neuroscience_field]);
+	edges.push([cognitive_architecture_theory, theory_of_field_relationship, psychology_field]);
+	edges.push([cognitive_architecture_theory, theory_of_field_relationship, neuroscience_field]);
     }
     {
 	var alpha_go_cognitive_architecture_theory = "DeepMind's AlphaGo\nCognitive Architecture\nTheory"
