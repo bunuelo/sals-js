@@ -426,16 +426,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([diabetes_market, parent_market_relationship, physical_health_market]);
 	    }
 	    {
-		var high_blood_pressure_market = "High Blood Pressure\nMarket";
-		minor_markets.push(high_blood_pressure_market);
-		edges.push([high_blood_pressure_market, parent_market_relationship, physical_health_market]);
-	    }
-	    {
-		var obesity_market = "Obesity\nMarket";
-		minor_markets.push(obesity_market);
-		edges.push([obesity_market, parent_market_relationship, physical_health_market]);
-	    }
-	    {
 		var emergency_medicine_market = "Emergency Medicine\nMarket";
 		minor_markets.push(emergency_medicine_market);
 		edges.push([emergency_medicine_market, parent_market_relationship, physical_health_market]);
