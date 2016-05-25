@@ -411,9 +411,14 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
 	    }
 	    {
-		var exercise_market = "Smoking\nPhysical Behavior Change\nMarket";
-		minor_markets.push(exercise_market);
-		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
+		var smoking_market = "Smoking\nPhysical Behavior Change\nMarket";
+		minor_markets.push(smoking_market);
+		edges.push([smoking_market, parent_market_relationship, behavior_change_market]);
+	    }
+	    {
+		var substance_abuse_market = "Substance Abuse\nPhysical Behavior Change\nMarket";
+		minor_markets.push(substance_abuse_market);
+		edges.push([substance_abuse_market, parent_market_relationship, behavior_change_market]);
 	    }
 	    {
 		var diabetes_market = "Diabetes\nMarket";
