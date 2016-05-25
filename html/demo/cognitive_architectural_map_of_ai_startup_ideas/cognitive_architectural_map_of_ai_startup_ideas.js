@@ -1054,7 +1054,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     //var layers__pin_colors             = false;
     //var fields__pin_colors             = false;
     var development_stages__pin_colors = true;
-    var major_markets__pin_colors            = false;
+    var major_markets__pin_colors      = false;
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
 						      node_concept_map,
@@ -1090,7 +1090,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      true,
 						      map_size,  map_size,  map_size, -map_size,
 						      major_markets__pin_colors,
-						      1, 0.5, 0.5, 1, 0.5, 0.5);
+						      1, 1, 1, 1, 1, 1);
     (function() {
 	for(var index = 0; index < minor_markets.length; index ++) {
 	    var minor_market       = minor_markets[index];
