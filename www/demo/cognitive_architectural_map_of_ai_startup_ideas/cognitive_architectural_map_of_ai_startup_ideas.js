@@ -466,7 +466,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([gender_dysphoria_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var disruptive_impulse_control_and_conduct_disorders_market = "Disruptive,\nImpulse Control\nand Conduct Disordersa\nMarket";
+		var disruptive_impulse_control_and_conduct_disorders_market = "Disruptive,\nImpulse Control\nand Conduct Disorders\nMarket";
 		minor_markets.push(disruptive_impulse_control_and_conduct_disorders_market);
 		edges.push([disruptive_impulse_control_and_conduct_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
