@@ -382,6 +382,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var education_market = "Education\nMarket";
 	major_markets.push(education_market);
+	{
+	    var cognitive_development_market = "Cognitive Development\nMarket";
+	    minor_markets.push(cognitive_development_market);
+	    edges.push([cognitive_development_market, parent_market_relationship, education_market]);
+	}
     }
     {
 	var medicine_market = "Medicine\nMarket";
