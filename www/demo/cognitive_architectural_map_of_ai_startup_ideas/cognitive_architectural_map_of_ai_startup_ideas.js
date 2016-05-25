@@ -942,6 +942,21 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     var products = [];
     {
+	var executive_cognitive_development_product = "Executive\nCognitive Development\nProduct";
+	minor_markets.push(executive_cognitive_development_product);
+	edges.push([executive_cognitive_development_product, sold_in_market_relationship, executive_cognitive_development_market]);
+    }
+    {
+	var social_cognitive_development_product = "Social\nCognitive Development\nProduct";
+	minor_markets.push(social_cognitive_development_product);
+	edges.push([social_cognitive_development_product, sold_in_market_relationship, social_cognitive_development_market]);
+    }
+    {
+	var emotional_cognitive_development_product = "Emotional\nCognitive Development\nProduct";
+	minor_markets.push(emotional_cognitive_development_product);
+	edges.push([emotional_cognitive_development_product, sold_in_market_relationship, emotional_cognitive_development_market]);
+    }
+    {
 	var wearable_technology_product = "Wearable Technology\nProduct";
 	products.push(wearable_technology_product);
 	edges.push([wearable_technology_product, sold_in_market_relationship, personal_health_market]);
