@@ -939,6 +939,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var exercise_behavior_change_product = "Exercise\nPhysical Behavior Change\nProduct";
 	products.push(exercise_behavior_change_product);
 	edges.push([exercise_behavior_change_product, can_be_implemented_with_relationship, exercise_behavior_change_technology]);
+	edges.push([exercise_behavior_change_product, sold_in_market_relationship, physical_medicine_market]);
     }
     {
 	var smoking_behavior_change_technology = "Smoking\nBehavior Change\nTechnology";
@@ -948,6 +949,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var smoking_behavior_change_product = "Smoking\nPhysical Behavior Change\nProduct";
 	products.push(smoking_behavior_change_product);
 	edges.push([smoking_behavior_change_product, can_be_implemented_with_relationship, smoking_behavior_change_technology]);
+	edges.push([smoking_behavior_change_product, sold_in_market_relationship, substance_use_and_addictive_disorders_market]);
     }
     {
 	var substance_abuse_behavior_change_technology = "Substance Abuse\nBehavior Change\nTechnology";
@@ -957,6 +959,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var substance_abuse_behavior_change_product = "Substance Abuse\nPhysical Behavior Change\nProduct";
 	products.push(substance_abuse_behavior_change_product);
 	edges.push([substance_abuse_behavior_change_product, can_be_implemented_with_relationship, substance_abuse_behavior_change_technology]);
+	edges.push([substance_abuse_behavior_change_product, sold_in_market_relationship, substance_use_and_addictive_disorders_market]);
     }
     
     var node_concept_map               = {};
