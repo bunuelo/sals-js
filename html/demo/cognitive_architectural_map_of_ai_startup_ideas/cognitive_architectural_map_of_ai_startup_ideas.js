@@ -969,7 +969,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	layers.push(self_reflective_layer);
 	edges.push([self_reflective_layer, can_be_implemented_with_relationship, story_understanding_technology]);
 	edges.push([self_reflective_layer, can_be_implemented_with_relationship, social_cognitive_development_technology]);
-	edges.push([self_reflective_layer, can_be_implemented_with_relationship, emotional_cognitive_development_technology]);
 	edges.push([self_reflective_layer, can_be_implemented_with_relationship, theory_of_mind_technology]);
     }
     {
@@ -977,7 +976,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	layers.push(self_conscious_layer);
 	edges.push([self_conscious_layer, can_be_implemented_with_relationship, story_understanding_technology]);
 	edges.push([self_conscious_layer, can_be_implemented_with_relationship, social_cognitive_development_technology]);
-	edges.push([self_conscious_layer, can_be_implemented_with_relationship, emotional_cognitive_development_technology]);
 	edges.push([self_conscious_layer, can_be_implemented_with_relationship, theory_of_mind_technology]);
     }
     // layer END
