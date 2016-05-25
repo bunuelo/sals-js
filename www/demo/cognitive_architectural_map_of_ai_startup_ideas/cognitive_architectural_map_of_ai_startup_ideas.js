@@ -660,6 +660,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     // development_stage BEGIN
     var development_stages = [];
+    /*
     {
 	var philosophy_development_stage = "Philosophy\nDevelopment Stage";
 	development_stages.push(philosophy_development_stage);
@@ -668,6 +669,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var mathematical_theory_development_stage = "Mathematical Theory\nDevelopment Stage";
 	development_stages.push(mathematical_theory_development_stage);
     }
+    */
     {
 	var computational_implementation_development_stage = "Computational Implementation\nDevelopment Stage";
 	development_stages.push(computational_implementation_development_stage);
