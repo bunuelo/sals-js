@@ -963,6 +963,13 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([toy_robot_technology, technology_at_development_stage, successful_startup_development_stage]);
 	edges.push([toy_robot_technology, can_be_implemented_with_relationship, conversational_agent_technology]);
     }
+    {
+	var social_emotional_learning_trainer_technology = "Social Emotional Learning\nTrainer\nTechnology";
+	minor_markets.push(social_emotional_learning_trainer_technology);
+	edges.push([social_emotional_learning_trainer_technology, technology_at_development_stage, research_application_development_stage]);
+	edges.push([social_emotional_learning_trainer_technology, can_be_implemented_with_relationship, conversational_agent_technology]);
+	edges.push([social_emotional_learning_trainer_technology, technology_implements_theory, social_emotional_learning_theory]);
+    }
     // technology END
     
     // layer BEGIN
