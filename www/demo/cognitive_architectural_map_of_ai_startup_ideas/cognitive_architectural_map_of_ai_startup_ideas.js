@@ -631,7 +631,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var deliberative_layer = "Emotion Machine\nDeliberative Layer\nTechnology";
 	layers.push(deliberative_layer);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, alpha_go_technology]);
-	edges.push([deliberative_layer, can_be_implemented_with_relationship, reinforcement_learning_technology]);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, state_space_planning_technology]);
     }
     {
