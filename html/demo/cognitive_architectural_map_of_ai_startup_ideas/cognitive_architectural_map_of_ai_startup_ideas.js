@@ -441,11 +441,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([autistic_spectrum_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var autistic_spectrum_market = "Autistic Spectrum\nMarket";
-		minor_markets.push(autistic_spectrum_market);
-		edges.push([autistic_spectrum_market, parent_market_relationship, mental_health_market]);
-	    }
-	    {
 		var neurodevelopmental_disorders_market = "Neurodevelopmental Disorders\nMarket";
 		minor_markets.push(neurodevelopmental_disorders_market);
 		edges.push([neurodevelopmental_disorders_market, parent_market_relationship, mental_health_market]);
