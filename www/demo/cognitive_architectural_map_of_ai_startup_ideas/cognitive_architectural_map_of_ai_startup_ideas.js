@@ -702,7 +702,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	layers.push(reflective_layer);
 	edges.push([reflective_layer, can_be_implemented_with_relationship, alpha_go_technology]);
 	edges.push([reflective_layer, can_be_implemented_with_relationship, plan_space_planning_technology]);
-	edges.push([deliberative_layer, can_be_implemented_with_relationship, story_understanding_technology]);
+	edges.push([reflective_layer, can_be_implemented_with_relationship, story_understanding_technology]);
     }
     {
 	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer\nTechnology";
