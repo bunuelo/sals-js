@@ -390,6 +390,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var mental_health_market = "Mental Health\nMarket";
 	    minor_markets.push(mental_health_market);
 	    edges.push([mental_health_market, parent_market_relationship, medicine_market]);
+	    {
+		var autism_market = "Autism\nMarket";
+		minor_markets.push(autism_market);
+		edges.push([autism_market, parent_market_relationship, mental_health_market]);
+	    }
 	}
 	{
 	    var physical_health_market = "Physical Health\nMarket";
