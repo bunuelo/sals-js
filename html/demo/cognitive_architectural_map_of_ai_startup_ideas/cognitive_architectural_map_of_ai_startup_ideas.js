@@ -612,6 +612,9 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		var toy_robot_market = "Toy Robot\nMarket";
 		minor_markets.push(toy_robot_market);
 		edges.push([toy_robot_market, parent_market_relationship, toy_market]);
+		edges.push([toy_robot_market, parent_market_relationship, executive_cognitive_development_market]);
+		edges.push([toy_robot_market, parent_market_relationship, social_cognitive_development_market]);
+		edges.push([toy_robot_market, parent_market_relationship, emotional_cognitive_development_market]);
 	    }
 	}
 	{
