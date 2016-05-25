@@ -59,10 +59,10 @@ sals.demo.ai_startup_idea = {};
 	var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
 	(function() { // red stripe
 	    var red_stripe_enabled = true;
-	    var red_stripe_r       = 0.75;
+	    var red_stripe_r       = 0.5;
 	    var red_stripe_g       = 1.0;
-	    var red_stripe_b       = 0.75;
-	    var red_stripe_radius  = 0.1;
+	    var red_stripe_b       = 0.5;
+	    var red_stripe_radius  = 0.05;
 	    if ((r >= (red_stripe_r - red_stripe_radius)) && (r <= (red_stripe_r + red_stripe_radius)) &&
 		(g >= (red_stripe_g - red_stripe_radius)) && (g <= (red_stripe_g + red_stripe_radius)) &&
 		(b >= (red_stripe_b - red_stripe_radius)) && (b <= (red_stripe_b + red_stripe_radius))) {
