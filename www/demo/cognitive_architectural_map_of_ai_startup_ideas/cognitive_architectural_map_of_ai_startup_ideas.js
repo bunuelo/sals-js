@@ -387,11 +387,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var medicine_market = "Medicine\nMarket";
 	major_markets.push(medicine_market);
 	{
-	    var pharmaceutical_market = "Pharmaceutical\nMarket";
-	    minor_markets.push(pharmaceutical_market);
-	    edges.push([pharmaceutical_market, parent_market_relationship, medicine_market]);
-	}
-	{
 	    var mental_health_market = "Mental Health\nMarket";
 	    minor_markets.push(mental_health_market);
 	    edges.push([mental_health_market, parent_market_relationship, medicine_market]);
@@ -400,6 +395,26 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var physical_health_market = "Physical Health\nMarket";
 	    minor_markets.push(physical_health_market);
 	    edges.push([physical_health_market, parent_market_relationship, medicine_market]);
+	}
+	{
+	    var diabetes_market = "Diabetes\nMarket";
+	    minor_markets.push(diabetes_market);
+	    edges.push([diabetes_market, parent_market_relationship, physical_health_market]);
+	}
+	{
+	    var high_blood_pressure_market = "High Blood Pressure\nMarket";
+	    minor_markets.push(high_blood_pressure_market);
+	    edges.push([high_blood_pressure_market, parent_market_relationship, physical_health_market]);
+	}
+	{
+	    var obesity_market = "Obesity\nMarket";
+	    minor_markets.push(obesity_market);
+	    edges.push([obesity_market, parent_market_relationship, physical_health_market]);
+	}
+	{
+	    var emergency_medicine_market = "Emergency Medicine\nMarket";
+	    minor_markets.push(emergency_medicine_market);
+	    edges.push([emergency_medicine_market, parent_market_relationship, physical_health_market]);
 	}
     }
     {
