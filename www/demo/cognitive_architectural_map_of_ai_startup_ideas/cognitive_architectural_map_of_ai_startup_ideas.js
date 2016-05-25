@@ -57,13 +57,19 @@ sals.demo.ai_startup_idea = {};
 	var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
 	var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
 	var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
-	if ((r >= 0.45) && (r <= 0.55) &&
-	    (g >= 0.95) && (g <= 1.00) &&
-	    (b >= 0.45) && (b <= 0.55)) {
-	    r = 1.0;
-	    g = 0.0;
-	    b = 0.0;
-	}
+	(function() { // red stripe
+	    var red_stripe_r      = 0.5;
+	    var red_stripe_g      = 1.0;
+	    var red_stripe_b      = 0.5;
+	    var red_stripe_radius = 0.05;
+	    if ((r >= (red_stripe_r - red_stripe_radius)) && (r <= (red_stripe_r + red_stripe_radius)) &&
+		(g >= (red_stripe_g - red_stripe_radius)) && (g <= (red_stripe_g + red_stripe_radius)) &&
+		(b >= (red_stripe_b - red_stripe_radius)) && (b <= (red_stripe_b + red_stripe_radius))) {
+		r = 1.0;
+		g = 0.0;
+		b = 0.0;
+	    }
+	})();
 	sals.vis.object__soft_merge_recursive(vis_node, {
 	    fixed : position_pin_active,
 	    x     : x,
