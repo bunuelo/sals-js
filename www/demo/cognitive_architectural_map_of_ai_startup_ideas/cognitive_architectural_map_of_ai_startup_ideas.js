@@ -390,31 +390,31 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var mental_health_market = "Mental Health\nMarket";
 	    minor_markets.push(mental_health_market);
 	    edges.push([mental_health_market, parent_market_relationship, medicine_market]);
-	    {
-		var behavior_change_market = "Behavior Change\nMarket";
-		minor_markets.push(behavior_change_market);
-		edges.push([behavior_change_market, parent_market_relationship, mental_health_market]);
-	    }
-	    {
-		var nutrition_market = "Nutrition\nBehavior Change\nMarket";
-		minor_markets.push(nutrition_market);
-		edges.push([nutrition_market, parent_market_relationship, behavior_change_market]);
-	    }
-	    {
-		var exercise_market = "Exercise\nBehavior Change\nMarket";
-		minor_markets.push(exercise_market);
-		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
-	    }
-	    {
-		var exercise_market = "Smoking\nBehavior Change\nMarket";
-		minor_markets.push(exercise_market);
-		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
-	    }
 	}
 	{
 	    var physical_health_market = "Physical Health\nMarket";
 	    minor_markets.push(physical_health_market);
 	    edges.push([physical_health_market, parent_market_relationship, medicine_market]);
+	    {
+		var behavior_change_market = "Physical Behavior Change\nMarket";
+		minor_markets.push(behavior_change_market);
+		edges.push([behavior_change_market, parent_market_relationship, physical_health_market]);
+	    }
+	    {
+		var nutrition_market = "Nutrition\nPhysical Behavior Change\nMarket";
+		minor_markets.push(nutrition_market);
+		edges.push([nutrition_market, parent_market_relationship, behavior_change_market]);
+	    }
+	    {
+		var exercise_market = "Exercise\nPhysical Behavior Change\nMarket";
+		minor_markets.push(exercise_market);
+		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
+	    }
+	    {
+		var exercise_market = "Smoking\nPhysical Behavior Change\nMarket";
+		minor_markets.push(exercise_market);
+		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
+	    }
 	    {
 		var diabetes_market = "Diabetes\nMarket";
 		minor_markets.push(diabetes_market);
