@@ -406,6 +406,21 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var cognitive_development_market = "Cognitive Development\nMarket";
 	    minor_markets.push(cognitive_development_market);
 	    edges.push([cognitive_development_market, parent_market_relationship, education_market]);
+	    {
+		var executive_cognitive_development_market = "Executive Cognitive Development\nMarket";
+		minor_markets.push(executive_cognitive_development_market);
+		edges.push([executive_cognitive_development_market, parent_market_relationship, cognitive_development_market]);
+	    }
+	    {
+		var social_cognitive_development_market = "Social Cognitive Development\nMarket";
+		minor_markets.push(social_cognitive_development_market);
+		edges.push([social_cognitive_development_market, parent_market_relationship, cognitive_development_market]);
+	    }
+	    {
+		var emotional_cognitive_development_market = "Emotional Cognitive Development\nMarket";
+		minor_markets.push(emotional_cognitive_development_market);
+		edges.push([emotional_cognitive_development_market, parent_market_relationship, cognitive_development_market]);
+	    }
 	}
 	{
 	    var cognitive_development_market = "Learning Disabilities\nMarket";
