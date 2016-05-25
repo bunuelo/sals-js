@@ -305,7 +305,7 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 					    nb = b;
 					} else {
 					    (function() {
-						var white_weight = 0.05;
+						var white_weight = 0.0;
 						var r_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "r") + white_weight;
 						var r_count = sals.demo.ai_startup_idea.propogation__count(graph, graph_node, source_key, "r") + white_weight;
 						var g_sum   = sals.demo.ai_startup_idea.propogation__sum(  graph, graph_node, source_key, "g") + white_weight;
