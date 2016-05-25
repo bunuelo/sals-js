@@ -526,7 +526,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var alpha_go_cognitive_architecture_theory = "DeepMind's AlphaGo\nCognitive Architecture\nTheory"
 	theories.push(alpha_go_cognitive_architecture_theory);
 	edges.push([alpha_go_cognitive_architecture_theory, parent_theory_relationship, cognitive_architecture_theory]);
-	edges.push([alpha_go_cognitive_architecture_theory, technology_at_development_stage, research_application_development_stage]);
+	edges.push([alpha_go_cognitive_architecture_theory, technology_at_development_stage, toy_problem_development_stage]);
     }
     // theory END
     
