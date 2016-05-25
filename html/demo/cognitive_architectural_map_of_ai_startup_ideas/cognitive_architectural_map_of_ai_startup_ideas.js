@@ -594,6 +594,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([commonsense_reasoning_technology, technology_at_development_stage, research_application_development_stage]);
     }
     {
+	var story_understanding_technology = "Story Understanding\nTechnology";
+	technologies.push(story_understanding_technology);
+	edges.push([story_understanding_technology, parent_technology_relationship, commonsense_reasoning_technology]);
+	edges.push([story_understanding_technology, technology_at_development_stage, toy_problem_development_stage]);
+    }
+    {
 	var convolutional_artificial_neural_network_technology = "Convolutional\nArtificial Neural Network\nTechnology";
 	technologies.push(convolutional_artificial_neural_network_technology);
 	edges.push([convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
@@ -689,20 +695,24 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, alpha_go_technology]);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, state_space_planning_technology]);
 	edges.push([deliberative_layer, can_be_implemented_with_relationship, commonsense_reasoning_technology]);
+	edges.push([deliberative_layer, can_be_implemented_with_relationship, story_understanding_technology]);
     }
     {
 	var reflective_layer = "Emotion Machine\nReflective Layer\nTechnology";
 	layers.push(reflective_layer);
 	edges.push([reflective_layer, can_be_implemented_with_relationship, alpha_go_technology]);
 	edges.push([reflective_layer, can_be_implemented_with_relationship, plan_space_planning_technology]);
+	edges.push([deliberative_layer, can_be_implemented_with_relationship, story_understanding_technology]);
     }
     {
 	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer\nTechnology";
 	layers.push(self_reflective_layer);
+	edges.push([self_reflective_layer, can_be_implemented_with_relationship, story_understanding_technology]);
     }
     {
 	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer\nTechnology";
 	layers.push(self_conscious_layer);
+	edges.push([self_conscious_layer, can_be_implemented_with_relationship, story_understanding_technology]);
     }
     // layer END
     
