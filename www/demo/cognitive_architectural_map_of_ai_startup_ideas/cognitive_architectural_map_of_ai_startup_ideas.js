@@ -622,6 +622,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, reflective_layer]);
 	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, deliberative_layer]);
 	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, learned_reactive_layer]);
+	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
 	edges.push([alpha_go_technology, technology_implements_theory, alpha_go_cognitive_architecture_theory]);
     }
     {
