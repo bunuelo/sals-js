@@ -952,6 +952,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([prosthetic_limb_technology, technology_at_development_stage, successful_startup_development_stage]);
 	edges.push([prosthetic_limb_technology, can_be_implemented_with_relationship, brain_computer_interface_technology]);
     }
+    {
+	var toy_robot_technology = "Toy Robot\nTechnology";
+	minor_markets.push(toy_robot_technology);
+	edges.push([toy_robot_technology, technology_at_development_stage, research_application_development_stage]);
+	edges.push([toy_robot_technology, technology_at_development_stage, successful_startup_development_stage]);
+    }
     // technology END
     
     // layer BEGIN
@@ -1007,26 +1013,32 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     var products = [];
     {
+	var toy_robot_product = "Toy Robot\nProduct";
+	products.push(toy_robot_product);
+	edges.push([toy_robot_product, sold_in_market_relationship, toy_robot_market]);
+	edges.push([toy_robot_product, can_be_implemented_with_relationship, toy_robot_technology]);
+    }
+    {
 	var prosthetic_limb_product = "Prosthetic Limb\nProduct";
-	minor_markets.push(prosthetic_limb_product);
+	products.push(prosthetic_limb_product);
 	edges.push([prosthetic_limb_product, sold_in_market_relationship, prosthetic_limb_market]);
 	edges.push([prosthetic_limb_product, can_be_implemented_with_relationship, prosthetic_limb_technology]);
     }
     {
 	var executive_cognitive_development_product = "Executive\nCognitive Development\nProduct";
-	minor_markets.push(executive_cognitive_development_product);
+	products.push(executive_cognitive_development_product);
 	edges.push([executive_cognitive_development_product, sold_in_market_relationship, executive_cognitive_development_market]);
 	edges.push([executive_cognitive_development_product, can_be_implemented_with_relationship, executive_cognitive_development_technology]);
     }
     {
 	var social_cognitive_development_product = "Social\nCognitive Development\nProduct";
-	minor_markets.push(social_cognitive_development_product);
+	products.push(social_cognitive_development_product);
 	edges.push([social_cognitive_development_product, sold_in_market_relationship, social_cognitive_development_market]);
 	edges.push([social_cognitive_development_product, can_be_implemented_with_relationship, social_cognitive_development_technology]);
     }
     {
 	var emotional_cognitive_development_product = "Emotional\nCognitive Development\nProduct";
-	minor_markets.push(emotional_cognitive_development_product);
+	products.push(emotional_cognitive_development_product);
 	edges.push([emotional_cognitive_development_product, sold_in_market_relationship, emotional_cognitive_development_market]);
 	edges.push([emotional_cognitive_development_product, can_be_implemented_with_relationship, emotional_cognitive_development_technology]);
     }
