@@ -403,6 +403,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([feature_film_market, parent_market_relationship, entertainment_market]);
     }
     {
+	var tv_market = "TV\nMarket";
+	minor_markets.push(tv_market);
+	edges.push([tv_market, parent_market_relationship, entertainment_market]);
+    }
+    {
 	var game_market = "Game\nMarket";
 	minor_markets.push(game_market);
 	edges.push([game_market, parent_market_relationship, entertainment_market]);
