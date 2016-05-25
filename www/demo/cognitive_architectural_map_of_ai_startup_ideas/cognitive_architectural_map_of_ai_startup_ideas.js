@@ -926,6 +926,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var nutrition_behavior_change_technology = "Nutrition\nBehavior Change\nTechnology";
 	technologies.push(nutrition_behavior_change_technology);
 	edges.push([nutrition_behavior_change_technology, can_be_implemented_with_relationship, artificial_neural_network_technology]);
+	edges.push([nutrition_behavior_change_technology, technology_at_development_stage, successful_startup_development_stage]);
     }
     {
 	var nutrition_behavior_change_product = "Nutrition\nBehavior Change\nProduct";
@@ -937,6 +938,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var exercise_behavior_change_technology = "Exercise\nBehavior Change\nTechnology";
 	technologies.push(exercise_behavior_change_technology);
 	edges.push([exercise_behavior_change_technology, can_be_implemented_with_relationship, artificial_neural_network_technology]);
+	edges.push([exercise_behavior_change_technology, technology_at_development_stage, successful_startup_development_stage]);
     }
     {
 	var exercise_behavior_change_product = "Exercise\nPhysical Behavior Change\nProduct";
@@ -948,6 +950,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var smoking_behavior_change_technology = "Smoking\nBehavior Change\nTechnology";
 	technologies.push(smoking_behavior_change_technology);
 	edges.push([smoking_behavior_change_technology, can_be_implemented_with_relationship, artificial_neural_network_technology]);
+	edges.push([smoking_behavior_change_technology, technology_at_development_stage, successful_startup_development_stage]);
     }
     {
 	var smoking_behavior_change_product = "Smoking\nPhysical Behavior Change\nProduct";
@@ -958,6 +961,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var substance_abuse_behavior_change_technology = "Substance Abuse\nBehavior Change\nTechnology";
 	technologies.push(substance_abuse_behavior_change_technology);
+	edges.push([substance_abuse_behavior_change_technology, technology_at_development_stage, successful_startup_development_stage]);
     }
     {
 	var substance_abuse_behavior_change_product = "Substance Abuse\nPhysical Behavior Change\nProduct";
