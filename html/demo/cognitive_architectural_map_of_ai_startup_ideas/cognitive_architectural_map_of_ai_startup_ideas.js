@@ -953,10 +953,17 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([prosthetic_limb_technology, can_be_implemented_with_relationship, brain_computer_interface_technology]);
     }
     {
+	var conversational_agent_technology = "Conversational Agent\nTechnology";
+	minor_markets.push(conversational_agent_technology);
+	edges.push([conversational_agent_technology, technology_at_development_stage, research_application_development_stage]);
+	edges.push([conversational_agent_technology, can_be_implemented_with_relationship, natural_language_technology]);
+    }
+    {
 	var toy_robot_technology = "Toy Robot\nTechnology";
 	minor_markets.push(toy_robot_technology);
 	edges.push([toy_robot_technology, technology_at_development_stage, research_application_development_stage]);
 	edges.push([toy_robot_technology, technology_at_development_stage, successful_startup_development_stage]);
+	edges.push([toy_robot_technology, can_be_implemented_with_relationship, conversational_agent_technology]);
     }
     // technology END
     
