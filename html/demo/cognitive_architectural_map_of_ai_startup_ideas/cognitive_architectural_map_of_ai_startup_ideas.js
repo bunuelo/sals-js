@@ -929,6 +929,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var nutrition_behavior_change_product = "Nutrition\nBehavior Change\nProduct";
 	products.push(nutrition_behavior_change_product);
 	edges.push([nutrition_behavior_change_product, can_be_implemented_with_relationship, nutrition_behavior_change_technology]);
+	edges.push([nutrition_behavior_change_product, sold_in_market_relationship, feeding_and_eating_disorders_market]);
     }
     {
 	var exercise_behavior_change_technology = "Exercise\nBehavior Change\nTechnology";
