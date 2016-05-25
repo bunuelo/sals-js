@@ -347,7 +347,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     var parent_technology_relationship        = "parent\ntechnology";
     var parent_theory_relationship            = "parent\ntheory";
-    var can_be_used_to_implement_relationship = "can be\nused to\nimplement";
+    var can_be_implemented_with_relationship = "can be\nimplemented with";
     var used_in_layer_relationship            = "used in\nlayer";
     var theory_of_field_relationship          = "theory of\nfield";
     var technology_implements_theory          = "technology\nimplements\ntheory";
@@ -375,34 +375,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	markets.push(consumer_market);
     }
     // market END
-    
-    // layer BEGIN
-    var layers = [];
-    {
-	var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer\nTechnology";
-	layers.push(built_in_reactive_layer);
-    }
-    {
-	var learned_reactive_layer = "Emotion Machine\nLearned Reactive Layer\nTechnology";
-	layers.push(learned_reactive_layer);
-    }
-    {
-	var deliberative_layer = "Emotion Machine\nDeliberative Layer\nTechnology";
-	layers.push(deliberative_layer);
-    }
-    {
-	var reflective_layer = "Emotion Machine\nReflective Layer\nTechnology";
-	layers.push(reflective_layer);
-    }
-    {
-	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer\nTechnology";
-	layers.push(self_reflective_layer);
-    }
-    {
-	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer\nTechnology";
-	layers.push(self_conscious_layer);
-    }
-    // layer END
     
     // field BEGIN
     var fields = [];
@@ -569,20 +541,16 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var recurrent_artificial_neural_network_technology = "Recurrent\nArtificial Neural Network\nTechnology";
 	technologies.push(recurrent_artificial_neural_network_technology);
 	edges.push([recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
-	edges.push([recurrent_artificial_neural_network_technology, can_be_used_to_implement_relationship, auditory_input_technology]);
-	edges.push([recurrent_artificial_neural_network_technology, can_be_used_to_implement_relationship, motor_control_technology]);
     }
     {
 	var bidirectional_recurrent_artificial_neural_network_technology = "Bidirectional Recurrent\nArtificial Neural Network\nTechnology";
 	technologies.push(bidirectional_recurrent_artificial_neural_network_technology);
 	edges.push([bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology]);
-	edges.push([bidirectional_recurrent_artificial_neural_network_technology, can_be_used_to_implement_relationship, auditory_input_technology]);
     }
     {
 	var convolutional_artificial_neural_network_technology = "Convolutional\nArtificial Neural Network\nTechnology";
 	technologies.push(convolutional_artificial_neural_network_technology);
 	edges.push([convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
-	edges.push([convolutional_artificial_neural_network_technology, can_be_used_to_implement_relationship, visual_input_technology]);
     }
     {
 	var self_organizing_maps_artificial_neural_network_technology = "Self-Organizing Maps\nArtificial Neural Network\nTechnology";
@@ -590,15 +558,13 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([self_organizing_maps_artificial_neural_network_technology, parent_technology_relationship, artificial_neural_network_technology]);
     }
     {
-	var plan_space_planning_technology = "Plan-Space Planning\nTechnology";
-	technologies.push(plan_space_planning_technology);
-	edges.push([plan_space_planning_technology, can_be_used_to_implement_relationship, reflective_layer]);
-    }
-    {
 	var state_space_planning_technology = "State-Space Planning\nTechnology";
 	technologies.push(state_space_planning_technology);
-	edges.push([state_space_planning_technology, can_be_used_to_implement_relationship, deliberative_layer]);
-	edges.push([state_space_planning_technology, can_be_used_to_implement_relationship, plan_space_planning_technology]);
+    }
+    {
+	var plan_space_planning_technology = "Plan-Space Planning\nTechnology";
+	technologies.push(plan_space_planning_technology);
+	edges.push([plan_space_planning_technology, can_be_implemented_with_relationship, state_space_planning_technology]);
     }
     {
 	var monte_carlo_tree_search_technology = "Monte Carlo Tree Search\nTechnology";
@@ -612,32 +578,28 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var reinforcement_learning_technology = "Reinforcement Learning\nTechnology";
 	technologies.push(reinforcement_learning_technology);
-	edges.push([reinforcement_learning_technology, can_be_used_to_implement_relationship, deliberative_layer]);
-	edges.push([reinforcement_learning_technology, can_be_used_to_implement_relationship, learned_reactive_layer]);
     }
     {
 	var alpha_go_technology = "DeepMind's AlphaGo\nTechnology";
 	technologies.push(alpha_go_technology);
-	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, reflective_layer]);
-	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, deliberative_layer]);
-	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, learned_reactive_layer]);
-	edges.push([alpha_go_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
 	edges.push([alpha_go_technology, technology_implements_theory, alpha_go_cognitive_architecture_theory]);
     }
     {
 	var sensor_input_technology = "Sensor Input\nTechnology";
 	technologies.push(sensor_input_technology);
-	edges.push([sensor_input_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
     }
     {
 	var visual_input_technology = "Visual Input\nTechnology";
 	technologies.push(visual_input_technology);
 	edges.push([visual_input_technology, parent_technology_relationship, sensor_input_technology]);
+	edges.push([visual_input_technology, can_be_implemented_with_relationship, convolutional_artificial_neural_network_technology]);
     }
     {
 	var auditory_input_technology = "Auditory Input\nTechnology";
 	technologies.push(auditory_input_technology);
 	edges.push([auditory_input_technology, parent_technology_relationship, sensor_input_technology]);
+	edges.push([auditory_input_technology, can_be_implemented_with_relationship, recurrent_artificial_neural_network_technology]);
+	edges.push([auditory_input_technology, can_be_implemented_with_relationship, bidirectional_recurrent_artificial_neural_network_technology]);
     }
     {
 	var speech_recognition_technology = "Speech Recognition\nTechnology";
@@ -647,9 +609,47 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var motor_control_technology = "Motor Control\nTechnology";
 	technologies.push(motor_control_technology);
-	edges.push([motor_control_technology, can_be_used_to_implement_relationship, built_in_reactive_layer]);
+	edges.push([motor_control_technology, can_be_implemented_with_relationship, recurrent_artificial_neural_network_technology]);
     }
     // technology END
+    
+    // layer BEGIN
+    var layers = [];
+    {
+	var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer\nTechnology";
+	layers.push(built_in_reactive_layer);
+	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, motor_control_technology]);
+	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, sensor_input_technology]);
+	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, alpha_go_technology]);
+    }
+    {
+	var learned_reactive_layer = "Emotion Machine\nLearned Reactive Layer\nTechnology";
+	layers.push(learned_reactive_layer);
+	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, alpha_go_technology]);
+	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, reinforcement_learning_technology]);
+    }
+    {
+	var deliberative_layer = "Emotion Machine\nDeliberative Layer\nTechnology";
+	layers.push(deliberative_layer);
+	edges.push([deliberative_layer, can_be_implemented_with_relationship, alpha_go_technology]);
+	edges.push([deliberative_layer, can_be_implemented_with_relationship, reinforcement_learning_technology]);
+	edges.push([deliberative_layer, can_be_implemented_with_relationship, state_space_planning_technology]);
+    }
+    {
+	var reflective_layer = "Emotion Machine\nReflective Layer\nTechnology";
+	layers.push(reflective_layer);
+	edges.push([reflective_layer, can_be_implemented_with_relationship, alpha_go_technology]);
+	edges.push([reflective_layer, can_be_implemented_with_relationship, plan_space_planning_technology]);
+    }
+    {
+	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer\nTechnology";
+	layers.push(self_reflective_layer);
+    }
+    {
+	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer\nTechnology";
+	layers.push(self_conscious_layer);
+    }
+    // layer END
     
     var products = [];
     {
