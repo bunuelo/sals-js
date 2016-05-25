@@ -374,6 +374,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     // market BEGIN
     var major_markets = [];
+    var minor_markets = [];
     {
 	var business_to_business_market = "Business-to-Business\nMarket";
 	major_markets.push(business_to_business_market);
@@ -389,6 +390,26 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var entertainment_market = "Entertainment\nMarket";
 	major_markets.push(entertainment_market);
+	{
+	    var feature_film_market = "Feature Film\nMarket";
+	    minor_markets.push(feature_film_market);
+	    edges.push([feature_film_market, parent_market_relationship, entertainment_market]);
+	}
+	{
+	    var tv_market = "TV\nMarket";
+	    minor_markets.push(tv_market);
+	    edges.push([tv_market, parent_market_relationship, entertainment_market]);
+	}
+	{
+	    var game_market = "Game\nMarket";
+	    minor_markets.push(game_market);
+	    edges.push([game_market, parent_market_relationship, entertainment_market]);
+	}
+	{
+	    var theme_park_market = "Theme Park\nMarket";
+	    minor_markets.push(theme_park_market);
+	    edges.push([theme_park_market, parent_market_relationship, entertainment_market]);
+	}
     }
     {
 	var consumer_product_market = "Consumer Product\nMarket";
@@ -396,27 +417,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     }
     // market END
     
-    var minor_markets = [];
-    {
-	var feature_film_market = "Feature Film\nMarket";
-	minor_markets.push(feature_film_market);
-	edges.push([feature_film_market, parent_market_relationship, entertainment_market]);
-    }
-    {
-	var tv_market = "TV\nMarket";
-	minor_markets.push(tv_market);
-	edges.push([tv_market, parent_market_relationship, entertainment_market]);
-    }
-    {
-	var game_market = "Game\nMarket";
-	minor_markets.push(game_market);
-	edges.push([game_market, parent_market_relationship, entertainment_market]);
-    }
-    {
-	var theme_park_market = "Theme Park\nMarket";
-	minor_markets.push(theme_park_market);
-	edges.push([theme_park_market, parent_market_relationship, entertainment_market]);
-    }
     
     // field BEGIN
     var fields = [];
@@ -735,6 +735,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer\nTechnology";
 	layers.push(self_reflective_layer);
 	edges.push([self_reflective_layer, can_be_implemented_with_relationship, story_understanding_technology]);
+	edges.push([self_reflective_layer, can_be_implemented_with_relationship, cognitive_architecture_technology]);
     }
     {
 	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer\nTechnology";
