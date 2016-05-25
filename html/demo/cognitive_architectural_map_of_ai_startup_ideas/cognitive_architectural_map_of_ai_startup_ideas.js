@@ -451,11 +451,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		edges.push([_market, parent_market_relationship, mental_health_market]);
 	    }
 	    {
-		var _market = "Elimination Disorders\nMarket";
-		minor_markets.push(_market);
-		edges.push([_market, parent_market_relationship, mental_health_market]);
-	    }
-	    {
 		var _market = "Sleep-Wake Disorders\nMarket";
 		minor_markets.push(_market);
 		edges.push([_market, parent_market_relationship, mental_health_market]);
