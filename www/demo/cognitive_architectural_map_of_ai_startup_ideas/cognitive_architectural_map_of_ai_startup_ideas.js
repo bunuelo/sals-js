@@ -741,6 +741,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([theory_of_mind_theory, parent_theory_relationship, social_emotional_learning_theory]);
     }
     {
+	var plan_recognition_theory = "Plan Recognition\nTheory"
+	theories.push(plan_recognition_theory);
+	edges.push([plan_recognition_theory, parent_theory_relationship, theory_of_mind_theory]);
+    }
+    {
 	var metacognition_theory = "Metacognition\nTheory"
 	theories.push(metacognition_theory);
 	edges.push([metacognition_theory, parent_theory_relationship, social_emotional_learning_theory]);
@@ -782,6 +787,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     // technology BEGIN
     var technologies = [];
+    {
+	var plan_recognition_technology = "Plan Recognition\nTechnology";
+	technologies.push(plan_recognition_technology);
+	edges.push([plan_recognition_technology, technology_at_development_stage, toy_problem_development_stage]);
+	edges.push([plan_recognition_technology, technology_implements_theory, plan_recognition_theory]);
+    }
     {
 	var natural_language_technology = "Natural Language\nTechnology";
 	technologies.push(natural_language_technology);
