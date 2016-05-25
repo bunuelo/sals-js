@@ -558,8 +558,13 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology]);
     }
     {
+	var linear_algebra_technology = "Linear Algebra\nTechnology";
+	technologies.push(linear_algebra_technology);
+    }
+    {
 	var graph_technology = "Graph\nTechnology";
 	technologies.push(graph_technology);
+	edges.push([graph_technology, can_be_implemented_with_relationship, linear_algebra_technology]);
     }
     {
 	var semantic_graph_reasoning_technology = "Semantic Graph Reasoning\nTechnology";
