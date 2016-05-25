@@ -870,6 +870,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var probabilistic_reasoning_technology = "Probabilistic Reasoning\nTechnology";
 	technologies.push(probabilistic_reasoning_technology);
+	edges.push([probabilistic_reasoning_technology, can_be_implemented_with_relationship, linear_algebra_technology]);
     }
     {
 	var reinforcement_learning_technology = "Reinforcement Learning\nTechnology";
