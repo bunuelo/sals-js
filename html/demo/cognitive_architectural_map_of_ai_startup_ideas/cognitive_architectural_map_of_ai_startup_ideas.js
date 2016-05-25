@@ -521,8 +521,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var artificial_neural_network_technology = "Artificial\nNeural Network\nTechnology";
 	technologies.push(artificial_neural_network_technology);
-	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, artificial_neural_network_technology]);
-	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, artificial_neural_network_technology]);
     }
     {
 	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
@@ -620,12 +618,14 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, motor_control_technology]);
 	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, sensor_input_technology]);
 	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, alpha_go_technology]);
+	edges.push([built_in_reactive_layer, can_be_implemented_with_relationship, artificial_neural_network_technology]);
     }
     {
 	var learned_reactive_layer = "Emotion Machine\nLearned Reactive Layer\nTechnology";
 	layers.push(learned_reactive_layer);
 	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, alpha_go_technology]);
 	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, reinforcement_learning_technology]);
+	edges.push([learned_reactive_layer, can_be_implemented_with_relationship, artificial_neural_network_technology]);
     }
     {
 	var deliberative_layer = "Emotion Machine\nDeliberative Layer\nTechnology";
