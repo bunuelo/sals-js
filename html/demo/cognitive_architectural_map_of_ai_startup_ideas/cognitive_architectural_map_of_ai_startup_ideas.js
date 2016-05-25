@@ -632,10 +632,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     
     // field BEGIN
     var fields = [];
+    /*
     {
 	var anthropology_field = "Anthropology\n(Cognitive Science)";
 	fields.push(anthropology_field);
     }
+    */
     {
 	var neuroscience_field = "Neuroscience\n(Cognitive Science)";
 	fields.push(neuroscience_field);
@@ -648,10 +650,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var linguistics_field = "Linguistics\n(Cognitive Science)";
 	fields.push(linguistics_field);
     }
+    /*
     {
 	var philosophy_field = "Philosophy\n(Cognitive Science)";
 	fields.push(philosophy_field);
     }
+    */
     {
 	var computer_science_field = "Computer Science\n(Cognitive Science)";
 	fields.push(computer_science_field);
