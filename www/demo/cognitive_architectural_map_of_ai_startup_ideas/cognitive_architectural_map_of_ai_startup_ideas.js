@@ -784,6 +784,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // technology BEGIN
     var technologies = [];
     {
+	var natural_language_technology = "Natural Language\nTechnology";
+	technologies.push(natural_language_technology);
+	edges.push([natural_language_technology, technology_at_development_stage, successful_startup_development_stage]);
+	edges.push([natural_language_technology, technology_implements_theory, natural_language_theory]);
+    }
+    {
 	var theory_of_mind_technology = "Theory of Mind\nTechnology"
 	theories.push(theory_of_mind_technology);
 	edges.push([theory_of_mind_technology, technology_at_development_stage, computational_implementation_development_stage]);
