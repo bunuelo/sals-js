@@ -564,7 +564,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    }
 	}
     }
-    /*
     {
 	var entertainment_market = "Entertainment\nMarket";
 	major_markets.push(entertainment_market);
@@ -589,7 +588,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    edges.push([theme_park_market, parent_market_relationship, entertainment_market]);
 	}
     }
-    */
     {
 	var consumer_product_market = "Consumer Product\nMarket";
 	major_markets.push(consumer_product_market);
@@ -1028,6 +1026,15 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // layer END
     
     var products = [];
+    {
+	var social_emotional_learning_trainer_product = "Social Emotional Learning\nTrainer\nProduct";
+	products.push(social_emotional_learning_trainer_product);
+	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, toy_robot_market]);
+	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, game_market]);
+	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, tv_market]);
+	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, feature_film_market]);
+	edges.push([social_emotional_learning_trainer_product, can_be_implemented_with_relationship, social_emotional_learning_trainer_technology]);
+    }
     {
 	var toy_robot_product = "Toy Robot\nProduct";
 	products.push(toy_robot_product);
