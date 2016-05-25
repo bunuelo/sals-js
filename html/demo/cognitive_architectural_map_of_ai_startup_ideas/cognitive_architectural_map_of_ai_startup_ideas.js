@@ -368,32 +368,40 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var technology_implements_theory          = "technology\nimplements\ntheory";
     // product relationships
     var parent_product_relationship           = "parent\nproduct";
+    var parent_market_relationship            = "parent\nmarket";
     var sold_in_market_relationship           = "sold\nin\nmarket";
     var technology_at_development_stage       = "at\ndevelopment stage";
     
     // market BEGIN
-    var markets = [];
+    var major_markets = [];
     {
 	var business_to_business_market = "Business-to-Business\nMarket";
-	markets.push(business_to_business_market);
+	major_markets.push(business_to_business_market);
     }
     {
 	var education_market = "Education\nMarket";
-	markets.push(education_market);
+	major_markets.push(education_market);
     }
     {
 	var medicine_market = "Medicine\nMarket";
-	markets.push(medicine_market);
+	major_markets.push(medicine_market);
     }
     {
 	var entertainment_market = "Entertainment\nMarket";
-	markets.push(entertainment_market);
+	major_markets.push(entertainment_market);
     }
     {
 	var consumer_product_market = "Consumer Product\nMarket";
-	markets.push(consumer_product_market);
+	major_markets.push(consumer_product_market);
     }
     // market END
+    
+    var minor_markets = [];
+    {
+	var feature_film_market = "Feature Film\nMarket";
+	minor_markets.push(feature_film_market);
+	edges.push([feature_film_market, parent_market_relationship, entertainment_market]);
+    }
     
     // field BEGIN
     var fields = [];
@@ -743,7 +751,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     var layers__pin_colors             = false;
     var fields__pin_colors             = false;
     var development_stages__pin_colors = true;
-    var markets__pin_colors            = false;
+    var major_markets__pin_colors            = false;
     sals.demo.ai_startup_idea.graph__add_concept_line(graph,
 						      "Map 1",
 						      node_concept_map,
@@ -775,11 +783,23 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 						      "Map 1",
 						      node_concept_map,
 						      null,
-						      markets,
+						      major_markets,
 						      true,
 						      map_size,  map_size,  map_size, -map_size,
-						      markets__pin_colors,
+						      major_markets__pin_colors,
 						      1, 0.5, 0.5, 1, 0.5, 0.5);
+    (function() {
+	for(var index = 0; index < minor_markets.length; index ++) {
+	    var minor_market       = minor_markets[index];
+	    var minor_market__node = sals.graph.graph_node__new(minor_market);
+	    technology__node["vis_node"] = {
+		x : 0,
+		y : 0
+	    };
+	    sals.graph.graph__add_node(graph, minor_market__node);
+	    node_concept_map[minor_market] = minor_market__node;
+	}
+    })();
     (function() {
 	for(var index = 0; index < technologies.length; index ++) {
 	    var technology       = technologies[index];
