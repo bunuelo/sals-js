@@ -307,9 +307,9 @@ sals.demo.ai_startup_idea.propogation__iterate = function(graph, source_key) {
 						if (nb > 255) {nb = 255;}
 					    })();
 					}
-					color_done = ((sals.math.abs(nr - r) < 0.1) && 
-						      (sals.math.abs(ng - g) < 0.1) && 
-						      (sals.math.abs(nb - b) < 0.1));
+					color_done = ((sals.math.abs(nr - r) < 0.01) && 
+						      (sals.math.abs(ng - g) < 0.01) && 
+						      (sals.math.abs(nb - b) < 0.01));
 					r = nr;
 					g = ng;
 					b = nb;
