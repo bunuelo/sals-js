@@ -379,27 +379,27 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // layer BEGIN
     var layers = [];
     {
-	var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer";
+	var built_in_reactive_layer = "Emotion Machine\nBuilt-In Reactive Layer\nTechnology";
 	layers.push(built_in_reactive_layer);
     }
     {
-	var learned_reactive_layer = "Emotion Machine\nLearned Reactive Layer";
+	var learned_reactive_layer = "Emotion Machine\nLearned Reactive Layer\nTechnology";
 	layers.push(learned_reactive_layer);
     }
     {
-	var deliberative_layer = "Emotion Machine\nDeliberative Layer";
+	var deliberative_layer = "Emotion Machine\nDeliberative Layer\nTechnology";
 	layers.push(deliberative_layer);
     }
     {
-	var reflective_layer = "Emotion Machine\nReflective Layer";
+	var reflective_layer = "Emotion Machine\nReflective Layer\nTechnology";
 	layers.push(reflective_layer);
     }
     {
-	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer";
+	var self_reflective_layer = "Emotion Machine\nSelf-Reflective Layer\nTechnology";
 	layers.push(self_reflective_layer);
     }
     {
-	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer";
+	var self_conscious_layer = "Emotion Machine\nSelf-Conscious Layer\nTechnology";
 	layers.push(self_conscious_layer);
     }
     // layer END
