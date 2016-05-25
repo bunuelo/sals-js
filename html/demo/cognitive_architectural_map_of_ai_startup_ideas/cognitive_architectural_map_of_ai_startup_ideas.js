@@ -375,10 +375,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // market BEGIN
     var major_markets = [];
     var minor_markets = [];
+    /*
     {
 	var business_to_business_market = "Business-to-Business\nMarket";
 	major_markets.push(business_to_business_market);
     }
+    */
     {
 	var education_market = "Education\nMarket";
 	major_markets.push(education_market);
