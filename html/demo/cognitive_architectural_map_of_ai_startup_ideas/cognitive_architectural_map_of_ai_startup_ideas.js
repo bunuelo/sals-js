@@ -1268,7 +1268,7 @@ window.onload = function() {
     console.log("Executing window.onload");
     var success_callback = function() {
 	try {
-	    var use_poster_size     = false; // use right-click -> save-image-as
+	    var use_poster_size     = true; // use right-click -> save-image-as
 	    var poster_size__width  = 4096;
 	    var poster_size__height = 4096;
 	    var width;
