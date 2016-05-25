@@ -485,11 +485,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 		minor_markets.push(personality_disorders_market);
 		edges.push([personality_disorders_market, parent_market_relationship, mental_health_market]);
 	    }
-	    {
-		var paraphilic_disorders_market = "Paraphilic Disorders\nMarket";
-		minor_markets.push(paraphilic_disorders_market);
-		edges.push([paraphilic_disorders_market, parent_market_relationship, mental_health_market]);
-	    }
 	}
 	{
 	    var physical_health_market = "Physical Health\nMarket";
