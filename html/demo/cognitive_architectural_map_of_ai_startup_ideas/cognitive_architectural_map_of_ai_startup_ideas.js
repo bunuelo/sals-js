@@ -575,6 +575,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var commonsense_reasoning_technology = "Commonsense Reasoning\nTechnology";
 	technologies.push(commonsense_reasoning_technology);
 	edges.push([commonsense_reasoning_technology, parent_technology_relationship, semantic_graph_reasoning_technology]);
+	edges.push([commonsense_reasoning_technology, technology_at_development_stage, research_application_development_stage]);
     }
     {
 	var convolutional_artificial_neural_network_technology = "Convolutional\nArtificial Neural Network\nTechnology";
