@@ -57,6 +57,13 @@ sals.demo.ai_startup_idea = {};
 	var r                         = sals.frame.frame__get_element(propogate_node_data_frame, "r");
 	var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
 	var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
+	if ((r >= 0.25) && (r <= 0.75) &&
+	    (g >= 0.50) && (g <= 0.75) &&
+	    (b >= 0.25) && (b <= 0.75)) {
+	    r = 1.0;
+	    g = 0.0;
+	    b = 0.0;
+	}
 	sals.vis.object__soft_merge_recursive(vis_node, {
 	    fixed : position_pin_active,
 	    x     : x,
