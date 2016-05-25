@@ -569,16 +569,20 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var recurrent_artificial_neural_network_technology = "Recurrent\nArtificial Neural Network\nTechnology";
 	technologies.push(recurrent_artificial_neural_network_technology);
 	edges.push([recurrent_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
+	edges.push([recurrent_artificial_neural_network_technology, can_be_used_to_implement_relationship, auditory_input_technology]);
+	edges.push([recurrent_artificial_neural_network_technology, can_be_used_to_implement_relationship, motor_control_technology]);
     }
     {
 	var bidirectional_recurrent_artificial_neural_network_technology = "Bidirectional Recurrent\nArtificial Neural Network\nTechnology";
 	technologies.push(bidirectional_recurrent_artificial_neural_network_technology);
 	edges.push([bidirectional_recurrent_artificial_neural_network_technology, parent_technology_relationship, recurrent_artificial_neural_network_technology]);
+	edges.push([bidirectional_recurrent_artificial_neural_network_technology, can_be_used_to_implement_relationship, auditory_input_technology]);
     }
     {
 	var convolutional_artificial_neural_network_technology = "Convolutional\nArtificial Neural Network\nTechnology";
 	technologies.push(convolutional_artificial_neural_network_technology);
 	edges.push([convolutional_artificial_neural_network_technology, parent_technology_relationship, feedforward_backpropogate_artificial_neural_network_technology]);
+	edges.push([convolutional_artificial_neural_network_technology, can_be_used_to_implement_relationship, visual_input_technology]);
     }
     {
 	var self_organizing_maps_artificial_neural_network_technology = "Self-Organizing Maps\nArtificial Neural Network\nTechnology";
