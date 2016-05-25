@@ -1033,6 +1033,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, game_market]);
 	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, tv_market]);
 	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, feature_film_market]);
+	edges.push([social_emotional_learning_trainer_product, sold_in_market_relationship, depressive_disorders_market]);
 	edges.push([social_emotional_learning_trainer_product, can_be_implemented_with_relationship, social_emotional_learning_trainer_technology]);
     }
     {
