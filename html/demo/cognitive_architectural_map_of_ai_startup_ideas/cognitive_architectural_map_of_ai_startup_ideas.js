@@ -950,6 +950,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var executive_cognitive_development_product = "Executive\nCognitive Development\nProduct";
 	minor_markets.push(executive_cognitive_development_product);
 	edges.push([executive_cognitive_development_product, sold_in_market_relationship, executive_cognitive_development_market]);
+	edges.push([executive_cognitive_development_product, can_be_implemented_with_relationship, executive_cognitive_development_technology]);
     }
     {
 	var social_cognitive_development_technology = "Social\nCognitive Development\nTechnology";
@@ -960,6 +961,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var social_cognitive_development_product = "Social\nCognitive Development\nProduct";
 	minor_markets.push(social_cognitive_development_product);
 	edges.push([social_cognitive_development_product, sold_in_market_relationship, social_cognitive_development_market]);
+	edges.push([social_cognitive_development_product, can_be_implemented_with_relationship, social_cognitive_development_technology]);
     }
     {
 	var emotional_cognitive_development_technology = "Emotional\nCognitive Development\nTechnology";
@@ -970,6 +972,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var emotional_cognitive_development_product = "Emotional\nCognitive Development\nProduct";
 	minor_markets.push(emotional_cognitive_development_product);
 	edges.push([emotional_cognitive_development_product, sold_in_market_relationship, emotional_cognitive_development_market]);
+	edges.push([emotional_cognitive_development_product, can_be_implemented_with_relationship, emotional_cognitive_development_technology]);
     }
     {
 	var wearable_technology_product = "Wearable Technology\nProduct";
