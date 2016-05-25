@@ -735,6 +735,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var artificial_neural_network_technology = "Artificial\nNeural Network\nTechnology";
 	technologies.push(artificial_neural_network_technology);
+	edges.push([artificial_neural_network_technology, technology_at_development_stage, successful_startup_development_stage]);
     }
     {
 	var feedforward_backpropogate_artificial_neural_network_technology = "Feedforward Backpropogate\nArtificial Neural Network\nTechnology";
