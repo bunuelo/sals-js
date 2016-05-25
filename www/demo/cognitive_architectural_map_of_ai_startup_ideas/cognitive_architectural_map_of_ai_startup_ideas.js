@@ -390,46 +390,66 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    var mental_health_market = "Mental Health\nMarket";
 	    minor_markets.push(mental_health_market);
 	    edges.push([mental_health_market, parent_market_relationship, medicine_market]);
+	    {
+		var behavior_change_market = "Behavior Change\nMarket";
+		minor_markets.push(behavior_change_market);
+		edges.push([behavior_change_market, parent_market_relationship, mental_health_market]);
+	    }
+	    {
+		var nutrition_market = "Nutrition Behavior Change\nMarket";
+		minor_markets.push(nutrition_market);
+		edges.push([nutrition_market, parent_market_relationship, behavior_change_market]);
+	    }
+	    {
+		var exercise_market = "Exercise Behavior Change\nMarket";
+		minor_markets.push(exercise_market);
+		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
+	    }
+	    {
+		var exercise_market = "Smoking Behavior Change\nMarket";
+		minor_markets.push(exercise_market);
+		edges.push([exercise_market, parent_market_relationship, behavior_change_market]);
+	    }
 	}
 	{
 	    var physical_health_market = "Physical Health\nMarket";
 	    minor_markets.push(physical_health_market);
 	    edges.push([physical_health_market, parent_market_relationship, medicine_market]);
-	}
-	{
-	    var diabetes_market = "Diabetes\nMarket";
-	    minor_markets.push(diabetes_market);
-	    edges.push([diabetes_market, parent_market_relationship, physical_health_market]);
-	}
-	{
-	    var high_blood_pressure_market = "High Blood Pressure\nMarket";
-	    minor_markets.push(high_blood_pressure_market);
-	    edges.push([high_blood_pressure_market, parent_market_relationship, physical_health_market]);
-	}
-	{
-	    var obesity_market = "Obesity\nMarket";
-	    minor_markets.push(obesity_market);
-	    edges.push([obesity_market, parent_market_relationship, physical_health_market]);
-	}
-	{
-	    var emergency_medicine_market = "Emergency Medicine\nMarket";
-	    minor_markets.push(emergency_medicine_market);
-	    edges.push([emergency_medicine_market, parent_market_relationship, physical_health_market]);
-	}
-	{
-	    var prosthetic_limb_market = "Prosthetic Limb\nMarket";
-	    minor_markets.push(prosthetic_limb_market);
-	    edges.push([prosthetic_limb_market, parent_market_relationship, physical_health_market]);
-	}
-	{
-	    var physical_rehabilitation_market = "Physical Rehabilitation\nMarket";
-	    minor_markets.push(physical_rehabilitation_market);
-	    edges.push([physical_rehabilitation_market, parent_market_relationship, physical_health_market]);
-	}
-	{
-	    var cancer_market = "Cancer\nMarket";
-	    minor_markets.push(cancer_market);
-	    edges.push([cancer_market, parent_market_relationship, physical_health_market]);
+	    {
+		var diabetes_market = "Diabetes\nMarket";
+		minor_markets.push(diabetes_market);
+		edges.push([diabetes_market, parent_market_relationship, physical_health_market]);
+	    }
+	    {
+		var high_blood_pressure_market = "High Blood Pressure\nMarket";
+		minor_markets.push(high_blood_pressure_market);
+		edges.push([high_blood_pressure_market, parent_market_relationship, physical_health_market]);
+	    }
+	    {
+		var obesity_market = "Obesity\nMarket";
+		minor_markets.push(obesity_market);
+		edges.push([obesity_market, parent_market_relationship, physical_health_market]);
+	    }
+	    {
+		var emergency_medicine_market = "Emergency Medicine\nMarket";
+		minor_markets.push(emergency_medicine_market);
+		edges.push([emergency_medicine_market, parent_market_relationship, physical_health_market]);
+	    }
+	    {
+		var prosthetic_limb_market = "Prosthetic Limb\nMarket";
+		minor_markets.push(prosthetic_limb_market);
+		edges.push([prosthetic_limb_market, parent_market_relationship, physical_health_market]);
+	    }
+	    {
+		var physical_rehabilitation_market = "Physical Rehabilitation\nMarket";
+		minor_markets.push(physical_rehabilitation_market);
+		edges.push([physical_rehabilitation_market, parent_market_relationship, physical_health_market]);
+	    }
+	    {
+		var cancer_market = "Cancer\nMarket";
+		minor_markets.push(cancer_market);
+		edges.push([cancer_market, parent_market_relationship, physical_health_market]);
+	    }
 	}
     }
     {
