@@ -909,6 +909,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	technologies.push(emotional_cognitive_development_technology);
 	edges.push([emotional_cognitive_development_technology, technology_at_development_stage, research_application_development_stage]);
     }
+    {
+	var prosthetic_limb_technology = "Prosthetic Limb\nTechnology";
+	minor_markets.push(prosthetic_limb_technology);
+	edges.push([prosthetic_limb_technology, technology_at_development_stage, research_application_development_stage]);
+	edges.push([prosthetic_limb_technology, technology_at_development_stage, successful_startup_development_stage]);
+    }
     // technology END
     
     // layer BEGIN
@@ -963,6 +969,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // layer END
     
     var products = [];
+    {
+	var prosthetic_limb_product = "Prosthetic Limb\nProduct";
+	minor_markets.push(prosthetic_limb_product);
+	edges.push([prosthetic_limb_product, sold_in_market_relationship, prosthetic_limb_market]);
+	edges.push([executive_cognitive_development_product, can_be_implemented_with_relationship, prosthetic_limb_technology]);
+    }
     {
 	var executive_cognitive_development_product = "Executive\nCognitive Development\nProduct";
 	minor_markets.push(executive_cognitive_development_product);
