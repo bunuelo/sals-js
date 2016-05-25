@@ -633,10 +633,6 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	development_stages.push(research_application_development_stage);
     }
     {
-	var business_application_development_stage = "Business Application\nDevelopment Stage";
-	development_stages.push(business_application_development_stage);
-    }
-    {
 	var successful_startup_development_stage = "Successful Startup\nDevelopment Stage";
 	development_stages.push(successful_startup_development_stage);
     }
