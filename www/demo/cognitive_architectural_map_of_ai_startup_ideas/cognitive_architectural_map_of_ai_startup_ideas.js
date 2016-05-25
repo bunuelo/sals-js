@@ -374,8 +374,8 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     // market BEGIN
     var markets = [];
     {
-	var cloud_service_market = "Cloud Service\nMarket";
-	markets.push(cloud_service_market);
+	var business_to_business_market = "Business-to-Business\nMarket";
+	markets.push(business_to_business_market);
     }
     {
 	var education_market = "Education\nMarket";
@@ -386,8 +386,12 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	markets.push(medicine_market);
     }
     {
-	var consumer_market = "Consumer\nMarket";
-	markets.push(consumer_market);
+	var entertainment_market = "Entertainment\nMarket";
+	markets.push(entertainment_market);
+    }
+    {
+	var consumer_product_market = "Consumer Product\nMarket";
+	markets.push(consumer_product_market);
     }
     // market END
     
@@ -720,7 +724,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
     {
 	var wearable_technology_product = "Wearable Technology\nProduct";
 	products.push(wearable_technology_product);
-	edges.push([wearable_technology_product, sold_in_market_relationship, consumer_market]);
+	edges.push([wearable_technology_product, sold_in_market_relationship, consumer_product_market]);
     }
     {
 	var health_monitor_wearable_technology_product = "Health Monitor\nWearable Technology\nProduct";
