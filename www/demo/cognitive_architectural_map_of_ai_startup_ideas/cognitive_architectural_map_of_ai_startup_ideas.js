@@ -973,7 +973,7 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	var prosthetic_limb_product = "Prosthetic Limb\nProduct";
 	minor_markets.push(prosthetic_limb_product);
 	edges.push([prosthetic_limb_product, sold_in_market_relationship, prosthetic_limb_market]);
-	edges.push([executive_cognitive_development_product, can_be_implemented_with_relationship, prosthetic_limb_technology]);
+	edges.push([prosthetic_limb_product, can_be_implemented_with_relationship, prosthetic_limb_technology]);
     }
     {
 	var executive_cognitive_development_product = "Executive\nCognitive Development\nProduct";
