@@ -416,6 +416,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    minor_markets.push(emergency_medicine_market);
 	    edges.push([emergency_medicine_market, parent_market_relationship, physical_health_market]);
 	}
+	{
+	    var prosthetic_limb_market = "Prosthetic Limb\nMarket";
+	    minor_markets.push(prosthetic_limb_market);
+	    edges.push([prosthetic_limb_market, parent_market_relationship, physical_health_market]);
+	}
     }
     {
 	var entertainment_market = "Entertainment\nMarket";
