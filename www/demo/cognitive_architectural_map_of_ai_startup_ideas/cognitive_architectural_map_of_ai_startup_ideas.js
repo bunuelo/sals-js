@@ -426,6 +426,11 @@ sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element = function(width, heig
 	    minor_markets.push(physical_rehabilitation_market);
 	    edges.push([physical_rehabilitation_market, parent_market_relationship, physical_health_market]);
 	}
+	{
+	    var cancer_market = "Cancer\nMarket";
+	    minor_markets.push(cancer_market);
+	    edges.push([cancer_market, parent_market_relationship, physical_health_market]);
+	}
     }
     {
 	var entertainment_market = "Entertainment\nMarket";
