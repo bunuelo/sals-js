@@ -881,8 +881,18 @@ window.onload = function() {
     console.log("Executing window.onload");
     var success_callback = function() {
 	try {
-	    var width   = 4096; //window.innerWidth;
-	    var height  = 4096; //window.innerHeight;
+	    var use_poster_size     = false; // use right-click -> save-image-as
+	    var poster_size__width  = 4096;
+	    var poster_size__height = 4096;
+	    var width;
+	    var height;
+	    if (use_poster_size) {
+		width   = poster_size__width;
+		height  = poster_size__height;
+	    } else { // otherwise, adapt to window (or iframe)
+		width   = window.innerWidth;
+		height  = window.innerHeight;
+	    }
 	    var element = sals.demo.ai_startup_idea.new_ai_startup_idea_dom_element(width - 16, height - 16);
 	    document.body.appendChild(element);
 	} catch (error) {
