@@ -58,8 +58,8 @@ sals.demo.ai_startup_idea = {};
 	var g                         = sals.frame.frame__get_element(propogate_node_data_frame, "g");
 	var b                         = sals.frame.frame__get_element(propogate_node_data_frame, "b");
 	if ((r >= 0.95) && (r <= 1.00) &&
-	    (g >= 0.95) && (g <= 1.00) &&
-	    (b >= 0.95) && (b <= 1.00)) {
+	    (g >= 0.45) && (g <= 0.55) &&
+	    (b >= 0.45) && (b <= 0.55)) {
 	    r = 1.0;
 	    g = 0.0;
 	    b = 0.0;
