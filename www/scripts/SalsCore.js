@@ -84,7 +84,7 @@ sals.core.date__to_string = function(self) {
     var minute = self.getMinutes();
     var minute_str;
     if ((minute >= 0) && (minute <= 9)) {
-	minute_str = " " + minute;
+	minute_str = "0" + minute;
     } else if ((minute >= 10) && (minute <= 59)) {
 	minute_str = "" + minute;
     }
