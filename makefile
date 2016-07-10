@@ -64,8 +64,34 @@ print-usage:
 	@echo "  Bo Morgan <bo.morgan@bomorgan.io>"
 	@echo ""
 
+SOURCE_FILES=              \
+  js/SalsCons.js           \
+  js/SalsCore.js           \
+  js/SalsFrameArray.js     \
+  js/SalsFrame.js          \
+  js/SalsGo.js             \
+  js/SalsGraph.js*         \
+  js/SalsHashMatrix.js     \
+  js/SalsIndex.js          \
+  js/SalsLogic.js          \
+  js/SalsMachine.js        \
+  js/SalsMath.js           \
+  js/SalsObject.js         \
+  js/SalsObjectRegistry.js \
+  js/SalsPattern.js        \
+  js/SalsPlanner.js        \
+  js/SalsPrimitive.js      \
+  js/SalsRender.js         \
+  js/SalsThree.js          \
+  js/SalsVis.js            \
+  js/sals.js               \
+  html/index.html          \
+  sals.sh                  \
+  makefile                 \
+  README.md
+
 start-editor:
-	$(TEXT_EDITOR) makefile *.md html/*.html js/*.js
+	$(TEXT_EDITOR) $(SOURCE_FILES)
 
 compile-webpage:
 	rm -Rf ./www/
@@ -101,5 +127,8 @@ git-add:
 
 git-development-cycle:
 	make git-pull; make compile-webpage; make git-add; make git-commit; make git-push; make upload-webpage
+
+sals:
+	./sals.sh
 
 

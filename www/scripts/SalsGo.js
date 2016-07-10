@@ -131,6 +131,29 @@ sals.go = {};
 	return html;
     };
     
+    sals.go.go_game_board__to_predicate_set = function(self) {
+	var predicate_set  = sals.logic.predicate_set__new_empty();
+	(function() { // the green block to be on the table
+	    var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
+	    var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
+	    sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+	})();
+	return predicate_set;
+    };
+    
+    sals.go.go_game_board__to_english_string = function(self) {
+	var predicate_set = sals.go.go_game_board__to_predicate_set(self);
+	return sals.logic.predicate_set__to_english_string(predicate_set);
+    };
+    
+    sals.go.go_game_board__to_english_sentence = function(self) {
+	return sals.logic.english_string__sentencify(sals.go.go_game_board__to_english_string(self));
+    };
+    
+    sals.go.go_game_board__log = function(self) {
+	console.log("go_game_board = " + sals.go.go_game_board__to_english_sentence(self));
+    };
+    
 })(); // go_game_board END
 
 (function () { // go_game BEGIN
@@ -183,7 +206,9 @@ sals.go = {};
     
 })(); // go_game END
 
-sals.go.test_go_game_element = function() {
+// sals render test
+
+sals.go.go_game_element = function() {
     var go_game        = sals.go.go_game__new(4, 4);
     var go_game__board = sals.go.go_game__board(go_game);
     var white_cell     = sals.go.go_game_board__get_cell(go_game__board, 0, 0);
@@ -192,6 +217,9 @@ sals.go.test_go_game_element = function() {
     sals.go.go_game_board_cell__set_state(black_cell, "black");
     sals.logic.test_logic();
     sals.pattern.test_pattern();
+    sals.go.go_game_board__log(self);
+    sals.render.register_render_function(sals.go.game_test.render);
     return sals.go.go_game__to_dom_element(go_game);
 };
+
 

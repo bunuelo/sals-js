@@ -1,5 +1,7 @@
 var sals = {};
 
+exports.sals = sals
+
 sals.core = {};
 
 console.log("Loading SalsCore.js");
