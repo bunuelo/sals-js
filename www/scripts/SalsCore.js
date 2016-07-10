@@ -81,7 +81,14 @@ sals.core.date__to_string = function(self) {
 	hour_number_str = "" + (hour - 12);
 	hour_ampm_str   = "pm";
     }
-    var time_str = hour_number_str + " " + hour_ampm_str;
+    var minute = self.getMinutes();
+    var minute_str;
+    if ((minute >= 0) && (minute <= 9)) {
+	minute_str = " " + minute;
+    } else if ((minute >= 10) && (minute <= 59)) {
+	minute_str = "" + minute;
+    }
+    var time_str = hour_number_str + ":" + minute_str + " " + hour_ampm_str;
     // compile time_str END
     return "" + date_str + " " + time_str;
 };
