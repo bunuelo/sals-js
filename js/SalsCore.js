@@ -26,8 +26,58 @@ sals.core.source_file_names = ["/scripts/SalsPrimitive.js",
 
 sals.core.total_load_count = 0;
 
+sale.core.date__to_string = function(self) {
+    var month = self.getMonth();
+    var month_str;
+    if (month == 0) {
+	month_str = "Jan";
+    } else if (month == 1) {
+	month_str = "Feb";
+    } else if (month == 2) {
+	month_str = "Mar";
+    } else if (month == 3) {
+	month_str = "Apr";
+    } else if (month == 4) {
+	month_str = "May";
+    } else if (month == 5) {
+	month_str = "Jun";
+    } else if (month == 6) {
+	month_str = "Jul";
+    } else if (month == 7) {
+	month_str = "Aug";
+    } else if (month == 8) {
+	month_str = "Sep";
+    } else if (month == 9) {
+	month_str = "Oct";
+    } else if (month == 10) {
+	month_str = "Nov";
+    } else if (month == 11) {
+	month_str = "Dec";
+    }
+    var day      = self.getDate();
+    var day_str  = "" + day;
+    if (day_str.length == 1) {
+	day_str = "0" + day_str;
+    }
+    var year     = self.getFullYear();
+    var year_str = "" + year;
+    return "" + month_str + " " + day_str + " " + year_str;
+};
+
+sale.core.date__to_column_string = function(width, self) {
+    var str         = sale.core.date__to_string(self);
+    var str__length = str.length;
+    var index       = width - str__length;
+    while (index > 0) {
+	str = (" " + str);
+	index --;
+    }
+    return str;
+};
+
 sals.core.date_time_string = function() {
-    return "" + new Date().toString();
+    var now__date = new Date();
+    return "" + sale.core.date__to_column_string(16, now__date);
 };
 
 sals.core.log_error = function(error) {
