@@ -71,13 +71,13 @@ sals.graph.graph__edges = function(self) {
 };
 
 sals.graph.graph__add_node = function(self, node) {
-    var nodes = sals.graph.graph__nodes(self);
+    var nodes     = sals.graph.graph__nodes(self);
     var node__uid = sals.frame.frame__uid(node);
     sals.frame.frame__add_element(nodes, node__uid, node);
 };
 
 sals.graph.graph__add_edge = function(self, edge) {
-    var edges = sals.graph.graph__edges(self);
+    var edges     = sals.graph.graph__edges(self);
     var edge__uid = sals.frame.frame__uid(edge);
     sals.frame.frame__add_element(edges, edge__uid, edge);
 };
@@ -138,11 +138,22 @@ sals.graph.graph__get_node_neighbors = function(graph, graph_node) {
 };
 
 sals.graph.graph__to_predicate_set = function(self) {
-    var predicate_set  = sals.logic.predicate_set__new_empty();
-    (function() { // the green block to be on the table
-	var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
-	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
-	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
-    })();
+    var predicate_set        = sals.logic.predicate_set__new_empty();
+    var graph__edges         = sals.frame.frame__values(sals.graph.graph__edges(graph));
+    var graph__edges__length = graph__edges.length;
+    var graph__edges__index  = 0;
+    while (graph__edges__index < graph__edges__length) {
+	(function() {
+	    var graph__edge            = graph__edges[graph__edges__index];
+	    var graph__edge__from_node = sals.graph.graph_edge__from_node(graph__edge);
+	    var graph__edge__to_node   = sals.graph.graph_edge__to_node(graph__edge);
+	    (function() { // the green block to be on the table
+		var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
+		var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
+		sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+	    })();
+	})();
+	graph__edges__index ++;
+    }
     return predicate_set;
 };
