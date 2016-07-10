@@ -73,7 +73,7 @@ if (window.webkitRequestAnimationFrame) {
 	var frames_per_second            = frame_count * sals.core.nanoseconds_per_second / elapsed_nanoseconds;
 	return frames_per_second;
     };
-
+    
     sals.render.render_state__render = function(self) {
 	var frame_count                       = sals.render.render_state__frame_count(self);
 	var last_print_nanoseconds_since_1970 = sals.render.render_state__last_print_nanoseconds_since_1970(self);
@@ -83,11 +83,21 @@ if (window.webkitRequestAnimationFrame) {
 	    sals.render.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
 	    sals.core.log("render_callback: fps = " + sals.render.render_state__get_frames_per_second(self));
 	}
-	if (sals.machine.step_test_deliberate_machine !== null) {
-	    if (! sals.machine.step_test_deliberate_machine(self)) {
-		sals.machine.step_test_deliberate_machine = null;
+	(function() { // randering BEGIN
+	    var go_game        = sals.render.render_state__go_game(self);
+	    var go_game__board = sals.go.go_game__board(go_game);
+	    sals.go.go_game_board__log(go_game__board);
+	    
+	    // deliberate layer
+	    if (sals.machine.step_test_deliberate_machine !== null) {
+		if (! sals.machine.step_test_deliberate_machine(self)) {
+		    sals.machine.step_test_deliberate_machine = null;
+		}
 	    }
-	}
+	    
+	    // reactive layer
+	    
+	})(); // rendering END
 	frame_count = frame_count + 1;
 	sals.render.render_state__set_frame_count(self, frame_count);
     };
