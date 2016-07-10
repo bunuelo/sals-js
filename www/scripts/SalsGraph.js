@@ -137,3 +137,12 @@ sals.graph.graph__get_node_neighbors = function(graph, graph_node) {
     return neighbors;
 };
 
+sals.graph.graph__to_predicate_set = function(self) {
+    var predicate_set  = sals.logic.predicate_set__new_empty();
+    (function() { // the green block to be on the table
+	var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
+	var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : "the green block", "on" : "the table"}));
+	sals.logic.predicate_set__add_predicate(predicate_set, predicate)
+    })();
+    return predicate_set;
+};
