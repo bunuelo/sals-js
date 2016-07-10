@@ -140,11 +140,11 @@ sals.graph.graph__get_node_neighbors = function(graph, graph_node) {
 sals.graph.graph__to_predicate_set = function(self) {
     var predicate_set = sals.logic.predicate_set__new_empty();
     var edges         = sals.frame.frame__values(sals.graph.graph__edges(self));
-    var edges__length = graph__edges.length;
+    var edges__length = edges.length;
     var edges__index  = 0;
     while (edges__index < edges__length) {
 	(function() {
-	    var edge            = graph__edges[edges__index];
+	    var edge            = edges[edges__index];
 	    var edge__from_node = sals.graph.graph_edge__from_node(edge);
 	    var edge__to_node   = sals.graph.graph_edge__to_node(edge);
 	    (function() { // the green block to be on the table
@@ -153,7 +153,7 @@ sals.graph.graph__to_predicate_set = function(self) {
 		sals.logic.predicate_set__add_predicate(predicate_set, predicate)
 	    })();
 	})();
-	graph__edges__index ++;
+	edges__index ++;
     }
     return predicate_set;
 };
