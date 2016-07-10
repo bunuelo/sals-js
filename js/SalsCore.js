@@ -27,6 +27,7 @@ sals.core.source_file_names = ["/scripts/SalsPrimitive.js",
 sals.core.total_load_count = 0;
 
 sals.core.date__to_string = function(self) {
+    // compile date_str BEGIN
     var month = self.getMonth();
     var month_str;
     if (month == 0) {
@@ -61,7 +62,28 @@ sals.core.date__to_string = function(self) {
     }
     var year     = self.getFullYear();
     var year_str = "" + year;
-    return "" + month_str + " " + day_str + " " + year_str;
+    var date_str = month_str + " " + day_str + " " + year_str;
+    // compile date_str END
+    // compile time_str BEGIN
+    var hour     = self.getHours();
+    var hour_number_str;
+    var hour_ampm_str;
+    if (hour == 0) {
+	hour_number_str = "12";
+	hour_ampm_str   = "am";
+    } else if ((hour >= 1) && (hour <= 11)) {
+	hour_number_str = "" + hour;
+	hour_ampm_str   = "am";
+    } else if (hour == 12) {
+	hour_number_str = "12";
+	hour_ampm_str   = "pm";
+    } else if ((hour >= 13) && (hour <= 23)) {
+	hour_number_str = "" + (hour - 12);
+	hour_ampm_str   = "pm";
+    }
+    var time_str = hour_number_str + " " + hour_ampm_str;
+    // compile time_str END
+    return "" + date_str + " " + time_str;
 };
 
 sals.core.date__to_column_string = function(width, self) {
