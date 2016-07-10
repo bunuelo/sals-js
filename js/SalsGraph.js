@@ -145,12 +145,13 @@ sals.graph.graph__to_predicate_set = function(self) {
     while (edges__index < edges__length) {
 	(function() {
 	    var edge                   = edges[edges__index];
+	    var edge__label            = sals.graph.graph_edge__label(edge);
 	    var edge__from_node        = sals.graph.graph_edge__from_node(edge);
 	    var edge__from_node__label = sals.graph.graph_node__label(edge__from_node);
 	    var edge__to_node          = sals.graph.graph_edge__to_node(edge);
 	    var edge__to_node__label   = sals.graph.graph_node__label(edge__to_node);
 	    (function() { // the green block to be on the table
-		var predicate_type = sals.logic.predicate_type__new("to be", sals.frame.frame({"subject" : "a physical object", "on" : sals.logic.parameter_type__new("a physical object")}));
+		var predicate_type = sals.logic.predicate_type__new(edge__label, sals.frame.frame({"subject" : "an object", "on" : sals.logic.parameter_type__new("an object")}));
 		var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : edge__from_node__label, "on" : edge__from_node__label}));
 		sals.logic.predicate_set__add_predicate(predicate_set, predicate)
 	    })();
