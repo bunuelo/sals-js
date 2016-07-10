@@ -95,7 +95,7 @@ sals.core.date__to_string = function(self) {
     } else if ((second >= 10) && (second <= 59)) {
 	second_str = "" + second;
     }
-    var time_str = hour_number_str + "." + minute_str + "." + second_str + " " + hour_ampm_str;
+    var time_str = hour_number_str + ":" + minute_str + ":" + second_str + " " + hour_ampm_str;
     // compile time_str END
     return "" + date_str + " " + time_str;
 };
