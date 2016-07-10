@@ -78,15 +78,16 @@ if (window.webkitRequestAnimationFrame) {
 	var frame_count                       = sals.render.render_state__frame_count(self);
 	var last_print_nanoseconds_since_1970 = sals.render.render_state__last_print_nanoseconds_since_1970(self);
 	var nanoseconds_since_1970            = sals.core.nanoseconds_since_1970();
-	if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= (30 * sals.core.nanoseconds_per_second))) {
-	    last_print_nanoseconds_since_1970 = nanoseconds_since_1970;
-	    sals.render.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
-	    sals.core.log("render_callback: fps = " + sals.render.render_state__get_frames_per_second(self));
-	}
 	(function() { // randering BEGIN
 	    var go_game        = sals.render.render_state__go_game(self);
 	    var go_game__board = sals.go.go_game__board(go_game);
-	    sals.go.go_game_board__log(go_game__board);
+	    
+	    if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= (30 * sals.core.nanoseconds_per_second))) {
+		last_print_nanoseconds_since_1970 = nanoseconds_since_1970;
+		sals.render.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
+		sals.core.log("render_callback: fps = " + sals.render.render_state__get_frames_per_second(self));
+		sals.go.go_game_board__log(go_game__board);
+	    }
 	    
 	    // deliberate layer
 	    if (sals.machine.step_test_deliberate_machine !== null) {
