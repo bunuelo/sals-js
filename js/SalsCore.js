@@ -1,6 +1,6 @@
 var sals = {};
 
-exports.sals = sals
+if (typedef(exports)!="undefined") {exports.sals = sals;}
 
 sals.core = {};
 
