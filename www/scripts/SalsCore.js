@@ -112,8 +112,9 @@ sals.core.date__to_column_string = function(width, self) {
 };
 
 sals.core.date_time_string = function() {
-    var now__date = new Date();
-    return "" + sals.core.date__to_column_string(16, now__date);
+    var column_width = 24;
+    var now__date    = new Date();
+    return "" + sals.core.date__to_column_string(column_width, now__date);
 };
 
 sals.core.log_error = function(error) {
