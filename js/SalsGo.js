@@ -218,7 +218,6 @@ sals.go.go_game_element = function() {
     sals.logic.test_logic();
     sals.pattern.test_pattern();
     sals.go.go_game_board__log(self);
-    sals.render.register_render_function(sals.go.game_test.render);
     return sals.go.go_game__to_dom_element(go_game);
 };
 
