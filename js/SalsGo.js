@@ -25,6 +25,38 @@ sals.go = {};
 	sals.frame.frame__set_element(self, "to have state", state);
     };
     
+    sals.go.go_game_board_cell__north = function(self) {
+	return sals.frame.frame__get_element(self, "to be to the south of");
+    };
+    
+    sals.go.go_game_board_cell__set_north = function(self, value) {
+	sals.frame.frame__set_element(self, "to be to the south of", value);
+    };
+    
+    sals.go.go_game_board_cell__south = function(self) {
+	return sals.frame.frame__get_element(self, "to be to the north of");
+    };
+    
+    sals.go.go_game_board_cell__set_south = function(self, value) {
+	sals.frame.frame__set_element(self, "to be to the north of", value);
+    };
+    
+    sals.go.go_game_board_cell__east = function(self) {
+	return sals.frame.frame__get_element(self, "to be to the west of");
+    };
+    
+    sals.go.go_game_board_cell__set_east = function(self, value) {
+	sals.frame.frame__set_element(self, "to be to the west of", value);
+    };
+    
+    sals.go.go_game_board_cell__west = function(self) {
+	return sals.frame.frame__get_element(self, "to be to the east of");
+    };
+    
+    sals.go.go_game_board_cell__set_west = function(self, value) {
+	sals.frame.frame__set_element(self, "to be to the east of", value);
+    };
+    
     sals.go.go_game_board_cell__to_html = function(self) {
 	var state = sals.go.go_game_board_cell__state(self);
 	if (state === null) {
@@ -77,10 +109,10 @@ sals.go = {};
 		if (x > 0) {
 		    go_game_board_cell__west = sals.frame.frame__get_element(row, x - 1);
 		}
-		sals.frame.frame__set_element(go_game_board_cell, "north", go_game_board_cell__north);
-		sals.frame.frame__set_element(go_game_board_cell, "south", go_game_board_cell__south);
-		sals.frame.frame__set_element(go_game_board_cell, "east",  go_game_board_cell__east);
-		sals.frame.frame__set_element(go_game_board_cell, "west",  go_game_board_cell__west);
+		sals.go.go_game_board_cell__set_north(go_game_board_cell, go_game_board_cell__north);
+		sals.go.go_game_board_cell__set_south(go_game_board_cell, go_game_board_cell__south);
+		sals.go.go_game_board_cell__set_east( go_game_board_cell, go_game_board_cell__east);
+		sals.go.go_game_board_cell__set_west( go_game_board_cell, go_game_board_cell__west);
 	    }
 	}
 	sals.frame.frame__add_element(self, "rows", rows);
