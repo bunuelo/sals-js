@@ -128,6 +128,8 @@ sals.logic = {};
 	var verb_transitive   = sals.logic.predicate_type__verb_transitive(type);
 	if (verb_transitive.includes("to be")) {
 	    verb_transitive = verb_transitive.split("to be").join("is");
+	} else if (verb_transitive.includes("to have")) {
+	    verb_transitive = verb_transitive.split("to have").join("has");
 	}
 	to_english_string                 = to_english_string + " " + verb_transitive;
 	var parameter_frame__keys         = sals.frame.frame__keys(parameter_frame);
