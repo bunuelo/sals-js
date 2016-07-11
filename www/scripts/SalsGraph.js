@@ -150,9 +150,15 @@ sals.graph.graph__to_predicate_set = function(self) {
 	    var edge__from_node__label = sals.graph.graph_node__label(edge__from_node);
 	    var edge__to_node          = sals.graph.graph_edge__to_node(edge);
 	    var edge__to_node__label   = sals.graph.graph_node__label(edge__to_node);
+	    var edge__to_node__label__str;
+	    if (edge__to_node__label === null) {
+		edge__to_node__label__str = "nothing";
+	    } else {
+		edge__to_node__label__str = "" + edge__to_node__label;
+	    }
 	    (function() { // the green block to be on the table
 		var predicate_type = sals.logic.predicate_type__new(edge__label, sals.frame.frame({"subject" : "an object", "direct object" : sals.logic.parameter_type__new("an object")}));
-		var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : edge__from_node__label, "direct object" : edge__to_node__label}));
+		var predicate      = sals.logic.predicate__new(predicate_type, sals.frame.frame({"subject" : edge__from_node__label, "direct object" : edge__to_node__label__str}));
 		sals.logic.predicate_set__add_predicate(predicate_set, predicate)
 	    })();
 	})();
