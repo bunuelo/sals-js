@@ -9,20 +9,20 @@ sals.go = {};
     
     sals.go.go_game_board_cell__new = function(state, north, south, east, west) {
 	var self = sals.object.object__new("go_game_board_cell");
-	sals.frame.frame__add_element(self, "state", state);
-	sals.frame.frame__add_element(self, "north", north);
-	sals.frame.frame__add_element(self, "south", south);
-	sals.frame.frame__add_element(self, "east",  east);
-	sals.frame.frame__add_element(self, "west",  west);
+	sals.frame.frame__add_element(self, "to have state",         state);
+	sals.frame.frame__add_element(self, "to be to the south of", north);
+	sals.frame.frame__add_element(self, "to be to the north of", south);
+	sals.frame.frame__add_element(self, "to be to the west of",  east);
+	sals.frame.frame__add_element(self, "to be to the east of",  west);
 	return self;
     };
     
     sals.go.go_game_board_cell__state = function(self) {
-	return sals.frame.frame__get_element(self, "state");
+	return sals.frame.frame__get_element(self, "to have state");
     };
     
     sals.go.go_game_board_cell__set_state = function(self, state) {
-	sals.frame.frame__set_element(self, "state", state);
+	sals.frame.frame__set_element(self, "to have state", state);
     };
     
     sals.go.go_game_board_cell__to_html = function(self) {
