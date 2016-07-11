@@ -138,7 +138,7 @@ sals.logic = {};
 		var parameter_frame__key   = sals.primitive.array__get_element(parameter_frame__keys, parameter_frame__keys__index);
 		if (parameter_frame__key !== "subject") {
 		    var parameter_frame__value = sals.frame.frame__get_element(parameter_frame, parameter_frame__key);
-		    if (parameter_frame__key === "direct object") {
+		    if ((parameter_frame__key === "direct object") || (parameter_frame__key === "second direct object")) {
 			to_english_string = to_english_string + " " + parameter_frame__value;
 		    } else {
 			to_english_string = to_english_string + " " + parameter_frame__key + " " + parameter_frame__value;
