@@ -151,7 +151,7 @@ sals.graph.graph__to_predicate_set = function(self) {
 	    var edge__to_node          = sals.graph.graph_edge__to_node(edge);
 	    var edge__to_node__label   = sals.graph.graph_node__label(edge__to_node);
 	    var edge__to_node__label__str;
-	    if (edge__to_node__label === null) {
+	    if ((edge__to_node__label === null) || (edge__to_node__label == "null")) {
 		edge__to_node__label__str = "nothing";
 	    } else {
 		edge__to_node__label__str = "" + edge__to_node__label;
