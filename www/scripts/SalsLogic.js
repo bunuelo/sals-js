@@ -152,7 +152,7 @@ sals.logic = {};
 	}
 	
 	(function() {
-	    var vowels         = ["a", "e", "i", "o", "u"];
+	    var vowels         = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 	    var vowels__length = vowels.length;
 	    var vowels__index  = vowels__length - 1;
 	    var vowel;
