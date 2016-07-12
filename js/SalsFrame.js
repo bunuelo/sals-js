@@ -218,17 +218,6 @@ sals.frame.flat_frame__new = function(frame) {
 	    sals.frame.frame__set_element(self, key, value);
 	}
     });
-/*
-    sals.frame.frame__foreach_meta_key(frame, function(key) {
-	var value = sals.frame.frame__get_meta_element(frame, key);
-	if (sals.frame.frame__is_type(value)) {
-	    var value__uid = sals.frame.frame__uid(value);
-	    sals.frame.frame__set_element(self, "meta_" + key, value__uid);
-	} else {
-	    sals.frame.frame__set_element(self, "meta_" + key, value);
-	}
-    });
-*/
     return self;
 };
 

@@ -150,7 +150,7 @@ sals.logic = {};
 	    })();
 	    parameter_frame__keys__index ++;
 	}
-	(function() {
+	(function() { // rewrite "is a apple" to "is an apple" for all vowels.
 	    var vowels         = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 	    var vowels__length = vowels.length;
 	    var vowels__index  = vowels__length - 1;
