@@ -154,6 +154,10 @@ sals.core.nanoseconds_since_1970 = function() {
     return sals.core.milliseconds_since_1970() * 1000000.0;
 };
 
+sals.core.string__to_english_string = function(self) {
+    return self.split("_").join(" ");
+};
+
 sals.core.load_next_file = function(done_loading_files_callback) {
     if (sals.core.total_load_count < sals.core.source_file_names.length) {
 	var script_file_name = sals.core.source_file_names[sals.core.total_load_count];
