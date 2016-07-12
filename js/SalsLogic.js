@@ -150,6 +150,22 @@ sals.logic = {};
 	    })();
 	    parameter_frame__keys__index ++;
 	}
+	
+	(function() {
+	    var vowels         = ["a", "e", "i", "o", "u"];
+	    var vowels__length = vowels.length;
+	    var vowels__index  = vowels__length - 1;
+	    var vowel;
+	    var is_a_vowel;
+	    while (vowels__index >= 0) {
+		vowel = vowels[vowels__index];
+		is_a_vowel = "is a " + vowel;
+		if (to_english_string.includes(is_a_vowel)) {
+		    to_english_string = to_english_string.split(is_a_vowel).join("is an " + vowel);
+		}
+		vowels__index ++;
+	    }
+	})();
 	return to_english_string;
     };
     
