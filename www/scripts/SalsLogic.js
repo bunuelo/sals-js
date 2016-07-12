@@ -142,9 +142,9 @@ sals.logic = {};
 		if (parameter_frame__key !== "subject") {
 		    var parameter_frame__value = sals.frame.frame__get_element(parameter_frame, parameter_frame__key);
 		    if ((parameter_frame__key === "direct object") || (parameter_frame__key === "second direct object")) {
-			to_english_string = to_english_string + " " + parameter_frame__value;
+			to_english_string = to_english_string + " " + sals.core.object__to_english_string(parameter_frame__value);
 		    } else {
-			to_english_string = to_english_string + " " + parameter_frame__key + " " + parameter_frame__value;
+			to_english_string = to_english_string + " " + sals.core.object__to_english_string(parameter_frame__key) + " " + sals.core.object__to_english_string(parameter_frame__value);
 		    }
 		}
 	    })();
