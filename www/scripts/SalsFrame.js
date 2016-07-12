@@ -6,7 +6,7 @@ sals.frame.frame_uid_map = {};
 sals.frame.uid__next_value = 0;
 
 sals.frame.uid__new = function() {
-    var uid = "uid-" + sals.frame.uid__next_value;
+    var uid = "object_" + sals.frame.uid__next_value;
     sals.frame.uid__next_value ++;
     return uid;
 };
