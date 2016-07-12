@@ -88,20 +88,29 @@ sals.graph.graph__add_frame_recursively_with_frame_uid_map = function(self, fram
 	return sals.frame.frame__get_element(frame_uid_map, frame__uid);
     } else {
 	var frame__node = sals.graph.graph_node__new(frame__uid);
-	sals.frame.frame__add_element(frame_uid_map, frame__uid, frame__node);
-	sals.graph.graph__add_node(self, frame__node);
-	sals.frame.frame__foreach_key(frame, function(frame__key) {
-	    var frame__value = sals.frame.frame__get_element(frame, frame__key);
-	    var frame__value__node;
-	    if (sals.frame.frame__is_type(frame__value)) {
-		frame__value__node = sals.graph.graph__add_frame_recursively_with_frame_uid_map(self, frame__value, frame_uid_map);
-	    } else {
-		frame__value__node = sals.graph.graph_node__new("" + frame__value);
-		sals.graph.graph__add_node(self, frame__value__node);
-	    }
-	    var edge = sals.graph.graph_edge__new("" + frame__key, frame__node, frame__value__node);
+	(function() {
+	    var frame__type       = sals.object.object__type(frame);
+	    var frame__type__node = sals.graph.graph_node__new("" + frame__type);
+	    sals.graph.graph__add_node(self, frame__type__node);
+	    var edge = sals.graph.graph_edge__new("is a", frame__node, frame__type__node);
 	    sals.graph.graph__add_edge(self, edge);
-	});
+	})();
+	(function() {
+	    sals.frame.frame__add_element(frame_uid_map, frame__uid, frame__node);
+	    sals.graph.graph__add_node(self, frame__node);
+	    sals.frame.frame__foreach_key(frame, function(frame__key) {
+		var frame__value = sals.frame.frame__get_element(frame, frame__key);
+		var frame__value__node;
+		if (sals.frame.frame__is_type(frame__value)) {
+		    frame__value__node = sals.graph.graph__add_frame_recursively_with_frame_uid_map(self, frame__value, frame_uid_map);
+		} else {
+		    frame__value__node = sals.graph.graph_node__new("" + frame__value);
+		    sals.graph.graph__add_node(self, frame__value__node);
+		}
+		var edge = sals.graph.graph_edge__new("" + frame__key, frame__node, frame__value__node);
+		sals.graph.graph__add_edge(self, edge);
+	    });
+	})();
 	return frame__node;
     }
     

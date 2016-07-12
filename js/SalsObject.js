@@ -14,7 +14,7 @@ sals.object.object__type = function(exp) {
 	return null;
     } else {
 	if (! sals.frame.frame__contains_meta_key(exp, "type")) {
-	    
+	    return "object";
 	} else {
 	    return sals.frame.frame__get_meta_element(exp, "type");
 	}
