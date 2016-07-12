@@ -88,7 +88,7 @@ sals.object.object_type__assert = function(correct_type, exp) {
     if (! sals.object.object__is_type(exp, correct_type)) {
 	(function() {
 	    var incorrect_type = sals.object.object__type(exp);
-	    sals.core.throw_new_object_type_error(correct_type, incorrect_type, exp);
+	    sals.object.throw_new_object_type_error(correct_type, incorrect_type, exp);
 	})();
     }
 };
