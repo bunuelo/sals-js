@@ -124,7 +124,7 @@ sals.logic = {};
 	var parameter_frame   = sals.logic.predicate__parameter_frame(self);
 	var subject           = sals.core.object__to_english_string(sals.frame.frame__get_element(parameter_frame, "subject"));
 	var to_english_string = subject;
-	var type              = sals.core.object__to_english_string(sals.logic.predicate__type(self));
+	var type              = sals.logic.predicate__type(self);
 	var verb_transitive   = sals.core.object__to_english_string(sals.logic.predicate_type__verb_transitive(type));
 	if (verb_transitive.includes("to be")) {
 	    verb_transitive = verb_transitive.split("to be").join("is");
