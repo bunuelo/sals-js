@@ -150,7 +150,6 @@ sals.logic = {};
 	    })();
 	    parameter_frame__keys__index ++;
 	}
-	
 	(function() {
 	    var vowels         = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 	    var vowels__length = vowels.length;
@@ -163,7 +162,7 @@ sals.logic = {};
 		if (to_english_string.includes(is_a_vowel)) {
 		    to_english_string = to_english_string.split(is_a_vowel).join("is an " + vowel);
 		}
-		vowels__index ++;
+		vowels__index --;
 	    }
 	})();
 	return to_english_string;
