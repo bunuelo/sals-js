@@ -184,7 +184,27 @@ sals.go = {};
     
     sals.go.go_game_board__step = function(self) {
 	//sals.core.log("go_game_board__step: here.");
-	var did_something = false;
+	var did_something    = false;
+	var width            = sals.go.go_game_board__width(self);
+	var height           = sals.go.go_game_board__height(self);
+	var height_minus_one = height - 1;
+	var x                = width - 1;
+	var y;
+	while (x >= 0) {
+	    y = height_minus_one;
+	    while (y >= 0) {
+		var cell        = sals.go.go_game_board__get_cell(self, x, y);
+		var cell__state = sals.go.go_game_board_cell__state(self);
+		if (cell__state == "white") {
+		    cell__state = "black";
+		} else if (cell__state == "black") {
+		    cell__state = "white";
+		}
+		sals.go.go_game_board_cell__set_state(self, state);
+		y --;
+	    }
+	    x --;
+	}
 	return did_something;
     };
     
