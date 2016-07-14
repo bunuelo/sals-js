@@ -199,7 +199,6 @@ sals.go = {};
 	    while (y >= 0) {
 		var cell        = sals.go.go_game_board__get_cell(self, x, y);
 		var cell__state = sals.go.go_game_board_cell__state(cell);
-		var 
 		if (cell__state === null) {
 		    cell__state = "white";
 		} else if ((cell__state == "white") ||
