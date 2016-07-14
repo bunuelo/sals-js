@@ -83,14 +83,14 @@ if (window.webkitRequestAnimationFrame) {
 	    var go_game__board = sals.go.go_game__board(go_game);
 	    
 	    // fast rendering
-
+	    
 	    // text logging
 	    
-	    if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= (30 * sals.core.nanoseconds_per_second))) {
+	    if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= (10 * sals.core.nanoseconds_per_second))) {
 		last_print_nanoseconds_since_1970 = nanoseconds_since_1970;
 		sals.render.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
 		sals.core.log("render_callback: fps = " + sals.render.render_state__get_frames_per_second(self));
-		sals.go.go_game_board__log(go_game__board);
+		//sals.go.go_game_board__log(go_game__board);
 	    }
 	    
 	    // game logic
