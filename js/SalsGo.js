@@ -206,8 +206,8 @@ sals.go = {};
     };
     
     sals.go.go_game__step = function(self) {
-	var go_game_board = sals.go.go_game_board__new(width, height);
-	return sals.go.go_game_board__step(go_game_board);
+	var board = sals.go.go_game__board(self);
+	return sals.go.go_game_board__step(board);
     };
     
     sals.go.go_game__to_dom_element = function(self) {
