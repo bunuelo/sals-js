@@ -190,17 +190,45 @@ sals.go = {};
 	var height_minus_one = height - 1;
 	var x                = width - 1;
 	var y;
+	var left_signal;
+	var up_signal;
+	var right_signal;
+	var down_signal;
 	while (x >= 0) {
 	    y = height_minus_one;
 	    while (y >= 0) {
 		var cell        = sals.go.go_game_board__get_cell(self, x, y);
 		var cell__state = sals.go.go_game_board_cell__state(cell);
+		var 
 		if (cell__state === null) {
 		    cell__state = "white";
-		} else if (cell__state == "white") {
-		    cell__state = "black";
-		} else if (cell__state == "black") {
-		    cell__state = "white";
+		} else if ((cell__state == "white") ||
+			   (cell__state == "black")) {
+		    if (x >= 1) {
+			left_signal = (sals.go.go_game_board_cell__state(sals.go.go_game_board__get_cell(self, x - 1, y)) == "white");
+		    } else {
+			left_signal = false;
+		    }
+		    if (y >= 1) {
+			up_signal = (sals.go.go_game_board_cell__state(sals.go.go_game_board__get_cell(self, x, y - 1)) == "white");
+		    } else {
+			up_signal = false;
+		    }
+		    if (x < (width - 1)) {
+			right_signal = (sals.go.go_game_board_cell__state(sals.go.go_game_board__get_cell(self, x + 1, y)) == "white");
+		    } else {
+			right_signal = false;
+		    }
+		    if (y < (height - 1)) {
+			down_signal = (sals.go.go_game_board_cell__state(sals.go.go_game_board__get_cell(self, x, y + 1)) == "white");
+		    } else {
+			down_signal = false;
+		    }
+		    if (left_signal || right_signal || up_signal || down_signal) {
+			cell__state = "black";
+		    } else {
+			cell__state = "white";
+		    }
 		}
 		sals.go.go_game_board_cell__set_state(cell, cell__state);
 		y --;
