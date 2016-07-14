@@ -182,6 +182,12 @@ sals.go = {};
 	console.log("go_game_board = " + sals.go.go_game_board__to_english_sentence(self));
     };
     
+    sals.go.go_game_board__step = function(self) {
+	sals.core.log("go_game_board__step: here.");
+	var did_something = false;
+	return did_something;
+    };
+    
 })(); // go_game_board END
 
 (function () { // go_game BEGIN
@@ -197,6 +203,11 @@ sals.go = {};
     
     sals.go.go_game__board = function(self) {
 	return sals.frame.frame__get_element(self, "board");
+    };
+    
+    sals.go.go_game__step = function(self) {
+	var go_game_board = sals.go.go_game_board__new(width, height);
+	return sals.go.go_game_board__step(go_game_board);
     };
     
     sals.go.go_game__to_dom_element = function(self) {

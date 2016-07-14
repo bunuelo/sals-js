@@ -84,8 +84,7 @@ if (window.webkitRequestAnimationFrame) {
 	    
 	    // fast rendering
 	    
-	    // text logging
-	    
+	    // FPS text logging
 	    if ((last_print_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_print_nanoseconds_since_1970 >= (10 * sals.core.nanoseconds_per_second))) {
 		last_print_nanoseconds_since_1970 = nanoseconds_since_1970;
 		sals.render.render_state__set_last_print_nanoseconds_since_1970(self, last_print_nanoseconds_since_1970);
@@ -94,6 +93,7 @@ if (window.webkitRequestAnimationFrame) {
 	    }
 	    
 	    // game logic
+	    sals.go.go_game__step(go_game);
 	    
 	    // deliberate layer
 	    if (sals.machine.step_test_deliberate_machine !== null) {
