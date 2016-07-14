@@ -210,7 +210,7 @@ sals.go = {};
 	return sals.go.go_game_board__step(board);
     };
     
-    sals.go.go_game__to_dom_element = function(self) {
+    sals.go.go_game__to_dom_element_content = function(self) {
 	var board             = sals.go.go_game__board(self);
 	var go_game_table__tr = document.createElement("tr");
 	(function() {
@@ -241,6 +241,21 @@ sals.go = {};
 	var go_game_table = document.createElement("table");
 	go_game_table.appendChild(go_game_table__tr);
 	return go_game_table;
+    };
+    
+    sals.go.go_game__to_dom_element = function(self) {
+	var dom_element__content = sals.go.go_game__to_dom_element_content(self);
+	var dom_element          = document.createElement("div");
+	dom_element.appendChild(dom_element__content);
+	return dom_element;
+    };
+    
+    sals.go.go_game__update_dom_element = function(self, dom_element) {
+	var dom_element__content = sals.go.go_game__to_dom_element_content(self);
+	while (dom_element.firstChild) {
+	    dom_element.removeChild(dom_element.firstChild);
+	}
+	dom_element.appendChild(dom_element__content);
     };
     
 })(); // go_game END

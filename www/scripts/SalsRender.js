@@ -80,7 +80,7 @@ if (window.webkitRequestAnimationFrame) {
     };
     
     sals.render.render__go_game__update_dom_element = function(go_game, dom_element) {
-	
+	sals.go.go_game__update_dom_element(go_game, dom_element);
     };
     
     sals.render.render_state__render = function(self) {
