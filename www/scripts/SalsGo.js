@@ -223,12 +223,8 @@ sals.go = {};
 		    } else {
 			down_signal = false;
 		    }
-		    if ((left_signal && right_signal) ||
-			(left_signal && up_signal) ||
-			(left_signal && down_signal) ||
-			(right_signal && up_signal) ||
-			(right_signal && down_signal) ||
-			(up_signal && down_signal)) {
+		    if (((up_signal && down_signal) && (! (left_signal && right_signal))) ||
+			((left_signal && right_signal) && (! (up_signal && down_signal)))) {
 			cell__state = "black";
 		    } else {
 			cell__state = "white";
