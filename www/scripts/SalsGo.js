@@ -226,6 +226,9 @@ sals.go = {};
 		    if (((up_signal && down_signal) && (! (left_signal && right_signal))) ||
 			((left_signal && right_signal) && (! (up_signal && down_signal)))) {
 			cell__state = "black";
+		    } else if ((up_signal && down_signal && left_signal && right_signal) ||
+			       ((! up_signal) && (! down_signal) && (! left_signal) && (! right_signal))) {
+			cell__state = null;
 		    } else {
 			cell__state = "white";
 		    }
