@@ -27,10 +27,11 @@ if (window.webkitRequestAnimationFrame) {
     var object_type = sals.object.object_type__new("render_state");
     sals.object_registry.add_type(object_type);
     
-    sals.render.render_state__new = function(width, height) {
+    sals.render.render_state__new = function(width, height, dom_element) {
 	var self    = sals.object.object__new("render_state");
 	var go_game = sals.go.go_game__new(width, height);
 	sals.frame.frame__add_element(self, "go_game",                           go_game);
+	sals.frame.frame__add_element(self, "dom_element",                       dom_element);
 	sals.frame.frame__add_element(self, "frame_count",                       0);
 	sals.frame.frame__add_element(self, "start_nanoseconds_since_1970",      sals.core.nanoseconds_since_1970());
 	sals.frame.frame__add_element(self, "last_print_nanoseconds_since_1970", null);
@@ -39,6 +40,10 @@ if (window.webkitRequestAnimationFrame) {
     
     sals.render.render_state__go_game = function(self) {
 	return sals.frame.frame__get_element(self, "go_game");
+    };
+    
+    sals.render.render_state__dom_element = function(self) {
+	return sals.frame.frame__get_element(self, "dom_element");
     };
     
     sals.render.render_state__frame_count = function(self) {
@@ -74,6 +79,11 @@ if (window.webkitRequestAnimationFrame) {
 	return frames_per_second;
     };
     
+    self.render.render__go_game__update_dom_element = function(go_game, dom_element) {
+	sals.core.log("render__go_game__update_dom_element: here.");
+	
+    };
+    
     sals.render.render_state__render = function(self) {
 	var frame_count                       = sals.render.render_state__frame_count(self);
 	var last_print_nanoseconds_since_1970 = sals.render.render_state__last_print_nanoseconds_since_1970(self);
@@ -94,6 +104,10 @@ if (window.webkitRequestAnimationFrame) {
 	    
 	    // game logic
 	    sals.go.go_game__step(go_game);
+
+	    // update DOM element
+	    var dom_element = sals.render.render_state__dom_element(self);
+	    self.render.render__go_game__update_dom_element(go_game, dom_element); 
 	    
 	    // deliberate layer
 	    if (sals.machine.step_test_deliberate_machine !== null) {
@@ -121,7 +135,7 @@ sals.render.render_callback = function() {
     }
 };
 
-sals.render.start_game = function() {
-    sals.render.render_state = sals.render.render_state__new(4, 4);
+sals.render.start_game = function(go_game_element) {
+    sals.render.render_state = sals.render.render_state__new(4, 4, go_game_element);
     sals.render.on_each_frame(sals.render.render_callback);
 }
