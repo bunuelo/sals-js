@@ -138,4 +138,5 @@ sals.render.render_callback = function() {
 sals.render.start_game = function(go_game_element) {
     sals.render.render_state = sals.render.render_state__new(4, 4, go_game_element);
     sals.render.on_each_frame(sals.render.render_callback);
-}
+};
+
