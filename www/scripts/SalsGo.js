@@ -200,7 +200,7 @@ sals.go = {};
 		} else if (cell__state == "black") {
 		    cell__state = "white";
 		}
-		sals.go.go_game_board_cell__set_state(self, cell__state);
+		sals.go.go_game_board_cell__set_state(cell, cell__state);
 		y --;
 	    }
 	    x --;
