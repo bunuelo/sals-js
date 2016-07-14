@@ -79,7 +79,7 @@ if (window.webkitRequestAnimationFrame) {
 	return frames_per_second;
     };
     
-    self.render.render__go_game__update_dom_element = function(go_game, dom_element) {
+    sals.render.render__go_game__update_dom_element = function(go_game, dom_element) {
 	sals.core.log("render__go_game__update_dom_element: here.");
 	
     };
@@ -107,7 +107,7 @@ if (window.webkitRequestAnimationFrame) {
 
 	    // update DOM element
 	    var dom_element = sals.render.render_state__dom_element(self);
-	    self.render.render__go_game__update_dom_element(go_game, dom_element); 
+	    sals.render.render__go_game__update_dom_element(go_game, dom_element); 
 	    
 	    // deliberate layer
 	    if (sals.machine.step_test_deliberate_machine !== null) {
