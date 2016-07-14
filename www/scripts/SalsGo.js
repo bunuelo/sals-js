@@ -183,7 +183,7 @@ sals.go = {};
     };
     
     sals.go.go_game_board__step = function(self) {
-	sals.core.log("go_game_board__step: here.");
+	//sals.core.log("go_game_board__step: here.");
 	var did_something = false;
 	return did_something;
     };
