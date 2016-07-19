@@ -274,9 +274,14 @@ sals.go = {};
 	    go_game_table__tr.appendChild(go_game_table__tr__game_board_td);
 	})();
 	(function() {
-	    var go_game_table__tr__textarea_td = document.createElement("td");
-	    go_game_table__tr__textarea_td.innerHTML = "<textarea rows=32 cols=80>" + sals.go.go_game_board__to_english_sentence(board) + " " + sals.frame.frame__to_string(board) + "</textarea>";
-	    go_game_table__tr.appendChild(go_game_table__tr__textarea_td);
+	    var textarea_td = document.createElement("td");
+	    textarea_td.innerHTML = "<textarea rows=32 cols=80>" + sals.go.go_game_board__to_english_sentence(board) + "</textarea>";
+	    go_game_table__tr.appendChild(textarea_td);
+	})();
+	(function() {
+	    var textarea_td = document.createElement("td");
+	    textarea_td.innerHTML = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
+	    go_game_table__tr.appendChild(textarea_td);
 	})();
 	//(function() {
 	//    var board__graph                   = sals.go.go_game_board__to_graph(board);
