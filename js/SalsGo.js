@@ -200,6 +200,7 @@ sals.go = {};
 		var cell        = sals.go.go_game_board__get_cell(self, x, y);
 		var cell__state = sals.go.go_game_board_cell__state(cell);
 		if (cell__state === null) {
+		    var random_index = (sals.math.random() * 2)
 		    cell__state = "white";
 		} else if ((cell__state == "white") ||
 			   (cell__state == "black")) {
@@ -274,7 +275,7 @@ sals.go = {};
 	})();
 	(function() {
 	    var go_game_table__tr__textarea_td = document.createElement("td");
-	    go_game_table__tr__textarea_td.innerHTML = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
+	    go_game_table__tr__textarea_td.innerHTML = "<textarea rows=32 cols=80>" + sals.go.go_game_board__to_english_sentence(board) + " " + sals.frame.frame__to_string(board) + "</textarea>";
 	    go_game_table__tr.appendChild(go_game_table__tr__textarea_td);
 	})();
 	//(function() {
