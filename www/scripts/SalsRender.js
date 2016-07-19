@@ -30,11 +30,12 @@ if (window.webkitRequestAnimationFrame) {
     sals.render.render_state__new = function(width, height, dom_element) {
 	var self    = sals.object.object__new("render_state");
 	var go_game = sals.go.go_game__new(width, height);
-	sals.frame.frame__add_element(self, "go_game",                           go_game);
-	sals.frame.frame__add_element(self, "dom_element",                       dom_element);
-	sals.frame.frame__add_element(self, "frame_count",                       0);
-	sals.frame.frame__add_element(self, "start_nanoseconds_since_1970",      sals.core.nanoseconds_since_1970());
-	sals.frame.frame__add_element(self, "last_print_nanoseconds_since_1970", null);
+	sals.frame.frame__add_element(self, "go_game",                                go_game);
+	sals.frame.frame__add_element(self, "dom_element",                            dom_element);
+	sals.frame.frame__add_element(self, "frame_count",                            0);
+	sals.frame.frame__add_element(self, "start_nanoseconds_since_1970",           sals.core.nanoseconds_since_1970());
+	sals.frame.frame__add_element(self, "last_print_nanoseconds_since_1970",      null);
+	sals.frame.frame__add_element(self, "last_update_dom_nanoseconds_since_1970", null);
 	return self;
     };
     
@@ -70,6 +71,14 @@ if (window.webkitRequestAnimationFrame) {
 	return sals.frame.frame__set_element(self, "last_print_nanoseconds_since_1970", value);
     };
     
+    sals.render.render_state__last_update_dom_nanoseconds_since_1970 = function(self) {
+	return sals.frame.frame__get_element(self, "last_update_dom_nanoseconds_since_1970");
+    };
+    
+    sals.render.render_state__set_last_update_dom_nanoseconds_since_1970 = function(self, value) {
+	return sals.frame.frame__set_element(self, "last_update_dom_nanoseconds_since_1970", value);
+    };
+    
     sals.render.render_state__get_frames_per_second = function(self) {
 	var frame_count                  = sals.render.render_state__frame_count(self);
 	var start_nanoseconds_since_1970 = sals.render.render_state__start_nanoseconds_since_1970(self);
@@ -84,9 +93,10 @@ if (window.webkitRequestAnimationFrame) {
     };
     
     sals.render.render_state__render = function(self) {
-	var frame_count                       = sals.render.render_state__frame_count(self);
-	var last_print_nanoseconds_since_1970 = sals.render.render_state__last_print_nanoseconds_since_1970(self);
-	var nanoseconds_since_1970            = sals.core.nanoseconds_since_1970();
+	var frame_count                            = sals.render.render_state__frame_count(self);
+	var last_print_nanoseconds_since_1970      = sals.render.render_state__last_print_nanoseconds_since_1970(self);
+	var last_update_dom_nanoseconds_since_1970 = sals.render.render_state__last_update_dom_nanoseconds_since_1970(self);
+	var nanoseconds_since_1970                 = sals.core.nanoseconds_since_1970();
 	(function() { // randering BEGIN
 	    var go_game        = sals.render.render_state__go_game(self);
 	    var go_game__board = sals.go.go_game__board(go_game);
@@ -105,8 +115,15 @@ if (window.webkitRequestAnimationFrame) {
 	    sals.go.go_game__step(go_game);
 
 	    // update DOM element
-	    var dom_element = sals.render.render_state__dom_element(self);
-	    sals.render.render__go_game__update_dom_element(go_game, dom_element); 
+	    if ((last_update_dom_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_update_dom_nanoseconds_since_1970 >= (1 * sals.core.nanoseconds_per_second))) {
+		last_update_dom_nanoseconds_since_1970 = nanoseconds_since_1970;
+		sals.render.render_state__set_last_update_dom_nanoseconds_since_1970(self, last_update_dom_nanoseconds_since_1970);
+		(function() {
+		    var dom_element = sals.render.render_state__dom_element(self);
+		    sals.render.render__go_game__update_dom_element(go_game, dom_element); 
+		})();
+	    }
+	    
 	    
 	    // deliberate layer
 	    if (sals.machine.step_test_deliberate_machine !== null) {
