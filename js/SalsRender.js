@@ -113,7 +113,7 @@ if (window.webkitRequestAnimationFrame) {
 	    
 	    // game logic
 	    
-	    if ((last_update_dom_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_update_dom_nanoseconds_since_1970 >= (2 * sals.core.nanoseconds_per_second))) {
+	    if ((last_update_dom_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_update_dom_nanoseconds_since_1970 >= (1 * sals.core.nanoseconds_per_second))) {
 		last_update_dom_nanoseconds_since_1970 = nanoseconds_since_1970;
 		sals.render.render_state__set_last_update_dom_nanoseconds_since_1970(self, last_update_dom_nanoseconds_since_1970);
 		sals.core.log("stepping game logic.");
