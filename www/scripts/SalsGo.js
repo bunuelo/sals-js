@@ -283,13 +283,13 @@ sals.go = {};
 	    textarea_td.innerHTML = "<textarea rows=32 cols=80>" + sals.frame.frame__to_string(board) + "</textarea>";
 	    go_game_table__tr.appendChild(textarea_td);
 	})();
-	//(function() {
-	//    var board__graph                   = sals.go.go_game_board__to_graph(board);
-	//    var visgraph                       = sals.vis.sals_vis_graph__new(512, 512, board__graph);
-	//    var go_game_table__tr__visgraph_td = document.createElement("td");
-	//    go_game_table__tr__visgraph_td.appendChild(visgraph);
-	//    go_game_table__tr.appendChild(go_game_table__tr__visgraph_td);
-	//})();
+	(function() {
+	    var board__graph                   = sals.go.go_game_board__to_graph(board);
+	    var visgraph                       = sals.vis.sals_vis_graph__new(512, 512, board__graph);
+	    var go_game_table__tr__visgraph_td = document.createElement("td");
+	    go_game_table__tr__visgraph_td.appendChild(visgraph);
+	    go_game_table__tr.appendChild(go_game_table__tr__visgraph_td);
+	})();
 	//(function() {
 	//	var sals_three                       = sals.three.sals_three__new(256, 512);
 	//	var sals_three__dom_element          = sals.three.sals_three__dom_element(sals_three);
