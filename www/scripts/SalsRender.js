@@ -112,18 +112,19 @@ if (window.webkitRequestAnimationFrame) {
 	    }
 	    
 	    // game logic
-	    sals.go.go_game__step(go_game);
 	    
-	    // update DOM element
 	    if ((last_update_dom_nanoseconds_since_1970 === null) || (nanoseconds_since_1970 - last_update_dom_nanoseconds_since_1970 >= (2 * sals.core.nanoseconds_per_second))) {
 		last_update_dom_nanoseconds_since_1970 = nanoseconds_since_1970;
 		sals.render.render_state__set_last_update_dom_nanoseconds_since_1970(self, last_update_dom_nanoseconds_since_1970);
-		sals.core.log("updating dom element.");
-		(function() {
-		    var dom_element = sals.render.render_state__dom_element(self);
-		    sals.render.render__go_game__update_dom_element(go_game, dom_element); 
-		})();
+		sals.core.log("stepping game logic.");
+		sals.go.go_game__step(go_game);
 	    }
+	    
+	    // update DOM element
+	    (function() {
+		var dom_element = sals.render.render_state__dom_element(self);
+		sals.render.render__go_game__update_dom_element(go_game, dom_element); 
+	    })();
 	    
 	    // deliberate layer
 	    if (sals.machine.step_test_deliberate_machine !== null) {
